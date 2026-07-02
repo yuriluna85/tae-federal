@@ -78,6 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initTabs();
     initA11y();
     initCalcInputs();
+    initRscCalc();
     initTableViewer();
     calculateSalary(); // Cálculo inicial
 });
@@ -470,4 +471,93 @@ function renderLevelTable(nivel) {
         `;
         tbody.appendChild(row);
     });
+}
+
+// Inicialização da Calculadora de Pontuação RSC
+function initRscCalc() {
+    const inputs = document.querySelectorAll(".rsc-input");
+    inputs.forEach(input => {
+        input.addEventListener("input", calculateRscPoints);
+        input.addEventListener("change", calculateRscPoints);
+    });
+    calculateRscPoints(); // Cálculo inicial
+}
+
+// Calcular Pontuação Geral e por Eixo do RSC
+function calculateRscPoints() {
+    const pesos = {
+        "pts-e1-cperm": 10,
+        "pts-e1-ctemp": 5,
+        "pts-e2-coord": 15,
+        "pts-e2-membro": 10,
+        "pts-e3-premio": 10,
+        "pts-e4-complex": 8,
+        "pts-e5-cd": 15,
+        "pts-e5-fg": 10,
+        "pts-e6-manual": 8,
+        "pts-e6-live": 5
+    };
+
+    const e1 = (parseInt(document.getElementById("pts-e1-cperm").value) || 0) * pesos["pts-e1-cperm"] +
+               (parseInt(document.getElementById("pts-e1-ctemp").value) || 0) * pesos["pts-e1-ctemp"];
+
+    const e2 = (parseInt(document.getElementById("pts-e2-coord").value) || 0) * pesos["pts-e2-coord"] +
+               (parseInt(document.getElementById("pts-e2-membro").value) || 0) * pesos["pts-e2-membro"];
+
+    const e3 = (parseInt(document.getElementById("pts-e3-premio").value) || 0) * pesos["pts-e3-premio"];
+
+    const e4 = (parseInt(document.getElementById("pts-e4-complex").value) || 0) * pesos["pts-e4-complex"];
+
+    const e5 = (parseInt(document.getElementById("pts-e5-cd").value) || 0) * pesos["pts-e5-cd"] +
+               (parseInt(document.getElementById("pts-e5-fg").value) || 0) * pesos["pts-e5-fg"];
+
+    const e6 = (parseInt(document.getElementById("pts-e6-manual").value) || 0) * pesos["pts-e6-manual"] +
+               (parseInt(document.getElementById("pts-e6-live").value) || 0) * pesos["pts-e6-live"];
+
+    const total = e1 + e2 + e3 + e4 + e5 + e6;
+
+    // Atualizar labels dos subtotais na tela
+    document.getElementById("rsc-breakdown-e1").textContent = `${e1} pts`;
+    document.getElementById("rsc-breakdown-e2").textContent = `${e2} pts`;
+    document.getElementById("rsc-breakdown-e3").textContent = `${e3} pts`;
+    document.getElementById("rsc-breakdown-e4").textContent = `${e4} pts`;
+    document.getElementById("rsc-breakdown-e5").textContent = `${e5} pts`;
+    document.getElementById("rsc-breakdown-e6").textContent = `${e6} pts`;
+
+    // Atualizar pontos totais
+    document.getElementById("rsc-total-points").textContent = total;
+
+    // Calcular e atualizar progresso
+    const pct = Math.min(100, Math.round((total / 50) * 100));
+    document.getElementById("rsc-progress-pct").textContent = `${pct}%`;
+    
+    const fill = document.getElementById("rsc-progress-bar-fill");
+    if (fill) {
+        fill.style.width = `${pct}%`;
+        if (total >= 50) {
+            fill.style.backgroundColor = "#10b981"; // Verde sucesso
+        } else {
+            fill.style.backgroundColor = "var(--color-accent)"; // Ciano padrão
+        }
+    }
+
+    // Status da Meta
+    const statusBox = document.getElementById("rsc-status-box");
+    const statusIcon = document.getElementById("rsc-status-icon");
+    const statusTitle = document.getElementById("rsc-status-title");
+    const statusDesc = document.getElementById("rsc-status-desc");
+
+    if (statusBox && statusIcon && statusTitle && statusDesc) {
+        if (total >= 50) {
+            statusBox.className = "rsc-status approved";
+            statusIcon.textContent = "✅";
+            statusTitle.textContent = "Pontuação Atingida!";
+            statusDesc.textContent = `Parabéns! Você acumulou ${total} pontos (mínimo exigido: 50). Seu memorial descritivo atende aos critérios regulamentares mínimos para homologação do RSC no IF Baiano.`;
+        } else {
+            statusBox.className = "rsc-status pending";
+            statusIcon.textContent = "⚠️";
+            statusTitle.textContent = "Pontuação Insuficiente";
+            statusDesc.textContent = `Faltam ${50 - total} pontos para atingir a meta mínima. Insira mais portarias de comissões, projetos institucionais ou registros de produção técnica.`;
+        }
+    }
 }

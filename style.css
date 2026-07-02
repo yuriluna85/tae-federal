@@ -615,3 +615,299 @@ footer .brand-text {
 .ads-by-google[data-ad-status="filled"] ~ .adsense-placeholder-preview {
     display: none;
 }
+
+/* Mural de Notícias Rápidas na Calculadora */
+.news-mural {
+    margin-top: 15px;
+    width: 100%;
+}
+
+.mural-title {
+    font-family: var(--font-title);
+    font-size: 1.3rem;
+    color: var(--color-accent);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.mural-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.mural-card {
+    background: rgba(255, 255, 255, 0.015);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-md);
+    padding: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: var(--transition-smooth);
+}
+
+.mural-card:hover {
+    border-color: rgba(13, 202, 240, 0.25);
+    background: rgba(255, 255, 255, 0.03);
+    transform: translateY(-2px);
+}
+
+.mural-card h4 {
+    font-family: var(--font-title);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 10px 0 6px 0;
+}
+
+.mural-card p {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.mural-badge {
+    align-self: flex-start;
+    font-size: 0.65rem;
+    font-family: var(--font-body);
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+}
+
+.badge-alert {
+    background: rgba(239, 68, 68, 0.15);
+    color: #f87171;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.badge-info {
+    background: rgba(13, 110, 253, 0.15);
+    color: #60a5fa;
+    border: 1px solid rgba(13, 110, 253, 0.3);
+}
+
+.badge-success {
+    background: rgba(16, 185, 129, 0.15);
+    color: #34d399;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.mural-date {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    align-self: flex-end;
+    margin-top: auto;
+}
+
+/* Layout da Calculadora de RSC */
+.rsc-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 30px;
+}
+
+@media (max-width: 900px) {
+    .rsc-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.rsc-activities {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.rsc-eixo-box {
+    background: rgba(255, 255, 255, 0.015);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-md);
+    padding: 20px;
+}
+
+.rsc-eixo-box h3 {
+    font-family: var(--font-title);
+    font-size: 1.1rem;
+    color: var(--color-primary);
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 8px;
+}
+
+.rsc-item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 12px;
+}
+
+.rsc-item-row:last-child {
+    margin-bottom: 0;
+}
+
+.rsc-item-row label {
+    font-size: 0.9rem;
+    color: var(--color-text);
+    line-height: 1.4;
+}
+
+.rsc-input {
+    width: 80px !important;
+    text-align: center;
+    padding: 6px 8px !important;
+}
+
+/* Painel de Resultados do RSC */
+.rsc-summary-card {
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-lg);
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: sticky;
+    top: 20px;
+    height: fit-content;
+}
+
+.rsc-score-header {
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 15px;
+}
+
+.rsc-score-header h3 {
+    font-family: var(--font-title);
+    font-size: 1.2rem;
+    color: var(--color-text-muted);
+}
+
+.rsc-total-badge {
+    margin-top: 10px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    padding: 12px 24px;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-primary);
+}
+
+#rsc-total-points {
+    font-family: var(--font-title);
+    font-size: 2.4rem;
+    font-weight: 800;
+    line-height: 1;
+    color: #ffffff;
+}
+
+.rsc-total-badge .pts-lbl {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin-top: 2px;
+}
+
+.rsc-progress-wrapper {
+    width: 100%;
+}
+
+.rsc-progress-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin-bottom: 6px;
+}
+
+.rsc-progress-bar-container {
+    height: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#rsc-progress-bar-fill {
+    height: 100%;
+    background: var(--color-accent);
+    transition: var(--transition-smooth);
+    width: 0%;
+}
+
+.rsc-status {
+    display: flex;
+    gap: 12px;
+    padding: 15px;
+    border-radius: var(--border-radius-md);
+    font-size: 0.85rem;
+    line-height: 1.4;
+    transition: var(--transition-smooth);
+}
+
+.rsc-status.pending {
+    background: rgba(121, 82, 179, 0.08);
+    border-left: 4px solid var(--color-secondary);
+}
+
+.rsc-status.pending #rsc-status-icon {
+    color: var(--color-secondary);
+    font-size: 1.3rem;
+}
+
+.rsc-status.pending h4 {
+    color: var(--color-secondary);
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.rsc-status.approved {
+    background: rgba(16, 185, 129, 0.08);
+    border-left: 4px solid #10b981;
+}
+
+.rsc-status.approved #rsc-status-icon {
+    color: #10b981;
+    font-size: 1.3rem;
+}
+
+.rsc-status.approved h4 {
+    color: #10b981;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.rsc-breakdown {
+    border-top: 1px solid var(--border-color);
+    padding-top: 15px;
+}
+
+.rsc-breakdown h4 {
+    font-family: var(--font-title);
+    font-size: 0.95rem;
+    color: #ffffff;
+    margin-bottom: 12px;
+}
+
+.breakdown-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.breakdown-row:last-child {
+    border-bottom: none;
+}

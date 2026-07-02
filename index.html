@@ -32,6 +32,7 @@
         <nav class="nav-tabs" aria-label="Menu principal de abas">
             <button class="tab-btn active" data-tab="calculadora" aria-selected="true">📊 Calculadora Salarial</button>
             <button class="tab-btn" data-tab="tabela" aria-selected="false">📅 Tabela de Carreira</button>
+            <button class="tab-btn" data-tab="calculadora-rsc" aria-selected="false">🎯 Pontuação RSC</button>
             <button class="tab-btn" data-tab="noticias" aria-selected="false">📰 Leis & Informativos</button>
         </nav>
 
@@ -249,7 +250,176 @@
                     </div>
                 </section>
             </div>
+
+            <!-- Mural de Novidades Rápidas e Acompanhamento do RSC (Aba Calculadora) -->
+            <div class="news-mural">
+                <section class="card card-mural-noticias" aria-labelledby="mural-news-title">
+                    <h3 id="mural-news-title" class="mural-title">📰 Painel de Novidades da Carreira & RSC</h3>
+                    <div class="mural-grid">
+                        <div class="mural-card">
+                            <span class="mural-badge badge-alert">Acompanhamento</span>
+                            <h4>Minuta do Decreto do RSC em Análise</h4>
+                            <p>A Comissão Nacional de Supervisão da Carreira (CNSC) iniciou a consolidação das diretrizes de avaliação dos 6 eixos para homologação ministerial.</p>
+                            <span class="mural-date">02/07/2026</span>
+                        </div>
+                        <div class="mural-card">
+                            <span class="mural-badge badge-info">Vigente</span>
+                            <h4>Tabela Salarial de Abril/2026 Implementada</h4>
+                            <p>O step linear de 4,1% estabelecido pela Lei nº 15.141/2025 está oficialmente vigente, extinguindo as antigas distorções de área direta e indireta de IQ.</p>
+                            <span class="mural-date">01/04/2026</span>
+                        </div>
+                        <div class="mural-card">
+                            <span class="mural-badge badge-success">Orientação</span>
+                            <h4>Dossiê do Memorial Descritivo</h4>
+                            <p>Servidores do IF Baiano já podem realizar a curadoria de portarias de comissões, diárias e certificados organizando a pasta de anexos do memorial.</p>
+                            <span class="mural-date">02/07/2026</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
         </main>
+
+        <!-- ABA 4: CALCULADORA DE PONTUAÇÃO RSC -->
+        <section id="calculadora-rsc" class="tab-content" aria-labelledby="rsc-calc-title">
+            <div class="card">
+                <h2 id="rsc-calc-title" style="font-family: var(--font-title); font-size: 1.6rem; color: var(--color-primary); margin-bottom: 10px;">Simulador de Pontuação do RSC-PCCTAE</h2>
+                <p style="color: var(--color-text-muted); margin-bottom: 25px;">
+                    Simule a pontuação do seu Memorial Descritivo com base nas atividades desenvolvidas no IF Baiano. A meta mínima é acumular <strong>50 pontos</strong> para homologação do Reconhecimento de Saberes.
+                </p>
+
+                <div class="rsc-grid">
+                    <!-- Painel de Seleção de Atividades -->
+                    <div class="rsc-activities">
+                        <!-- Eixo I -->
+                        <div class="rsc-eixo-box">
+                            <h3>Eixo I: Representações e Comissões</h3>
+                            <div class="rsc-item-row">
+                                <label for="pts-e1-cperm">Comissão Permanente / Colegiado / Conselho (10 pts/ano)</label>
+                                <input type="number" id="pts-e1-cperm" class="form-control rsc-input" min="0" max="10" value="0">
+                            </div>
+                            <div class="rsc-item-row">
+                                <label for="pts-e1-ctemp">Comissão Temporária / Grupo de Trabalho (5 pts/comissão)</label>
+                                <input type="number" id="pts-e1-ctemp" class="form-control rsc-input" min="0" max="20" value="0">
+                            </div>
+                        </div>
+
+                        <!-- Eixo II -->
+                        <div class="rsc-eixo-box">
+                            <h3>Eixo II: Projetos Institucionais</h3>
+                            <div class="rsc-item-row">
+                                <label for="pts-e2-coord">Coordenador de Projeto de Ensino/Pesquisa/Extensão (15 pts/projeto)</label>
+                                <input type="number" id="pts-e2-coord" class="form-control rsc-input" min="0" max="10" value="0">
+                            </div>
+                            <div class="rsc-item-row">
+                                <label for="pts-e2-membro">Membro Executor de Projeto (10 pts/projeto)</label>
+                                <input type="number" id="pts-e2-membro" class="form-control rsc-input" min="0" max="20" value="0">
+                            </div>
+                        </div>
+
+                        <!-- Eixo III -->
+                        <div class="rsc-eixo-box">
+                            <h3>Eixo III: Premiações Ocupacionais</h3>
+                            <div class="rsc-item-row">
+                                <label for="pts-e3-premio">Láurea, Menção Honrosa ou Prêmio de Gestão (10 pts/prêmio)</label>
+                                <input type="number" id="pts-e3-premio" class="form-control rsc-input" min="0" max="5" value="0">
+                            </div>
+                        </div>
+
+                        <!-- Eixo IV -->
+                        <div class="rsc-eixo-box">
+                            <h3>Eixo IV: Encargos e Responsabilidades</h3>
+                            <div class="rsc-item-row">
+                                <label for="pts-e4-complex">Atividade Especializada de Alta Complexidade / Parecer Técnico (8 pts/item)</label>
+                                <input type="number" id="pts-e4-complex" class="form-control rsc-input" min="0" max="10" value="0">
+                            </div>
+                        </div>
+
+                        <!-- Eixo V -->
+                        <div class="rsc-eixo-box">
+                            <h3>Eixo V: Funções de Liderança</h3>
+                            <div class="rsc-item-row">
+                                <label for="pts-e5-cd">Cargos de Direção - CD (15 pts/ano)</label>
+                                <input type="number" id="pts-e5-cd" class="form-control rsc-input" min="0" max="10" value="0">
+                            </div>
+                            <div class="rsc-item-row">
+                                <label for="pts-e5-fg">Função Gratificada / Chefia de Setor - FG (10 pts/ano)</label>
+                                <input type="number" id="pts-e5-fg" class="form-control rsc-input" min="0" max="10" value="0">
+                            </div>
+                        </div>
+
+                        <!-- Eixo VI -->
+                        <div class="rsc-eixo-box">
+                            <h3>Eixo VI: Produção e Difusão Técnica</h3>
+                            <div class="rsc-item-row">
+                                <label for="pts-e6-manual">Nota Técnica, Manual Operacional ou Cartilha (8 pts/item)</label>
+                                <input type="number" id="pts-e6-manual" class="form-control rsc-input" min="0" max="10" value="0">
+                            </div>
+                            <div class="rsc-item-row">
+                                <label for="pts-e6-live">Suporte Audiovisual / Operação de Transmissão Institucional / Live (5 pts/evento)</label>
+                                <input type="number" id="pts-e6-live" class="form-control rsc-input" min="0" max="30" value="0">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Painel de Resultados do RSC -->
+                    <div class="rsc-summary-card">
+                        <div class="rsc-score-header">
+                            <h3>Pontuação Geral do Memorial</h3>
+                            <div class="rsc-total-badge">
+                                <span id="rsc-total-points">0</span>
+                                <span class="pts-lbl">pontos</span>
+                            </div>
+                        </div>
+
+                        <div class="rsc-progress-wrapper">
+                            <div class="rsc-progress-header">
+                                <span>Progresso da Meta (50 pontos)</span>
+                                <span id="rsc-progress-pct">0%</span>
+                            </div>
+                            <div class="rsc-progress-bar-container">
+                                <div id="rsc-progress-bar-fill" style="width: 0%"></div>
+                            </div>
+                        </div>
+
+                        <div id="rsc-status-box" class="rsc-status pending">
+                            <div id="rsc-status-icon">⚠️</div>
+                            <div>
+                                <h4 id="rsc-status-title">Pontuação Insuficiente</h4>
+                                <p id="rsc-status-desc">Você acumulou menos de 50 pontos. Adicione portarias ou atividades de produção técnica para atingir a meta mínima.</p>
+                            </div>
+                        </div>
+
+                        <div class="rsc-breakdown">
+                            <h4>Distribuição por Eixo</h4>
+                            <div class="breakdown-row">
+                                <span>Eixo I: Representações e Comissões</span>
+                                <span id="rsc-breakdown-e1" class="val">0 pts</span>
+                            </div>
+                            <div class="breakdown-row">
+                                <span>Eixo II: Projetos Institucionais</span>
+                                <span id="rsc-breakdown-e2" class="val">0 pts</span>
+                            </div>
+                            <div class="breakdown-row">
+                                <span>Eixo III: Premiações Ocupacionais</span>
+                                <span id="rsc-breakdown-e3" class="val">0 pts</span>
+                            </div>
+                            <div class="breakdown-row">
+                                <span>Eixo IV: Encargos e Responsabilidades</span>
+                                <span id="rsc-breakdown-e4" class="val">0 pts</span>
+                            </div>
+                            <div class="breakdown-row">
+                                <span>Eixo V: Funções de Liderança</span>
+                                <span id="rsc-breakdown-e5" class="val">0 pts</span>
+                            </div>
+                            <div class="breakdown-row">
+                                <span>Eixo VI: Produção e Difusão Técnica</span>
+                                <span id="rsc-breakdown-e6" class="val">0 pts</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- ABA 2: VISUALIZADOR DE TABELA -->
         <section id="tabela" class="tab-content" aria-labelledby="tabela-title">

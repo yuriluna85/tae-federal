@@ -30,6 +30,11 @@ A arquitetura do software apoia-se em tecnologias nativas da plataforma web (Zer
     *   Cálculo em cascata da contribuição previdenciária (PSS) sob as alíquotas progressivas federais vigentes.
     *   Projeção do Imposto de Renda Retido na Fonte (IRRF) baseado na tabela progressiva oficial de 2026 e deduções por dependentes legais.
     *   Gráfico de barras dinâmico exibindo a composição proporcional do contracheque (vencimento básico, qualificação e benefícios).
+*   **Calculadora de Pontuação RSC**:
+    *   Mapeamento das atividades e comissões elegíveis subdivididas nos 6 eixos funcionais (com base na minuta nacional).
+    *   Simulação da pontuação do memorial do servidor em tempo real, com pesos específicos por atividade.
+    *   Barra de progresso interativa e indicador de status de homologação baseados na meta mínima de 50 pontos.
+    *   Detalhamento da pontuação obtida individualmente em cada eixo de comprovação.
 *   **Visualizador da Matriz Salarial**:
     *   Painel interativo para consulta rápida dos vencimentos básicos e simulações com IQ em todos os níveis.
 *   **Quadro Legal e Informativos**:
@@ -66,3 +71,5 @@ Este repositório está estruturado especificamente para publicação direta e i
 *   📊 **Inteligência Salarial**: Implementação dos algoritmos de cálculo de progressão por step (4,1%), faixas tributárias de PSS/IRRF (2026) e regras de per capita de saúde suplementar (Portaria MGI nº 2.778/2026).
 *   ⚙️ **Segregação de IQ & RSC**: Ajuste para separar os campos de IQ e RSC na interface do usuário, adicionando regras de restrição regulatória dinâmica (limitação do RSC a apenas um nível superior à escolaridade de entrada do IQ) e consolidação da equivalência financeira de proventos pelo percentual superior.
 *   💵 **Google AdSense**: Inclusão de blocos de anúncios responsivos (Leaderboards) discretos com estilização Glassmorphism e ocultação automática do placeholder local ao preenchimento de conteúdo do anúncio.
+*   📰 **Mural de Novidades**: Desenvolvimento e acoplamento de seção de novidades e informes rápidos da carreira na parte inferior da aba da calculadora, promovendo visibilidade imediata para eixos e diretrizes regulamentares.
+*   🎯 **Calculadora de Pontuação RSC**: Lançamento da nova aba de cálculo de pontuação baseada em eixos de curadoria documental, com pesos parametrizados e verificação de status de homologação de 50 pontos mínimos.
