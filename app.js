@@ -840,7 +840,7 @@ function calculateRscPoints() {
                 statusBox.className = "rsc-status approved";
                 statusIcon.textContent = "✅";
                 statusTitle.textContent = "Pontuação Atingida!";
-                statusDesc.textContent = `Parabéns! Você acumulou ${total} pontos distribuídos em ${eixosAtivos} eixos (mínimo exigido: 50 pts em 2 eixos). Seu memorial descritivo atende aos critérios regulamentares de dispersão para homologação do ${rscLabel} no IF Baiano.`;
+                statusDesc.textContent = `Parabéns! Você acumulou ${total} pontos distribuídos em ${eixosAtivos} eixos (mínimo exigido: 50 pts em 2 eixos). Seu memorial descritivo atende aos critérios regulamentares de dispersão para homologação do ${rscLabel}.`;
             }
         } else {
             statusBox.className = "rsc-status pending";
@@ -1119,7 +1119,7 @@ function renderNews(newsList) {
             const article = document.createElement("article");
             article.className = "news-item";
             article.innerHTML = `
-                <div class="news-meta">${item.category || 'Informativo'} | Fonte: ${item.source || 'IF Baiano'} | Data: ${dateStr}</div>
+                <div class="news-meta">${item.category || 'Informativo'} | Fonte: ${item.source || 'Institucional'} | Data: ${dateStr}</div>
                 <h3 class="news-title">${item.title}</h3>
                 <p class="news-excerpt">${item.description || ''}</p>
                 <a href="${item.link}" target="_blank" style="color: var(--color-accent); font-size: 0.9rem; text-decoration: none; display: inline-block; margin-top: 10px;">Acessar Matéria Completa ↗</a>
