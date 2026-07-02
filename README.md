@@ -74,3 +74,4 @@ Este repositório está estruturado especificamente para publicação direta e i
 *   📰 **Mural de Novidades**: Desenvolvimento e acoplamento de seção de novidades e informes rápidos da carreira na parte inferior da aba da calculadora, promovendo visibilidade imediata para eixos e diretrizes regulamentares.
 *   🎯 **Calculadora de Pontuação RSC**: Lançamento da nova aba de cálculo de pontuação baseada em eixos de curadoria documental, com pesos parametrizados e verificação de status de homologação de 50 pontos mínimos.
 *   🎨 **Favicon do Laboratório**: Incorporação da marca oficial **YLuna85 LABs** como ícone de página (favicon) no head do documento HTML.
+*   💵 **Parametrização do AdSense**: Substituição das chaves de identificação genéricas do Google AdSense pelo ID de cliente real (`ca-pub-7370246789612593`) no cabeçalho e contêineres do simulador.
