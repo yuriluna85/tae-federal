@@ -359,9 +359,45 @@
                                 <label for="diaria-fim" style="font-family: var(--font-title); font-size: 0.95rem; font-weight: 600; color: var(--color-text); margin-bottom: 8px;">Data de Fim</label>
                                 <input type="date" id="diaria-fim" class="form-control">
                             </div>
+                        <!-- Configurações de Auxílios para Dedução de Diárias -->
+                        <div style="margin-top: 20px; border-top: 1px solid var(--border-color); padding-top: 15px;">
+                            <h4 style="font-family: var(--font-title); font-size: 1rem; color: var(--color-secondary); margin-bottom: 12px; font-weight: 600;">Deduções de Benefícios (Em Trânsito)</h4>
+                            
+                            <div style="display: flex; gap: 20px; margin-bottom: 15px; flex-wrap: wrap;">
+                                <label style="display: flex; align-items: center; gap: 8px; font-size: 0.9rem; cursor: pointer; color: var(--color-text);">
+                                    <input type="checkbox" id="diaria-alimentacao-checkbox" checked style="width: 16px; height: 16px;"> Dedução de Auxílio-Alimentação
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 8px; font-size: 0.9rem; cursor: pointer; color: var(--color-text);">
+                                    <input type="checkbox" id="diaria-transporte-checkbox" style="width: 16px; height: 16px;"> Dedução de Auxílio-Transporte
+                                </label>
+                            </div>
+
+                            <!-- Painel de Detalhes de Transporte para Diárias (Exibido apenas se o checkbox estiver ativo) -->
+                            <div id="diaria-transporte-panel" style="display: none; background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); padding: 15px; border-radius: var(--border-radius-md); margin-bottom: 15px;">
+                                <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 10px;">
+                                    <div style="flex: 1; min-width: 140px; display: flex; flex-direction: column;">
+                                        <label for="diaria-transporte-valor-input" style="font-size: 0.85rem; font-weight: 600; margin-bottom: 5px;">Valor Diário da Passagem (R$)</label>
+                                        <input type="number" id="diaria-transporte-valor-input" class="form-control" min="0" value="0" step="0.10">
+                                    </div>
+                                    <div style="flex: 1; min-width: 140px; display: flex; flex-direction: column;">
+                                        <label for="diaria-transporte-dias-input" style="font-size: 0.85rem; font-weight: 600; margin-bottom: 5px;">Dias de Transporte no Mês</label>
+                                        <input type="number" id="diaria-transporte-dias-input" class="form-control" min="0" max="31" value="22">
+                                    </div>
+                                </div>
+                                <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                                    <div style="flex: 1; min-width: 140px; display: flex; flex-direction: column;">
+                                        <label for="diaria-transporte-pgd-input" style="font-size: 0.85rem; font-weight: 600; margin-bottom: 5px;">Teletrabalho / PGD (%)</label>
+                                        <input type="number" id="diaria-transporte-pgd-input" class="form-control" min="0" max="100" value="0">
+                                    </div>
+                                    <div style="flex: 1; min-width: 140px; display: flex; flex-direction: column;">
+                                        <label for="diaria-vb-input" style="font-size: 0.85rem; font-weight: 600; margin-bottom: 5px;">Vencimento Básico do Cargo (R$)</label>
+                                        <input type="number" id="diaria-vb-input" class="form-control" min="0" value="5215.39" step="100">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="info-box-diaria" style="margin-top: 10px; padding: 10px 14px; border-radius: 8px; background: rgba(13, 202, 240, 0.05); border: 1px solid rgba(13, 202, 240, 0.15); font-size: 0.85rem; line-height: 1.4; color: var(--color-text-muted); max-width: 100%;">
-                            💡 <strong>Aviso sobre o Auxílio-Transporte:</strong> Para que as deduções em dias úteis sejam calculadas corretamente, lembre-se de que a opção <strong>Auxílio-Transporte</strong> e seu respectivo <strong>Valor Diário</strong> devem estar preenchidos no formulário de proventos acima. O simulador calcula e abate automaticamente o valor líquido diário proporcional do seu benefício (descontando a cota-parte de 6% do Vencimento Básico e o regime PGD informados).
+                            💡 <strong>Informação de Dedução:</strong> O cálculo das diárias desconta o valor proporcional dos auxílios de transporte e alimentação recebidos para os dias úteis da viagem, visto que o deslocamento oficial já cobre as despesas de estadia e transporte. Os valores informados neste painel servem de base para o desconto líquido do auxílio-transporte (descontada a cota-parte de 6% e regime de PGD de forma isolada).
                         </div>
                     </div>
                     <!-- Resultados Diárias -->
