@@ -786,8 +786,46 @@ function initDiarias() {
         if (el) {
             el.addEventListener("change", calculateDiarias);
             el.addEventListener("input", calculateDiarias);
+            
+            // Força a abertura do calendário nativo ao clicar no input
+            if (id === "diaria-inicio" || id === "diaria-fim") {
+                el.addEventListener("click", () => {
+                    try {
+                        el.showPicker();
+                    } catch (e) {
+                        console.log("showPicker não suportado:", e);
+                    }
+                });
+            }
         }
     });
+}
+
+// Verifica se no dia incide desconto de alimentação/transporte (não incide em fins de semana e feriados)
+function isDeductionDay(date) {
+    const day = date.getDay(); // 0 = Domingo, 6 = Sábado
+    if (day === 0 || day === 6) return false;
+
+    // Feriados Nacionais Fixos no Brasil (formato: "MM-DD")
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const dayOfMonth = String(date.getDate()).padStart(2, '0');
+    const key = `${month}-${dayOfMonth}`;
+
+    const feriadosFixos = [
+        "01-01", // Confraternização Universal / Ano Novo
+        "04-21", // Tiradentes
+        "05-01", // Dia do Trabalho
+        "09-07", // Independência do Brasil
+        "10-12", // Nossa Senhora Aparecida
+        "11-02", // Finados
+        "11-15", // Proclamação da República
+        "11-20", // Dia Nacional de Zumbi e da Consciência Negra
+        "12-25"  // Natal
+    ];
+
+    if (feriadosFixos.includes(key)) return false;
+
+    return true;
 }
 
 // Cálculo das Diárias e Deduções correspondentes
@@ -822,26 +860,36 @@ function calculateDiarias() {
         qtdDiarias = diffDays + 0.5;
     }
 
+    // Cálculo de dias de desconto efetivos (desconsiderando fins de semana e feriados)
+    let diasDescontoEfetivos = 0;
+    let currentDate = new Date(inicio.getTime());
+    while (currentDate.getTime() <= fim.getTime()) {
+        if (isDeductionDay(currentDate)) {
+            diasDescontoEfetivos++;
+        }
+        currentDate.setDate(currentDate.getDate() + 1);
+    }
+
     // Taxa diária da diária
     const taxaDiaria = pcctaeData.diarias[cargo][destino] || 0;
     const valorBruto = qtdDiarias * taxaDiaria;
 
-    // Desconto de Auxílio Alimentação (auxilio / 22 por dia de afastamento)
+    // Desconto de Auxílio Alimentação (auxilio / 22 por dia de desconto efetivo)
     const alimentacaoAtiva = document.getElementById("aux-alimentacao").checked;
     const alimentacaoDiaria = alimentacaoAtiva ? (pcctaeData.auxilios.alimentacao / 22) : 0;
-    const descontoAlimentacao = alimentacaoDiaria * diasAfastamento;
+    const descontoAlimentacao = alimentacaoDiaria * diasDescontoEfetivos;
 
-    // Desconto de Auxílio Transporte (transporte informado por dia de afastamento)
+    // Desconto de Auxílio Transporte (transporte informado por dia de desconto efetivo)
     const transporteAtivo = document.getElementById("aux-transporte").checked;
     const transporteDiario = transporteAtivo ? (parseFloat(document.getElementById("transporte-valor").value) || 0) : 0;
-    const descontoTransporte = transporteDiario * diasAfastamento;
+    const descontoTransporte = transporteDiario * diasDescontoEfetivos;
 
     const totalDesconto = descontoAlimentacao + descontoTransporte;
     const valorLiquido = Math.max(0, valorBruto - totalDesconto);
 
     // Renderizar nos elementos correspondentes
     document.getElementById("res-diaria-qtd").textContent = qtdDiarias.toLocaleString("pt-BR", { minimumFractionDigits: 1 });
-    document.getElementById("res-diaria-dias-desconto").textContent = diasAfastamento;
+    document.getElementById("res-diaria-dias-desconto").textContent = diasDescontoEfetivos;
     document.getElementById("res-diaria-bruto").textContent = formatCurrency(valorBruto);
     document.getElementById("res-diaria-desc-alimentacao").textContent = "- " + formatCurrency(descontoAlimentacao);
     document.getElementById("res-diaria-desc-transporte").textContent = "- " + formatCurrency(descontoTransporte);
