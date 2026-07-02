@@ -563,7 +563,7 @@ footer .brand-text {
 }
 
 /* Espaços para Publicidade (AdSense) */
-.adsense-container {
+.patrocinio-container {
     background: rgba(13, 202, 240, 0.02);
     border: 1px dashed rgba(13, 202, 240, 0.2);
     border-radius: var(--border-radius-lg);
@@ -583,7 +583,7 @@ footer .brand-text {
     min-height: 70px;
 }
 
-.adsense-container:hover {
+.patrocinio-container:hover {
     border-color: var(--color-primary);
     background: rgba(13, 110, 253, 0.04);
 }
