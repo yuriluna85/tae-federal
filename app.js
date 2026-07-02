@@ -89,6 +89,112 @@ const pcctaeData = {
     }
 };
 
+// Dados completos do Barema de Pontuação RSC-PCCTAE (Conforme Minuta do Decreto de Regulamentação Nacional)
+const RSC_ANEXOS_DATA = [
+    {
+        id: 1,
+        sigla: "Anexo I",
+        titulo: "Eixo I: Grupos de Trabalho, Comissões, Comitês, Núcleos ou Representações",
+        itens: [
+            { id: "pts-1-1", n: 1, d: "Exercício do mandato como membro de conselhos superiores e conselhos de unidades e órgãos colegiados das instituições federais de ensino.", u: "Por ano ou fração acima de 6 meses", pts: 3.0 },
+            { id: "pts-1-2", n: 2, d: "Coordenação ou presidência de núcleos, representações, grupos de trabalho ou similares, comissões ou comitês previstos no âmbito da administração pública, regularmente instituídos, ou reconhecidos pelo órgão ou pela entidade.", u: "Por designação", pts: 4.5 },
+            { id: "pts-1-3", n: 3, d: "Participação como membro de núcleos, representações, grupos de trabalho ou similares, comissões ou comitês previstos no âmbito da administração pública, regularmente instituídos.", u: "Por designação", pts: 3.0 },
+            { id: "pts-1-4", n: 4, d: "Participação como defensor dativo ou como membro de equipe designada em processos de apuração de materialidade e responsabilidade, como sindicância, processo administrativo disciplinar e tomada de contas especial.", u: "Por designação", pts: 15.0 },
+            { id: "pts-1-5", n: 5, d: "Atuação em atividades de organização, fiscalização, execução de exame de seleção, vestibular ou concursos.", u: "Por designação", pts: 4.5 },
+            { id: "pts-1-6", n: 6, d: "Atuação em atividades de elaboração, revisão ou correção de provas de exame de seleção, vestibular ou concursos.", u: "Por designação", pts: 3.0 },
+            { id: "pts-1-7", n: 7, d: "Exercício de mandato em entidade sindical representativa da categoria.", u: "Por ano ou fração acima de 6 meses", pts: 1.5 },
+            { id: "pts-1-8", n: 8, d: "Participação como membro em programas ou projetos de políticas públicas externas à instituição.", u: "Por designação", pts: 3.0 },
+            { id: "pts-1-9", n: 9, d: "Representação legal da instituição ou responsabilidade técnica em órgãos de fiscalização, controle e regulação, ou em qualquer outra entidade pública.", u: "Por designação", pts: 7.5 },
+            { id: "pts-1-10", n: 10, d: "Trabalho desenvolvido em órgãos estatais ou paraestatais, escolas de governo, agências reguladoras e organismos internacionais.", u: "Por produto", pts: 4.5 }
+        ]
+    },
+    {
+        id: 2,
+        sigla: "Anexo II",
+        titulo: "Eixo II: Projetos Institucionais, Gestão, Apoio ao Ensino, Pesquisa, Extensão, Inovação e Assistência",
+        itens: [
+            { id: "pts-2-1", n: 1, d: "Coordenação de projetos institucionais (ensino, pesquisa, extensão, gestão e inovação).", u: "Por projeto", pts: 7.5 },
+            { id: "pts-2-2", n: 2, d: "Participação em atividades técnicas ou especializadas em projetos, incluindo a elaboração de projetos pedagógicos, programas ou ações institucionais (ensino, pesquisa, extensão, gestão e inovação).", u: "Por projeto", pts: 4.5 },
+            { id: "pts-2-3", n: 3, d: "Participação em comissão/conselho editorial de livros, revistas, publicações científicas ou outras publicações acadêmicas.", u: "Por mandato", pts: 7.5 },
+            { id: "pts-2-4", n: 4, d: "Participação em atividade de cooperação técnica interinstitucional em projetos institucionais.", u: "Por projeto", pts: 3.0 },
+            { id: "pts-2-5", n: 5, d: "Participação em atividades de orientação, tutoria, preceptoria ou supervisão.", u: "Por designação", pts: 3.0 },
+            { id: "pts-2-6", n: 6, d: "Participação em atividades de produção/reformulação de material acessível, técnico de referência (manuais, roteiros técnicos).", u: "Por produto", pts: 3.0 },
+            { id: "pts-2-7", n: 7, d: "Participação em atividade de avaliação de trabalho ou atuação como jurado em eventos acadêmicos, científicos, culturais, esportivos e técnicos.", u: "Por evento", pts: 3.0 },
+            { id: "pts-2-8", n: 8, d: "Participação em atividade institucional de produção audiovisual, artística, exposição, podcast ou outras formas de apresentação.", u: "Por projeto", pts: 3.0 },
+            { id: "pts-2-9", n: 9, d: "Participação em programas de formação continuada ou ações de desenvolvimento de competências, desde que não utilizada para fins de aceleração da promoção na carreira, com carga horária mínima de 10 horas.", u: "Por capacitação", pts: 3.0 },
+            { id: "pts-2-10", n: 10, d: "Desempenho de atividade técnica de natureza especializada, com contribuição institucional relevante na área de atuação.", u: "Por ano ou fração acima de 6 meses", pts: 1.0 },
+            { id: "pts-2-11", n: 11, d: "Participação em congresso, simpósio, fórum, conferência, colóquio, mesa-redonda, workshop, seminário, mostra/feira, treinamento, atividades de apoio técnico, ações de campo, saídas pedagógicas, eventos científicos/esportivos/artísticos/culturais/sindicais (carga horária mínima de 4h).", u: "Por evento", pts: 1.0 }
+        ]
+    },
+    {
+        id: 3,
+        sigla: "Anexo III",
+        titulo: "Eixo III: Prêmio de Mérito, Comendas, Homenagens e Menções Honrosas",
+        itens: [
+            { id: "pts-3-1", n: 1, d: "Recebimento de reconhecimento, menção honrosa ou premiação de âmbito internacional.", u: "Por prêmio", pts: 20.0 },
+            { id: "pts-3-2", n: 2, d: "Recebimento de reconhecimento, menção honrosa ou premiação de âmbito nacional.", u: "Por prêmio", pts: 15.0 },
+            { id: "pts-3-3", n: 3, d: "Recebimento de reconhecimento, menção honrosa ou premiação de âmbito local ou institucional, formalmente instituídos.", u: "Por prêmio", pts: 7.5 }
+        ]
+    },
+    {
+        id: 4,
+        sigla: "Anexo IV",
+        titulo: "Eixo IV: Assunção de Responsabilidades Técnico-Administrativas ou Especializadas",
+        itens: [
+            { id: "pts-4-1", n: 1, d: "Atuação diferenciada em atividades de execução/operação, desenvolvimento, colaboração nos sistemas estruturantes da administração pública.", u: "Por Sistema", pts: 4.5 },
+            { id: "pts-4-2", n: 2, d: "Elaboração de projeto básico ou de termo de referência, ou participação como membro da equipe de planejamento da contratação.", u: "Por designação", pts: 3.0 },
+            { id: "pts-4-3", n: 3, d: "Exercício de atividades de gestão ou fiscalização de contratos de aquisição, serviços, convênios e acordos ou instrumentos correlatos.", u: "Por designação", pts: 4.5 },
+            { id: "pts-4-4", n: 4, d: "Exercício de atividades relacionadas a licitação e a respectivas excepcionalidades.", u: "Por ano ou fração acima de seis meses", pts: 3.0 },
+            { id: "pts-4-5", n: 5, d: "Participação em atividades de apoio técnico especializado em políticas, programas e ações de promoção na área de saúde humana, animal e ambiente, de acessibilidade ou diversidade.", u: "Por ano ou fração acima de seis meses", pts: 3.0 },
+            { id: "pts-4-6", n: 6, d: "Atuação em ambientes ou processos que demandem condições especiais de segurança, cuidado ou conformidade.", u: "Por ano ou fração acima de seis meses", pts: 3.0 },
+            { id: "pts-4-7", n: 7, d: "Atuação diferenciada em sistemas ou processos de trabalho institucionais no âmbito do ensino, pesquisa, extensão, gestão e inovação.", u: "Por designação", pts: 3.0 },
+            { id: "pts-4-8", n: 8, d: "Atuação como responsável formal por setor ou unidade, formalmente designado.", u: "Por ano ou fração acima de seis meses", pts: 4.5 }
+        ]
+    },
+    {
+        id: 5,
+        sigla: "Anexo V",
+        titulo: "Eixo V: Exercício de Funções, Cargos de Direção e de Assessoramento",
+        itens: [
+            { id: "pts-5-1", n: 1, d: "Exercício de Cargo de Direção (CD-02) ou equivalente - Titular.", u: "Por ano ou fração acima de seis meses", pts: 9.0 },
+            { id: "pts-5-2", n: 2, d: "Exercício de Cargo de Direção (CD-02) ou equivalente - Substituto.", u: "Por ano ou fração acima de seis meses", pts: 4.5 },
+            { id: "pts-5-3", n: 3, d: "Exercício de Cargo de Direção (CD-03 e 04) ou equivalente - Titular.", u: "Por ano ou fração acima de seis meses", pts: 7.5 },
+            { id: "pts-5-4", n: 4, d: "Exercício de Cargo de Direção (CD-03 e 04) ou equivalente - Substituto.", u: "Por ano ou fração acima de seis meses", pts: 3.0 },
+            { id: "pts-5-5", n: 5, d: "Exercício de Função Gratificada (FG-01 e 02) ou equivalente - Titular.", u: "Por ano ou fração acima de seis meses", pts: 4.5 },
+            { id: "pts-5-6", n: 6, d: "Exercício de Função Gratificada (FG-01 e 02) ou equivalente - Substituto.", u: "Por ano ou fração acima de seis meses", pts: 1.5 },
+            { id: "pts-5-7", n: 7, d: "Exercício de Função Gratificada (a partir da FG-03) ou equivalente - Titular.", u: "Por ano ou fração acima de seis meses", pts: 3.0 },
+            { id: "pts-5-8", n: 8, d: "Exercício de Função Gratificada (a partir da FG-03) ou equivalente - Substituto.", u: "Por ano ou fração acima de seis meses", pts: 1.0 }
+        ]
+    },
+    {
+        id: 6,
+        sigla: "Anexo VI",
+        titulo: "Eixo VI: Produção, Prospecção e Difusão de Conhecimento Científico ou Técnico",
+        itens: [
+            { id: "pts-6-1", n: 1, d: "Carta Patente.", u: "Por patente", pts: 30.0 },
+            { id: "pts-6-2", n: 2, d: "Participação no desenvolvimento de protótipos, depósitos ou registros de propriedade intelectual ou privilégio de invenção.", u: "Por projeto", pts: 25.0 },
+            { id: "pts-6-3", n: 3, d: "Participação em transferência de tecnologia, licenciamento ou exploração de ativo tecnológico, como autor ou inventor.", u: "Por produto", pts: 20.0 },
+            { id: "pts-6-4", n: 4, d: "Conclusão de curso de educação formal superior ao exigido para o ingresso no cargo de que é titular e que não seja utilizado para percepção do atual nível de Incentivo a Qualificação - IQ.", u: "Por curso", pts: 15.0 },
+            { id: "pts-6-5", n: 5, d: "Participação na implantação ou desenvolvimento de produto, projeto, processo, técnica ou tecnologia de interesse institucional.", u: "Por produto", pts: 15.0 },
+            { id: "pts-6-6", n: 6, d: "Certificação profissional por órgão ou entidade competente demonstrando domínio de conhecimento técnico na área de atuação.", u: "Por certificado", pts: 15.0 },
+            { id: "pts-6-7", n: 7, d: "Atuação em atividade de liderança ou vice-liderança de grupo de pesquisa ou extensão registrada.", u: "Por grupo de pesquisa", pts: 7.5 },
+            { id: "pts-6-8", n: 8, d: "Participação como membro em grupo de pesquisa devidamente registrado em órgão ou sistema oficial de reconhecimento institucional.", u: "Por projeto", pts: 3.0 },
+            { id: "pts-6-9", n: 9, d: "Aprovação de projeto para a captação de recursos.", u: "Por projeto", pts: 7.5 },
+            { id: "pts-6-10", n: 10, d: "Publicação ou organização de livro (com ISBN e Conselho Editorial).", u: "Por produto", pts: 20.0 },
+            { id: "pts-6-11", n: 11, d: "Autoria ou coautoria de capítulo de livro, de artigo publicado em revista especializada, jornal científico ou periódico.", u: "Por publicação", pts: 7.5 },
+            { id: "pts-6-12", n: 12, d: "Apresentação de trabalho em congresso, seminário ou outros eventos.", u: "Por produto", pts: 4.5 },
+            { id: "pts-6-13", n: 13, d: "Produção de material técnico, científico, metodológico ou administrativo estruturado que visa à difusão do conhecimento.", u: "Por produto", pts: 4.5 },
+            { id: "pts-6-14", n: 14, d: "Participação em atividade de avaliação do projeto de ensino, pesquisa, extensão ou inovação.", u: "Por projeto", pts: 4.5 },
+            { id: "pts-6-15", n: 15, d: "Participação em atividade de difusão ou apoio à formação institucional (expositor, facilitador, colaborador).", u: "Por evento", pts: 3.0 },
+            { id: "pts-6-16", n: 16, d: "Atuação como instrutor, tutor, palestrante, autor técnico ou orientador em ação formativa estruturada.", u: "Por curso", pts: 4.5 },
+            { id: "pts-6-17", n: 17, d: "Atuação na coordenação/mediação de fórum, congresso, mesa-redonda, simpósio, seminário, oficina e outros eventos.", u: "Por evento", pts: 4.5 },
+            { id: "pts-6-18", n: 18, d: "Exercício de atividade de orientação ou coorientação de trabalho de conclusão de curso em diferentes modalidades de ensino.", u: "Por evento", pts: 7.5 },
+            { id: "pts-6-19", n: 19, d: "Autoria de obra artística ou cultural registrada.", u: "Por produto", pts: 3.0 },
+            { id: "pts-6-20", n: 20, d: "Atuação no enfrentamento de situações de surto, epidemias e pandemia.", u: "Por mês", pts: 1.0 }
+        ]
+    }
+];
+
 // Configurações do Estado da Aplicação
 let currentFontSize = 16;
 const fontStep = 2;
@@ -160,6 +266,22 @@ function initCalcInputs() {
         const el = document.getElementById(id);
         if (el) {
             el.addEventListener("change", () => {
+                if (id === "nivel") {
+                    const isSemVinculo = el.value === "sem_vinculo";
+                    const padraoEl = document.getElementById("padrao");
+                    const iqEl = document.getElementById("select-iq");
+                    const rscEl = document.getElementById("select-rsc");
+                    if (padraoEl) padraoEl.disabled = isSemVinculo;
+                    if (iqEl) {
+                        iqEl.disabled = isSemVinculo;
+                        if (isSemVinculo) iqEl.value = "none";
+                    }
+                    if (rscEl) {
+                        rscEl.disabled = isSemVinculo;
+                        if (isSemVinculo) rscEl.value = "none";
+                    }
+                    updateRscOptions();
+                }
                 if (id === "select-iq") {
                     updateRscOptions();
                 }
@@ -308,7 +430,10 @@ function calculateSalary() {
     // 1. Vencimento Básico
     const nivel = document.getElementById("nivel").value;
     const padrao = parseInt(document.getElementById("padrao").value) - 1;
-    const vencimentoBasico = pcctaeData.tabela_salarial[nivel][padrao] || 0;
+    let vencimentoBasico = 0;
+    if (nivel !== "sem_vinculo") {
+        vencimentoBasico = pcctaeData.tabela_salarial[nivel][padrao] || 0;
+    }
 
     // 1.1 Função Comissionada
     const funcaoId = document.getElementById("select-funcao").value;
@@ -324,6 +449,12 @@ function calculateSalary() {
     // O RSC eleva o percentual final ao nível do Reconhecimento de Saberes obtido
     const qualifPercentual = Math.max(iqPercentual, rscPercentual);
     const valorQualif = vencimentoBasico * qualifPercentual;
+
+    // Regra: CD integral (100%) exclui o VB e o IQ/RSC dos proventos recebidos pelo servidor
+    const isCdIntegral = ["cd1_int", "cd2_int", "cd3_int", "cd4_int"].includes(funcaoId);
+    
+    const vencimentoBasicoEfetivo = isCdIntegral ? 0 : vencimentoBasico;
+    const valorQualifEfetivo = isCdIntegral ? 0 : valorQualif;
 
     // 3. Auxílios
     let valorAlimentacao = 0;
@@ -360,8 +491,8 @@ function calculateSalary() {
     let valorSaude = 0;
     if (document.getElementById("aux-saude").checked) {
         const idadeTitular = parseInt(document.getElementById("saude-idade").value) || 0;
-        // O valor considerado de rendimentos para enquadrar na faixa de per capita é o vencimento básico + adicionais permanentes (como o IQ/RSC) + Função Comissionada
-        const rendimentoReferencia = vencimentoBasico + valorQualif + valorFuncao;
+        // O valor considerado de rendimentos para enquadrar na faixa de per capita é o vencimento básico efetivo + IQ/RSC efetivo + Função Comissionada
+        const rendimentoReferencia = vencimentoBasicoEfetivo + valorQualifEfetivo + valorFuncao;
         
         // Custo do titular
         valorSaude += getSaudePerCapita(rendimentoReferencia, idadeTitular);
@@ -374,14 +505,15 @@ function calculateSalary() {
         });
     }
 
-    // Totais de Proventos Brutos
-    const baseTributavel = vencimentoBasico + valorQualif + valorFuncao; // CD/FG/FCC e Vencimento/Qualificação sofrem impostos
+    // Totais de Proventos Brutos (Remuneração real efetiva)
+    const baseTributavel = vencimentoBasicoEfetivo + valorQualifEfetivo + valorFuncao; 
     const totalAuxilios = valorAlimentacao + valorTransporte + valorCreche + valorSaude;
     const brutoTotal = baseTributavel + totalAuxilios;
 
     // 5. DEDUÇÕES (Cálculos de Previdência PSS e IRRF baseados em 2026)
-    // PSS - Alíquotas Progressivas Federais
-    const pss = calcularPSS(baseTributavel);
+    // PSS - Alíquotas Progressivas Federais (Incide sobre o cargo de carreira efetivo do servidor)
+    const basePSS = (nivel === "sem_vinculo") ? 0 : (vencimentoBasico + valorQualif);
+    const pss = calcularPSS(basePSS);
 
     // IRRF - Imposto de Renda Retido na Fonte
     // Base de cálculo = base tributável - PSS - dependentes (dedução legal R$ 189,59 cada) - contribuição sindical
@@ -397,9 +529,28 @@ function calculateSalary() {
     const liquidoTotal = brutoTotal - totalDescontos;
 
     // RENDERIZAR RESULTADOS NA TELA
-    document.getElementById("res-vencimento").textContent = formatCurrency(vencimentoBasico);
+    const elVenc = document.getElementById("res-vencimento");
+    const elQual = document.getElementById("res-qualificacao");
+
+    if (isCdIntegral) {
+        elVenc.style.textDecoration = "line-through";
+        elVenc.style.color = "#ef4444";
+        elVenc.textContent = formatCurrency(vencimentoBasico) + " (Excluído)";
+
+        elQual.style.textDecoration = "line-through";
+        elQual.style.color = "#ef4444";
+        elQual.textContent = formatCurrency(valorQualif) + " (Excluído)";
+    } else {
+        elVenc.style.textDecoration = "none";
+        elVenc.style.color = "";
+        elVenc.textContent = formatCurrency(vencimentoBasico);
+
+        elQual.style.textDecoration = "none";
+        elQual.style.color = "";
+        elQual.textContent = formatCurrency(valorQualif);
+    }
+
     document.getElementById("res-funcao").textContent = formatCurrency(valorFuncao);
-    document.getElementById("res-qualificacao").textContent = formatCurrency(valorQualif);
     document.getElementById("res-alimentacao").textContent = formatCurrency(valorAlimentacao);
     document.getElementById("res-transporte").textContent = formatCurrency(valorTransporte);
     document.getElementById("res-creche").textContent = formatCurrency(valorCreche);
@@ -433,7 +584,7 @@ function calculateSalary() {
     document.getElementById("res-liquido").textContent = formatCurrency(liquidoTotal);
 
     // Atualizar Gráfico do Contracheque (Função comissionada entra no segmento básico)
-    updateSalaryChart(vencimentoBasico + valorFuncao, valorQualif, totalAuxilios, totalDescontos);
+    updateSalaryChart(vencimentoBasicoEfetivo + valorFuncao, valorQualifEfetivo, totalAuxilios, totalDescontos);
     
     // Atualizar Diárias se estiverem ativas
     if (typeof calculateDiarias === "function") {
@@ -552,13 +703,89 @@ function renderLevelTable(nivel) {
     });
 }
 
+// Renderizar dinamicamente os eixos e critérios do RSC
+function renderRscActivities() {
+    const container = document.getElementById("rsc-anexos-container");
+    if (!container) return;
+
+    container.innerHTML = "";
+
+    RSC_ANEXOS_DATA.forEach(anexo => {
+        const box = document.createElement("div");
+        box.className = "rsc-eixo-box";
+        box.id = `rsc-anexo-box-${anexo.id}`;
+
+        const h3 = document.createElement("h3");
+        h3.textContent = `${anexo.titulo} (${anexo.sigla})`;
+        box.appendChild(h3);
+
+        anexo.itens.forEach(item => {
+            const row = document.createElement("div");
+            row.className = "rsc-item-row";
+            row.setAttribute("data-anexo", anexo.id);
+
+            const label = document.createElement("label");
+            label.setAttribute("for", item.id);
+            label.innerHTML = `<strong>${item.n}.</strong> ${item.d} <span style="font-size: 0.8rem; color: var(--color-text-muted);">(${item.u} | ${item.pts.toFixed(1)} pts)</span>`;
+            row.appendChild(label);
+
+            const inputWrapper = document.createElement("div");
+            inputWrapper.style.display = "flex";
+            inputWrapper.style.alignItems = "center";
+            inputWrapper.style.gap = "10px";
+
+            const input = document.createElement("input");
+            input.type = "number";
+            input.id = item.id;
+            input.className = "form-control rsc-input";
+            input.min = "0";
+            input.value = "0";
+            input.setAttribute("data-pts", item.pts);
+            input.setAttribute("data-eixo", anexo.id);
+            input.addEventListener("input", calculateRscPoints);
+            input.addEventListener("change", calculateRscPoints);
+
+            const span = document.createElement("span");
+            span.id = `val-${item.id}`;
+            span.className = "rsc-inline-pts";
+            span.textContent = "0 pts";
+
+            inputWrapper.appendChild(input);
+            inputWrapper.appendChild(span);
+            row.appendChild(inputWrapper);
+            box.appendChild(row);
+        });
+
+        container.appendChild(box);
+    });
+
+    // Configurar o buscador
+    const searchInput = document.getElementById("rsc-input-busca");
+    if (searchInput) {
+        searchInput.addEventListener("input", function () {
+            const query = this.value.toLowerCase().trim();
+            const boxes = document.querySelectorAll("#rsc-anexos-container .rsc-eixo-box");
+            boxes.forEach(box => {
+                let hasVisibleRow = false;
+                const rows = box.querySelectorAll(".rsc-item-row");
+                rows.forEach(row => {
+                    const labelText = row.querySelector("label").textContent.toLowerCase();
+                    if (labelText.includes(query)) {
+                        row.style.display = "flex";
+                        hasVisibleRow = true;
+                    } else {
+                        row.style.display = "none";
+                    }
+                });
+                box.style.display = hasVisibleRow ? "block" : "none";
+            });
+        });
+    }
+}
+
 // Inicialização da Calculadora de Pontuação RSC
 function initRscCalc() {
-    const inputs = document.querySelectorAll(".rsc-input");
-    inputs.forEach(input => {
-        input.addEventListener("input", calculateRscPoints);
-        input.addEventListener("change", calculateRscPoints);
-    });
+    renderRscActivities();
 
     const rscPleiteadoSelect = document.getElementById("rsc-nivel-pleiteado");
     if (rscPleiteadoSelect) {
@@ -588,7 +815,7 @@ function initRscCalc() {
 // Exportar os dados de inputs de RSC para um arquivo JSON
 function exportRscSessao() {
     const data = {};
-    const inputs = document.querySelectorAll(".rsc-input");
+    const inputs = document.querySelectorAll("#rsc-anexos-container .rsc-input");
     inputs.forEach(input => {
         data[input.id] = parseInt(input.value) || 0;
     });
@@ -651,62 +878,19 @@ function importRscSessao(event) {
 // Exportar planilha das atividades pontuadas para arquivo CSV
 function exportRscPlanilhaCsv() {
     const rows = [
-        ["Eixo de Comprovacao", "Atividade", "Quantidade Informada", "Pontuacao Obtida"]
-    ];
-
-    const eixosMapeados = [
-        {
-            eixo: "Eixo I: Representações e Comissões",
-            items: [
-                { id: "pts-e1-cperm", label: "Comissão Permanente / Colegiado / Conselho", peso: 10 },
-                { id: "pts-e1-ctemp", label: "Comissão Temporária / Grupo de Trabalho", peso: 5 }
-            ]
-        },
-        {
-            eixo: "Eixo II: Projetos Institucionais",
-            items: [
-                { id: "pts-e2-coord", label: "Coordenador de Projeto de Ensino/Pesquisa/Extensão", peso: 15 },
-                { id: "pts-e2-membro", label: "Membro Executor de Projeto", peso: 10 }
-            ]
-        },
-        {
-            eixo: "Eixo III: Premiações Ocupacionais",
-            items: [
-                { id: "pts-e3-premio", label: "Láurea, Menção Honrosa ou Prêmio de Gestão", peso: 10 }
-            ]
-        },
-        {
-            eixo: "Eixo IV: Encargos e Responsabilidades",
-            items: [
-                { id: "pts-e4-complex", label: "Atividade Especializada de Alta Complexidade / Parecer Técnico", peso: 8 }
-            ]
-        },
-        {
-            eixo: "Eixo V: Funções de Liderança",
-            items: [
-                { id: "pts-e5-cd", label: "Cargos de Direção - CD", peso: 15 },
-                { id: "pts-e5-fg", label: "Função Gratificada / Chefia de Setor - FG", peso: 10 }
-            ]
-        },
-        {
-            eixo: "Eixo VI: Produção e Difusão Técnica",
-            items: [
-                { id: "pts-e6-manual", label: "Nota Técnica, Manual Operacional ou Cartilha", peso: 8 },
-                { id: "pts-e6-live", label: "Suporte Audiovisual / Operação de Transmissão Institucional / Live", peso: 5 }
-            ]
-        }
+        ["Eixo de Comprovacao", "Item", "Atividade", "Quantidade Informada", "Pontuacao Obtida"]
     ];
 
     let totalGeral = 0;
 
-    eixosMapeados.forEach(em => {
-        em.items.forEach(item => {
+    RSC_ANEXOS_DATA.forEach(anexo => {
+        anexo.itens.forEach(item => {
             const input = document.getElementById(item.id);
             const qtd = input ? parseInt(input.value) || 0 : 0;
             if (qtd > 0) {
-                const pts = qtd * item.peso;
+                const pts = qtd * item.pts;
                 totalGeral += pts;
-                rows.push([em.eixo, item.label, qtd.toString(), `${pts} pts`]);
+                rows.push([anexo.titulo, item.n.toString(), item.d, qtd.toString(), `${pts.toFixed(1)} pts`]);
             }
         });
     });
@@ -716,9 +900,8 @@ function exportRscPlanilhaCsv() {
         return;
     }
 
-    rows.push(["", "", "Total Geral:", `${totalGeral} pts`]);
+    rows.push(["", "", "", "Total Geral:", `${totalGeral.toFixed(1)} pts`]);
 
-    // Converter para string CSV no formato adequado com separador de ponto e vírgula
     const csvContent = "\uFEFF" + rows.map(r => r.map(cell => `"${cell.replace(/"/g, '""')}"`).join(";")).join("\n");
     const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
     const downloadAnchor = document.createElement("a");
@@ -731,80 +914,99 @@ function exportRscPlanilhaCsv() {
     downloadAnchor.remove();
 }
 
+// Alvos de Pontuação e Critérios por Nível (Conforme Minuta do Decreto - SEI 23000.026640/2025-10)
+const RSC_LEVEL_TARGETS = {
+    rsc_fundamental: { name: "RSC-PCCTAE-I", pts: 10, crit: 1, validate: (ativs) => true, msg: "" },
+    rsc_medio: { name: "RSC-PCCTAE-II", pts: 15, crit: 2, validate: (ativs) => true, msg: "" },
+    rsc_graduacao: { name: "RSC-PCCTAE-III", pts: 25, crit: 2, validate: (ativs) => true, msg: "" },
+    rsc_especializacao: { 
+        name: "RSC-PCCTAE-IV", 
+        pts: 30, 
+        crit: 3, 
+        validate: (ativs) => (ativs[2] > 0 || ativs[4] > 0 || ativs[5] > 0 || ativs[6] > 0), 
+        msg: "exige pontuação em pelo menos um critério dos Eixos II, IV, V ou VI" 
+    },
+    rsc_mestrado: { 
+        name: "RSC-PCCTAE-V", 
+        pts: 52, 
+        crit: 5, 
+        validate: (ativs) => (ativs[4] > 0 || ativs[5] > 0 || ativs[6] > 0), 
+        msg: "exige pontuação em pelo menos um critério dos Eixos IV, V ou VI" 
+    },
+    rsc_doutorado: { 
+        name: "RSC-PCCTAE-VI", 
+        pts: 75, 
+        crit: 7, 
+        validate: (ativs) => (ativs[6] > 0), 
+        msg: "exige pontuação em pelo menos um critério do Eixo VI (Produção e Difusão)" 
+    }
+};
+
 // Calcular Pontuação Geral e por Eixo do RSC
 function calculateRscPoints() {
-    const pesos = {
-        "pts-e1-cperm": 10,
-        "pts-e1-ctemp": 5,
-        "pts-e2-coord": 15,
-        "pts-e2-membro": 10,
-        "pts-e3-premio": 10,
-        "pts-e4-complex": 8,
-        "pts-e5-cd": 15,
-        "pts-e5-fg": 10,
-        "pts-e6-manual": 8,
-        "pts-e6-live": 5
-    };
+    let total = 0;
+    let totalCriteria = 0;
+    const eixosPontos = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0 };
+    const eixosAtivosCount = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0 };
 
-    // Atualizar cada multiplicador inline
-    for (const [id, peso] of Object.entries(pesos)) {
-        const input = document.getElementById(id);
-        const valSpan = document.getElementById(id.replace("pts-", "val-"));
-        if (input && valSpan) {
-            const qtd = parseInt(input.value) || 0;
-            const pts = qtd * peso;
-            valSpan.textContent = `${pts} pts`;
+    const inputs = document.querySelectorAll("#rsc-anexos-container .rsc-input");
+    inputs.forEach(input => {
+        const val = Math.max(0, parseInt(input.value) || 0);
+        const weight = parseFloat(input.getAttribute("data-pts")) || 0;
+        const eixo = parseInt(input.getAttribute("data-eixo")) || 1;
+        const pts = val * weight;
+
+        total += pts;
+        eixosPontos[eixo] += pts;
+        
+        if (val > 0) {
+            totalCriteria++;
+            eixosAtivosCount[eixo]++;
+        }
+
+        // Atualizar span inline
+        const span = document.getElementById(`val-${input.id}`);
+        if (span) {
+            span.textContent = `${pts.toFixed(1)} pts`;
+        }
+    });
+
+    // Atualizar labels dos subtotais na tela
+    for (let e = 1; e <= 6; e++) {
+        const breakdownEl = document.getElementById(`rsc-breakdown-e${e}`);
+        if (breakdownEl) {
+            breakdownEl.textContent = `${eixosPontos[e].toFixed(1)} pts`;
         }
     }
 
-    const e1 = (parseInt(document.getElementById("pts-e1-cperm").value) || 0) * pesos["pts-e1-cperm"] +
-               (parseInt(document.getElementById("pts-e1-ctemp").value) || 0) * pesos["pts-e1-ctemp"];
-
-    const e2 = (parseInt(document.getElementById("pts-e2-coord").value) || 0) * pesos["pts-e2-coord"] +
-               (parseInt(document.getElementById("pts-e2-membro").value) || 0) * pesos["pts-e2-membro"];
-
-    const e3 = (parseInt(document.getElementById("pts-e3-premio").value) || 0) * pesos["pts-e3-premio"];
-
-    const e4 = (parseInt(document.getElementById("pts-e4-complex").value) || 0) * pesos["pts-e4-complex"];
-
-    const e5 = (parseInt(document.getElementById("pts-e5-cd").value) || 0) * pesos["pts-e5-cd"] +
-               (parseInt(document.getElementById("pts-e5-fg").value) || 0) * pesos["pts-e5-fg"];
-
-    const e6 = (parseInt(document.getElementById("pts-e6-manual").value) || 0) * pesos["pts-e6-manual"] +
-               (parseInt(document.getElementById("pts-e6-live").value) || 0) * pesos["pts-e6-live"];
-
-    const total = e1 + e2 + e3 + e4 + e5 + e6;
-
-    // Atualizar labels dos subtotais na tela
-    document.getElementById("rsc-breakdown-e1").textContent = `${e1} pts`;
-    document.getElementById("rsc-breakdown-e2").textContent = `${e2} pts`;
-    document.getElementById("rsc-breakdown-e3").textContent = `${e3} pts`;
-    document.getElementById("rsc-breakdown-e4").textContent = `${e4} pts`;
-    document.getElementById("rsc-breakdown-e5").textContent = `${e5} pts`;
-    document.getElementById("rsc-breakdown-e6").textContent = `${e6} pts`;
-
     // Atualizar pontos totais
-    document.getElementById("rsc-total-points").textContent = total;
-
-    // Contagem de eixos ativos (pontuação > 0)
-    let eixosAtivos = 0;
-    if (e1 > 0) eixosAtivos++;
-    if (e2 > 0) eixosAtivos++;
-    if (e3 > 0) eixosAtivos++;
-    if (e4 > 0) eixosAtivos++;
-    if (e5 > 0) eixosAtivos++;
-    if (e6 > 0) eixosAtivos++;
+    const totalPointsEl = document.getElementById("rsc-total-points");
+    if (totalPointsEl) {
+        totalPointsEl.textContent = total.toFixed(1);
+    }
 
     const selectNivel = document.getElementById("rsc-nivel-pleiteado");
     const rscNivelSelected = selectNivel ? selectNivel.value : "rsc_especializacao";
-    const rscLabel = selectNivel ? selectNivel.options[selectNivel.selectedIndex].text.split(":")[0] : "RSC";
 
-    const isApproved = total >= 50 && eixosAtivos >= 2 && !(rscNivelSelected === "rsc_doutorado" && e6 === 0);
+    const target = RSC_LEVEL_TARGETS[rscNivelSelected] || RSC_LEVEL_TARGETS.rsc_especializacao;
+    
+    const isPointsOk = total >= target.pts;
+    const isCritOk = totalCriteria >= target.crit;
+    const isObrigatorioOk = target.validate(eixosAtivosCount);
+    const isApproved = isPointsOk && isCritOk && isObrigatorioOk;
 
     // Calcular e atualizar progresso
-    const pct = Math.min(100, Math.round((total / 50) * 100));
-    document.getElementById("rsc-progress-pct").textContent = `${pct}%`;
+    const pct = Math.min(100, Math.round((total / target.pts) * 100));
+    const progressPctEl = document.getElementById("rsc-progress-pct");
+    if (progressPctEl) {
+        progressPctEl.textContent = `${pct}%`;
+    }
     
+    const progressHeaderEl = document.querySelector(".rsc-progress-wrapper .rsc-progress-header span");
+    if (progressHeaderEl) {
+        progressHeaderEl.textContent = `Progresso da Meta (${target.pts} pontos | Mínimo ${target.crit} critérios)`;
+    }
+
     const fill = document.getElementById("rsc-progress-bar-fill");
     if (fill) {
         fill.style.width = `${pct}%`;
@@ -822,37 +1024,30 @@ function calculateRscPoints() {
     const statusDesc = document.getElementById("rsc-status-desc");
 
     if (statusBox && statusIcon && statusTitle && statusDesc) {
-        if (total >= 50) {
-            if (eixosAtivos < 2) {
-                // Bloqueio por concentração de pontos em um único eixo
-                statusBox.className = "rsc-status pending";
-                statusIcon.textContent = "⚠️";
-                statusTitle.textContent = "Pontuação Concentrada";
-                statusDesc.textContent = `Apesar de somar ${total} pontos, o regulamento exige que a pontuação esteja distribuída em pelo menos 2 eixos diferentes. Adicione atividades em outros eixos para homologar o ${rscLabel}.`;
-            } else if (rscNivelSelected === "rsc_doutorado" && e6 === 0) {
-                // Bloqueio do Doutorado pela ausência de Produção Técnica (Eixo VI)
-                statusBox.className = "rsc-status pending";
-                statusIcon.textContent = "⚠️";
-                statusTitle.textContent = "Eixo Obrigatório Ausente";
-                statusDesc.textContent = `Para pleitear o RSC-PCCTAE-VI (Doutorado), é obrigatório possuir pontuação no Eixo VI (Produção e Difusão Técnica). Adicione atividades de Nota Técnica, Manual ou Transmissão para prosseguir.`;
-            } else {
-                // Aprovado com sucesso
-                statusBox.className = "rsc-status approved";
-                statusIcon.textContent = "✅";
-                statusTitle.textContent = "Pontuação Atingida!";
-                statusDesc.textContent = `Parabéns! Você acumulou ${total} pontos distribuídos em ${eixosAtivos} eixos (mínimo exigido: 50 pts em 2 eixos). Seu memorial descritivo atende aos critérios regulamentares de dispersão para homologação do ${rscLabel}.`;
-            }
+        if (isApproved) {
+            statusBox.className = "rsc-status approved";
+            statusIcon.textContent = "✅";
+            statusTitle.textContent = "Requisitos Atingidos!";
+            statusDesc.textContent = `Parabéns! Seu memorial descritivo atinge a pontuação mínima (${total.toFixed(1)} de ${target.pts} pts) e o total de critérios exigidos (${totalCriteria} de ${target.crit}) para homologação do ${target.name}.`;
         } else {
             statusBox.className = "rsc-status pending";
             statusIcon.textContent = "⚠️";
-            statusTitle.textContent = "Pontuação Insuficiente";
-            statusDesc.textContent = `Faltam ${50 - total} pontos para atingir a meta mínima. Insira mais portarias de comissões, projetos institucionais ou registros de produção técnica para pleitear o ${rscLabel}.`;
+            
+            if (!isPointsOk) {
+                statusTitle.textContent = "Pontuação Insuficiente";
+                statusDesc.textContent = `Você acumulou ${total.toFixed(1)} pontos. Faltam ${(target.pts - total).toFixed(1)} pontos para atingir o mínimo de ${target.pts} pts exigido para o ${target.name}.`;
+            } else if (!isCritOk) {
+                statusTitle.textContent = "Critérios Insuficientes";
+                statusDesc.textContent = `Você acumulou ${total.toFixed(1)} pontos em apenas ${totalCriteria} critérios. É necessário ter pelo menos ${target.crit} critérios ativos para homologação do ${target.name}.`;
+            } else {
+                statusTitle.textContent = "Requisito Obrigatório Ausente";
+                statusDesc.textContent = `Apesar de atingir os pontos e critérios, seu memorial não atendeu à regra do ${target.name} que ${target.msg}. Adicione atividades nos eixos exigidos para prosseguir.`;
+            }
         }
     }
 
     // Atualizar painel informativo da lei do RSC-PCCTAE
     updateRscLevelInfo();
-}
 
 // Atualizar informações da Lei do RSC-PCCTAE baseadas no nível selecionado
 function updateRscLevelInfo() {
@@ -1022,10 +1217,29 @@ function calculateDiarias() {
     const alimentacaoDiaria = alimentacaoAtiva ? (pcctaeData.auxilios.alimentacao / 22) : 0;
     const descontoAlimentacao = alimentacaoDiaria * diasDescontoEfetivos;
 
-    // Desconto de Auxílio Transporte (transporte informado por dia de desconto efetivo)
+    // Desconto de Auxílio Transporte (Calculado de forma autônoma)
+    let transporteDiarioLiquido = 0;
     const transporteAtivo = document.getElementById("aux-transporte").checked;
-    const transporteDiario = transporteAtivo ? (parseFloat(document.getElementById("transporte-valor").value) || 0) : 0;
-    const descontoTransporte = transporteDiario * diasDescontoEfetivos;
+    if (transporteAtivo) {
+        const valorDiario = parseFloat(document.getElementById("transporte-valor").value) || 0;
+        const dias = parseInt(document.getElementById("transporte-dias").value) || 0;
+        const pgd = parseFloat(document.getElementById("transporte-pgd").value) || 0;
+        
+        const fatorPGD = (100 - pgd) / 100.0;
+        const valorMensalBruto = valorDiario * dias * fatorPGD;
+
+        // Obter Vencimento Básico de forma independente
+        const nivel = document.getElementById("classe-nivel").value;
+        const padrao = parseInt(document.getElementById("classe-padrao").value) || 1;
+        const vencimentoBasico = pcctaeData.tabela_salarial[nivel] ? pcctaeData.tabela_salarial[nivel][padrao - 1] : 0;
+
+        const contrapartidaMensal = valorMensalBruto > 0 ? Math.min(valorMensalBruto, vencimentoBasico * 0.06) : 0;
+        const valorMensalLiquido = Math.max(0, valorMensalBruto - contrapartidaMensal);
+        
+        // A dedução diária no SIAPE é equivalente a 1/22 do valor líquido mensal creditado
+        transporteDiarioLiquido = valorMensalLiquido / 22;
+    }
+    const descontoTransporte = transporteDiarioLiquido * diasDescontoEfetivos;
 
     const totalDesconto = descontoAlimentacao + descontoTransporte;
     const valorLiquido = Math.max(0, valorBruto - totalDesconto);
