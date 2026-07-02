@@ -561,3 +561,57 @@ footer .brand-text {
     color: var(--color-primary);
     margin-top: 5px;
 }
+
+/* Espaços para Publicidade (AdSense) */
+.adsense-container {
+    background: rgba(13, 202, 240, 0.02);
+    border: 1px dashed rgba(13, 202, 240, 0.2);
+    border-radius: var(--border-radius-lg);
+    padding: 12px;
+    margin: 25px auto;
+    text-align: center;
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    transition: var(--transition-smooth);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    min-height: 70px;
+}
+
+.adsense-container:hover {
+    border-color: var(--color-primary);
+    background: rgba(13, 110, 253, 0.04);
+}
+
+.adsense-label {
+    position: absolute;
+    top: 4px;
+    left: 12px;
+    font-size: 0.6rem;
+    font-family: var(--font-body);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+    opacity: 0.6;
+}
+
+.adsense-placeholder-preview {
+    font-family: var(--font-title);
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    letter-spacing: 0.03em;
+    pointer-events: none;
+    margin-top: 4px;
+}
+
+/* Ocultar placeholders de preview quando o adsense real for carregado */
+.ads-by-google[data-ad-status="filled"] ~ .adsense-placeholder-preview {
+    display: none;
+}

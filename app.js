@@ -19,12 +19,13 @@ const pcctaeData = {
     },
     rsc_pcctae: {
         none: 0,
-        rsc1: 0.10, // fundamental
-        rsc2: 0.15, // medio
-        rsc3: 0.25, // tecnico/medio
-        rsc4: 0.30, // graduacao
-        rsc5: 0.52, // especializacao
-        rsc6: 0.75  // mestrado
+        rsc_fundamental: 0.10, // fundamental
+        rsc_medio: 0.15,       // medio
+        rsc_tecnico: 0.20,     // tecnico
+        rsc_graduacao: 0.25,   // graduacao
+        rsc_especializacao: 0.30, // especializacao
+        rsc_mestrado: 0.52,    // mestrado
+        rsc_doutorado: 0.75    // doutorado
     },
     auxilios: {
         alimentacao: 1192.00,
@@ -128,15 +129,15 @@ function initA11y() {
 
 // Inicialização dos Inputs da Calculadora
 function initCalcInputs() {
-    const inputs = ["nivel", "padrao", "qualif-tipo", "qualif-nivel", "aux-alimentacao", "aux-creche", "creche-dep", "aux-saude", "saude-idade"];
+    const inputs = ["nivel", "padrao", "select-iq", "select-rsc", "aux-alimentacao", "aux-creche", "creche-dep", "aux-saude", "saude-idade"];
     
     inputs.forEach(id => {
         const el = document.getElementById(id);
         if (el) {
             el.addEventListener("change", () => {
-                // Habilitar/Desabilitar campos dependentes
-                if (id === "qualif-tipo") {
-                    toggleQualifOptions();
+                // Atualizar opções do RSC dinamicamente quando o IQ muda
+                if (id === "select-iq") {
+                    updateRscOptions();
                 }
                 if (id === "aux-creche") {
                     document.getElementById("creche-dep").disabled = !el.checked;
@@ -152,52 +153,76 @@ function initCalcInputs() {
 
     // Evento do botão adicionar dependente de saúde
     document.getElementById("btn-add-dep").addEventListener("click", addDependentRow);
+
+    // Inicializa as opções do RSC com base no IQ padrão
+    updateRscOptions();
 }
 
-// Exibir opções corretas de IQ ou RSC
-function toggleQualifOptions() {
-    const qualifTipo = document.getElementById("qualif-tipo").value;
-    const qualifNivelSelect = document.getElementById("qualif-nivel");
-    qualifNivelSelect.innerHTML = "";
+// Popular dinamicamente as opções válidas de RSC
+function updateRscOptions() {
+    const iqSelect = document.getElementById("select-iq");
+    const rscSelect = document.getElementById("select-rsc");
+    if (!iqSelect || !rscSelect) return;
 
-    if (qualifTipo === "iq") {
-        const opt = [
-            { val: "none", text: "Sem Incentivo" },
-            { val: "fundamental", text: "Fundamental Completo (10%)" },
-            { val: "medio", text: "Médio Completo (15%)" },
-            { val: "tecnico", text: "Médio Profissionalizante/Técnico (20%)" },
-            { val: "graduacao", text: "Graduação Completa (25%)" },
-            { val: "especializacao", text: "Especialização (30%)" },
-            { val: "mestrado", text: "Mestrado (52%)" },
-            { val: "doutorado", text: "Doutorado (75%)" }
-        ];
-        opt.forEach(o => {
-            const el = document.createElement("option");
-            el.value = o.val;
-            el.textContent = o.text;
-            qualifNivelSelect.appendChild(el);
-        });
-    } else if (qualifTipo === "rsc") {
-        const opt = [
-            { val: "none", text: "Sem RSC" },
-            { val: "rsc1", text: "RSC-I: Fundamental (10%)" },
-            { val: "rsc2", text: "RSC-II: Médio (15%)" },
-            { val: "rsc3", text: "RSC-III: Técnico (25%)" },
-            { val: "rsc4", text: "RSC-IV: Graduação (30%)" },
-            { val: "rsc5", text: "RSC-V: Especialização (52%)" },
-            { val: "rsc6", text: "RSC-VI: Mestrado (75%)" }
-        ];
-        opt.forEach(o => {
-            const el = document.createElement("option");
-            el.value = o.val;
-            el.textContent = o.text;
-            qualifNivelSelect.appendChild(el);
-        });
+    const currentIq = iqSelect.value;
+    const rscValueBefore = rscSelect.value; // Salvar valor selecionado anteriormente
+    rscSelect.innerHTML = "";
+
+    const rscOpcoes = {
+        none: [
+            { val: "none", text: "Sem RSC / Não possui" },
+            { val: "rsc_fundamental", text: "RSC-I: Fundamental Completo (10%)" },
+            { val: "rsc_medio", text: "RSC-II: Ensino Médio Completo (15%)" },
+            { val: "rsc_tecnico", text: "RSC-III: Ensino Técnico Completo (20%)" },
+            { val: "rsc_graduacao", text: "RSC-IV: Graduação Completa (25%)" },
+            { val: "rsc_especializacao", text: "RSC-V: Especialização Completa (30%)" },
+            { val: "rsc_mestrado", text: "RSC-VI: Mestrado Completo (52%)" },
+            { val: "rsc_doutorado", text: "RSC-VII: Doutorado Completo (75%)" }
+        ],
+        fundamental: [
+            { val: "none", text: "Sem RSC / Não possui" },
+            { val: "rsc_medio", text: "RSC-II: Ensino Médio Completo (15%)" }
+        ],
+        medio: [
+            { val: "none", text: "Sem RSC / Não possui" },
+            { val: "rsc_tecnico", text: "RSC-III: Ensino Técnico Completo (20%)" }
+        ],
+        tecnico: [
+            { val: "none", text: "Sem RSC / Não possui" },
+            { val: "rsc_graduacao", text: "RSC-IV: Graduação Completa (25%)" }
+        ],
+        graduacao: [
+            { val: "none", text: "Sem RSC / Não possui" },
+            { val: "rsc_especializacao", text: "RSC-V: Especialização Completa (30%)" }
+        ],
+        especializacao: [
+            { val: "none", text: "Sem RSC / Não possui" },
+            { val: "rsc_mestrado", text: "RSC-VI: Mestrado Completo (52%)" }
+        ],
+        mestrado: [
+            { val: "none", text: "Sem RSC / Não possui" },
+            { val: "rsc_doutorado", text: "RSC-VII: Doutorado Completo (75%)" }
+        ],
+        doutorado: [
+            { val: "none", text: "Sem RSC (Já atingiu o teto da carreira)" }
+        ]
+    };
+
+    const opcoes = rscOpcoes[currentIq] || [{ val: "none", text: "Sem RSC" }];
+
+    opcoes.forEach(o => {
+        const opt = document.createElement("option");
+        opt.value = o.val;
+        opt.textContent = o.text;
+        rscSelect.appendChild(opt);
+    });
+
+    // Tentar restaurar o valor anterior se ele ainda existir nas novas opções
+    const hasValue = Array.from(rscSelect.options).some(opt => opt.value === rscValueBefore);
+    if (hasValue) {
+        rscSelect.value = rscValueBefore;
     } else {
-        const el = document.createElement("option");
-        el.value = "none";
-        el.textContent = "Nenhum";
-        qualifNivelSelect.appendChild(el);
+        rscSelect.value = "none";
     }
 }
 
@@ -256,16 +281,15 @@ function calculateSalary() {
     const padrao = parseInt(document.getElementById("padrao").value) - 1;
     const vencimentoBasico = pcctaeData.tabela_salarial[nivel][padrao] || 0;
 
-    // 2. Qualificação (IQ ou RSC)
-    const qualifTipo = document.getElementById("qualif-tipo").value;
-    const qualifNivel = document.getElementById("qualif-nivel").value;
-    let qualifPercentual = 0;
+    // 2. Qualificação (IQ e RSC separados e integrados)
+    const iqNivel = document.getElementById("select-iq").value;
+    const rscNivel = document.getElementById("select-rsc").value;
     
-    if (qualifTipo === "iq") {
-        qualifPercentual = pcctaeData.incentivo_qualificacao[qualifNivel] || 0;
-    } else if (qualifTipo === "rsc") {
-        qualifPercentual = pcctaeData.rsc_pcctae[qualifNivel] || 0;
-    }
+    const iqPercentual = pcctaeData.incentivo_qualificacao[iqNivel] || 0;
+    const rscPercentual = pcctaeData.rsc_pcctae[rscNivel] || 0;
+    
+    // O RSC eleva o percentual final ao nível do Reconhecimento de Saberes obtido
+    const qualifPercentual = Math.max(iqPercentual, rscPercentual);
     const valorQualif = vencimentoBasico * qualifPercentual;
 
     // 3. Auxílios

@@ -6,6 +6,8 @@
     <title>Calculadora de Carreira e Salário TAE (PCCTAE 2026) | YLuna85 LABs</title>
     <meta name="description" content="Simulador financeiro e base de dados para a carreira dos Técnico-Administrativos em Educação (TAEs) federais. Realize cálculos salariais, simulação de IQ/RSC, adicionais e auxílios de 2026.">
     <link rel="stylesheet" href="style.css">
+    <!-- Google AdSense - Código de Monetização YLuna85 LABs -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -32,6 +34,21 @@
             <button class="tab-btn" data-tab="tabela" aria-selected="false">📅 Tabela de Carreira</button>
             <button class="tab-btn" data-tab="noticias" aria-selected="false">📰 Leis & Informativos</button>
         </nav>
+
+        <!-- Bloco de Anúncio AdSense (Leaderboard Topo) -->
+        <div class="adsense-container adsense-top" aria-hidden="true">
+            <span class="adsense-label">Publicidade</span>
+            <ins class="adsbygoogle ads-by-google"
+                 style="display:block"
+                 data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                 data-ad-slot="XXXXXXXXXX"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            <div class="adsense-placeholder-preview">Espaço Publicitário - YLuna85 LABs</div>
+        </div>
 
         <!-- ABA 1: CALCULADORA SALARIAL -->
         <main id="calculadora" class="tab-content active">
@@ -79,21 +96,26 @@
                             </select>
                         </div>
 
-                        <!-- Tipo de Qualificação (IQ ou RSC) -->
+                        <!-- Incentivo à Qualificação (IQ) -->
                         <div class="form-group">
-                            <label for="qualif-tipo">Modalidade de Qualificação Adicional</label>
-                            <select id="qualif-tipo" class="form-control">
-                                <option value="none">Nenhum adicional selecionado</option>
-                                <option value="iq">Incentivo à Qualificação (IQ - Titulação Acadêmica)</option>
-                                <option value="rsc">Reconhecimento de Saberes e Competências (RSC - Experiência/Práxis)</option>
+                            <label for="select-iq">Incentivo à Qualificação (IQ - Escolaridade Adicional)</label>
+                            <select id="select-iq" class="form-control">
+                                <option value="none" selected>Nenhum / Requisito do Cargo (0%)</option>
+                                <option value="fundamental">Fundamental Completo (10%)</option>
+                                <option value="medio">Ensino Médio Completo (15%)</option>
+                                <option value="tecnico">Ensino Técnico Completo (20%)</option>
+                                <option value="graduacao">Graduação Completa (25%)</option>
+                                <option value="especializacao">Especialização Completa (30%)</option>
+                                <option value="mestrado">Mestrado Completo (52%)</option>
+                                <option value="doutorado">Doutorado Completo (75%)</option>
                             </select>
                         </div>
 
-                        <!-- Nível de Qualificação -->
+                        <!-- Reconhecimento de Saberes e Competências (RSC) -->
                         <div class="form-group">
-                            <label for="qualif-nivel">Nível da Titulação / RSC</label>
-                            <select id="qualif-nivel" class="form-control">
-                                <option value="none">Nenhum</option>
+                            <label for="select-rsc">Reconhecimento de Saberes e Competências (RSC)</label>
+                            <select id="select-rsc" class="form-control">
+                                <option value="none" selected>Sem RSC / Não possui</option>
                             </select>
                         </div>
 
@@ -301,6 +323,21 @@
                 </div>
             </div>
         </section>
+
+        <!-- Bloco de Anúncio AdSense (Leaderboard Inferior) -->
+        <div class="adsense-container adsense-bottom" aria-hidden="true">
+            <span class="adsense-label">Publicidade</span>
+            <ins class="adsbygoogle ads-by-google"
+                 style="display:block"
+                 data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                 data-ad-slot="YYYYYYYYYY"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            <div class="adsense-placeholder-preview">Espaço Publicitário - YLuna85 LABs</div>
+        </div>
 
         <!-- Rodapé do Aplicativo -->
         <footer>

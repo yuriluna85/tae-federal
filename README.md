@@ -23,7 +23,7 @@ A arquitetura do software apoia-se em tecnologias nativas da plataforma web (Zer
 
 *   **Calculadora de Proventos Brutos**:
     *   Indexador automático de vencimento básico (Níveis A a E e padrões de progressão 1 a 19, com *step* de 4,1%).
-    *   Acréscimo percentual de Incentivo à Qualificação (IQ) tradicional ou Reconhecimento de Saberes e Competências (RSC-PCCTAE) de níveis I a VI.
+    *   Acréscimo percentual integrado e independente de Incentivo à Qualificação (IQ) e Reconhecimento de Saberes e Competências (RSC-PCCTAE), com regras automáticas de restrição (RSC limitado a um nível imediatamente superior ao IQ real) e cálculo de equivalência financeira (percentual máximo).
     *   Cálculo de benefícios assistenciais ajustados para 2026: Auxílio-Alimentação (R$ 1.192,00) e Auxílio-Creche (R$ 526,34 por dependente).
     *   Custeio parcial de Saúde Suplementar baseado de forma dinâmica no rendimento de referência e na idade do titular e de cada dependente, em estrita consonância com a tabela progressiva da **Portaria MGI nº 2.778/2026**.
 *   **Simulador de Dedutivos e Líquido**:
@@ -64,3 +64,5 @@ Este repositório está estruturado especificamente para publicação direta e i
 *   🚀 **Estruturação do Projeto**: Criação da base de códigos em [index.html](file:///G:/Meu%20Drive/APP/2.%20Projetos%20e%20Aplica%C3%A7%C3%B5es/2.2%20Aplica%C3%A7%C3%B5es%20e%20C%C3%B3digos%20(GitHub)/YLuna85%20LABs%20APPs/calculadora-tae-federal/index.html), [style.css](file:///G:/Meu%20Drive/APP/2.%20Projetos%20e%20Aplica%C3%A7%C3%B5es/2.2%20Aplica%C3%A7%C3%B5es%20e%20C%C3%B3digos%20(GitHub)/YLuna85%20LABs%20APPs/calculadora-tae-federal/style.css) e [app.js](file:///G:/Meu%20Drive/APP/2.%20Projetos%20e%20Aplica%C3%A7%C3%B5es/2.2%20Aplica%C3%A7%C3%B5es%20e%20C%C3%B3digos%20(GitHub)/YLuna85%20LABs%20APPs/calculadora-tae-federal/app.js).
 *   🎨 **Branding de Laboratório**: Configuração da identidade visual com o selo **YLuna85 LABs** e incorporação dos ativos de imagem dos mascotes oficiais Coragem e Bolinho de chuva na pasta `/assets`.
 *   📊 **Inteligência Salarial**: Implementação dos algoritmos de cálculo de progressão por step (4,1%), faixas tributárias de PSS/IRRF (2026) e regras de per capita de saúde suplementar (Portaria MGI nº 2.778/2026).
+*   ⚙️ **Segregação de IQ & RSC**: Ajuste para separar os campos de IQ e RSC na interface do usuário, adicionando regras de restrição regulatória dinâmica (limitação do RSC a apenas um nível superior à escolaridade de entrada do IQ) e consolidação da equivalência financeira de proventos pelo percentual superior.
+*   💵 **Google AdSense**: Inclusão de blocos de anúncios responsivos (Leaderboards) discretos com estilização Glassmorphism e ocultação automática do placeholder local ao preenchimento de conteúdo do anúncio.
