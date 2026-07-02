@@ -98,6 +98,31 @@
                             </select>
                         </div>
 
+                        <!-- Função Comissionada / Cargo de Confiança -->
+                        <div class="form-group">
+                            <label for="select-funcao">Função Comissionada / Cargo de Confiança (2026)</label>
+                            <select id="select-funcao" class="form-control">
+                                <option value="none" selected>Nenhuma Função / Cargo</option>
+                                <optgroup label="Cargos de Direção (CD)">
+                                    <option value="cd1_int">CD-1 (Integral: R$ 22.219,64)</option>
+                                    <option value="cd1_opt">CD-1 (Opção 60%: R$ 13.331,78)</option>
+                                    <option value="cd2_int">CD-2 (Integral: R$ 16.806,33)</option>
+                                    <option value="cd2_opt">CD-2 (Opção 60%: R$ 10.083,80)</option>
+                                    <option value="cd3_int">CD-3 (Integral: R$ 12.291,61)</option>
+                                    <option value="cd3_opt">CD-3 (Opção 60%: R$ 7.374,97)</option>
+                                    <option value="cd4_int">CD-4 (Integral: R$ 8.315,71)</option>
+                                    <option value="cd4_opt">CD-4 (Opção 60%: R$ 4.989,43)</option>
+                                </optgroup>
+                                <optgroup label="Funções Gratificadas (FG) & Coordenação">
+                                    <option value="fg1">FG-1 (Total: R$ 1.263,32)</option>
+                                    <option value="fg2">FG-2 (Total: R$ 849,91)</option>
+                                    <option value="fg3">FG-3 (Total: R$ 689,06)</option>
+                                    <option value="fg4">FG-4 (Total: R$ 321,77)</option>
+                                    <option value="fcc">FCC / FUC (Nível Único: R$ 1.273,25)</option>
+                                </optgroup>
+                            </select>
+                        </div>
+
                         <!-- Incentivo à Qualificação (IQ) -->
                         <div class="form-group">
                             <label for="select-iq">Incentivo à Qualificação (IQ - Escolaridade Adicional)</label>
@@ -141,6 +166,33 @@
                                 </div>
 
                                 <label class="checkbox-label">
+                                    <input type="checkbox" id="aux-transporte">
+                                    Auxílio-Transporte (Valor Diário e PGD)
+                                </label>
+                                
+                                <div class="transport-details" style="display: none; padding-left: 28px; margin-top: 5px; margin-bottom: 10px;">
+                                    <div class="form-row" style="display: flex; gap: 10px; margin-bottom: 10px;">
+                                        <div style="flex: 1;">
+                                            <label for="transporte-valor" style="font-size: 0.85rem; color: var(--color-text-muted);">Valor Diário (R$)</label>
+                                            <input type="number" id="transporte-valor" class="form-control" min="0" step="0.01" value="0.00" style="padding: 6px 10px;">
+                                        </div>
+                                        <div style="flex: 1;">
+                                            <label for="transporte-dias" style="font-size: 0.85rem; color: var(--color-text-muted);">Dias no Mês (máx. 22)</label>
+                                            <input type="number" id="transporte-dias" class="form-control" min="0" max="22" value="22" style="padding: 6px 10px;">
+                                        </div>
+                                    </div>
+                                    <div class="form-group" style="margin-bottom: 0;">
+                                        <label for="transporte-pgd" style="font-size: 0.85rem; color: var(--color-text-muted);">Regime de Trabalho (PGD)</label>
+                                        <select id="transporte-pgd" class="form-control" style="padding: 6px 10px;">
+                                            <option value="0" selected>Sem PGD (Presencial / 100%)</option>
+                                            <option value="20">PGD 20% Teletrabalho (4 dias presencial)</option>
+                                            <option value="60">PGD 60% Teletrabalho (2 dias presencial)</option>
+                                            <option value="100">PGD 100% Teletrabalho (Integral)</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <label class="checkbox-label">
                                     <input type="checkbox" id="aux-saude">
                                     Assistência à Saúde Suplementar (Participação per capita União)
                                 </label>
@@ -175,12 +227,20 @@
                             <span id="res-vencimento" class="val">R$ 0,00</span>
                         </div>
                         <div class="result-item">
+                            <span>Função Comissionada (CD/FG/FCC)</span>
+                            <span id="res-funcao" class="val">R$ 0,00</span>
+                        </div>
+                        <div class="result-item">
                             <span>Qualificação (IQ/RSC)</span>
                             <span id="res-qualificacao" class="val">R$ 0,00</span>
                         </div>
                         <div class="result-item benefit">
                             <span>Auxílio-Alimentação</span>
                             <span id="res-alimentacao" class="val">R$ 0,00</span>
+                        </div>
+                        <div class="result-item benefit">
+                            <span>Auxílio-Transporte</span>
+                            <span id="res-transporte" class="val">R$ 0,00</span>
                         </div>
                         <div class="result-item benefit">
                             <span>Assistência Pré-Escolar</span>
@@ -252,29 +312,81 @@
                 </section>
             </div>
 
+            <!-- Simulador de Diárias de Viagem -->
+            <section class="card" aria-labelledby="diarias-title" style="margin-top: 30px;">
+                <h3 id="diarias-title" style="font-family: var(--font-title); font-size: 1.4rem; color: var(--color-primary); margin-bottom: 20px; display: flex; align-items: center; gap: 8px;">
+                    ✈️ Simulador de Diárias de Viagem (Decreto nº 11.872/2023)
+                </h3>
+                <div class="diarias-grid">
+                    <!-- Form Diárias -->
+                    <div class="diarias-inputs">
+                        <div class="form-row" style="display: flex; gap: 15px; margin-bottom: 15px; flex-wrap: wrap;">
+                            <div style="flex: 1; min-width: 200px; display: flex; flex-direction: column;">
+                                <label for="diaria-cargo" style="font-family: var(--font-title); font-size: 0.95rem; font-weight: 600; color: var(--color-text); margin-bottom: 8px;">Classificação do Cargo/Função</label>
+                                <select id="diaria-cargo" class="form-control">
+                                    <option value="tae" selected>Demais cargos e funções (TAEs)</option>
+                                    <option value="cce13_17">CCE-13 a CCE-17 e equivalentes</option>
+                                    <option value="cce18">CCE-18 e Natureza Especial</option>
+                                    <option value="ministro">Ministros de Estado</option>
+                                </select>
+                            </div>
+                            <div style="flex: 1; min-width: 200px; display: flex; flex-direction: column;">
+                                <label for="diaria-destino" style="font-family: var(--font-title); font-size: 0.95rem; font-weight: 600; color: var(--color-text); margin-bottom: 8px;">Destino do Deslocamento</label>
+                                <select id="diaria-destino" class="form-control">
+                                    <option value="demais" selected>Demais Cidades (Nacional)</option>
+                                    <option value="capitais">Outras Capitais de Estados</option>
+                                    <option value="especiais">Brasília, Manaus, Rio de Janeiro ou São Paulo</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row" style="display: flex; gap: 15px; margin-bottom: 15px; flex-wrap: wrap;">
+                            <div style="flex: 1; min-width: 200px; display: flex; flex-direction: column;">
+                                <label for="diaria-inicio" style="font-family: var(--font-title); font-size: 0.95rem; font-weight: 600; color: var(--color-text); margin-bottom: 8px;">Data de Início</label>
+                                <input type="date" id="diaria-inicio" class="form-control">
+                            </div>
+                            <div style="flex: 1; min-width: 200px; display: flex; flex-direction: column;">
+                                <label for="diaria-fim" style="font-family: var(--font-title); font-size: 0.95rem; font-weight: 600; color: var(--color-text); margin-bottom: 8px;">Data de Fim</label>
+                                <input type="date" id="diaria-fim" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Resultados Diárias -->
+                    <div class="diarias-results" style="background: rgba(0,0,0,0.2); padding: 20px; border-radius: var(--border-radius-md); border: 1px solid var(--border-color); display: flex; flex-direction: column; gap: 10px;">
+                        <h4 style="font-family: var(--font-title); margin-bottom: 5px; color: var(--color-accent);">Detalhamento do Recebimento</h4>
+                        <div class="result-item" style="display: flex; justify-content: space-between; font-size: 0.9rem;">
+                            <span>Quantidade de Diárias:</span>
+                            <span id="res-diaria-qtd" style="font-weight: 600;">0.0</span>
+                        </div>
+                        <div class="result-item" style="display: flex; justify-content: space-between; font-size: 0.9rem;">
+                            <span>Dias de Afastamento (Desconto):</span>
+                            <span id="res-diaria-dias-desconto" style="font-weight: 600;">0</span>
+                        </div>
+                        <div class="result-item" style="display: flex; justify-content: space-between; font-size: 0.9rem;">
+                            <span>Valor Bruto Total:</span>
+                            <span id="res-diaria-bruto" style="font-weight: 600;">R$ 0,00</span>
+                        </div>
+                        <div class="result-item deduction" style="display: flex; justify-content: space-between; font-size: 0.9rem; color: #f87171;">
+                            <span>Desconto Aux-Alimentação:</span>
+                            <span id="res-diaria-desc-alimentacao" style="font-weight: 600;">- R$ 0,00</span>
+                        </div>
+                        <div class="result-item deduction" style="display: flex; justify-content: space-between; font-size: 0.9rem; color: #f87171;">
+                            <span>Desconto Aux-Transporte:</span>
+                            <span id="res-diaria-desc-transporte" style="font-weight: 600;">- R$ 0,00</span>
+                        </div>
+                        <div class="result-item bold" style="display: flex; justify-content: space-between; margin-top: 5px; padding-top: 10px; border-top: 1px solid var(--border-color); font-size: 1.1rem; color: #34d399;">
+                            <span>Líquido das Diárias:</span>
+                            <span id="res-diaria-liquido" style="font-weight: 700;">R$ 0,00</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <!-- Mural de Novidades Rápidas e Acompanhamento do RSC (Aba Calculadora) -->
             <div class="news-mural">
                 <section class="card card-mural-noticias" aria-labelledby="mural-news-title">
                     <h3 id="mural-news-title" class="mural-title">📰 Painel de Novidades da Carreira & RSC</h3>
-                    <div class="mural-grid">
-                        <div class="mural-card">
-                            <span class="mural-badge badge-alert">Acompanhamento</span>
-                            <h4>Minuta do Decreto do RSC em Análise</h4>
-                            <p>A Comissão Nacional de Supervisão da Carreira (CNSC) iniciou a consolidação das diretrizes de avaliação dos 6 eixos para homologação ministerial.</p>
-                            <span class="mural-date">02/07/2026</span>
-                        </div>
-                        <div class="mural-card">
-                            <span class="mural-badge badge-info">Vigente</span>
-                            <h4>Tabela Salarial de Abril/2026 Implementada</h4>
-                            <p>O step linear de 4,1% estabelecido pela Lei nº 15.141/2025 está oficialmente vigente, extinguindo as antigas distorções de área direta e indireta de IQ.</p>
-                            <span class="mural-date">01/04/2026</span>
-                        </div>
-                        <div class="mural-card">
-                            <span class="mural-badge badge-success">Orientação</span>
-                            <h4>Dossiê do Memorial Descritivo</h4>
-                            <p>Servidores do IF Baiano já podem realizar a curadoria de portarias de comissões, diárias e certificados organizando a pasta de anexos do memorial.</p>
-                            <span class="mural-date">02/07/2026</span>
-                        </div>
+                    <div id="mural-container" class="mural-grid">
+                        <!-- Inserido dinamicamente pelo JS via noticias.json -->
                     </div>
                 </section>
             </div>
@@ -296,11 +408,17 @@
                             <h3>Eixo I: Representações e Comissões</h3>
                             <div class="rsc-item-row">
                                 <label for="pts-e1-cperm">Comissão Permanente / Colegiado / Conselho (10 pts/ano)</label>
-                                <input type="number" id="pts-e1-cperm" class="form-control rsc-input" min="0" max="10" value="0">
+                                <div style="display: flex; align-items: center; gap: 10px;">
+                                    <input type="number" id="pts-e1-cperm" class="form-control rsc-input" min="0" max="10" value="0">
+                                    <span id="val-e1-cperm" class="rsc-inline-pts">0 pts</span>
+                                </div>
                             </div>
                             <div class="rsc-item-row">
                                 <label for="pts-e1-ctemp">Comissão Temporária / Grupo de Trabalho (5 pts/comissão)</label>
-                                <input type="number" id="pts-e1-ctemp" class="form-control rsc-input" min="0" max="20" value="0">
+                                <div style="display: flex; align-items: center; gap: 10px;">
+                                    <input type="number" id="pts-e1-ctemp" class="form-control rsc-input" min="0" max="20" value="0">
+                                    <span id="val-e1-ctemp" class="rsc-inline-pts">0 pts</span>
+                                </div>
                             </div>
                         </div>
 
@@ -309,11 +427,17 @@
                             <h3>Eixo II: Projetos Institucionais</h3>
                             <div class="rsc-item-row">
                                 <label for="pts-e2-coord">Coordenador de Projeto de Ensino/Pesquisa/Extensão (15 pts/projeto)</label>
-                                <input type="number" id="pts-e2-coord" class="form-control rsc-input" min="0" max="10" value="0">
+                                <div style="display: flex; align-items: center; gap: 10px;">
+                                    <input type="number" id="pts-e2-coord" class="form-control rsc-input" min="0" max="10" value="0">
+                                    <span id="val-e2-coord" class="rsc-inline-pts">0 pts</span>
+                                </div>
                             </div>
                             <div class="rsc-item-row">
                                 <label for="pts-e2-membro">Membro Executor de Projeto (10 pts/projeto)</label>
-                                <input type="number" id="pts-e2-membro" class="form-control rsc-input" min="0" max="20" value="0">
+                                <div style="display: flex; align-items: center; gap: 10px;">
+                                    <input type="number" id="pts-e2-membro" class="form-control rsc-input" min="0" max="20" value="0">
+                                    <span id="val-e2-membro" class="rsc-inline-pts">0 pts</span>
+                                </div>
                             </div>
                         </div>
 
@@ -322,7 +446,10 @@
                             <h3>Eixo III: Premiações Ocupacionais</h3>
                             <div class="rsc-item-row">
                                 <label for="pts-e3-premio">Láurea, Menção Honrosa ou Prêmio de Gestão (10 pts/prêmio)</label>
-                                <input type="number" id="pts-e3-premio" class="form-control rsc-input" min="0" max="5" value="0">
+                                <div style="display: flex; align-items: center; gap: 10px;">
+                                    <input type="number" id="pts-e3-premio" class="form-control rsc-input" min="0" max="5" value="0">
+                                    <span id="val-e3-premio" class="rsc-inline-pts">0 pts</span>
+                                </div>
                             </div>
                         </div>
 
@@ -331,7 +458,10 @@
                             <h3>Eixo IV: Encargos e Responsabilidades</h3>
                             <div class="rsc-item-row">
                                 <label for="pts-e4-complex">Atividade Especializada de Alta Complexidade / Parecer Técnico (8 pts/item)</label>
-                                <input type="number" id="pts-e4-complex" class="form-control rsc-input" min="0" max="10" value="0">
+                                <div style="display: flex; align-items: center; gap: 10px;">
+                                    <input type="number" id="pts-e4-complex" class="form-control rsc-input" min="0" max="10" value="0">
+                                    <span id="val-e4-complex" class="rsc-inline-pts">0 pts</span>
+                                </div>
                             </div>
                         </div>
 
@@ -340,11 +470,17 @@
                             <h3>Eixo V: Funções de Liderança</h3>
                             <div class="rsc-item-row">
                                 <label for="pts-e5-cd">Cargos de Direção - CD (15 pts/ano)</label>
-                                <input type="number" id="pts-e5-cd" class="form-control rsc-input" min="0" max="10" value="0">
+                                <div style="display: flex; align-items: center; gap: 10px;">
+                                    <input type="number" id="pts-e5-cd" class="form-control rsc-input" min="0" max="10" value="0">
+                                    <span id="val-e5-cd" class="rsc-inline-pts">0 pts</span>
+                                </div>
                             </div>
                             <div class="rsc-item-row">
                                 <label for="pts-e5-fg">Função Gratificada / Chefia de Setor - FG (10 pts/ano)</label>
-                                <input type="number" id="pts-e5-fg" class="form-control rsc-input" min="0" max="10" value="0">
+                                <div style="display: flex; align-items: center; gap: 10px;">
+                                    <input type="number" id="pts-e5-fg" class="form-control rsc-input" min="0" max="10" value="0">
+                                    <span id="val-e5-fg" class="rsc-inline-pts">0 pts</span>
+                                </div>
                             </div>
                         </div>
 
@@ -353,11 +489,17 @@
                             <h3>Eixo VI: Produção e Difusão Técnica</h3>
                             <div class="rsc-item-row">
                                 <label for="pts-e6-manual">Nota Técnica, Manual Operacional ou Cartilha (8 pts/item)</label>
-                                <input type="number" id="pts-e6-manual" class="form-control rsc-input" min="0" max="10" value="0">
+                                <div style="display: flex; align-items: center; gap: 10px;">
+                                    <input type="number" id="pts-e6-manual" class="form-control rsc-input" min="0" max="10" value="0">
+                                    <span id="val-e6-manual" class="rsc-inline-pts">0 pts</span>
+                                </div>
                             </div>
                             <div class="rsc-item-row">
                                 <label for="pts-e6-live">Suporte Audiovisual / Operação de Transmissão Institucional / Live (5 pts/evento)</label>
-                                <input type="number" id="pts-e6-live" class="form-control rsc-input" min="0" max="30" value="0">
+                                <div style="display: flex; align-items: center; gap: 10px;">
+                                    <input type="number" id="pts-e6-live" class="form-control rsc-input" min="0" max="30" value="0">
+                                    <span id="val-e6-live" class="rsc-inline-pts">0 pts</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -479,33 +621,8 @@
             <div class="card">
                 <h2 id="noticias-title" style="font-family: var(--font-title); font-size: 1.6rem; color: var(--color-primary); margin-bottom: 20px;">Quadro Normativo e Informativos</h2>
                 
-                <div class="news-list">
-                    <!-- Informativo 1 -->
-                    <article class="news-item">
-                        <div class="news-meta">Legislação e Acordo de Greve</div>
-                        <h3 class="news-title">Promulgação da Lei nº 15.141/2025</h3>
-                        <p class="news-excerpt">
-                            Esta lei consubstancia a reestruturação da carreira do PCCTAE nos moldes do Termo de Acordo nº 11/2024. A legislação extinguiu os antigos quatro níveis de capacitação e verticalizou os cargos em uma linha de progressão horizontal composta por 19 padrões de vencimento, além de estabelecer o step linear de 4,1% aplicável a partir de 1º de abril de 2026.
-                        </p>
-                    </article>
-
-                    <!-- Informativo 2 -->
-                    <article class="news-item">
-                        <div class="news-meta">Reconhecimento de Saberes</div>
-                        <h3 class="news-title">Instituição do RSC-PCCTAE via Lei nº 15.367/2026</h3>
-                        <p class="news-excerpt">
-                            Sancionada em 30 de março de 2026, a lei instituiu o Reconhecimento de Saberes e Competências (RSC) para Técnico-Administrativos em Educação a contar de 1º de abril de 2026. O RSC representa uma modalidade excludente em relação ao IQ de mesmo grau escolar e depende da publicação de decreto regulamentador federal para formalizar a formação de bancas examinadoras e pontuações do memorial descritivo.
-                        </p>
-                    </article>
-
-                    <!-- Informativo 3 -->
-                    <article class="news-item">
-                        <div class="news-meta">Placeholder / Notícia de Teste</div>
-                        <h3 class="news-title">Placeholder: Análise Técnica dos Memorais do RSC</h3>
-                        <p class="news-excerpt">
-                            [Notícia de Teste] Este espaço é reservado para simulação de notícias institucionais. Um estudo analítico preliminar mapeará os fluxos de submissão de memoriais de servidores a fim de planejar o suporte administrativo no processamento de títulos e equivalências após a regulamentação do RSC por ato ministerial.
-                        </p>
-                    </article>
+                <div id="news-container" class="news-list">
+                    <!-- Inserido dinamicamente pelo JS via noticias.json -->
                 </div>
             </div>
         </section>

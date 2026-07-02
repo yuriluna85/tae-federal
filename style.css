@@ -961,3 +961,53 @@ footer .brand-text {
     color: #ffffff;
     border-color: #10b981;
 }
+
+/* Estilos para o Simulador de Diárias e Inline RSC */
+.diarias-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 30px;
+    margin-top: 15px;
+}
+
+@media (max-width: 900px) {
+    .diarias-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.diarias-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.diarias-results {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-md);
+    padding: 20px;
+}
+
+.rsc-inline-pts {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    background: rgba(13, 202, 240, 0.1);
+    border: 1px solid rgba(13, 202, 240, 0.25);
+    padding: 4px 10px;
+    border-radius: 12px;
+    min-width: 65px;
+    text-align: center;
+    display: inline-block;
+}
+
+.transport-details {
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+

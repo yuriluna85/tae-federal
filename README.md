@@ -65,6 +65,13 @@ Este repositório está estruturado especificamente para publicação direta e i
 
 ## 📝 Log de Atualizações (Changelog)
 
+### [02/07/2026] - Integração de Cargos de Confiança, Auxílio-Transporte, Simulador de Diárias e Notícias Dinâmicas
+*   👔 **Cargos de Confiança (CD/FG/FCC)**: Adicionado dropdown de seleção para cargos comissionados CD-1 a CD-4 (opções integral e 60%), FG-1 a FG-4 e FCC, somando ao Vencimento Bruto e aplicando incidências tributárias de PSS e IRRF de forma integrada.
+*   🚌 **Auxílio-Transporte & PGD**: Implementado simulador de auxílio-transporte com desconto proporcional ao regime de teletrabalho (PGD) selecionado (0%, 20%, 60%, 100%).
+*   ✈️ **Simulador de Diárias**: Novo painel completo para cálculo de diárias nacionais (Decreto nº 11.872/2023) parametrizado por destino (Demais Cidades, Capitais, Brasília/Manaus/RJ/SP) e cargo/função, deduzindo proporcionalmente as parcelas diárias de auxílio-alimentação e auxílio-transporte do servidor em trânsito.
+*   🎯 **Pontuação RSC em Tempo Real**: Indicadores de pontos individuais exibidos dinamicamente ao lado de cada caixa de quantidade de atividades no barema de RSC, otimizando a visualização e usabilidade.
+*   📰 **Notícias Dinâmicas via RSS Scraper**: Acoplamento do leitor de notícias assíncrono buscando do arquivo notícias local `noticias.json`, alimentado por um scraper automático Python que roda a cada 24h via GitHub Actions.
+
 ### [02/07/2026] - Lançamento e Configuração Inicial
 *   🚀 **Estruturação do Projeto**: Criação da base de códigos em [index.html](file:///G:/Meu%20Drive/APP/2.%20Projetos%20e%20Aplica%C3%A7%C3%B5es/2.2%20Aplica%C3%A7%C3%B5es%20e%20C%C3%B3digos%20(GitHub)/YLuna85%20LABs%20APPs/calculadora-tae-federal/index.html), [style.css](file:///G:/Meu%20Drive/APP/2.%20Projetos%20e%20Aplica%C3%A7%C3%B5es/2.2%20Aplica%C3%A7%C3%B5es%20e%20C%C3%B3digos%20(GitHub)/YLuna85%20LABs%20APPs/calculadora-tae-federal/style.css) e [app.js](file:///G:/Meu%20Drive/APP/2.%20Projetos%20e%20Aplica%C3%A7%C3%B5es/2.2%20Aplica%C3%A7%C3%B5es%20e%20C%C3%B3digos%20(GitHub)/YLuna85%20LABs%20APPs/calculadora-tae-federal/app.js).
 *   🎨 **Branding de Laboratório**: Configuração da identidade visual com o selo **YLuna85 LABs** e incorporação dos ativos de imagem dos mascotes oficiais Coragem e Bolinho de chuva na pasta `/assets`.

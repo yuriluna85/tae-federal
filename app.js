@@ -7,6 +7,28 @@ const pcctaeData = {
         D: [3181.39, 3311.83, 3447.61, 3588.97, 3736.11, 3889.29, 4048.75, 4214.75, 4387.56, 4567.45, 4754.71, 4949.66, 5152.59, 5363.85, 5583.77, 5812.70, 6051.02, 6299.11, 6557.38],
         E: [5215.39, 5429.23, 5651.82, 5883.55, 6124.77, 6375.89, 6637.13, 6909.43, 7192.72, 7487.62, 7794.61, 8114.19, 8446.87, 8793.19, 9153.72, 9529.02, 9919.71, 10326.42, 10749.80]
     },
+    funcoes: {
+        none: 0,
+        cd1_int: 22219.64,
+        cd1_opt: 13331.78,
+        cd2_int: 16806.33,
+        cd2_opt: 10083.80,
+        cd3_int: 12291.61,
+        cd3_opt: 7374.97,
+        cd4_int: 8315.71,
+        cd4_opt: 4989.43,
+        fg1: 1263.32,
+        fg2: 849.91,
+        fg3: 689.06,
+        fg4: 321.77,
+        fcc: 1273.25
+    },
+    diarias: {
+        tae: { demais: 335.00, capitais: 380.00, especiais: 425.00 },
+        cce13_17: { demais: 455.00, capitais: 515.00, especiais: 600.00 },
+        cce18: { demais: 650.00, capitais: 700.00, especiais: 800.00 },
+        ministro: { demais: 750.00, capitais: 800.00, especiais: 900.00 }
+    },
     incentivo_qualificacao: {
         none: 0,
         fundamental: 0.10,
@@ -80,6 +102,8 @@ document.addEventListener("DOMContentLoaded", () => {
     initCalcInputs();
     initRscCalc();
     initTableViewer();
+    initNews();
+    initDiarias();
     calculateSalary(); // Cálculo inicial
 });
 
@@ -130,18 +154,20 @@ function initA11y() {
 
 // Inicialização dos Inputs da Calculadora
 function initCalcInputs() {
-    const inputs = ["nivel", "padrao", "select-iq", "select-rsc", "aux-alimentacao", "aux-creche", "creche-dep", "aux-saude", "saude-idade"];
+    const inputs = ["nivel", "padrao", "select-iq", "select-rsc", "select-funcao", "aux-alimentacao", "aux-creche", "creche-dep", "aux-transporte", "transporte-valor", "transporte-dias", "transporte-pgd", "aux-saude", "saude-idade"];
     
     inputs.forEach(id => {
         const el = document.getElementById(id);
         if (el) {
             el.addEventListener("change", () => {
-                // Atualizar opções do RSC dinamicamente quando o IQ muda
                 if (id === "select-iq") {
                     updateRscOptions();
                 }
                 if (id === "aux-creche") {
                     document.getElementById("creche-dep").disabled = !el.checked;
+                }
+                if (id === "aux-transporte") {
+                    document.querySelector(".transport-details").style.display = el.checked ? "block" : "none";
                 }
                 if (id === "aux-saude") {
                     document.getElementById("saude-idade").disabled = !el.checked;
@@ -149,6 +175,9 @@ function initCalcInputs() {
                 }
                 calculateSalary();
             });
+            if (id === "transporte-valor" || id === "transporte-dias") {
+                el.addEventListener("input", calculateSalary);
+            }
         }
     });
 
@@ -282,6 +311,10 @@ function calculateSalary() {
     const padrao = parseInt(document.getElementById("padrao").value) - 1;
     const vencimentoBasico = pcctaeData.tabela_salarial[nivel][padrao] || 0;
 
+    // 1.1 Função Comissionada
+    const funcaoId = document.getElementById("select-funcao").value;
+    const valorFuncao = pcctaeData.funcoes[funcaoId] || 0;
+
     // 2. Qualificação (IQ e RSC separados e integrados)
     const iqNivel = document.getElementById("select-iq").value;
     const rscNivel = document.getElementById("select-rsc").value;
@@ -305,12 +338,23 @@ function calculateSalary() {
         valorCreche = numDep * pcctaeData.auxilios.pre_escolar;
     }
 
+    let valorTransporte = 0;
+    if (document.getElementById("aux-transporte").checked) {
+        const valorDiario = parseFloat(document.getElementById("transporte-valor").value) || 0;
+        const dias = parseInt(document.getElementById("transporte-dias").value) || 0;
+        const pgd = parseFloat(document.getElementById("transporte-pgd").value) || 0;
+        
+        // PGD reduz o transporte de acordo com o percentual de teletrabalho
+        const fatorPGD = (100 - pgd) / 100.0;
+        valorTransporte = valorDiario * dias * fatorPGD;
+    }
+
     // 4. Saúde Suplementar (Titular e Dependentes)
     let valorSaude = 0;
     if (document.getElementById("aux-saude").checked) {
         const idadeTitular = parseInt(document.getElementById("saude-idade").value) || 0;
-        // O valor considerado de rendimentos para enquadrar na faixa de per capita é o vencimento básico + adicionais permanentes (como o IQ/RSC)
-        const rendimentoReferencia = vencimentoBasico + valorQualif;
+        // O valor considerado de rendimentos para enquadrar na faixa de per capita é o vencimento básico + adicionais permanentes (como o IQ/RSC) + Função Comissionada
+        const rendimentoReferencia = vencimentoBasico + valorQualif + valorFuncao;
         
         // Custo do titular
         valorSaude += getSaudePerCapita(rendimentoReferencia, idadeTitular);
@@ -324,8 +368,8 @@ function calculateSalary() {
     }
 
     // Totais de Proventos Brutos
-    const baseTributavel = vencimentoBasico + valorQualif; // Somente vencimento e IQ/RSC sofrem impostos, auxílios são indenizatórios
-    const totalAuxilios = valorAlimentacao + valorCreche + valorSaude;
+    const baseTributavel = vencimentoBasico + valorQualif + valorFuncao; // CD/FG/FCC e Vencimento/Qualificação sofrem impostos
+    const totalAuxilios = valorAlimentacao + valorTransporte + valorCreche + valorSaude;
     const brutoTotal = baseTributavel + totalAuxilios;
 
     // 5. DEDUÇÕES (Cálculos de Previdência PSS e IRRF baseados em 2026)
@@ -347,8 +391,10 @@ function calculateSalary() {
 
     // RENDERIZAR RESULTADOS NA TELA
     document.getElementById("res-vencimento").textContent = formatCurrency(vencimentoBasico);
+    document.getElementById("res-funcao").textContent = formatCurrency(valorFuncao);
     document.getElementById("res-qualificacao").textContent = formatCurrency(valorQualif);
     document.getElementById("res-alimentacao").textContent = formatCurrency(valorAlimentacao);
+    document.getElementById("res-transporte").textContent = formatCurrency(valorTransporte);
     document.getElementById("res-creche").textContent = formatCurrency(valorCreche);
     document.getElementById("res-saude").textContent = formatCurrency(valorSaude);
     
@@ -358,8 +404,13 @@ function calculateSalary() {
     document.getElementById("res-descontos").textContent = formatCurrency(totalDescontos);
     document.getElementById("res-liquido").textContent = formatCurrency(liquidoTotal);
 
-    // Atualizar Gráfico do Contracheque
-    updateSalaryChart(vencimentoBasico, valorQualif, totalAuxilios, totalDescontos);
+    // Atualizar Gráfico do Contracheque (Função comissionada entra no segmento básico)
+    updateSalaryChart(vencimentoBasico + valorFuncao, valorQualif, totalAuxilios, totalDescontos);
+    
+    // Atualizar Diárias se estiverem ativas
+    if (typeof calculateDiarias === "function") {
+        calculateDiarias();
+    }
 }
 
 // Formatar Moeda Real R$
@@ -652,6 +703,17 @@ function calculateRscPoints() {
         "pts-e6-live": 5
     };
 
+    // Atualizar cada multiplicador inline
+    for (const [id, peso] of Object.entries(pesos)) {
+        const input = document.getElementById(id);
+        const valSpan = document.getElementById(id.replace("pts-", "val-"));
+        if (input && valSpan) {
+            const qtd = parseInt(input.value) || 0;
+            const pts = qtd * peso;
+            valSpan.textContent = `${pts} pts`;
+        }
+    }
+
     const e1 = (parseInt(document.getElementById("pts-e1-cperm").value) || 0) * pesos["pts-e1-cperm"] +
                (parseInt(document.getElementById("pts-e1-ctemp").value) || 0) * pesos["pts-e1-ctemp"];
 
@@ -715,3 +777,164 @@ function calculateRscPoints() {
         }
     }
 }
+
+// Inicialização do Simulador de Diárias
+function initDiarias() {
+    const inputs = ["diaria-cargo", "diaria-destino", "diaria-inicio", "diaria-fim"];
+    inputs.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+            el.addEventListener("change", calculateDiarias);
+            el.addEventListener("input", calculateDiarias);
+        }
+    });
+}
+
+// Cálculo das Diárias e Deduções correspondentes
+function calculateDiarias() {
+    const cargo = document.getElementById("diaria-cargo").value;
+    const destino = document.getElementById("diaria-destino").value;
+    const inicioVal = document.getElementById("diaria-inicio").value;
+    const fimVal = document.getElementById("diaria-fim").value;
+
+    if (!inicioVal || !fimVal) {
+        resetDiariasResults();
+        return;
+    }
+
+    const inicio = new Date(inicioVal + "T00:00:00");
+    const fim = new Date(fimVal + "T00:00:00");
+
+    if (fim < inicio) {
+        resetDiariasResults();
+        return;
+    }
+
+    // Cálculo dos dias de afastamento e quantidade de diárias
+    const diffTime = Math.abs(fim - inicio);
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    
+    let diasAfastamento = 1;
+    let qtdDiarias = 0.5;
+
+    if (diffDays > 0) {
+        diasAfastamento = diffDays + 1;
+        qtdDiarias = diffDays + 0.5;
+    }
+
+    // Taxa diária da diária
+    const taxaDiaria = pcctaeData.diarias[cargo][destino] || 0;
+    const valorBruto = qtdDiarias * taxaDiaria;
+
+    // Desconto de Auxílio Alimentação (auxilio / 22 por dia de afastamento)
+    const alimentacaoAtiva = document.getElementById("aux-alimentacao").checked;
+    const alimentacaoDiaria = alimentacaoAtiva ? (pcctaeData.auxilios.alimentacao / 22) : 0;
+    const descontoAlimentacao = alimentacaoDiaria * diasAfastamento;
+
+    // Desconto de Auxílio Transporte (transporte informado por dia de afastamento)
+    const transporteAtivo = document.getElementById("aux-transporte").checked;
+    const transporteDiario = transporteAtivo ? (parseFloat(document.getElementById("transporte-valor").value) || 0) : 0;
+    const descontoTransporte = transporteDiario * diasAfastamento;
+
+    const totalDesconto = descontoAlimentacao + descontoTransporte;
+    const valorLiquido = Math.max(0, valorBruto - totalDesconto);
+
+    // Renderizar nos elementos correspondentes
+    document.getElementById("res-diaria-qtd").textContent = qtdDiarias.toLocaleString("pt-BR", { minimumFractionDigits: 1 });
+    document.getElementById("res-diaria-dias-desconto").textContent = diasAfastamento;
+    document.getElementById("res-diaria-bruto").textContent = formatCurrency(valorBruto);
+    document.getElementById("res-diaria-desc-alimentacao").textContent = "- " + formatCurrency(descontoAlimentacao);
+    document.getElementById("res-diaria-desc-transporte").textContent = "- " + formatCurrency(descontoTransporte);
+    document.getElementById("res-diaria-liquido").textContent = formatCurrency(valorLiquido);
+}
+
+function resetDiariasResults() {
+    document.getElementById("res-diaria-qtd").textContent = "0.0";
+    document.getElementById("res-diaria-dias-desconto").textContent = "0";
+    document.getElementById("res-diaria-bruto").textContent = formatCurrency(0);
+    document.getElementById("res-diaria-desc-alimentacao").textContent = "- " + formatCurrency(0);
+    document.getElementById("res-diaria-desc-transporte").textContent = "- " + formatCurrency(0);
+    document.getElementById("res-diaria-liquido").textContent = formatCurrency(0);
+}
+
+// Inicialização das Notícias Dinâmicas
+function initNews() {
+    fetch("noticias.json")
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Erro ao carregar notícias.");
+            }
+            return response.json();
+        })
+        .then(data => {
+            renderNews(data);
+        })
+        .catch(err => {
+            console.error(err);
+            // Renderizar notícias mockadas de backup se falhar
+            const fallbackData = [
+                {
+                    "title": "Promulgação da Lei nº 15.141/2025",
+                    "source": "Diário Oficial",
+                    "pubDate": "2025-06-02 08:00",
+                    "link": "https://www.in.gov.br",
+                    "description": "Esta lei consubstancia a reestruturação da carreira do PCCTAE nos moldes do Termo de Acordo nº 11/2024.",
+                    "category": "Vigente",
+                    "badge_class": "badge-info"
+                },
+                {
+                    "title": "Instituição do RSC-PCCTAE via Lei nº 15.367/2026",
+                    "source": "Diário Oficial",
+                    "pubDate": "2026-03-30 08:00",
+                    "link": "https://www.in.gov.br",
+                    "description": "Sancionada em 30 de março de 2026, a lei instituiu o Reconhecimento de Saberes e Competências (RSC).",
+                    "category": "Vigente",
+                    "badge_class": "badge-info"
+                }
+            ];
+            renderNews(fallbackData);
+        });
+}
+
+function renderNews(newsList) {
+    const muralContainer = document.getElementById("mural-container");
+    const newsContainer = document.getElementById("news-container");
+
+    if (muralContainer) {
+        muralContainer.innerHTML = "";
+        // Pegar no máximo 3 notícias para o mural
+        const muralItems = newsList.slice(0, 3);
+        muralItems.forEach(item => {
+            const dateStr = item.pubDate ? item.pubDate.split(" ")[0].split("-").reverse().join("/") : "";
+            const card = document.createElement("div");
+            card.className = "mural-card";
+            card.innerHTML = `
+                <span class="mural-badge ${item.badge_class || 'badge-info'}">${item.category || 'Informativo'}</span>
+                <h4>${item.title}</h4>
+                <p>${item.description || ''}</p>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 10px;">
+                    <span class="mural-date">${dateStr}</span>
+                    <a href="${item.link}" target="_blank" style="color: var(--color-accent); font-size: 0.8rem; text-decoration: none;">Leia Mais ↗</a>
+                </div>
+            `;
+            muralContainer.appendChild(card);
+        });
+    }
+
+    if (newsContainer) {
+        newsContainer.innerHTML = "";
+        newsList.forEach(item => {
+            const dateStr = item.pubDate ? item.pubDate.split(" ")[0].split("-").reverse().join("/") : "";
+            const article = document.createElement("article");
+            article.className = "news-item";
+            article.innerHTML = `
+                <div class="news-meta">${item.category || 'Informativo'} | Fonte: ${item.source || 'IF Baiano'} | Data: ${dateStr}</div>
+                <h3 class="news-title">${item.title}</h3>
+                <p class="news-excerpt">${item.description || ''}</p>
+                <a href="${item.link}" target="_blank" style="color: var(--color-accent); font-size: 0.9rem; text-decoration: none; display: inline-block; margin-top: 10px;">Acessar Matéria Completa ↗</a>
+            `;
+            newsContainer.appendChild(article);
+        });
+    }
+}
+
