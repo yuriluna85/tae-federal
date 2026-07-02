@@ -211,7 +211,25 @@ document.addEventListener("DOMContentLoaded", () => {
     initNews();
     initDiarias();
     calculateSalary(); // Cálculo inicial
+
+    // Inicialização segura do AdSense após reflow do layout
+    setTimeout(initAdSense, 300);
 });
+
+// Inicialização segura do Google AdSense
+function initAdSense() {
+    try {
+        const ads = document.querySelectorAll(".adsbygoogle:not([data-adsbygoogle-status='done'])");
+        ads.forEach(ad => {
+            if (ad.offsetWidth > 0 && ad.offsetHeight > 0) {
+                ad.setAttribute("data-adsbygoogle-status", "done");
+                (window.adsbygoogle = window.adsbygoogle || []).push({});
+            }
+        });
+    } catch (e) {
+        console.error("AdSense setup skipped/error:", e);
+    }
+}
 
 // Controle de Abas
 function initTabs() {
@@ -227,6 +245,9 @@ function initTabs() {
             
             btn.classList.add("active");
             document.getElementById(target).classList.add("active");
+
+            // Tentar inicializar anúncios que ficaram visíveis
+            setTimeout(initAdSense, 100);
         });
     });
 }
@@ -1048,6 +1069,7 @@ function calculateRscPoints() {
 
     // Atualizar painel informativo da lei do RSC-PCCTAE
     updateRscLevelInfo();
+}
 
 // Atualizar informações da Lei do RSC-PCCTAE baseadas no nível selecionado
 function updateRscLevelInfo() {
