@@ -32,7 +32,14 @@ def main():
     ]
 
     # 2. Busca dinâmica usando Google News RSS
-    queries = ['"IF Baiano"', '"PCCTAE"', '"RSC" servidor federal']
+    queries = [
+        '"PCCTAE"', 
+        '"RSC" "TAE"',
+        '"Reconhecimento de Saberes e Competências" "TAE"',
+        '"RSC" "PCCTAE"',
+        '"carreira" "PCCTAE"',
+        '"reestruturação" "PCCTAE"'
+    ]
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0.0.0'}
     
     fetched_news = []
@@ -71,12 +78,17 @@ def main():
                     clean_title = parts[0]
                     source = parts[1]
                 
+                # Filtrar apenas notícias relacionadas à carreira PCCTAE / RSC
+                title_lower = clean_title.lower()
+                keywords = ["rsc", "saberes", "pcctae", "tae", "carreira", "reestruturação", "reestruturacao", "servidor", "vencimento", "sindicato"]
+                if not any(k in title_lower for k in keywords):
+                    continue
+
                 seen_titles.add(title)
                 
                 category = "Notícia"
                 badge_class = "badge-success"
                 
-                title_lower = clean_title.lower()
                 if "rsc" in title_lower or "saberes" in title_lower:
                     category = "RSC"
                     badge_class = "badge-alert"
