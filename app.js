@@ -201,37 +201,36 @@ function updateRscOptions() {
     const rscOpcoes = {
         none: [
             { val: "none", text: "Sem RSC / Não possui" },
-            { val: "rsc_fundamental", text: "RSC-I: Fundamental Completo (10%)" },
-            { val: "rsc_medio", text: "RSC-II: Ensino Médio Completo (15%)" },
-            { val: "rsc_tecnico", text: "RSC-III: Ensino Técnico Completo (20%)" },
-            { val: "rsc_graduacao", text: "RSC-IV: Graduação Completa (25%)" },
-            { val: "rsc_especializacao", text: "RSC-V: Especialização Completa (30%)" },
-            { val: "rsc_mestrado", text: "RSC-VI: Mestrado Completo (52%)" },
-            { val: "rsc_doutorado", text: "RSC-VII: Doutorado Completo (75%)" }
+            { val: "rsc_fundamental", text: "RSC-PCCTAE-I: Fundamental Completo (10%)" },
+            { val: "rsc_medio", text: "RSC-PCCTAE-II: Ensino Médio Completo (15%)" },
+            { val: "rsc_graduacao", text: "RSC-PCCTAE-III: Graduação Completa (25%)" },
+            { val: "rsc_especializacao", text: "RSC-PCCTAE-IV: Especialização Completa (30%)" },
+            { val: "rsc_mestrado", text: "RSC-PCCTAE-V: Mestrado Completo (52%)" },
+            { val: "rsc_doutorado", text: "RSC-PCCTAE-VI: Doutorado Completo (75%)" }
         ],
         fundamental: [
             { val: "none", text: "Sem RSC / Não possui" },
-            { val: "rsc_medio", text: "RSC-II: Ensino Médio Completo (15%)" }
+            { val: "rsc_medio", text: "RSC-PCCTAE-II: Ensino Médio Completo (15%)" }
         ],
         medio: [
             { val: "none", text: "Sem RSC / Não possui" },
-            { val: "rsc_tecnico", text: "RSC-III: Ensino Técnico Completo (20%)" }
+            { val: "rsc_graduacao", text: "RSC-PCCTAE-III: Graduação Completa (25%)" }
         ],
         tecnico: [
             { val: "none", text: "Sem RSC / Não possui" },
-            { val: "rsc_graduacao", text: "RSC-IV: Graduação Completa (25%)" }
+            { val: "rsc_graduacao", text: "RSC-PCCTAE-III: Graduação Completa (25%)" }
         ],
         graduacao: [
             { val: "none", text: "Sem RSC / Não possui" },
-            { val: "rsc_especializacao", text: "RSC-V: Especialização Completa (30%)" }
+            { val: "rsc_especializacao", text: "RSC-PCCTAE-IV: Especialização Completa (30%)" }
         ],
         especializacao: [
             { val: "none", text: "Sem RSC / Não possui" },
-            { val: "rsc_mestrado", text: "RSC-VI: Mestrado Completo (52%)" }
+            { val: "rsc_mestrado", text: "RSC-PCCTAE-V: Mestrado Completo (52%)" }
         ],
         mestrado: [
             { val: "none", text: "Sem RSC / Não possui" },
-            { val: "rsc_doutorado", text: "RSC-VII: Doutorado Completo (75%)" }
+            { val: "rsc_doutorado", text: "RSC-PCCTAE-VI: Doutorado Completo (75%)" }
         ],
         doutorado: [
             { val: "none", text: "Sem RSC (Já atingiu o teto da carreira)" }
@@ -835,7 +834,7 @@ function calculateRscPoints() {
                 statusBox.className = "rsc-status pending";
                 statusIcon.textContent = "⚠️";
                 statusTitle.textContent = "Eixo Obrigatório Ausente";
-                statusDesc.textContent = `Para pleitear o RSC-VII (Doutorado), é obrigatório possuir pontuação no Eixo VI (Produção e Difusão Técnica). Adicione atividades de Nota Técnica, Manual ou Transmissão para prosseguir.`;
+                statusDesc.textContent = `Para pleitear o RSC-PCCTAE-VI (Doutorado), é obrigatório possuir pontuação no Eixo VI (Produção e Difusão Técnica). Adicione atividades de Nota Técnica, Manual ou Transmissão para prosseguir.`;
             } else {
                 // Aprovado com sucesso
                 statusBox.className = "rsc-status approved";
@@ -849,6 +848,76 @@ function calculateRscPoints() {
             statusTitle.textContent = "Pontuação Insuficiente";
             statusDesc.textContent = `Faltam ${50 - total} pontos para atingir a meta mínima. Insira mais portarias de comissões, projetos institucionais ou registros de produção técnica para pleitear o ${rscLabel}.`;
         }
+    }
+
+    // Atualizar painel informativo da lei do RSC-PCCTAE
+    updateRscLevelInfo();
+}
+
+// Atualizar informações da Lei do RSC-PCCTAE baseadas no nível selecionado
+function updateRscLevelInfo() {
+    const selectNivel = document.getElementById("rsc-nivel-pleiteado");
+    const infoBox = document.getElementById("rsc-nivel-info-box");
+    if (!selectNivel || !infoBox) return;
+
+    const nivel = selectNivel.value;
+    
+    const baseInfo = {
+        rsc_fundamental: {
+            titulo: "RSC-PCCTAE-I (Equivalência a Ensino Fundamental Completo)",
+            percentual: "10%",
+            requisito: "Não possuir Ensino Fundamental completo (Art. 12-C, § 2º, I).",
+            nota: "Conforme o **Art. 12-C, § 2º, inciso I da Lei nº 11.091/2005 (incluído pela Lei nº 15.367/2026)**: destinado a servidor que não concluiu o ensino fundamental, concedendo o Incentivo à Qualificação de 10% (dez por cento) do valor do vencimento básico."
+        },
+        rsc_medio: {
+            titulo: "RSC-PCCTAE-II (Equivalência a Ensino Médio Completo)",
+            percentual: "15%",
+            requisito: "Possuir certificado de conclusão de Ensino Fundamental completo (Art. 12-C, § 2º, II).",
+            nota: "Conforme o **Art. 12-C, § 2º, inciso II da Lei nº 11.091/2005 (incluído pela Lei nº 15.367/2026)**: destinado a servidor com certificado de conclusão do ensino fundamental, concedendo o Incentivo à Qualificação de 15% (quinze por cento) do valor do vencimento básico."
+        },
+        rsc_graduacao: {
+            titulo: "RSC-PCCTAE-III (Equivalência a Ensino Superior/Graduação Completa)",
+            percentual: "25%",
+            requisito: "Possuir certificado ou diploma de conclusão do Ensino Médio ou de Técnico de nível médio (Art. 12-C, § 2º, III).",
+            nota: "Conforme o **Art. 12-C, § 2º, inciso III da Lei nº 11.091/2005 (incluído pela Lei nº 15.367/2026)**: destinado a servidor com certificado ou diploma de conclusão do ensino médio ou de técnico de nível médio, concedendo o Incentivo à Qualificação de 25% (vinte e cinco por cento) do valor do vencimento básico."
+        },
+        rsc_especializacao: {
+            titulo: "RSC-PCCTAE-IV (Equivalência a Pós-Graduação Lato Sensu/Especialização Completa)",
+            percentual: "30%",
+            requisito: "Possuir diploma de Graduação no ensino superior (Art. 12-C, § 2º, IV).",
+            nota: "Conforme o **Art. 12-C, § 2º, inciso IV da Lei nº 11.091/2005 (incluído pela Lei nº 15.367/2026)**: destinado a servidor com diploma de graduação no ensino superior, concedendo o Incentivo à Qualificação de 30% (trinta por cento) do valor do vencimento básico."
+        },
+        rsc_mestrado: {
+            titulo: "RSC-PCCTAE-V (Equivalência a Mestrado Completo)",
+            percentual: "52%",
+            requisito: "Possuir certificado de pós-graduação lato sensu/especialização (Art. 12-C, § 2º, V).",
+            nota: "Conforme o **Art. 12-C, § 2º, inciso V da Lei nº 11.091/2005 (incluído pela Lei nº 15.367/2026)**: destinado a servidor com certificado de pós-graduação lato sensu, concedendo o Incentivo à Qualificação de 52% (cinquenta e dois por cento) do valor do vencimento básico."
+        },
+        rsc_doutorado: {
+            titulo: "RSC-PCCTAE-VI (Equivalência a Doutorado Completo)",
+            percentual: "75%",
+            requisito: "Possuir diploma de Mestrado completo (Art. 12-C, § 2º, VI).",
+            nota: "Conforme o **Art. 12-C, § 2º, inciso VI da Lei nº 11.091/2005 (incluído pela Lei nº 15.367/2026)**: destinado a servidor com diploma de mestrado, concedendo o Incentivo à Qualificação de 75% (setenta e cinco por cento) do valor do vencimento básico. **Critério Adicional**: É obrigatório pontuar no **Eixo VI (Produção e Difusão Técnica)**, em alinhamento com o **Art. 12-D, inciso VI**."
+        }
+    };
+
+    const info = baseInfo[nivel];
+    if (info) {
+        infoBox.innerHTML = `
+            <div style="display: flex; align-items: flex-start; gap: 12px;">
+                <span style="font-size: 1.5rem; line-height: 1;">⚖️</span>
+                <div>
+                    <h4 style="margin: 0 0 6px 0; font-family: var(--font-title); font-size: 0.95rem; font-weight: 700; color: var(--color-primary);">${info.titulo}</h4>
+                    <p style="margin: 0 0 8px 0; font-size: 0.85rem; color: var(--color-text);">
+                        <strong>Incentivo Financeiro (IQ):</strong> <span class="badge badge-info" style="background: var(--color-primary); color: #fff; padding: 2px 6px; border-radius: 4px; font-weight: 600;">${info.percentual}</span> | 
+                        <strong>Requisito Acadêmico Base:</strong> ${info.requisito}
+                    </p>
+                    <p style="margin: 0; font-size: 0.8rem; color: var(--color-text-muted); line-height: 1.45;">
+                        ${info.nota.replace(/\\*\\*(.*?)\\*\\*/g, '<strong>$1</strong>')}
+                    </p>
+                </div>
+            </div>
+        `;
     }
 }
 
