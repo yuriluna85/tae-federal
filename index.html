@@ -413,6 +413,20 @@
                     Simule a pontuação do seu Memorial Descritivo com base nas atividades desenvolvidas no IF Baiano. A meta mínima é acumular <strong>50 pontos</strong> para homologação do Reconhecimento de Saberes.
                 </p>
 
+                <!-- Seleção do nível do RSC pleiteado -->
+                <div class="form-group" style="max-width: 450px; margin-bottom: 25px; display: flex; flex-direction: column; gap: 8px;">
+                    <label for="rsc-nivel-pleiteado" style="font-family: var(--font-title); font-size: 0.95rem; font-weight: 600; color: var(--color-primary);">Nível de RSC Pleiteado pelo Servidor:</label>
+                    <select id="rsc-nivel-pleiteado" class="form-control" style="padding: 10px 14px; font-weight: 600; color: var(--color-text);">
+                        <option value="rsc_fundamental">RSC-I: Ensino Fundamental Completo (Acréscimo de 10%)</option>
+                        <option value="rsc_medio">RSC-II: Ensino Médio Completo (Acréscimo de 15%)</option>
+                        <option value="rsc_tecnico">RSC-III: Ensino Técnico Completo (Acréscimo de 20%)</option>
+                        <option value="rsc_graduacao">RSC-IV: Graduação Completa (Acréscimo de 25%)</option>
+                        <option value="rsc_especializacao" selected>RSC-V: Especialização Completa (Acréscimo de 30%)</option>
+                        <option value="rsc_mestrado">RSC-VI: Mestrado Completo (Acréscimo de 52%)</option>
+                        <option value="rsc_doutorado">RSC-VII: Doutorado Completo (Acréscimo de 75%)</option>
+                    </select>
+                </div>
+
                 <div class="rsc-grid">
                     <!-- Painel de Seleção de Atividades -->
                     <div class="rsc-activities">

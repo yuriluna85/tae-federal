@@ -561,6 +561,11 @@ function initRscCalc() {
         input.addEventListener("change", calculateRscPoints);
     });
 
+    const rscPleiteadoSelect = document.getElementById("rsc-nivel-pleiteado");
+    if (rscPleiteadoSelect) {
+        rscPleiteadoSelect.addEventListener("change", calculateRscPoints);
+    }
+
     // Ações de Importação e Exportação
     const btnExportJson = document.getElementById("btn-export-json");
     const btnImportTrigger = document.getElementById("btn-import-trigger");
@@ -589,6 +594,11 @@ function exportRscSessao() {
         data[input.id] = parseInt(input.value) || 0;
     });
 
+    const selectNivel = document.getElementById("rsc-nivel-pleiteado");
+    if (selectNivel) {
+        data["rsc-nivel-pleiteado"] = selectNivel.value;
+    }
+
     const jsonString = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(data, null, 2));
     const downloadAnchor = document.createElement("a");
     const dataAtual = new Date().toISOString().slice(0, 10);
@@ -613,14 +623,19 @@ function importRscSessao(event) {
             
             Object.keys(data).forEach(id => {
                 const el = document.getElementById(id);
-                if (el && el.classList.contains("rsc-input")) {
-                    el.value = Math.max(0, parseInt(data[id]) || 0);
-                    totalCarregados++;
+                if (el) {
+                    if (el.classList.contains("rsc-input")) {
+                        el.value = Math.max(0, parseInt(data[id]) || 0);
+                        totalCarregados++;
+                    } else if (id === "rsc-nivel-pleiteado") {
+                        el.value = data[id];
+                        totalCarregados++;
+                    }
                 }
             });
             
             if (totalCarregados > 0) {
-                alert(`Sessão carregada com sucesso! ${totalCarregados} parâmetros de atividades foram restaurados.`);
+                alert(`Sessão carregada com sucesso! ${totalCarregados} parâmetros do RSC foram restaurados.`);
                 calculateRscPoints();
             } else {
                 alert("Nenhum parâmetro válido do simulador RSC foi localizado no arquivo selecionado.");
@@ -772,6 +787,21 @@ function calculateRscPoints() {
     // Atualizar pontos totais
     document.getElementById("rsc-total-points").textContent = total;
 
+    // Contagem de eixos ativos (pontuação > 0)
+    let eixosAtivos = 0;
+    if (e1 > 0) eixosAtivos++;
+    if (e2 > 0) eixosAtivos++;
+    if (e3 > 0) eixosAtivos++;
+    if (e4 > 0) eixosAtivos++;
+    if (e5 > 0) eixosAtivos++;
+    if (e6 > 0) eixosAtivos++;
+
+    const selectNivel = document.getElementById("rsc-nivel-pleiteado");
+    const rscNivelSelected = selectNivel ? selectNivel.value : "rsc_especializacao";
+    const rscLabel = selectNivel ? selectNivel.options[selectNivel.selectedIndex].text.split(":")[0] : "RSC";
+
+    const isApproved = total >= 50 && eixosAtivos >= 2 && !(rscNivelSelected === "rsc_doutorado" && e6 === 0);
+
     // Calcular e atualizar progresso
     const pct = Math.min(100, Math.round((total / 50) * 100));
     document.getElementById("rsc-progress-pct").textContent = `${pct}%`;
@@ -779,10 +809,10 @@ function calculateRscPoints() {
     const fill = document.getElementById("rsc-progress-bar-fill");
     if (fill) {
         fill.style.width = `${pct}%`;
-        if (total >= 50) {
+        if (isApproved) {
             fill.style.backgroundColor = "#10b981"; // Verde sucesso
         } else {
-            fill.style.backgroundColor = "var(--color-accent)"; // Ciano padrão
+            fill.style.backgroundColor = "var(--color-accent)"; // Ciano padrão (bloqueio ou pendente)
         }
     }
 
@@ -794,15 +824,30 @@ function calculateRscPoints() {
 
     if (statusBox && statusIcon && statusTitle && statusDesc) {
         if (total >= 50) {
-            statusBox.className = "rsc-status approved";
-            statusIcon.textContent = "✅";
-            statusTitle.textContent = "Pontuação Atingida!";
-            statusDesc.textContent = `Parabéns! Você acumulou ${total} pontos (mínimo exigido: 50). Seu memorial descritivo atende aos critérios regulamentares mínimos para homologação do RSC no IF Baiano.`;
+            if (eixosAtivos < 2) {
+                // Bloqueio por concentração de pontos em um único eixo
+                statusBox.className = "rsc-status pending";
+                statusIcon.textContent = "⚠️";
+                statusTitle.textContent = "Pontuação Concentrada";
+                statusDesc.textContent = `Apesar de somar ${total} pontos, o regulamento exige que a pontuação esteja distribuída em pelo menos 2 eixos diferentes. Adicione atividades em outros eixos para homologar o ${rscLabel}.`;
+            } else if (rscNivelSelected === "rsc_doutorado" && e6 === 0) {
+                // Bloqueio do Doutorado pela ausência de Produção Técnica (Eixo VI)
+                statusBox.className = "rsc-status pending";
+                statusIcon.textContent = "⚠️";
+                statusTitle.textContent = "Eixo Obrigatório Ausente";
+                statusDesc.textContent = `Para pleitear o RSC-VII (Doutorado), é obrigatório possuir pontuação no Eixo VI (Produção e Difusão Técnica). Adicione atividades de Nota Técnica, Manual ou Transmissão para prosseguir.`;
+            } else {
+                // Aprovado com sucesso
+                statusBox.className = "rsc-status approved";
+                statusIcon.textContent = "✅";
+                statusTitle.textContent = "Pontuação Atingida!";
+                statusDesc.textContent = `Parabéns! Você acumulou ${total} pontos distribuídos em ${eixosAtivos} eixos (mínimo exigido: 50 pts em 2 eixos). Seu memorial descritivo atende aos critérios regulamentares de dispersão para homologação do ${rscLabel} no IF Baiano.`;
+            }
         } else {
             statusBox.className = "rsc-status pending";
             statusIcon.textContent = "⚠️";
             statusTitle.textContent = "Pontuação Insuficiente";
-            statusDesc.textContent = `Faltam ${50 - total} pontos para atingir a meta mínima. Insira mais portarias de comissões, projetos institucionais ou registros de produção técnica.`;
+            statusDesc.textContent = `Faltam ${50 - total} pontos para atingir a meta mínima. Insira mais portarias de comissões, projetos institucionais ou registros de produção técnica para pleitear o ${rscLabel}.`;
         }
     }
 }
