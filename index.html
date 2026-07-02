@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Carreira e Salário TAE (PCCTAE 2026) | YLuna85 LABs</title>
+    <meta name="description" content="Simulador financeiro e base de dados para a carreira dos Técnico-Administrativos em Educação (TAEs) federais. Realize cálculos salariais, simulação de IQ/RSC, adicionais e auxílios de 2026.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Acessibilidade e Ferramentas -->
+        <div class="a11y-bar">
+            <button id="btn-contrast" class="a11y-btn" aria-pressed="false" aria-label="Alternar alto contraste para acessibilidade visual">
+                🌓 Alto Contraste
+            </button>
+            <button id="btn-font-minus" class="a11y-btn" aria-label="Diminuir tamanho do texto">A-</button>
+            <button id="btn-font-plus" class="a11y-btn" aria-label="Aumentar tamanho do texto">A+</button>
+        </div>
+
+        <!-- Cabeçalho Principal -->
+        <header>
+            <img src="assets/marca-yluna85-labs.jpg" alt="Logotipo Oficial YLuna85 LABs" class="brand-logo" id="header-logo">
+            <h1>Simulador da Carreira TAE Federal</h1>
+            <p>Plano de Carreira dos Cargos Técnico-Administrativos em Educação (PCCTAE) — Parâmetros de Abril/2026</p>
+        </header>
+
+        <!-- Navegação por Abas -->
+        <nav class="nav-tabs" aria-label="Menu principal de abas">
+            <button class="tab-btn active" data-tab="calculadora" aria-selected="true">📊 Calculadora Salarial</button>
+            <button class="tab-btn" data-tab="tabela" aria-selected="false">📅 Tabela de Carreira</button>
+            <button class="tab-btn" data-tab="noticias" aria-selected="false">📰 Leis & Informativos</button>
+        </nav>
+
+        <!-- ABA 1: CALCULADORA SALARIAL -->
+        <main id="calculadora" class="tab-content active">
+            <div class="calc-grid">
+                <!-- Coluna 1: Formulário de Configuração -->
+                <section class="card" aria-labelledby="calc-config-title">
+                    <h2 id="calc-config-title" style="margin-bottom: 20px; font-family: var(--font-title); font-size: 1.4rem; color: var(--color-primary);">Parâmetros do Servidor</h2>
+                    
+                    <form id="salary-form" onsubmit="event.preventDefault();">
+                        <!-- Nível de Classificação -->
+                        <div class="form-group">
+                            <label for="nivel">Nível de Classificação (Escolaridade de Entrada)</label>
+                            <select id="nivel" class="form-control">
+                                <option value="E" selected>Nível E (Nível Superior / Inicial R$ 5.215,39)</option>
+                                <option value="D">Nível D (Médio/Técnico / Inicial R$ 3.181,39)</option>
+                                <option value="C">Nível C (Médio / Inicial R$ 2.607,70)</option>
+                                <option value="B">Nível B (Auxiliar / Inicial R$ 2.086,16)</option>
+                                <option value="A">Nível A (Apoio / Inicial R$ 1.877,54)</option>
+                            </select>
+                        </div>
+
+                        <!-- Padrão de Vencimento -->
+                        <div class="form-group">
+                            <label for="padrao">Padrão de Vencimento (Progressão 1 a 19)</label>
+                            <select id="padrao" class="form-control">
+                                <option value="1" selected>01 (Vencimento Base Inicial)</option>
+                                <option value="2">02</option>
+                                <option value="3">03</option>
+                                <option value="4">04</option>
+                                <option value="5">05</option>
+                                <option value="6">06</option>
+                                <option value="7">07</option>
+                                <option value="8">08</option>
+                                <option value="9">09</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19 (Topo de Carreira)</option>
+                            </select>
+                        </div>
+
+                        <!-- Tipo de Qualificação (IQ ou RSC) -->
+                        <div class="form-group">
+                            <label for="qualif-tipo">Modalidade de Qualificação Adicional</label>
+                            <select id="qualif-tipo" class="form-control">
+                                <option value="none">Nenhum adicional selecionado</option>
+                                <option value="iq">Incentivo à Qualificação (IQ - Titulação Acadêmica)</option>
+                                <option value="rsc">Reconhecimento de Saberes e Competências (RSC - Experiência/Práxis)</option>
+                            </select>
+                        </div>
+
+                        <!-- Nível de Qualificação -->
+                        <div class="form-group">
+                            <label for="qualif-nivel">Nível da Titulação / RSC</label>
+                            <select id="qualif-nivel" class="form-control">
+                                <option value="none">Nenhum</option>
+                            </select>
+                        </div>
+
+                        <!-- Auxílios e Assistências -->
+                        <div class="form-group">
+                            <label>Benefícios Assistenciais Integrados</label>
+                            <div class="checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="aux-alimentacao" checked>
+                                    Auxílio-Alimentação (Integral 40h: R$ 1.192,00)
+                                </label>
+                                
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="aux-creche">
+                                    Assistência Pré-Escolar (Creche: R$ 526,34 por dependente)
+                                </label>
+                                
+                                <div class="form-group" style="padding-left: 28px; margin-bottom: 5px;">
+                                    <label for="creche-dep" style="font-size: 0.85rem; color: var(--color-text-muted);">Quantidade de Dependentes (< 6 anos)</label>
+                                    <input type="number" id="creche-dep" class="form-control" min="0" max="10" value="0" disabled style="width: 100px; padding: 6px 10px;">
+                                </div>
+
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="aux-saude">
+                                    Assistência à Saúde Suplementar (Participação per capita União)
+                                </label>
+                                
+                                <div class="dependent-list" style="display: none;">
+                                    <div class="form-group" style="margin-bottom: 10px;">
+                                        <label for="saude-idade" style="font-size: 0.85rem; color: var(--color-text-muted);">Idade do Titular (Servidor)</label>
+                                        <input type="number" id="saude-idade" class="form-control" min="18" max="100" value="30" disabled style="width: 100px; padding: 6px 10px;">
+                                    </div>
+                                    <label style="font-size: 0.85rem; color: var(--color-text-muted); display: block; margin-bottom: 5px;">Idade de Dependentes de Saúde</label>
+                                    <div id="dep-ages-list">
+                                        <!-- Linhas de dependentes inseridas aqui pelo JS -->
+                                    </div>
+                                    <button type="button" id="btn-add-dep" class="btn-add">+ Adicionar Dependente</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+
+                <!-- Coluna 2: Painel de Resultados -->
+                <section class="card" aria-labelledby="calc-results-title">
+                    <div class="results-panel">
+                        <div class="results-header">
+                            <h2 id="calc-results-title" style="display: none;">Resultados do Provento</h2>
+                            <h3>Resumo de Remuneração</h3>
+                            <p style="color: var(--color-text-muted); font-size: 0.85rem; margin-top: 4px;">Simulação com parâmetros da legislação vigente</p>
+                        </div>
+
+                        <div class="result-item">
+                            <span>Vencimento Básico</span>
+                            <span id="res-vencimento" class="val">R$ 0,00</span>
+                        </div>
+                        <div class="result-item">
+                            <span>Qualificação (IQ/RSC)</span>
+                            <span id="res-qualificacao" class="val">R$ 0,00</span>
+                        </div>
+                        <div class="result-item benefit">
+                            <span>Auxílio-Alimentação</span>
+                            <span id="res-alimentacao" class="val">R$ 0,00</span>
+                        </div>
+                        <div class="result-item benefit">
+                            <span>Assistência Pré-Escolar</span>
+                            <span id="res-creche" class="val">R$ 0,00</span>
+                        </div>
+                        <div class="result-item benefit">
+                            <span>Saúde Suplementar (Per Capita)</span>
+                            <span id="res-saude" class="val">R$ 0,00</span>
+                        </div>
+                        <div class="result-item bold">
+                            <span>Total Bruto</span>
+                            <span id="res-bruto" class="val">R$ 0,00</span>
+                        </div>
+                        
+                        <div class="result-item deduction">
+                            <span>Desconto Previdenciário (PSS)</span>
+                            <span id="res-pss" class="val">R$ 0,00</span>
+                        </div>
+                        <div class="result-item deduction">
+                            <span>Imposto de Renda (IRRF)</span>
+                            <span id="res-irrf" class="val">R$ 0,00</span>
+                        </div>
+                        <div class="result-item bold deduction">
+                            <span>Total Descontos</span>
+                            <span id="res-descontos" class="val">R$ 0,00</span>
+                        </div>
+
+                        <div class="result-item liquid">
+                            <span>Líquido a Receber</span>
+                            <span id="res-liquido" class="val">R$ 0,00</span>
+                        </div>
+
+                        <!-- Gráfico de Distribuição -->
+                        <div class="salary-bar-chart">
+                            <div class="bar-title">
+                                <span>Distribuição do Contracheque</span>
+                                <span id="lbl-deduct-pct">0% de descontos</span>
+                            </div>
+                            <div class="bar-container">
+                                <div id="seg-basic" class="bar-segment basic" style="width: 0%" title="Vencimento Básico"></div>
+                                <div id="seg-qualif" class="bar-segment qualif" style="width: 0%" title="Incentivo à Qualificação / RSC"></div>
+                                <div id="seg-benefits" class="bar-segment benefits" style="width: 0%" title="Auxílios Assistenciais"></div>
+                            </div>
+                            <div class="chart-legend">
+                                <div class="legend-item">
+                                    <span class="legend-color" style="background: var(--color-primary);"></span>
+                                    <span>Vencimento (<span id="lbl-basic-pct">0%</span>)</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-color" style="background: var(--color-secondary);"></span>
+                                    <span>IQ / RSC (<span id="lbl-qualif-pct">0%</span>)</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-color" style="background: #10b981;"></span>
+                                    <span>Benefícios (<span id="lbl-benefits-pct">0%</span>)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Nota sobre PSS/IRRF -->
+                        <div class="alert">
+                            <div class="alert-title">Nota do Laboratório</div>
+                            <p style="font-size: 0.8rem; line-height: 1.4; color: var(--color-text);">
+                                Os descontos de PSS e IRRF utilizam as tabelas progressivas de 2026. A simulação da saúde complementar 
+                                adota as regras de custeio parcial da Portaria MGI nº 2.778/2026.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- ABA 2: VISUALIZADOR DE TABELA -->
+        <section id="tabela" class="tab-content" aria-labelledby="tabela-title">
+            <div class="card">
+                <h2 id="tabela-title" style="font-family: var(--font-title); font-size: 1.6rem; color: var(--color-primary); margin-bottom: 10px;">Visualizador da Matriz Salarial (PCCTAE 2026)</h2>
+                <p style="color: var(--color-text-muted); margin-bottom: 25px;">
+                    Selecione o nível de escolaridade para visualizar os valores dos 19 padrões de vencimento e a simulação de qualificações.
+                </p>
+
+                <!-- Seletores de nível de cargo -->
+                <div class="level-tabs" role="tablist">
+                    <button class="level-tab-btn active" data-level="E" role="tab" aria-selected="true">Nível E (Superior)</button>
+                    <button class="level-tab-btn" data-level="D" role="tab" aria-selected="false">Nível D (Médio/Técnico)</button>
+                    <button class="level-tab-btn" data-level="C" role="tab" aria-selected="false">Nível C (Médio)</button>
+                    <button class="level-tab-btn" data-level="B" role="tab" aria-selected="false">Nível B (Auxiliar)</button>
+                    <button class="level-tab-btn" data-level="A" role="tab" aria-selected="false">Nível A (Apoio)</button>
+                </div>
+
+                <!-- Tabela de Cargos -->
+                <div class="table-responsive">
+                    <table id="pcctae-values-table" aria-label="Tabela de vencimentos do nível selecionado">
+                        <thead>
+                            <tr>
+                                <th style="text-align: center; width: 10%;">Padrão</th>
+                                <th style="width: 22.5%;">Vencimento Básico</th>
+                                <th style="width: 22.5%;">+ Especialização (30%)</th>
+                                <th style="width: 22.5%;">+ Mestrado (52%)</th>
+                                <th style="width: 22.5%;">+ Doutorado (75%)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-body">
+                            <!-- Inserido dinamicamente pelo JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABA 3: INFORMATIVOS E LEIS -->
+        <section id="noticias" class="tab-content" aria-labelledby="noticias-title">
+            <div class="card">
+                <h2 id="noticias-title" style="font-family: var(--font-title); font-size: 1.6rem; color: var(--color-primary); margin-bottom: 20px;">Quadro Normativo e Informativos</h2>
+                
+                <div class="news-list">
+                    <!-- Informativo 1 -->
+                    <article class="news-item">
+                        <div class="news-meta">Legislação e Acordo de Greve</div>
+                        <h3 class="news-title">Promulgação da Lei nº 15.141/2025</h3>
+                        <p class="news-excerpt">
+                            Esta lei consubstancia a reestruturação da carreira do PCCTAE nos moldes do Termo de Acordo nº 11/2024. A legislação extinguiu os antigos quatro níveis de capacitação e verticalizou os cargos em uma linha de progressão horizontal composta por 19 padrões de vencimento, além de estabelecer o step linear de 4,1% aplicável a partir de 1º de abril de 2026.
+                        </p>
+                    </article>
+
+                    <!-- Informativo 2 -->
+                    <article class="news-item">
+                        <div class="news-meta">Reconhecimento de Saberes</div>
+                        <h3 class="news-title">Instituição do RSC-PCCTAE via Lei nº 15.367/2026</h3>
+                        <p class="news-excerpt">
+                            Sancionada em 30 de março de 2026, a lei instituiu o Reconhecimento de Saberes e Competências (RSC) para Técnico-Administrativos em Educação a contar de 1º de abril de 2026. O RSC representa uma modalidade excludente em relação ao IQ de mesmo grau escolar e depende da publicação de decreto regulamentador federal para formalizar a formação de bancas examinadoras e pontuações do memorial descritivo.
+                        </p>
+                    </article>
+
+                    <!-- Informativo 3 -->
+                    <article class="news-item">
+                        <div class="news-meta">Placeholder / Notícia de Teste</div>
+                        <h3 class="news-title">Placeholder: Análise Técnica dos Memorais do RSC</h3>
+                        <p class="news-excerpt">
+                            [Notícia de Teste] Este espaço é reservado para simulação de notícias institucionais. Um estudo analítico preliminar mapeará os fluxos de submissão de memoriais de servidores a fim de planejar o suporte administrativo no processamento de títulos e equivalências após a regulamentação do RSC por ato ministerial.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rodapé do Aplicativo -->
+        <footer>
+            <img src="assets/mascotes-yluna85-labs.jpg" alt="Mascotes Oficiais do Laboratório: Coragem e Bolinho de chuva" class="mascots" id="footer-mascots">
+            <p>Mascotes Oficiais: Coragem e Bolinho de chuva</p>
+            <p class="brand-text">YLuna85 LABs — Laboratório de Softwares</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
