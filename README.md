@@ -73,3 +73,4 @@ Este repositório está estruturado especificamente para publicação direta e i
 *   💵 **Google AdSense**: Inclusão de blocos de anúncios responsivos (Leaderboards) discretos com estilização Glassmorphism e ocultação automática do placeholder local ao preenchimento de conteúdo do anúncio.
 *   📰 **Mural de Novidades**: Desenvolvimento e acoplamento de seção de novidades e informes rápidos da carreira na parte inferior da aba da calculadora, promovendo visibilidade imediata para eixos e diretrizes regulamentares.
 *   🎯 **Calculadora de Pontuação RSC**: Lançamento da nova aba de cálculo de pontuação baseada em eixos de curadoria documental, com pesos parametrizados e verificação de status de homologação de 50 pontos mínimos.
+*   🎨 **Favicon do Laboratório**: Incorporação da marca oficial **YLuna85 LABs** como ícone de página (favicon) no head do documento HTML.
