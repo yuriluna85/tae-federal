@@ -372,6 +372,21 @@
                             </div>
                         </div>
 
+                        <!-- Barra de Ações (Importação e Exportação de Sessão) -->
+                        <div class="rsc-actions-bar">
+                            <button type="button" id="btn-export-json" class="btn-action-rsc btn-export" aria-label="Exportar a sessão de pontuação do RSC para arquivo JSON">
+                                📤 Salvar Sessão (JSON)
+                            </button>
+                            <button type="button" id="btn-import-trigger" class="btn-action-rsc btn-import" aria-label="Importar sessão de pontuação do RSC a partir de um arquivo JSON">
+                                📥 Carregar Sessão
+                            </button>
+                            <input type="file" id="rsc-file-import" accept=".json" style="display: none;">
+                            
+                            <button type="button" id="btn-export-csv" class="btn-action-rsc btn-csv" aria-label="Exportar o Rol de Saberes e Pontuação para formato CSV">
+                                📊 Exportar Planilha (CSV)
+                            </button>
+                        </div>
+
                         <div class="rsc-progress-wrapper">
                             <div class="rsc-progress-header">
                                 <span>Progresso da Meta (50 pontos)</span>

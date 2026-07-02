@@ -480,7 +480,161 @@ function initRscCalc() {
         input.addEventListener("input", calculateRscPoints);
         input.addEventListener("change", calculateRscPoints);
     });
+
+    // Ações de Importação e Exportação
+    const btnExportJson = document.getElementById("btn-export-json");
+    const btnImportTrigger = document.getElementById("btn-import-trigger");
+    const fileImportInput = document.getElementById("rsc-file-import");
+    const btnExportCsv = document.getElementById("btn-export-csv");
+
+    if (btnExportJson) {
+        btnExportJson.addEventListener("click", exportRscSessao);
+    }
+    if (btnImportTrigger && fileImportInput) {
+        btnImportTrigger.addEventListener("click", () => fileImportInput.click());
+        fileImportInput.addEventListener("change", importRscSessao);
+    }
+    if (btnExportCsv) {
+        btnExportCsv.addEventListener("click", exportRscPlanilhaCsv);
+    }
+
     calculateRscPoints(); // Cálculo inicial
+}
+
+// Exportar os dados de inputs de RSC para um arquivo JSON
+function exportRscSessao() {
+    const data = {};
+    const inputs = document.querySelectorAll(".rsc-input");
+    inputs.forEach(input => {
+        data[input.id] = parseInt(input.value) || 0;
+    });
+
+    const jsonString = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(data, null, 2));
+    const downloadAnchor = document.createElement("a");
+    const dataAtual = new Date().toISOString().slice(0, 10);
+    
+    downloadAnchor.setAttribute("href", jsonString);
+    downloadAnchor.setAttribute("download", `calculadora-rsc-sessao-${dataAtual}.json`);
+    document.body.appendChild(downloadAnchor);
+    downloadAnchor.click();
+    downloadAnchor.remove();
+}
+
+// Importar os dados do arquivo JSON e recarregar os inputs
+function importRscSessao(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        try {
+            const data = JSON.parse(e.target.result);
+            let totalCarregados = 0;
+            
+            Object.keys(data).forEach(id => {
+                const el = document.getElementById(id);
+                if (el && el.classList.contains("rsc-input")) {
+                    el.value = Math.max(0, parseInt(data[id]) || 0);
+                    totalCarregados++;
+                }
+            });
+            
+            if (totalCarregados > 0) {
+                alert(`Sessão carregada com sucesso! ${totalCarregados} parâmetros de atividades foram restaurados.`);
+                calculateRscPoints();
+            } else {
+                alert("Nenhum parâmetro válido do simulador RSC foi localizado no arquivo selecionado.");
+            }
+        } catch (err) {
+            alert("Erro ao ler o arquivo de sessão. Certifique-se de selecionar um arquivo .json gerado por esta calculadora.");
+        }
+    };
+    reader.readAsText(file);
+    // Limpar o valor do input file para permitir importar o mesmo arquivo novamente
+    event.target.value = "";
+}
+
+// Exportar planilha das atividades pontuadas para arquivo CSV
+function exportRscPlanilhaCsv() {
+    const rows = [
+        ["Eixo de Comprovacao", "Atividade", "Quantidade Informada", "Pontuacao Obtida"]
+    ];
+
+    const eixosMapeados = [
+        {
+            eixo: "Eixo I: Representações e Comissões",
+            items: [
+                { id: "pts-e1-cperm", label: "Comissão Permanente / Colegiado / Conselho", peso: 10 },
+                { id: "pts-e1-ctemp", label: "Comissão Temporária / Grupo de Trabalho", peso: 5 }
+            ]
+        },
+        {
+            eixo: "Eixo II: Projetos Institucionais",
+            items: [
+                { id: "pts-e2-coord", label: "Coordenador de Projeto de Ensino/Pesquisa/Extensão", peso: 15 },
+                { id: "pts-e2-membro", label: "Membro Executor de Projeto", peso: 10 }
+            ]
+        },
+        {
+            eixo: "Eixo III: Premiações Ocupacionais",
+            items: [
+                { id: "pts-e3-premio", label: "Láurea, Menção Honrosa ou Prêmio de Gestão", peso: 10 }
+            ]
+        },
+        {
+            eixo: "Eixo IV: Encargos e Responsabilidades",
+            items: [
+                { id: "pts-e4-complex", label: "Atividade Especializada de Alta Complexidade / Parecer Técnico", peso: 8 }
+            ]
+        },
+        {
+            eixo: "Eixo V: Funções de Liderança",
+            items: [
+                { id: "pts-e5-cd", label: "Cargos de Direção - CD", peso: 15 },
+                { id: "pts-e5-fg", label: "Função Gratificada / Chefia de Setor - FG", peso: 10 }
+            ]
+        },
+        {
+            eixo: "Eixo VI: Produção e Difusão Técnica",
+            items: [
+                { id: "pts-e6-manual", label: "Nota Técnica, Manual Operacional ou Cartilha", peso: 8 },
+                { id: "pts-e6-live", label: "Suporte Audiovisual / Operação de Transmissão Institucional / Live", peso: 5 }
+            ]
+        }
+    ];
+
+    let totalGeral = 0;
+
+    eixosMapeados.forEach(em => {
+        em.items.forEach(item => {
+            const input = document.getElementById(item.id);
+            const qtd = input ? parseInt(input.value) || 0 : 0;
+            if (qtd > 0) {
+                const pts = qtd * item.peso;
+                totalGeral += pts;
+                rows.push([em.eixo, item.label, qtd.toString(), `${pts} pts`]);
+            }
+        });
+    });
+
+    if (rows.length === 1) {
+        alert("Não há dados de atividades para exportar. Insira valores no simulador.");
+        return;
+    }
+
+    rows.push(["", "", "Total Geral:", `${totalGeral} pts`]);
+
+    // Converter para string CSV no formato adequado com separador de ponto e vírgula
+    const csvContent = "\uFEFF" + rows.map(r => r.map(cell => `"${cell.replace(/"/g, '""')}"`).join(";")).join("\n");
+    const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+    const downloadAnchor = document.createElement("a");
+    const dataAtual = new Date().toISOString().slice(0, 10);
+    
+    downloadAnchor.href = URL.createObjectURL(blob);
+    downloadAnchor.setAttribute("download", `planilha-pontuacao-rsc-${dataAtual}.csv`);
+    document.body.appendChild(downloadAnchor);
+    downloadAnchor.click();
+    downloadAnchor.remove();
 }
 
 // Calcular Pontuação Geral e por Eixo do RSC
