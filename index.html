@@ -208,6 +208,11 @@
                                     </div>
                                     <button type="button" id="btn-add-dep" class="btn-add">+ Adicionar Dependente</button>
                                 </div>
+
+                                <label class="checkbox-label" style="margin-top: 10px;">
+                                    <input type="checkbox" id="contrib-sindical">
+                                    Contribuição Sindical (Filiação ao Sindicato: 1% do Vencimento Básico)
+                                </label>
                             </div>
                         </div>
                     </form>
@@ -262,6 +267,14 @@
                         <div class="result-item deduction">
                             <span>Imposto de Renda (IRRF)</span>
                             <span id="res-irrf" class="val">R$ 0,00</span>
+                        </div>
+                        <div class="result-item deduction" id="row-desc-transporte" style="display: none;">
+                            <span>Cota-Parte Aux-Transporte (6% VB)</span>
+                            <span id="res-desc-transporte" class="val">R$ 0,00</span>
+                        </div>
+                        <div class="result-item deduction" id="row-desc-sindical" style="display: none;">
+                            <span>Contribuição Sindical (1% VB)</span>
+                            <span id="res-desc-sindical" class="val">R$ 0,00</span>
                         </div>
                         <div class="result-item bold deduction">
                             <span>Total Descontos</span>

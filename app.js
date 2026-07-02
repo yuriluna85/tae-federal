@@ -154,7 +154,7 @@ function initA11y() {
 
 // Inicialização dos Inputs da Calculadora
 function initCalcInputs() {
-    const inputs = ["nivel", "padrao", "select-iq", "select-rsc", "select-funcao", "aux-alimentacao", "aux-creche", "creche-dep", "aux-transporte", "transporte-valor", "transporte-dias", "transporte-pgd", "aux-saude", "saude-idade"];
+    const inputs = ["nivel", "padrao", "select-iq", "select-rsc", "select-funcao", "aux-alimentacao", "aux-creche", "creche-dep", "aux-transporte", "transporte-valor", "transporte-dias", "transporte-pgd", "contrib-sindical", "aux-saude", "saude-idade"];
     
     inputs.forEach(id => {
         const el = document.getElementById(id);
@@ -339,6 +339,7 @@ function calculateSalary() {
     }
 
     let valorTransporte = 0;
+    let contrapartidaTransporte = 0;
     if (document.getElementById("aux-transporte").checked) {
         const valorDiario = parseFloat(document.getElementById("transporte-valor").value) || 0;
         const dias = parseInt(document.getElementById("transporte-dias").value) || 0;
@@ -347,7 +348,14 @@ function calculateSalary() {
         // PGD reduz o transporte de acordo com o percentual de teletrabalho
         const fatorPGD = (100 - pgd) / 100.0;
         valorTransporte = valorDiario * dias * fatorPGD;
+
+        // Contrapartida de 6% do Vencimento Básico (VB)
+        contrapartidaTransporte = valorTransporte > 0 ? Math.min(valorTransporte, vencimentoBasico * 0.06) : 0;
     }
+
+    // Contribuição Sindical (1% do Vencimento Básico)
+    const sindicalAtivo = document.getElementById("contrib-sindical").checked;
+    const valorSindical = sindicalAtivo ? vencimentoBasico * 0.01 : 0;
 
     // 4. Saúde Suplementar (Titular e Dependentes)
     let valorSaude = 0;
@@ -377,16 +385,16 @@ function calculateSalary() {
     const pss = calcularPSS(baseTributavel);
 
     // IRRF - Imposto de Renda Retido na Fonte
-    // Base de cálculo = base tributável - PSS - dependentes (dedução legal R$ 189,59 cada)
+    // Base de cálculo = base tributável - PSS - dependentes (dedução legal R$ 189,59 cada) - contribuição sindical
     const depAgesCount = document.querySelectorAll(".dep-age").length;
     const crecheDepCount = document.getElementById("aux-creche").checked ? parseInt(document.getElementById("creche-dep").value) || 0 : 0;
     const totalDependentesIRRF = Math.max(depAgesCount, crecheDepCount); // Total de dependentes legais dedutíveis
     const deducaoDependentes = totalDependentesIRRF * 189.59;
     
-    const baseIRRF = Math.max(0, baseTributavel - pss - deducaoDependentes);
+    const baseIRRF = Math.max(0, baseTributavel - pss - deducaoDependentes - valorSindical);
     const irrf = calcularIRRF(baseIRRF);
 
-    const totalDescontos = pss + irrf;
+    const totalDescontos = pss + irrf + contrapartidaTransporte + valorSindical;
     const liquidoTotal = brutoTotal - totalDescontos;
 
     // RENDERIZAR RESULTADOS NA TELA
@@ -397,6 +405,27 @@ function calculateSalary() {
     document.getElementById("res-transporte").textContent = formatCurrency(valorTransporte);
     document.getElementById("res-creche").textContent = formatCurrency(valorCreche);
     document.getElementById("res-saude").textContent = formatCurrency(valorSaude);
+    
+    // Atualizar visualização e valores dos novos descontos
+    const rowTrans = document.getElementById("row-desc-transporte");
+    if (rowTrans) {
+        if (contrapartidaTransporte > 0) {
+            rowTrans.style.display = "flex";
+            document.getElementById("res-desc-transporte").textContent = formatCurrency(contrapartidaTransporte);
+        } else {
+            rowTrans.style.display = "none";
+        }
+    }
+
+    const rowSind = document.getElementById("row-desc-sindical");
+    if (rowSind) {
+        if (valorSindical > 0) {
+            rowSind.style.display = "flex";
+            document.getElementById("res-desc-sindical").textContent = formatCurrency(valorSindical);
+        } else {
+            rowSind.style.display = "none";
+        }
+    }
     
     document.getElementById("res-bruto").textContent = formatCurrency(brutoTotal);
     document.getElementById("res-pss").textContent = formatCurrency(pss);
