@@ -2,7 +2,11 @@
 ### YLuna85 LABs — Laboratório de Softwares
 *Mascotes Oficiais: Coragem e Bolinho de chuva*
 
+**Acesse online em:** [taes-federal.com.br](https://taes-federal.com.br)
+**Repositório Oficial:** [github.com/yuriluna85/tae-federal](https://github.com/yuriluna85/tae-federal)
+
 ---
+
 
 Este projeto consiste em um simulador financeiro e visualizador de carreira voltado para os servidores Técnico-Administrativos em Educação (TAEs) vinculados às Universidades e Institutos Federais de Ensino. O software unifica as regras e as reestruturações salariais vigentes a partir de **1º de abril de 2026** (decorrentes da Lei nº 15.141/2025 e Lei nº 15.367/2026).
 
@@ -54,12 +58,10 @@ Como a aplicação foi construída inteiramente com código estático nativo (SP
 2.  Dê duplo clique no arquivo `index.html` para abrir a aplicação instantaneamente em qualquer navegador moderno.
 
 ### Hospedagem no GitHub (GitHub Pages):
-Este repositório está estruturado especificamente para publicação direta e imediata no GitHub Pages:
-1.  Suba a pasta do projeto para um repositório público no GitHub.
-2.  Vá em **Settings** (Configurações) do repositório no GitHub.
-3.  Acesse a aba **Pages** na lateral esquerda.
-4.  Em **Build and deployment**, selecione a branch `main` (ou `master`) e a pasta raiz (`/root`) e clique em **Save**.
-5.  A aplicação estará disponível online em poucos instantes no endereço público gerado pelo GitHub (ex: `https://seu-usuario.github.io/nome-do-repositorio`).
+Este repositório está publicado no endereço [github.com/yuriluna85/tae-federal](https://github.com/yuriluna85/tae-federal) e configurado com domínio personalizado no GitHub Pages:
+1. O repositório está integrado sob a branch `main` e publicado via GitHub Pages.
+2. Está associado ao domínio customizado [taes-federal.com.br](https://taes-federal.com.br) para navegação de produção com HTTPS seguro.
+
 
 ---
 
@@ -71,6 +73,7 @@ Este repositório está estruturado especificamente para publicação direta e i
 *   ✈️ **Simulador de Diárias**: Novo painel completo para cálculo de diárias nacionais (Decreto nº 11.872/2023) parametrizado por destino (Demais Cidades, Capitais, Brasília/Manaus/RJ/SP) e cargo/função, deduzindo proporcionalmente as parcelas diárias de auxílio-alimentação e auxílio-transporte do servidor em trânsito.
 *   🎯 **Pontuação RSC em Tempo Real**: Indicadores de pontos individuais exibidos dinamicamente ao lado de cada caixa de quantidade de atividades no barema de RSC, otimizando a visualização e usabilidade.
 *   📰 **Notícias Dinâmicas via RSS Scraper**: Acoplamento do leitor de notícias assíncrono buscando do arquivo notícias local `noticias.json`, alimentado por um scraper automático Python que roda a cada 24h via GitHub Actions.
+*   🔧 **Correção de Permissão no Workflow**: Adicionada a permissão explícita `contents: write` ao `GITHUB_TOKEN` no arquivo `update_news.yml` para evitar erros de permissão 403 ao tentar atualizar o arquivo `noticias.json`.
 
 ### [02/07/2026] - Lançamento e Configuração Inicial
 *   🚀 **Estruturação do Projeto**: Criação da base de códigos em [index.html](file:///G:/Meu%20Drive/APP/2.%20Projetos%20e%20Aplica%C3%A7%C3%B5es/2.2%20Aplica%C3%A7%C3%B5es%20e%20C%C3%B3digos%20(GitHub)/YLuna85%20LABs%20APPs/calculadora-tae-federal/index.html), [style.css](file:///G:/Meu%20Drive/APP/2.%20Projetos%20e%20Aplica%C3%A7%C3%B5es/2.2%20Aplica%C3%A7%C3%B5es%20e%20C%C3%B3digos%20(GitHub)/YLuna85%20LABs%20APPs/calculadora-tae-federal/style.css) e [app.js](file:///G:/Meu%20Drive/APP/2.%20Projetos%20e%20Aplica%C3%A7%C3%B5es/2.2%20Aplica%C3%A7%C3%B5es%20e%20C%C3%B3digos%20(GitHub)/YLuna85%20LABs%20APPs/calculadora-tae-federal/app.js).
