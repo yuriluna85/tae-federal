@@ -89,7 +89,7 @@ const pcctaeData = {
     }
 };
 
-// Dados completos do Barema de Pontuação RSC-PCCTAE (Conforme Minuta do Decreto de Regulamentação Nacional)
+// Dados completos do Barema de Pontuação RSC-PCCTAE (Regulamentado pelo Decreto nº 13.048, de 3 de julho de 2026)
 const RSC_ANEXOS_DATA = [
     {
         id: 1,
@@ -819,6 +819,21 @@ function initRscCalc() {
         rscPleiteadoSelect.addEventListener("change", calculateRscPoints);
     }
 
+    const rscSaldoAnterior = document.getElementById("rsc-saldo-anterior");
+    if (rscSaldoAnterior) {
+        rscSaldoAnterior.addEventListener("input", calculateRscPoints);
+    }
+
+    const rscEstagioProbatorio = document.getElementById("rsc-estagio-probatorio");
+    if (rscEstagioProbatorio) {
+        rscEstagioProbatorio.addEventListener("change", calculateRscPoints);
+    }
+
+    const rscCumpreIntersticio = document.getElementById("rsc-cumpre-intersticio");
+    if (rscCumpreIntersticio) {
+        rscCumpreIntersticio.addEventListener("change", calculateRscPoints);
+    }
+
     // Ações de Importação e Exportação
     const btnExportJson = document.getElementById("btn-export-json");
     const btnImportTrigger = document.getElementById("btn-import-trigger");
@@ -852,6 +867,21 @@ function exportRscSessao() {
         data["rsc-nivel-pleiteado"] = selectNivel.value;
     }
 
+    const saldoAnteriorEl = document.getElementById("rsc-saldo-anterior");
+    if (saldoAnteriorEl) {
+        data["rsc-saldo-anterior"] = parseFloat(saldoAnteriorEl.value) || 0;
+    }
+
+    const estagioEl = document.getElementById("rsc-estagio-probatorio");
+    if (estagioEl) {
+        data["rsc-estagio-probatorio"] = estagioEl.checked;
+    }
+
+    const intersticioEl = document.getElementById("rsc-cumpre-intersticio");
+    if (intersticioEl) {
+        data["rsc-cumpre-intersticio"] = intersticioEl.checked;
+    }
+
     const jsonString = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(data, null, 2));
     const downloadAnchor = document.createElement("a");
     const dataAtual = new Date().toISOString().slice(0, 10);
@@ -882,6 +912,12 @@ function importRscSessao(event) {
                         totalCarregados++;
                     } else if (id === "rsc-nivel-pleiteado") {
                         el.value = data[id];
+                        totalCarregados++;
+                    } else if (id === "rsc-saldo-anterior") {
+                        el.value = parseFloat(data[id]) || 0;
+                        totalCarregados++;
+                    } else if (id === "rsc-estagio-probatorio" || id === "rsc-cumpre-intersticio") {
+                        el.checked = !!data[id];
                         totalCarregados++;
                     }
                 }
@@ -941,7 +977,7 @@ function exportRscPlanilhaCsv() {
     downloadAnchor.remove();
 }
 
-// Alvos de Pontuação e Critérios por Nível (Conforme Minuta do Decreto - SEI 23000.026640/2025-10)
+// Alvos de Pontuação e Critérios por Nível (Regulamentado pelo Art. 5º do Decreto nº 13.048, de 3 de julho de 2026)
 const RSC_LEVEL_TARGETS = {
     rsc_fundamental: { name: "RSC-PCCTAE-I", pts: 10, crit: 1, validate: (ativs) => true, msg: "" },
     rsc_medio: { name: "RSC-PCCTAE-II", pts: 15, crit: 2, validate: (ativs) => true, msg: "" },
@@ -1006,10 +1042,22 @@ function calculateRscPoints() {
         }
     }
 
-    // Atualizar pontos totais
+    // Obter saldo anterior
+    const saldoAnteriorEl = document.getElementById("rsc-saldo-anterior");
+    const saldoAnterior = saldoAnteriorEl ? (parseFloat(saldoAnteriorEl.value) || 0) : 0;
+    const totalComSaldo = total + saldoAnterior;
+
+    // Obter parâmetros administrativos do Decreto
+    const estagioProbatorioEl = document.getElementById("rsc-estagio-probatorio");
+    const isEstagioProbatorio = estagioProbatorioEl ? estagioProbatorioEl.checked : false;
+
+    const cumpreIntersticioEl = document.getElementById("rsc-cumpre-intersticio");
+    const isCumpreIntersticio = cumpreIntersticioEl ? cumpreIntersticioEl.checked : true;
+
+    // Atualizar pontos totais (incluindo saldo anterior)
     const totalPointsEl = document.getElementById("rsc-total-points");
     if (totalPointsEl) {
-        totalPointsEl.textContent = total.toFixed(1);
+        totalPointsEl.textContent = totalComSaldo.toFixed(1);
     }
 
     const selectNivel = document.getElementById("rsc-nivel-pleiteado");
@@ -1017,13 +1065,15 @@ function calculateRscPoints() {
 
     const target = RSC_LEVEL_TARGETS[rscNivelSelected] || RSC_LEVEL_TARGETS.rsc_especializacao;
     
-    const isPointsOk = total >= target.pts;
+    const isPointsOk = totalComSaldo >= target.pts;
     const isCritOk = totalCriteria >= target.crit;
     const isObrigatorioOk = target.validate(eixosAtivosCount);
-    const isApproved = isPointsOk && isCritOk && isObrigatorioOk;
+    
+    // Concessão inviável se estiver em estágio probatório ou não cumprir interstício
+    const isApproved = isPointsOk && isCritOk && isObrigatorioOk && !isEstagioProbatorio && isCumpreIntersticio;
 
     // Calcular e atualizar progresso
-    const pct = Math.min(100, Math.round((total / target.pts) * 100));
+    const pct = Math.min(100, Math.round((totalComSaldo / target.pts) * 100));
     const progressPctEl = document.getElementById("rsc-progress-pct");
     if (progressPctEl) {
         progressPctEl.textContent = `${pct}%`;
@@ -1039,8 +1089,10 @@ function calculateRscPoints() {
         fill.style.width = `${pct}%`;
         if (isApproved) {
             fill.style.backgroundColor = "#10b981"; // Verde sucesso
+        } else if (isEstagioProbatorio || !isCumpreIntersticio) {
+            fill.style.backgroundColor = "#dc3545"; // Vermelho bloqueado
         } else {
-            fill.style.backgroundColor = "var(--color-accent)"; // Ciano padrão (bloqueio ou pendente)
+            fill.style.backgroundColor = "var(--color-accent)"; // Ciano padrão (pendente)
         }
     }
 
@@ -1051,21 +1103,35 @@ function calculateRscPoints() {
     const statusDesc = document.getElementById("rsc-status-desc");
 
     if (statusBox && statusIcon && statusTitle && statusDesc) {
-        if (isApproved) {
+        if (isEstagioProbatorio) {
+            statusBox.className = "rsc-status blocked";
+            statusIcon.textContent = "❌";
+            statusTitle.textContent = "Servidor Inelegível (Estágio Probatório)";
+            statusDesc.textContent = "Conforme o Art. 12 do Decreto nº 13.048/2026, o RSC-PCCTAE não poderá ser concedido a servidores que se encontrem sob o regime de estágio probatório (as atividades realizadas no período, contudo, poderão ser pontuadas futuramente).";
+        } else if (!isCumpreIntersticio) {
+            statusBox.className = "rsc-status blocked";
+            statusIcon.textContent = "❌";
+            statusTitle.textContent = "Servidor Inelegível (Interstício Não Cumprido)";
+            statusDesc.textContent = "Conforme o Art. 11 do Decreto nº 13.048/2026, o RSC-PCCTAE somente poderá ser requerido após o cumprimento do interstício de 3 (três) anos, contado da data da última concessão.";
+        } else if (isApproved) {
             statusBox.className = "rsc-status approved";
             statusIcon.textContent = "✅";
             statusTitle.textContent = "Requisitos Atingidos!";
-            statusDesc.textContent = `Parabéns! Seu memorial descritivo atinge a pontuação mínima (${total.toFixed(1)} de ${target.pts} pts) e o total de critérios exigidos (${totalCriteria} de ${target.crit}) para homologação do ${target.name}.`;
+            let descStr = `Parabéns! Seu memorial descritivo atinge a pontuação mínima (${totalComSaldo.toFixed(1)} de ${target.pts} pts) e o total de critérios exigidos (${totalCriteria} de ${target.crit}) para homologação do ${target.name}.`;
+            if (saldoAnterior > 0) {
+                descStr += ` (Saldo anterior de ${saldoAnterior.toFixed(1)} pts incorporado com sucesso).`;
+            }
+            statusDesc.textContent = descStr;
         } else {
             statusBox.className = "rsc-status pending";
             statusIcon.textContent = "⚠️";
             
             if (!isPointsOk) {
                 statusTitle.textContent = "Pontuação Insuficiente";
-                statusDesc.textContent = `Você acumulou ${total.toFixed(1)} pontos. Faltam ${(target.pts - total).toFixed(1)} pontos para atingir o mínimo de ${target.pts} pts exigido para o ${target.name}.`;
+                statusDesc.textContent = `Você acumulou ${totalComSaldo.toFixed(1)} pontos. Faltam ${(target.pts - totalComSaldo).toFixed(1)} pontos para atingir o mínimo de ${target.pts} pts exigido para o ${target.name}.`;
             } else if (!isCritOk) {
                 statusTitle.textContent = "Critérios Insuficientes";
-                statusDesc.textContent = `Você acumulou ${total.toFixed(1)} pontos em apenas ${totalCriteria} critérios. É necessário ter pelo menos ${target.crit} critérios ativos para homologação do ${target.name}.`;
+                statusDesc.textContent = `Você acumulou ${totalComSaldo.toFixed(1)} pontos em apenas ${totalCriteria} critérios. É necessário ter pelo menos ${target.crit} critérios ativos para homologação do ${target.name}.`;
             } else {
                 statusTitle.textContent = "Requisito Obrigatório Ausente";
                 statusDesc.textContent = `Apesar de atingir os pontos e critérios, seu memorial não atendeu à regra do ${target.name} que ${target.msg}. Adicione atividades nos eixos exigidos para prosseguir.`;
@@ -1089,38 +1155,38 @@ function updateRscLevelInfo() {
         rsc_fundamental: {
             titulo: "RSC-PCCTAE-I (Equivalência a Ensino Fundamental Completo)",
             percentual: "10%",
-            requisito: "Não possuir Ensino Fundamental completo (Art. 12-C, § 2º, I).",
-            nota: "Conforme o **Art. 12-C, § 2º, inciso I da Lei nº 11.091/2005 (incluído pela Lei nº 15.367/2026)**: destinado a servidor que não concluiu o ensino fundamental, concedendo o Incentivo à Qualificação de 10% (dez por cento) do valor do vencimento básico."
+            requisito: "Não possuir Ensino Fundamental completo (Art. 5º, § 1º, I).",
+            nota: "Conforme o **Art. 5º, § 1º, inciso I do Decreto nº 13.048/2026**: destinado a servidor que não concluiu o ensino fundamental, concedendo o Incentivo à Qualificação de 10% (dez por cento) do valor do vencimento básico."
         },
         rsc_medio: {
             titulo: "RSC-PCCTAE-II (Equivalência a Ensino Médio Completo)",
             percentual: "15%",
-            requisito: "Possuir certificado de conclusão de Ensino Fundamental completo (Art. 12-C, § 2º, II).",
-            nota: "Conforme o **Art. 12-C, § 2º, inciso II da Lei nº 11.091/2005 (incluído pela Lei nº 15.367/2026)**: destinado a servidor com certificado de conclusão do ensino fundamental, concedendo o Incentivo à Qualificação de 15% (quinze por cento) do valor do vencimento básico."
+            requisito: "Possuir certificado de conclusão de Ensino Fundamental completo (Art. 5º, § 1º, II).",
+            nota: "Conforme o **Art. 5º, § 1º, inciso II do Decreto nº 13.048/2026**: destinado a servidor com certificado de conclusão do ensino fundamental, concedendo o Incentivo à Qualificação de 15% (quinze por cento) do valor do vencimento básico."
         },
         rsc_graduacao: {
             titulo: "RSC-PCCTAE-III (Equivalência a Ensino Superior/Graduação Completa)",
             percentual: "25%",
-            requisito: "Possuir certificado ou diploma de conclusão do Ensino Médio ou de Técnico de nível médio (Art. 12-C, § 2º, III).",
-            nota: "Conforme o **Art. 12-C, § 2º, inciso III da Lei nº 11.091/2005 (incluído pela Lei nº 15.367/2026)**: destinado a servidor com certificado ou diploma de conclusão do ensino médio ou de técnico de nível médio, concedendo o Incentivo à Qualificação de 25% (vinte e cinco por cento) do valor do vencimento básico."
+            requisito: "Possuir certificado ou diploma de conclusão do Ensino Médio ou de Técnico de nível médio (Art. 5º, § 1º, III).",
+            nota: "Conforme o **Art. 5º, § 1º, inciso III do Decreto nº 13.048/2026**: destinado a servidor com certificado ou diploma de conclusão do ensino médio ou de técnico de nível médio, concedendo o Incentivo à Qualificação de 25% (vinte e cinco por cento) do valor do vencimento básico."
         },
         rsc_especializacao: {
             titulo: "RSC-PCCTAE-IV (Equivalência a Pós-Graduação Lato Sensu/Especialização Completa)",
             percentual: "30%",
-            requisito: "Possuir diploma de Graduação no ensino superior (Art. 12-C, § 2º, IV).",
-            nota: "Conforme o **Art. 12-C, § 2º, inciso IV da Lei nº 11.091/2005 (incluído pela Lei nº 15.367/2026)**: destinado a servidor com diploma de graduação no ensino superior, concedendo o Incentivo à Qualificação de 30% (trinta por cento) do valor do vencimento básico."
+            requisito: "Possuir diploma de Graduação no ensino superior (Art. 5º, § 1º, IV).",
+            nota: "Conforme o **Art. 5º, § 1º, inciso IV do Decreto nº 13.048/2026**: destinado a servidor com diploma de graduação no ensino superior, concedendo o Incentivo à Qualificação de 30% (trinta por cento) do valor do vencimento básico. **Regra de Homologação**: Exige pontuação em pelo menos um critério dos Eixos II, IV, V ou VI."
         },
         rsc_mestrado: {
             titulo: "RSC-PCCTAE-V (Equivalência a Mestrado Completo)",
             percentual: "52%",
-            requisito: "Possuir certificado de pós-graduação lato sensu/especialização (Art. 12-C, § 2º, V).",
-            nota: "Conforme o **Art. 12-C, § 2º, inciso V da Lei nº 11.091/2005 (incluído pela Lei nº 15.367/2026)**: destinado a servidor com certificado de pós-graduação lato sensu, concedendo o Incentivo à Qualificação de 52% (cinquenta e dois por cento) do valor do vencimento básico."
+            requisito: "Possuir certificado de pós-graduação lato sensu/especialização (Art. 5º, § 1º, V).",
+            nota: "Conforme o **Art. 5º, § 1º, inciso V do Decreto nº 13.048/2026**: destinado a servidor com certificado de pós-graduação lato sensu, concedendo o Incentivo à Qualificação de 52% (cinquenta e dois por cento) do valor do vencimento básico. **Regra de Homologação**: Exige pontuação em pelo menos um critério dos Eixos IV, V ou VI."
         },
         rsc_doutorado: {
             titulo: "RSC-PCCTAE-VI (Equivalência a Doutorado Completo)",
             percentual: "75%",
-            requisito: "Possuir diploma de Mestrado completo (Art. 12-C, § 2º, VI).",
-            nota: "Conforme o **Art. 12-C, § 2º, inciso VI da Lei nº 11.091/2005 (incluído pela Lei nº 15.367/2026)**: destinado a servidor com diploma de mestrado, concedendo o Incentivo à Qualificação de 75% (setenta e cinco por cento) do valor do vencimento básico. **Critério Adicional**: É obrigatório pontuar no **Eixo VI (Produção e Difusão Técnica)**, em alinhamento com o **Art. 12-D, inciso VI**."
+            requisito: "Possuir diploma de Mestrado completo (Art. 5º, § 1º, VI).",
+            nota: "Conforme o **Art. 5º, § 1º, inciso VI do Decreto nº 13.048/2026**: destinado a servidor com diploma de mestrado, concedendo o Incentivo à Qualificação de 75% (setenta e cinco por cento) do valor do vencimento básico. **Regra de Homologação**: É obrigatório pontuar no **Eixo VI (Produção e Difusão Técnica)**, em alinhamento com o **Art. 5º, inciso VI**."
         }
     };
 
