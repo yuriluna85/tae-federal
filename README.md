@@ -63,14 +63,17 @@ Este repositório está publicado no endereço [github.com/yuriluna85/tae-federa
 2. Está associado ao domínio customizado [taes-federal.com.br](https://taes-federal.com.br) para navegação de produção com HTTPS seguro.
 
 
----
-
 ## 📝 Log de Atualizações (Changelog)
 
-### [04/07/2026] - Correção na Inicialização do Google AdSense
-*   💵 **Correção de Inicialização**: Corrigido bug na função `initAdSense` no arquivo [app.js](file:///G:/Meu%20Drive/APP/2.%20Projetos%20e%20Aplica%C3%A7%C3%B5es/2.2%20Aplica%C3%A7%C3%B5es%20e%20C%C3%B3digos%20(GitHub)/YLuna85%20LABs%20APPs/calculadora-tae-federal/app.js) onde a validação `ad.offsetWidth > 0 && ad.offsetHeight > 0` impedia a chamada `.push({})` em elementos vazios que possuíam altura inicial 0. A verificação foi atualizada para `ad.offsetParent !== null && ad.offsetWidth > 0` para prevenir o erro `TagError: No slot size for availableWidth=0` quando a página é aberta em segundo plano (background tabs) ou durante o reflow.
+### [04/07/2026] - Simplificação e Ajuste no Cálculo de Diárias & Correção do AdSense
+*   ✈️ **Revisão do Cálculo de Diárias**:
+    *   Removido o Vencimento Básico (VB), o fator de Teletrabalho/PGD (considerando que o servidor em viagem está obrigatoriamente em regime presencial) e a contagem total de dias de benefício do cálculo do desconto de Auxílio-Transporte em trânsito.
+    *   Simplificada a dedução do Auxílio-Transporte para ser meramente o produto do valor diário informado (`diaria-transporte-valor-input`) pela quantidade de dias com desconto efetivo.
+    *   O cálculo com cota-parte de 6% do VB continua valendo estritamente para a folha de proventos regular (salário).
+    *   Atualizada a interface em [index.html](file:///G:/Meu%20Drive/APP/2.%20Projetos e Aplicações/2.2 Aplicações e Códigos (GitHub)/YLuna85 LABs APPs/calculadora-tae-federal/index.html) removendo os campos de PGD, VB e total de dias do painel de diárias, mantendo apenas o campo de "Valor Diário do Auxílio-Transporte".
+*   💵 **Correção na Inicialização do AdSense**: Corrigido bug na função `initAdSense` no arquivo [app.js](file:///G:/Meu%20Drive/APP/2.%20Projetos e Aplicações/2.2 Aplicações e Códigos (GitHub)/YLuna85 LABs APPs/calculadora-tae-federal/app.js) onde a validação de largura/altura impedia a chamada `.push({})` em abas de segundo plano ou durante o reflow. A verificação foi atualizada para `ad.offsetParent !== null && ad.offsetWidth > 0` para prevenir o erro `TagError: No slot size for availableWidth=0`.
 *   ⚡ **Event Listener de Visibilidade**: Adicionado ouvinte para o evento `visibilitychange` de forma que anúncios sejam carregados assim que a aba inativa passe a ficar visível em primeiro plano.
-*   🏷️ **Atualização dos Slots de Anúncio**: Substituídos os slots fictícios nos blocos de topo e rodapé de [index.html](file:///G:/Meu%20Drive/APP/2.%20Projetos%20e%20Aplica%C3%A7%C3%B5es/2.2%20Aplica%C3%A7%C3%B5es%20e%20C%C3%B3digos%20(GitHub)/YLuna85%20LABs%20APPs/calculadora-tae-federal/index.html) pelos códigos numéricos reais dos novos blocos horizontais criados pelo usuário: `3035454922` (topo) e `9215931459` (rodapé).
+*   🏷️ **Atualização dos Slots de Anúncio**: Substituídos os slots fictícios nos blocos de topo e rodapé de [index.html](file:///G:/Meu%20Drive/APP/2.%20Projetos e Aplicações/2.2 Aplicações e Códigos (GitHub)/YLuna85 LABs APPs/calculadora-tae-federal/index.html) pelos códigos numéricos reais dos novos blocos horizontais criados pelo usuário: `3035454922` (topo) e `9215931459` (rodapé).
 *   🔒 **Ofuscação de Dados Sensíveis**: Substituído o ID de cliente real do AdSense por marcador genérico (`ca-pub-xxxxxxxxxxxxxxxx`) no changelog histórico e na documentação para preservação de privacidade em repositório público.
 
 ### [03/07/2026] - Regulamentação do RSC (Decreto nº 13.048/2026) e Tabelas de Funções Comissionadas

@@ -613,12 +613,6 @@ function calculateSalary() {
 
     // Atualizar Gráfico do Contracheque (Função comissionada entra no segmento básico)
     updateSalaryChart(vencimentoBasicoEfetivo + valorFuncao, valorQualifEfetivo, totalAuxilios, totalDescontos);
-    
-    // Sincronizar o Vencimento Básico padrão com o simulador de diárias (se o usuário não o tiver editado manualmente)
-    const diariaVbInput = document.getElementById("diaria-vb-input");
-    if (diariaVbInput && !diariaVbInput.dataset.userEdited) {
-        diariaVbInput.value = vencimentoBasico.toFixed(2);
-    }
 
     // Atualizar Diárias se estiverem ativas
     if (typeof calculateDiarias === "function") {
@@ -628,10 +622,11 @@ function calculateSalary() {
 
 // Formatar Moeda Real R$
 function formatCurrency(val) {
+    if (val === undefined || val === null) return "R$ 0,00";
     return val.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 }
 
-// Algoritmo de Cálculo PSS Progressivo
+// Algoritmo de Cálculo PSS Progressivo (Referência 2026)
 function calcularPSS(base) {
     const aliquotas = [
         { limite: 1412.00, tax: 0.075 }, // Salário mínimo em 2024, referência
@@ -1222,7 +1217,7 @@ function initDiarias() {
     const inputs = [
         "diaria-cargo", "diaria-destino", "diaria-inicio", "diaria-fim",
         "diaria-alimentacao-checkbox", "diaria-transporte-checkbox",
-        "diaria-transporte-valor-input", "diaria-transporte-dias-input", "diaria-transporte-pgd-input"
+        "diaria-transporte-valor-input"
     ];
     inputs.forEach(id => {
         const el = document.getElementById(id);
@@ -1252,17 +1247,7 @@ function initDiarias() {
         });
     }
 
-    const diariaVb = document.getElementById("diaria-vb-input");
-    if (diariaVb) {
-        diariaVb.addEventListener("input", () => {
-            diariaVb.dataset.userEdited = "true";
-            calculateDiarias();
-        });
-        diariaVb.addEventListener("change", () => {
-            diariaVb.dataset.userEdited = "true";
-            calculateDiarias();
-        });
-    }
+
 }
 
 // Verifica se no dia incide desconto de alimentação/transporte (não incide em fins de semana e feriados)
@@ -1343,22 +1328,11 @@ function calculateDiarias() {
     const alimentacaoDiaria = alimentacaoAtiva ? (pcctaeData.auxilios.alimentacao / 22) : 0;
     const descontoAlimentacao = alimentacaoDiaria * diasDescontoEfetivos;
 
-    // Desconto de Auxílio Transporte (Calculado de forma autônoma e local)
+        // Desconto de Auxílio Transporte (Somente o valor diário do auxílio-transporte, sem dedução de 6% ou PGD)
     let transporteDiarioLiquido = 0;
     const transporteAtivo = document.getElementById("diaria-transporte-checkbox").checked;
     if (transporteAtivo) {
-        const valorDiario = parseFloat(document.getElementById("diaria-transporte-valor-input").value) || 0;
-        const dias = parseInt(document.getElementById("diaria-transporte-dias-input").value) || 0;
-        const pgd = parseFloat(document.getElementById("diaria-transporte-pgd-input").value) || 0;
-        const vencimentoBasico = parseFloat(document.getElementById("diaria-vb-input").value) || 0;
-        
-        const fatorPGD = (100 - pgd) / 100.0;
-        const valorMensalBruto = valorDiario * dias * fatorPGD;
-        const contrapartidaMensal = valorMensalBruto > 0 ? Math.min(valorMensalBruto, vencimentoBasico * 0.06) : 0;
-        const valorMensalLiquido = Math.max(0, valorMensalBruto - contrapartidaMensal);
-        
-        // A dedução diária no SIAPE é equivalente a 1/22 do valor líquido mensal creditado ao servidor
-        transporteDiarioLiquido = valorMensalLiquido / 22;
+        transporteDiarioLiquido = parseFloat(document.getElementById("diaria-transporte-valor-input").value) || 0;
     }
     const descontoTransporte = transporteDiarioLiquido * diasDescontoEfetivos;
 
