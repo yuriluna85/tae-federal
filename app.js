@@ -214,6 +214,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Inicialização segura do AdSense após reflow do layout
     setTimeout(initAdSense, 300);
+
+    // Inicializar anúncios caso a página passe do plano de fundo para ativa
+    document.addEventListener("visibilitychange", () => {
+        if (document.visibilityState === "visible") {
+            initAdSense();
+        }
+    });
 });
 
 // Inicialização segura do Google AdSense
@@ -221,7 +228,7 @@ function initAdSense() {
     try {
         const ads = document.querySelectorAll(".adsbygoogle:not([data-adsbygoogle-status='done'])");
         ads.forEach(ad => {
-            if (ad.offsetParent !== null) {
+            if (ad.offsetParent !== null && ad.offsetWidth > 0) {
                 ad.setAttribute("data-adsbygoogle-status", "done");
                 (window.adsbygoogle = window.adsbygoogle || []).push({});
             }
