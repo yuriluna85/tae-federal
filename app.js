@@ -221,7 +221,7 @@ function initAdSense() {
     try {
         const ads = document.querySelectorAll(".adsbygoogle:not([data-adsbygoogle-status='done'])");
         ads.forEach(ad => {
-            if (ad.offsetWidth > 0 && ad.offsetHeight > 0) {
+            if (ad.offsetParent !== null) {
                 ad.setAttribute("data-adsbygoogle-status", "done");
                 (window.adsbygoogle = window.adsbygoogle || []).push({});
             }

@@ -67,6 +67,11 @@ Este repositório está publicado no endereço [github.com/yuriluna85/tae-federa
 
 ## 📝 Log de Atualizações (Changelog)
 
+### [04/07/2026] - Correção na Inicialização do Google AdSense
+*   💵 **Correção de Inicialização**: Corrigido bug na função `initAdSense` no arquivo [app.js](file:///G:/Meu%20Drive/APP/2.%20Projetos%20e%20Aplica%C3%A7%C3%B5es/2.2%20Aplica%C3%A7%C3%B5es%20e%20C%C3%B3digos%20(GitHub)/YLuna85%20LABs%20APPs/calculadora-tae-federal/app.js) onde a validação `ad.offsetWidth > 0 && ad.offsetHeight > 0` impedia a chamada `.push({})` em elementos vazios que possuíam altura inicial 0. A verificação foi atualizada para `ad.offsetParent !== null` (que valida visibilidade real no DOM sem sofrer com altura 0 pré-carregamento).
+*   🏷️ **Atualização dos Slots de Anúncio**: Substituídos os slots fictícios (`XXXXXXXXXX` e `YYYYYYYYYY`) nos blocos manual de topo e rodapé de [index.html](file:///G:/Meu%20Drive/APP/2.%20Projetos%20e%20Aplica%C3%A7%C3%B5es/2.2%20Aplica%C3%A7%C3%B5es%20e%20C%C3%B3digos%20(GitHub)/YLuna85%20LABs%20APPs/calculadora-tae-federal/index.html) pelos códigos numéricos reais de produção (`1760113261` e `4348536596`) gerados no painel do Google AdSense.
+*   🔒 **Ofuscação de Dados Sensíveis**: Substituído o ID de cliente real do AdSense por marcador genérico (`ca-pub-xxxxxxxxxxxxxxxx`) no changelog histórico e na documentação para preservação de privacidade em repositório público.
+
 ### [03/07/2026] - Regulamentação do RSC (Decreto nº 13.048/2026) e Tabelas de Funções Comissionadas
 *   ⚖️ **Regulamentação Oficial do RSC**: Atualizado o simulador de pontuação e o painel de informativos com base nas diretrizes oficiais do recém-publicado **Decreto nº 13.048, de 3 de julho de 2026**, que estabelece a pontuação e os critérios específicos (Anexos I a VI) para os níveis RSC-I a RSC-VI.
 *   ⚙️ **Parâmetros Administrativos**: Implementados inputs no simulador para Saldo de Pontos Anterior (Art. 5º, § 2º - cumulatividade), Em Estágio Probatório (Art. 12) e Cumpre Interstício de 3 anos (Art. 11), incluindo regras visuais e de lógica que bloqueiam a homologação e mostram alertas na cor vermelha caso o servidor esteja inapto administrativamente.
@@ -104,4 +109,4 @@ Este repositório está publicado no endereço [github.com/yuriluna85/tae-federa
 *   📰 **Mural de Novidades**: Desenvolvimento e acoplamento de seção de novidades e informes rápidos da carreira na parte inferior da aba da calculadora, promovendo visibilidade imediata para eixos e diretrizes regulamentares.
 *   🎯 **Calculadora de Pontuação RSC**: Lançamento da nova aba de cálculo de pontuação baseada em eixos de curadoria documental, com pesos parametrizados e verificação de status de homologação de 50 pontos mínimos.
 *   🎨 **Favicon do Laboratório**: Incorporação da marca oficial **YLuna85 LABs** como ícone de página (favicon) no head do documento HTML.
-*   💵 **Parametrização do AdSense**: Substituição das chaves de identificação genéricas do Google AdSense pelo ID de cliente real (`ca-pub-7370246789612593`) no cabeçalho e contêineres do simulador.
+*   💵 **Parametrização do AdSense**: Substituição das chaves de identificação genéricas do Google AdSense pelo ID de cliente real (`ca-pub-xxxxxxxxxxxxxxxx`) no cabeçalho e contêineres do simulador.
