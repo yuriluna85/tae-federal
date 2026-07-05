@@ -99,7 +99,7 @@ const RSC_ANEXOS_DATA = [
             { id: "pts-1-1", n: 1, d: "Exercício do mandato como membro de conselhos superiores e conselhos de unidades e órgãos colegiados das instituições federais de ensino.", u: "Por ano ou fração acima de 6 meses", pts: 3.0 },
             { id: "pts-1-2", n: 2, d: "Coordenação ou presidência de núcleos, representações, grupos de trabalho ou similares, comissões ou comitês previstos no âmbito da administração pública, regularmente instituídos, ou reconhecidos pelo órgão ou pela entidade.", u: "Por designação", pts: 4.5 },
             { id: "pts-1-3", n: 3, d: "Participação como membro de núcleos, representações, grupos de trabalho ou similares, comissões ou comitês previstos no âmbito da administração pública, regularmente instituídos.", u: "Por designação", pts: 3.0 },
-            { id: "pts-1-4", n: 4, d: "Participação como defensor dativo ou como membro de equipe designada em processos de apuração de materialidade e responsabilidade, como sindicância, processo administrativo disciplinar e tomada de contas especial.", u: "Por designação", pts: 15.0 },
+            { id: "pts-1-4", n: 4, d: "Participação como defensor dativo ou como membro de equipe designada em processos de apuração de materialidade e responsabilidade, como sindicância, processo administrativo disciplinar e tomada de contas especial.", u: "Por designação", pts: 3.0 },
             { id: "pts-1-5", n: 5, d: "Atuação em atividades de organização, fiscalização, execução de exame de seleção, vestibular ou concursos.", u: "Por designação", pts: 4.5 },
             { id: "pts-1-6", n: 6, d: "Atuação em atividades de elaboração, revisão ou correção de provas de exame de seleção, vestibular ou concursos.", u: "Por designação", pts: 3.0 },
             { id: "pts-1-7", n: 7, d: "Exercício de mandato em entidade sindical representativa da categoria.", u: "Por ano ou fração acima de 6 meses", pts: 1.5 },
@@ -121,9 +121,9 @@ const RSC_ANEXOS_DATA = [
             { id: "pts-2-6", n: 6, d: "Participação em atividades de produção/reformulação de material acessível, técnico de referência (manuais, roteiros técnicos).", u: "Por produto", pts: 3.0 },
             { id: "pts-2-7", n: 7, d: "Participação em atividade de avaliação de trabalho ou atuação como jurado em eventos acadêmicos, científicos, culturais, esportivos e técnicos.", u: "Por evento", pts: 3.0 },
             { id: "pts-2-8", n: 8, d: "Participação em atividade institucional de produção audiovisual, artística, exposição, podcast ou outras formas de apresentação.", u: "Por projeto", pts: 3.0 },
-            { id: "pts-2-9", n: 9, d: "Participação em programas de formação continuada ou ações de desenvolvimento de competências, desde que não utilizada para fins de aceleração da promoção na carreira, com carga horária mínima de 10 horas.", u: "Por capacitação", pts: 3.0 },
+            { id: "pts-2-9", n: 9, d: "Participação em programas de formação continuada ou ações de desenvolvimento de competências, desde que não utilizada para fins de aceleração da promoção na carreira, com carga horária mínima de 10 horas.", u: "Por capacitação", pts: 1.0 },
             { id: "pts-2-10", n: 10, d: "Desempenho de atividade técnica de natureza especializada, com contribuição institucional relevante na área de atuação.", u: "Por ano ou fração acima de 6 meses", pts: 1.0 },
-            { id: "pts-2-11", n: 11, d: "Participação em congresso, simpósio, fórum, conferência, colóquio, mesa-redonda, workshop, seminário, mostra/feira, treinamento, atividades de apoio técnico, ações de campo, saídas pedagógicas, eventos científicos/esportivos/artísticos/culturais/sindicais (carga horária mínima de 4h).", u: "Por evento", pts: 1.0 }
+            { id: "pts-2-11", n: 11, d: "Participação em capacitação, fórum, oficina, workshop e congresso, com carga horária mínima de dez horas, vinculada aos interesses da Instituição Federal de Ensino.", u: "Por evento", pts: 1.0 }
         ]
     },
     {
@@ -171,26 +171,25 @@ const RSC_ANEXOS_DATA = [
         sigla: "Anexo VI",
         titulo: "Eixo VI: Produção, Prospecção e Difusão de Conhecimento Científico ou Técnico",
         itens: [
-            { id: "pts-6-1", n: 1, d: "Carta Patente.", u: "Por patente", pts: 30.0 },
-            { id: "pts-6-2", n: 2, d: "Participação no desenvolvimento de protótipos, depósitos ou registros de propriedade intelectual ou privilégio de invenção.", u: "Por projeto", pts: 25.0 },
-            { id: "pts-6-3", n: 3, d: "Participação em transferência de tecnologia, licenciamento ou exploração de ativo tecnológico, como autor ou inventor.", u: "Por produto", pts: 20.0 },
-            { id: "pts-6-4", n: 4, d: "Conclusão de curso de educação formal superior ao exigido para o ingresso no cargo de que é titular e que não seja utilizado para percepção do atual nível de Incentivo a Qualificação - IQ.", u: "Por curso", pts: 15.0 },
-            { id: "pts-6-5", n: 5, d: "Participação na implantação ou desenvolvimento de produto, projeto, processo, técnica ou tecnologia de interesse institucional.", u: "Por produto", pts: 15.0 },
-            { id: "pts-6-6", n: 6, d: "Certificação profissional por órgão ou entidade competente demonstrando domínio de conhecimento técnico na área de atuação.", u: "Por certificado", pts: 15.0 },
-            { id: "pts-6-7", n: 7, d: "Atuação em atividade de liderança ou vice-liderança de grupo de pesquisa ou extensão registrada.", u: "Por grupo de pesquisa", pts: 7.5 },
-            { id: "pts-6-8", n: 8, d: "Participação como membro em grupo de pesquisa devidamente registrado em órgão ou sistema oficial de reconhecimento institucional.", u: "Por projeto", pts: 3.0 },
-            { id: "pts-6-9", n: 9, d: "Aprovação de projeto para a captação de recursos.", u: "Por projeto", pts: 7.5 },
-            { id: "pts-6-10", n: 10, d: "Publicação ou organização de livro (com ISBN e Conselho Editorial).", u: "Por produto", pts: 20.0 },
-            { id: "pts-6-11", n: 11, d: "Autoria ou coautoria de capítulo de livro, de artigo publicado em revista especializada, jornal científico ou periódico.", u: "Por publicação", pts: 7.5 },
-            { id: "pts-6-12", n: 12, d: "Apresentação de trabalho em congresso, seminário ou outros eventos.", u: "Por produto", pts: 4.5 },
-            { id: "pts-6-13", n: 13, d: "Produção de material técnico, científico, metodológico ou administrativo estruturado que visa à difusão do conhecimento.", u: "Por produto", pts: 4.5 },
-            { id: "pts-6-14", n: 14, d: "Participação em atividade de avaliação do projeto de ensino, pesquisa, extensão ou inovação.", u: "Por projeto", pts: 4.5 },
-            { id: "pts-6-15", n: 15, d: "Participação em atividade de difusão ou apoio à formação institucional (expositor, facilitador, colaborador).", u: "Por evento", pts: 3.0 },
-            { id: "pts-6-16", n: 16, d: "Atuação como instrutor, tutor, palestrante, autor técnico ou orientador em ação formativa estruturada.", u: "Por curso", pts: 4.5 },
-            { id: "pts-6-17", n: 17, d: "Atuação na coordenação/mediação de fórum, congresso, mesa-redonda, simpósio, seminário, oficina e outros eventos.", u: "Por evento", pts: 4.5 },
-            { id: "pts-6-18", n: 18, d: "Exercício de atividade de orientação ou coorientação de trabalho de conclusão de curso em diferentes modalidades de ensino.", u: "Por evento", pts: 7.5 },
-            { id: "pts-6-19", n: 19, d: "Autoria de obra artística ou cultural registrada.", u: "Por produto", pts: 3.0 },
-            { id: "pts-6-20", n: 20, d: "Atuação no enfrentamento de situações de surto, epidemias e pandemia.", u: "Por mês", pts: 1.0 }
+            { id: "pts-6-1", n: 1, d: "Carta patente relacionada aos interesses institucionais.", u: "Por patente", pts: 30.0 },
+            { id: "pts-6-2", n: 2, d: "Participação relevante no desenvolvimento de protótipos, depósitos e/ou registros de propriedade intelectual ou privilégio de invenção relacionada aos interesses institucionais.", u: "Por projeto", pts: 25.0 },
+            { id: "pts-6-3", n: 3, d: "Participação em transferência de tecnologia, licenciamento ou exploração de ativo tecnológico, como autor ou inventor relacionada aos interesses institucionais.", u: "Por produto", pts: 20.0 },
+            { id: "pts-6-4", n: 4, d: "Conclusão de curso de educação formal superior ao exigido para o ingresso no cargo de que é titular e que não seja utilizado para percepção de Incentivo à Qualificação - IQ.", u: "Por curso", pts: 15.0 },
+            { id: "pts-6-5", n: 5, d: "Participação relevante na implantação ou desenvolvimento de produto, projeto, processo, técnica ou tecnologia de interesse institucional.", u: "Por produto", pts: 15.0 },
+            { id: "pts-6-6", n: 6, d: "Atuação em atividade de liderança ou vice-liderança de grupo de pesquisa ou extensão registrado em órgão ou sistema oficial de reconhecimento institucional.", u: "Por grupo de pesquisa", pts: 7.5 },
+            { id: "pts-6-7", n: 7, d: "Participação como membro em grupo de pesquisa devidamente registrado em órgão ou sistema oficial de reconhecimento institucional.", u: "Por projeto", pts: 3.0 },
+            { id: "pts-6-8", n: 8, d: "Aprovação de projeto para a captação de recursos para a Instituição Federal de Ensino.", u: "Por projeto", pts: 7.5 },
+            { id: "pts-6-9", n: 9, d: "Publicação ou organização de livro relacionado aos interesses institucionais (com ISBN e Conselho Editorial).", u: "Por produto", pts: 20.0 },
+            { id: "pts-6-10", n: 10, d: "Autoria ou coautoria de capítulo de livro, de artigo publicado em revista especializada, jornal científico ou periódico, relacionado aos interesses institucionais.", u: "Por publicação", pts: 7.5 },
+            { id: "pts-6-11", n: 11, d: "Apresentação de trabalho de interesse institucional em congresso, seminário ou outros eventos.", u: "Por produto", pts: 4.5 },
+            { id: "pts-6-12", n: 12, d: "Produção de material técnico, científico, metodológico ou administrativo estruturado que visa à difusão do conhecimento.", u: "Por produto", pts: 4.5 },
+            { id: "pts-6-13", n: 13, d: "Avaliação do projeto de ensino e/ou pesquisa e/ou extensão e/ou inovação.", u: "Por projeto", pts: 4.5 },
+            { id: "pts-6-14", n: 14, d: "Participação em atividade de difusão ou apoio à formação institucional (expositor, facilitador, colaborador).", u: "Por evento", pts: 3.0 },
+            { id: "pts-6-15", n: 15, d: "Atuação formalmente autorizada como instrutor, tutor, palestrante, autor de conteúdo técnico ou orientador em ação formativa estruturada de interesse institucional, prevista em plano ou programa de desenvolvimento de pessoas.", u: "Por curso", pts: 4.5 },
+            { id: "pts-6-16", n: 16, d: "Atuação na coordenação de congresso, simpósio ou seminário de interesse institucional.", u: "Por evento", pts: 3.5 },
+            { id: "pts-6-17", n: 17, d: "Exercício de atividade de coorientação de trabalho de conclusão de curso em diferentes modalidades de ensino.", u: "Por evento", pts: 4.5 },
+            { id: "pts-6-18", n: 18, d: "Autoria de obra artística ou cultural registrada com contribuição ou repercussão institucional comprovada.", u: "Por produto", pts: 3.0 },
+            { id: "pts-6-19", n: 19, d: "Atuação institucional no enfrentamento de situações de surto, epidemia e pandemia.", u: "Por mês", pts: 1.0 }
         ]
     }
 ];
@@ -347,40 +346,39 @@ function updateRscOptions() {
     const currentIq = iqSelect.value;
     const rscValueBefore = rscSelect.value; // Salvar valor selecionado anteriormente
     rscSelect.innerHTML = "";
-
     const rscOpcoes = {
         none: [
             { val: "none", text: "Sem RSC / Não possui" },
-            { val: "rsc_fundamental", text: "RSC-PCCTAE-I: Fundamental Completo (10%)" },
-            { val: "rsc_medio", text: "RSC-PCCTAE-II: Ensino Médio Completo (15%)" },
-            { val: "rsc_graduacao", text: "RSC-PCCTAE-III: Graduação Completa (25%)" },
-            { val: "rsc_especializacao", text: "RSC-PCCTAE-IV: Especialização Completa (30%)" },
-            { val: "rsc_mestrado", text: "RSC-PCCTAE-V: Mestrado Completo (52%)" },
-            { val: "rsc_doutorado", text: "RSC-PCCTAE-VI: Doutorado Completo (75%)" }
+            { val: "rsc_fundamental", text: "RSC-PCCTAE-I: Sem Ensino Fundamental Completo (10%)" },
+            { val: "rsc_medio", text: "RSC-PCCTAE-II: Ensino Fundamental Completo (15%)" },
+            { val: "rsc_graduacao", text: "RSC-PCCTAE-III: Ensino Médio ou Técnico Completo (25%)" },
+            { val: "rsc_especializacao", text: "RSC-PCCTAE-IV: Graduação Completa (30%)" },
+            { val: "rsc_mestrado", text: "RSC-PCCTAE-V: Especialização Completa (52%)" },
+            { val: "rsc_doutorado", text: "RSC-PCCTAE-VI: Mestrado Completo (75%)" }
         ],
         fundamental: [
             { val: "none", text: "Sem RSC / Não possui" },
-            { val: "rsc_medio", text: "RSC-PCCTAE-II: Ensino Médio Completo (15%)" }
+            { val: "rsc_medio", text: "RSC-PCCTAE-II: Ensino Fundamental Completo (15%)" }
         ],
         medio: [
             { val: "none", text: "Sem RSC / Não possui" },
-            { val: "rsc_graduacao", text: "RSC-PCCTAE-III: Graduação Completa (25%)" }
+            { val: "rsc_graduacao", text: "RSC-PCCTAE-III: Ensino Médio ou Técnico Completo (25%)" }
         ],
         tecnico: [
             { val: "none", text: "Sem RSC / Não possui" },
-            { val: "rsc_graduacao", text: "RSC-PCCTAE-III: Graduação Completa (25%)" }
+            { val: "rsc_graduacao", text: "RSC-PCCTAE-III: Ensino Médio ou Técnico Completo (25%)" }
         ],
         graduacao: [
             { val: "none", text: "Sem RSC / Não possui" },
-            { val: "rsc_especializacao", text: "RSC-PCCTAE-IV: Especialização Completa (30%)" }
+            { val: "rsc_especializacao", text: "RSC-PCCTAE-IV: Graduação Completa (30%)" }
         ],
         especializacao: [
             { val: "none", text: "Sem RSC / Não possui" },
-            { val: "rsc_mestrado", text: "RSC-PCCTAE-V: Mestrado Completo (52%)" }
+            { val: "rsc_mestrado", text: "RSC-PCCTAE-V: Especialização Completa (52%)" }
         ],
         mestrado: [
             { val: "none", text: "Sem RSC / Não possui" },
-            { val: "rsc_doutorado", text: "RSC-PCCTAE-VI: Doutorado Completo (75%)" }
+            { val: "rsc_doutorado", text: "RSC-PCCTAE-VI: Mestrado Completo (75%)" }
         ],
         doutorado: [
             { val: "none", text: "Sem RSC (Já atingiu o teto da carreira)" }

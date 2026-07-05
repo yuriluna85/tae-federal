@@ -61,9 +61,18 @@ Como a aplicação foi construída inteiramente com código estático nativo (SP
 Este repositório está publicado no endereço [github.com/yuriluna85/tae-federal](https://github.com/yuriluna85/tae-federal) e configurado com domínio personalizado no GitHub Pages:
 1. O repositório está integrado sob a branch `main` e publicado via GitHub Pages.
 2. Está associado ao domínio customizado [taes-federal.com.br](https://taes-federal.com.br) para navegação de produção com HTTPS seguro.
-
-
 ## 📝 Log de Atualizações (Changelog)
+
+### [05/07/2026] - Atualização de Critérios RSC (Decreto nº 13.048/2026) e Ajuste de Layout no Simulador de Diárias
+* ⚖️ **Atualização dos Critérios RSC**: Ajustados os critérios individuais e pontuações do RSC-PCCTAE de acordo com o anexo oficial do **Decreto nº 13.048/2026**:
+  - Alterada a pontuação do Eixo I, Item 4 (Sindicância/PAD/etc.) de **15,0** para **3,0** pontos.
+  - Alterada a pontuação do Eixo II, Item 9 (Programas de formação continuada...) de **3,0** para **1,0** ponto.
+  - Atualizado o Eixo II, Item 11 para refletir a nova descrição e carga horária mínima de 10 horas.
+  - Removido o antigo item de Certificação Profissional do Eixo VI (Item 6 da versão anterior), com o consequente reordenamento dos itens e IDs subsequentes.
+  - Ajustada a pontuação de Coordenação de Congresso no Eixo VI de **4,5** para **3,5** pontos.
+  - Ajustada a pontuação de Coorientação de TCC no Eixo VI de **7,5** para **4,5** pontos.
+  - Atualizadas as descrições dos níveis de RSC no painel e nos seletores para refletir a escolaridade exigida para pleitear cada nível de RSC (RSC-I a RSC-VI).
+* ✈️ **Ajuste de Layout do Simulador de Diárias**: Corrigida a estrutura do HTML em [index.html](file:///G:/Meu%20Drive/APP/2.%20Projetos%20e%20Aplicações/2.2%20Aplicações%20e%20Códigos%20(GitHub)/YLuna85%20LABs%20APPs/calculadora-tae-federal/index.html) movendo o bloco `diarias-results` para fora do contêiner `diarias-inputs` (como elemento irmão). Isso reestabeleceu o layout de grid responsivo em duas colunas, posicionando os resultados de detalhamento lado a lado com os campos de entrada de forma harmônica (similar à visualização de remuneração principal).
 
 ### [04/07/2026] - Simplificação e Ajuste no Cálculo de Diárias & Correção do AdSense
 *   ✈️ **Revisão do Cálculo de Diárias**:
