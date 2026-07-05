@@ -1,14 +1,5 @@
 [
   {
-    "title": "Assinado o Decreto nº 13.048/2026 que regulamenta o RSC-PCCTAE",
-    "source": "Diário Oficial",
-    "pubDate": "2026-07-03 16:00",
-    "link": "https://www.in.gov.br",
-    "description": "Publicada a regulamentação nacional do Reconhecimento de Saberes e Competências (RSC-PCCTAE) para os Técnico-Administrativos em Educação, definindo os critérios de comprovação documental e eixos avaliativos.",
-    "category": "Regulamentado",
-    "badge_class": "badge-success"
-  },
-  {
     "title": "Promulgação da Lei nº 15.141/2025",
     "source": "Diário Oficial",
     "pubDate": "2025-06-02 08:00",
@@ -25,6 +16,42 @@
     "description": "Sancionada em 30 de março de 2026, a lei instituiu o Reconhecimento de Saberes e Competências (RSC) para Técnico-Administrativos em Educação a contar de 1º de abril de 2026.",
     "category": "Vigente",
     "badge_class": "badge-info"
+  },
+  {
+    "title": "Decreto do RSC é publicado no Diário Oficial da União",
+    "source": "Assufrgs",
+    "pubDate": "2026-07-03 20:58",
+    "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQYVJnRVZqSURCZjA4RWY1eU5ZS3dCeVVoRGp3Q1VKOVE5aDd5bFV5S2M4bkhycmlSay03Y3pSVDk4SlNtTV9FX0lhaWtqRVdxZXZ3WndGOE1UNDBKYlRaLU1jZVJFcUlKU1JJUXFYdGF3eW9DTU9wRXZqNHVxUU9hdDdKSlZ1VFhBel9paGZod01WLXVxODdoWg?oc=5",
+    "description": "Decreto do RSC é publicado no Diário Oficial da União",
+    "category": "RSC",
+    "badge_class": "badge-alert"
+  },
+  {
+    "title": "Governo do Brasil regulamenta validação de saberes práticos de TAEs — Ministério da Educação",
+    "source": "www.gov.br",
+    "pubDate": "2026-07-03 20:32",
+    "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQRzhTOTNmVnlnODh6aDhjX0x3MVUzYnQ1OG9OQlZ2OFZzejllWUZtdmlQTGxXcEk3d2hyN0c3UEVMOVpoNW1XNW01OG5HbXR5bURvT0M4aEUzeFZXaDVKY1lscU04M3pjaTZKSXJ1ZzNwTDVyeDQ0c3ZCd0lUVE5IZmRSR2lNN3JjeFZ0MngwYVVfZkpucmhHUUNRSHVXWEpVdHkzbC16dndDTjludWVIZjZNUEtwcFFMMFllZVA1Nk1xdFk?oc=5",
+    "description": "Governo do Brasil regulamenta validação de saberes práticos de TAEs — Ministério da Educação",
+    "category": "RSC",
+    "badge_class": "badge-alert"
+  },
+  {
+    "title": "Vitória dos TAE: Governo Federal publica decreto que regulamenta o RSC para servidores técnico-administrativos em educação",
+    "source": "SINTUFCE",
+    "pubDate": "2026-07-03 19:58",
+    "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxOVkkwcHREWUdRMzRvM0RSZ0F0a3BicURiOV9Cal9mRk9GdjRTclBzZ3k4UTdIa1IxamhEZVVTLTdHQUtLX3NET2RIMHYxTnQtY1hFQktndWFzU3ZyVm5mZkFMRGJieEQ2bC1NM2FZYUp5NWZLMkc3RG5xSnc4OExVYUFTSTFtMzVnQm5CQnpFc005aUtQeUp1MENqRk55dzRlVEU3enpVN2JScmhIQWVJMlJRQWpPX3VCSmlJUENSSVJqeGtDaW1rQTUweTEwM3hRU3A5RXc2c2ZpNjRlOC0weHpUN1g?oc=5",
+    "description": "Vitória dos TAE: Governo Federal publica decreto que regulamenta o RSC para servidores técnico-administrativos em educação",
+    "category": "RSC",
+    "badge_class": "badge-alert"
+  },
+  {
+    "title": "Conquista da nossa luta: RSC-TAE está regulamentado!",
+    "source": "sinasefe",
+    "pubDate": "2026-07-03 19:54",
+    "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOYkFUUUxOMFBxcm5QTWcxOWNtSlRHRTJTUGx3R2k5UG5xUVczNjBSYm54bVE5NklZSHBoczRBXzhQLUREY0FTQ3Y0U3lzSFg0SGZLUmtheF91UGZiYUJpSGVDUldOZzBYRGxkekgxM3BlX1ZSY3FZM1pHeHh6QTB4cHNkblg4UEk?oc=5",
+    "description": "Conquista da nossa luta: RSC-TAE está regulamentado!",
+    "category": "RSC",
+    "badge_class": "badge-alert"
   },
   {
     "title": "RSC-TAE: sindicato exige a publicação urgente da regulamentação",
@@ -56,45 +83,9 @@
   {
     "title": "Comissão Eleitoral do CIS-PCCTAE divulga resultado parcial do processo eleitoral",
     "source": "Universidade Federal do Maranhão",
-    "pubDate": "2026-06-09 11:42",
+    "pubDate": "2026-06-09 07:00",
     "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNTTVvamhUeGJUV2o5RWprU294QTk1RzBKNjU4R0lyUHlUaDBFNllsNTBZNXliSk9FUzlab29rRTd4U25FZlc2TFRtZWp6R0d6YnI5YUo1RTZKMjhwaHRkUWJwbXZwdC1YcEtrNkxmN184YlVxcjF0QlNzZFlJLUhQeTVYVWR2elNTMzhfN2xxMFg2MDd4Tl9nNTZ1MVp4UlpvbzB2enlfZkt4M1UyQjh4eFZhd0Uwb3p4MHNtcFp3Tms?oc=5",
     "description": "Comissão Eleitoral do CIS-PCCTAE divulga resultado parcial do processo eleitoral",
-    "category": "Carreira",
-    "badge_class": "badge-info"
-  },
-  {
-    "title": "Urnas virtuais abertas para a eleição da CIS/PCCTAE",
-    "source": "Comunica UFU",
-    "pubDate": "2026-06-01 07:00",
-    "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOUkJJbDZzZ1pIVlhuRGJHNHFoQmpBcWl2Q3FyMmptVWV0emozNGFQbFVPSFNWUmpMZFlmbjlRUWpiczE1eldKTnpCVnR2aTNiUUhKNjRNYWItUXRicW1INWIycUdVTG5tNTh5NGZoaEtSS2NaalVtdHVXZDRmTUdhM3o0c21nWWI3eDZucU90QUNYQQ?oc=5",
-    "description": "Urnas virtuais abertas para a eleição da CIS/PCCTAE",
-    "category": "Carreira",
-    "badge_class": "badge-info"
-  },
-  {
-    "title": "Eleição CIS-PCCTAE: confira as regras de votação para servidores com e-mail EBSERH",
-    "source": "Comunica UFU",
-    "pubDate": "2026-05-11 11:41",
-    "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOeE9LNHlZSFlKSVdITS1JdFdkc09TZmFhbUUxdWloaDhDMEVKUmhaYkV1cThmcGlOVjdxdXpMTE05aGJtdUJROVROOEYtNm0zeUZZUS1BMkMyV3E2THByNU1WODJUbU5ZUjh6dTVVd0ZLYzJYb1UyQ0NVSXdTcDhPX3lESC1NRDlwTVF5ZzU1RVk3ZHBHMEpNckItdmt0UzZUOGdiQzFTVTV1aFhVelE1SW5vQVRXUmw5NlE?oc=5",
-    "description": "Eleição CIS-PCCTAE: confira as regras de votação para servidores com e-mail EBSERH",
-    "category": "Carreira",
-    "badge_class": "badge-info"
-  },
-  {
-    "title": "IFMG instaura comissão de estruturação para o RSC (PCCTAE)",
-    "source": "ifmg.edu.br",
-    "pubDate": "2026-05-11 07:00",
-    "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOT2VUTEFZVDB6QzljdG5JQ1c4MGJiWEN3aUotNGVsSzFlOVpmYkpNYUtwUHJqLWNwZWN6ckI2M3l1YmdqU2RHOE5KUFdaYUJXS28zUnJOcXYwM3daYjYtOEtOR1djZHNOSDFwcXpEWjVXRHdSMVctWGprc1luQTRJNTBucWdoYklDdWZ3WWxxZWdFak9jVTJMVXB3dFg?oc=5",
-    "description": "IFMG instaura comissão de estruturação para o RSC (PCCTAE)",
-    "category": "RSC",
-    "badge_class": "badge-alert"
-  },
-  {
-    "title": "UFPI lança edital de processo eleitoral da Comissão Interna de Supervisão da Carreira (CIS - PCCTAE)",
-    "source": "UFPI",
-    "pubDate": "2026-05-05 07:00",
-    "link": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxPaXRnczVsa2Nwc3BiUnV4a2VwVDIwQXgzbzJhbDJaOWpjQm95elVHOFFfNTRzQjFPLUR1bGNLRWM4M2gzV24wbjQ0ZWpVNXUwU2RfUWRTOHJvd0FkRzVoZk9TdnVxZjZpMm51Y3lwLXpmTlc1RV83elNNVnNHSGZYVmg2d3YtblgyZlZmaE83RDI2eVJMSEY1U0ZlUzJFYVNNdXh2bEtyMjByS0JZZU0zTkpsMUlkTF9vWFVEZHpnd2pkZTJfTVpFZFRaa0xXSlJqM3UzZXU1V0hDYnhuWkV4RURNYnJia1lvRUpCeU1HRGd0UQ?oc=5",
-    "description": "UFPI lança edital de processo eleitoral da Comissão Interna de Supervisão da Carreira (CIS - PCCTAE)",
     "category": "Carreira",
     "badge_class": "badge-info"
   }
