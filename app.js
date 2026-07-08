@@ -24,8 +24,9 @@ const pcctaeData = {
         fcc: 1273.25
     },
     diarias: {
-        tae: { demais: 335.00, capitais: 380.00, especiais: 425.00 },
-        cce13_17: { demais: 455.00, capitais: 515.00, especiais: 600.00 },
+        tae: { demais: 340.00, capitais: 380.00, especiais: 425.00 },
+        cce11_14: { demais: 400.00, capitais: 450.00, especiais: 500.00 },
+        cce15_17: { demais: 500.00, capitais: 550.00, especiais: 600.00 },
         cce18: { demais: 650.00, capitais: 700.00, especiais: 800.00 },
         ministro: { demais: 750.00, capitais: 800.00, especiais: 900.00 }
     },
@@ -1189,7 +1190,7 @@ function initDiarias() {
     const inputs = [
         "diaria-cargo", "diaria-destino", "diaria-inicio", "diaria-fim",
         "diaria-alimentacao-checkbox", "diaria-transporte-checkbox",
-        "diaria-transporte-valor-input"
+        "diaria-veiculo-oficial-checkbox", "diaria-transporte-valor-input"
     ];
     inputs.forEach(id => {
         const el = document.getElementById(id);
@@ -1302,8 +1303,9 @@ function calculateDiarias() {
         valorBruto = qtdDiarias * taxaDiaria;
     }
 
-    // Adicional de Deslocamento de R$ 95,00 para despesas de embarque e desembarque
-    const adicionalDeslocamento = qtdDiarias > 0 ? 95.00 : 0.00;
+    // Adicional de Deslocamento de R$ 95,00 para despesas de embarque e desembarque (zerado se usar veículo oficial)
+    const veiculoOficial = document.getElementById("diaria-veiculo-oficial-checkbox").checked;
+    const adicionalDeslocamento = (qtdDiarias > 0 && !veiculoOficial) ? 95.00 : 0.00;
 
     // Desconto de Auxílio Alimentação (auxilio / 22 por dia de desconto efetivo)
     const alimentacaoAtiva = document.getElementById("diaria-alimentacao-checkbox").checked;
@@ -1322,10 +1324,11 @@ function calculateDiarias() {
     const valorLiquidoComTransporte = Math.max(0, valorBruto + adicionalDeslocamento - (descontoAlimentacao + descontoTransporte));
 
     // Renderizar nos elementos correspondentes
+    document.getElementById("res-diaria-valor-unitario").textContent = formatCurrency(taxaDiaria);
     document.getElementById("res-diaria-qtd").textContent = qtdDiarias.toLocaleString("pt-BR", { minimumFractionDigits: 1 });
     document.getElementById("res-diaria-dias-desconto").textContent = diasDescontoEfetivos;
     document.getElementById("res-diaria-bruto").textContent = formatCurrency(valorBruto);
-    document.getElementById("res-diaria-adicional").textContent = "+ " + formatCurrency(adicionalDeslocamento);
+    document.getElementById("res-diaria-adicional").textContent = (veiculoOficial ? "" : "+ ") + formatCurrency(adicionalDeslocamento);
     document.getElementById("res-diaria-desc-alimentacao").textContent = "- " + formatCurrency(descontoAlimentacao);
     document.getElementById("res-diaria-desc-transporte").textContent = "- " + formatCurrency(descontoTransporte);
     document.getElementById("res-diaria-liquido").textContent = formatCurrency(valorLiquidoSemTransporte);
@@ -1333,6 +1336,7 @@ function calculateDiarias() {
 }
 
 function resetDiariasResults() {
+    document.getElementById("res-diaria-valor-unitario").textContent = formatCurrency(0);
     document.getElementById("res-diaria-qtd").textContent = "0.0";
     document.getElementById("res-diaria-dias-desconto").textContent = "0";
     document.getElementById("res-diaria-bruto").textContent = formatCurrency(0);

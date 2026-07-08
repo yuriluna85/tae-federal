@@ -67,10 +67,14 @@ Este repositório está publicado no endereço [github.com/yuriluna85/tae-federa
 ### [08/07/2026] - Ajustes e Conformidade na Lógica de Diárias (Decreto nº 5.992/2006 & Decreto nº 11.872/2023)
 * ✈️ **Conformidade de Diárias**: Atualizado o simulador de diárias em [app.js](file:///G:/Meu%20Drive/app/2.%20Projetos%20e%20Aplica%C3%A7%C3%B5es/2.2%20Aplica%C3%A7%C3%B5es%20e%20C%C3%B3digos%20(GitHub)/YLuna85%20LABs%20APPs/calculadora-tae-federal/app.js) e [index.html](file:///G:/Meu%20Drive/app/2.%20Projetos%20e%20Aplica%C3%A7%C3%B5es/2.2%20Aplica%C3%A7%C3%B5es%20e%20C%C3%B3digos%20(GitHub)/YLuna85%20LABs%20APPs/calculadora-tae-federal/index.html) para alinhar com os critérios estritos da legislação federal:
   - **Isenção Previdenciária**: Removido o desconto indevido de previdência (R$ 45,45), uma vez que diárias de viagens federais possuem caráter estritamente indenizatório e são por lei isentas de PSS e IRRF, alinhando a simulação ao valor real recebido no SCDP (R$ 1.365,78 para viagem a SP).
-  - **Adicional de Deslocamento**: Adicionado o acréscimo fixo de R$ 95,00 para despesas de embarque/desembarque em todas as viagens com concessão de diária.
+  - **Classificação de Cargos**: Refatoradas as faixas de cargos/funções para 5 opções exatas em conformidade com o decreto (incluindo atualização do valor mínimo da diária TAE para R$ 340,00 na categoria demais).
+  - **Exibição do Valor Unitário**: Incluído o valor unitário da diária no detalhamento do cálculo no card de resultados.
+  - **Tabela de Diárias Federais**: Adicionado card visual completo com a tabela de diárias nacionais vigentes (Decreto nº 11.872/2023) na aba de "Tabelas".
+  - **Viagem com Veículo Oficial**: Implementado o checkbox para indicar uso de transporte institucional, eliminando o Adicional de Deslocamento de R$ 95,00 do cálculo final.
+  - **Adicional de Deslocamento**: Adicionado o acréscimo fixo de R$ 95,00 para despesas de embarque/desembarque em todas as viagens com concessão de diária (se não usado veículo oficial).
   - **Permanência Prolongada**: Implementado redutor automático de 25% no valor diário excedente a partir do 121º dia na mesma localidade (acima de 120 dias).
-  - **Dupla Projeção Líquida**: Reestruturada a exibição de resultados para apresentar dois cenários paralelos de recebimento: o Líquido Estimado Sem Desconto de Transporte (caso o proponente desmarque o desconto no SCDP nos dias de ida/volta ou por esquecimento) e o Líquido com Desconto de Transporte (caso o sistema aplique integralmente as deduções).
-  - **Alerta de Estimativa**: Adicionado aviso de alerta detalhado em destaque no painel do simulador (`index.html`) esclarecendo que o cálculo é estimativo e explicando os dois cenários de incidência.
+  - **Dupla Projeção Líquida**: Reestruturada a exibição de resultados para apresentar dois cenários paralelos de recebimento (com e sem o desconto de transporte).
+  - **Alerta de Estimativa e Canal SCDP**: Atualizado o painel com aviso detalhado reforçando o caráter estimativo dos valores e orientando o contato direto com o operador do SCDP da respectiva unidade do servidor em caso de dúvidas.
 
 ### [05/07/2026] - Atualização de Critérios RSC (Decreto nº 13.048/2026), Ajuste do Simulador de Diárias e AdSense
 * ⚖️ **Atualização dos Critérios RSC**: Ajustados os critérios individuais e pontuações do RSC-PCCTAE de acordo com o anexo oficial do **Decreto nº 13.048/2026**:

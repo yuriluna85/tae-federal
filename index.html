@@ -338,8 +338,9 @@
                             <div style="flex: 1; min-width: 200px; display: flex; flex-direction: column;">
                                 <label for="diaria-cargo" style="font-family: var(--font-title); font-size: 0.95rem; font-weight: 600; color: var(--color-text); margin-bottom: 8px;">Classificação do Cargo/Função</label>
                                 <select id="diaria-cargo" class="form-control">
-                                    <option value="tae" selected>Demais Cargos da Carreira TAE (inclui FGs, FCC e CD-4)</option>
-                                    <option value="cce13_17">CD-2 e CD-3 (Pró-Reitores / Diretores-Gerais / Diretores) ou CCE-13 a CCE-17 e equivalentes</option>
+                                    <option value="tae" selected>Demais Cargos da Carreira TAE (inclui FGs 2 a 4 e FCC)</option>
+                                    <option value="cce11_14">CD-3, CD-4, FG-1 ou CCE-11 a CCE-14 e equivalentes</option>
+                                    <option value="cce15_17">CD-2 (Pró-Reitores / Diretores-Gerais) ou CCE-15 a CCE-17 e equivalentes</option>
                                     <option value="cce18">CD-1 (Reitores) ou CCE-18, Natureza Especial e equivalentes</option>
                                     <option value="ministro">Ministros de Estado</option>
                                 </select>
@@ -375,6 +376,9 @@
                                 <label style="display: flex; align-items: center; gap: 8px; font-size: 0.9rem; cursor: pointer; color: var(--color-text);">
                                     <input type="checkbox" id="diaria-transporte-checkbox" style="width: 16px; height: 16px;"> Dedução de Auxílio-Transporte
                                 </label>
+                                <label style="display: flex; align-items: center; gap: 8px; font-size: 0.9rem; cursor: pointer; color: var(--color-text);">
+                                    <input type="checkbox" id="diaria-veiculo-oficial-checkbox" style="width: 16px; height: 16px;"> Viagem com Veículo Oficial
+                                </label>
                             </div>
 
                             <!-- Painel de Detalhes de Transporte para Diárias (Exibido apenas se o checkbox estiver ativo) -->
@@ -389,16 +393,22 @@
                         <div class="info-box-diaria" style="margin-top: 10px; padding: 10px 14px; border-radius: 8px; background: rgba(255, 193, 7, 0.05); border: 1px solid rgba(255, 193, 7, 0.25); font-size: 0.85rem; line-height: 1.4; color: var(--color-text-muted); max-width: 100%; margin-bottom: 15px;">
                             💡 <strong>Informação de Dedução:</strong> O cálculo das diárias desconta o valor proporcional dos auxílios de transporte e alimentação recebidos para os dias úteis da viagem. O valor do auxílio-transporte diário informado é deduzido diretamente para cada dia útil.
                             <br><br>
-                            ⚠️ <strong>Alerta de Estimativa (SCDP):</strong> O valor líquido das diárias varia conforme o cadastro de viagem no sistema. Por essa razão, o simulador exibe dois cenários:
+                            ⚠️ <strong>Alerta de Estimativa (SCDP):</strong> O valor líquido exibido é apenas uma <strong>estimativa aproximada</strong> e pode variar conforme as particularidades do cadastro no sistema. O simulador projeta dois cenários:
                             <ul style="margin: 8px 0 0 15px; padding: 0;">
                                 <li><strong>Líquido Estimado (Sem Desc. Transporte):</strong> Simula o recebimento caso a dedução de transporte não seja lançada na PCDP (por particularidades de parametrização ou ausência de integração automática de dados entre os sistemas) ou se você justificar no despacho que realizou o deslocamento habitual residência-trabalho na sede oficial nos dias de ida e volta.</li>
                                 <li><strong>Líquido com Desconto de Transporte:</strong> Simula o cenário em que o SCDP aplica a dedução integral de transporte nos dias úteis da viagem.</li>
                             </ul>
+                            <br>
+                            📞 <strong>Em caso de dúvidas:</strong> Havendo qualquer divergência em relação a valores ou descontos, o solicitante deve entrar em contato direto com o operador ou setor responsável pelo **SCDP (Sistema de Concessão de Diárias e Passagens)** da sua Unidade/Campus.
                         </div>
                     </div>
 
                     <div class="diarias-results" style="background: rgba(0,0,0,0.2); padding: 20px; border-radius: var(--border-radius-md); border: 1px solid var(--border-color); display: flex; flex-direction: column; gap: 10px;">
                         <h4 style="font-family: var(--font-title); margin-bottom: 5px; color: var(--color-accent);">Detalhamento do Recebimento</h4>
+                        <div class="result-item" style="display: flex; justify-content: space-between; font-size: 0.9rem;">
+                            <span>Valor Unitário da Diária:</span>
+                            <span id="res-diaria-valor-unitario" style="font-weight: 600;">R$ 0,00</span>
+                        </div>
                         <div class="result-item" style="display: flex; justify-content: space-between; font-size: 0.9rem;">
                             <span>Quantidade de Diárias:</span>
                             <span id="res-diaria-qtd" style="font-weight: 600;">0.0</span>
@@ -698,6 +708,59 @@
                                 <td>CCE-11</td>
                                 <td style="text-align: center;">2,38</td>
                                 <td style="text-align: right; font-weight: 600; color: #34d399;">R$ 8.315,71</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Novo Card: Tabela de Valores de Diárias Nacionais (Decreto nº 11.872/2023) -->
+            <div class="card" style="margin-top: 30px;">
+                <h2 style="font-family: var(--font-title); font-size: 1.6rem; color: var(--color-primary); margin-bottom: 10px;">✈️ Tabela de Valores de Diárias de Viagem Nacionais</h2>
+                <p style="color: var(--color-text-muted); margin-bottom: 25px;">
+                    Valores vigentes das diárias no serviço público federal estabelecidos e atualizados pelo <strong>Decreto nº 11.872/2023</strong>, organizados por nível hierárquico e localidade de destino.
+                </p>
+                
+                <div class="table-responsive">
+                    <table aria-label="Tabela de Valores de Diárias de Viagem Nacionais">
+                        <thead>
+                            <tr>
+                                <th style="width: 35%;">Nível Hierárquico do Cargo / Função</th>
+                                <th style="width: 20.5%; text-align: right;">Destino Especial (DF, RJ, SP, AM)</th>
+                                <th style="width: 22.5%; text-align: right;">Demais Capitais</th>
+                                <th style="width: 22.5%; text-align: right;">Outras Localidades</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Ministros de Estado</strong></td>
+                                <td style="text-align: right; font-weight: 600; color: #34d399;">R$ 900,00</td>
+                                <td style="text-align: right; font-weight: 600;">R$ 800,00</td>
+                                <td style="text-align: right; font-weight: 600;">R$ 750,00</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Natureza Especial e CCE-18 / CD-1</strong></td>
+                                <td style="text-align: right; font-weight: 600; color: #34d399;">R$ 800,00</td>
+                                <td style="text-align: right; font-weight: 600;">R$ 700,00</td>
+                                <td style="text-align: right; font-weight: 600;">R$ 650,00</td>
+                            </tr>
+                            <tr>
+                                <td><strong>CCE 15 a 17 / CD-2 / FUC</strong></td>
+                                <td style="text-align: right; font-weight: 600; color: #34d399;">R$ 600,00</td>
+                                <td style="text-align: right; font-weight: 600;">R$ 550,00</td>
+                                <td style="text-align: right; font-weight: 600;">R$ 500,00</td>
+                            </tr>
+                            <tr>
+                                <td><strong>CCE 11 a 14 / CD-3 e CD-4 / FG-1</strong></td>
+                                <td style="text-align: right; font-weight: 600; color: #34d399;">R$ 500,00</td>
+                                <td style="text-align: right; font-weight: 600;">R$ 450,00</td>
+                                <td style="text-align: right; font-weight: 600;">R$ 400,00</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Demais Cargos TAE / FG 2 a 4 / Sem Função / FCC</strong></td>
+                                <td style="text-align: right; font-weight: 600; color: #34d399;">R$ 425,00</td>
+                                <td style="text-align: right; font-weight: 600;">R$ 380,00</td>
+                                <td style="text-align: right; font-weight: 600;">R$ 340,00</td>
                             </tr>
                         </tbody>
                     </table>
