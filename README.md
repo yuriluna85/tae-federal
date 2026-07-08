@@ -66,6 +66,8 @@ Este repositório está publicado no endereço [github.com/yuriluna85/tae-federa
  
 ### [08/07/2026] - Ajustes e Conformidade na Lógica de Diárias (Decreto nº 5.992/2006 & Decreto nº 11.872/2023)
 * ✈️ **Conformidade de Diárias**: Atualizado o simulador de diárias em [app.js](file:///G:/Meu%20Drive/app/2.%20Projetos%20e%20Aplica%C3%A7%C3%B5es/2.2%20Aplica%C3%A7%C3%B5es%20e%20C%C3%B3digos%20(GitHub)/YLuna85%20LABs%20APPs/calculadora-tae-federal/app.js) e [index.html](file:///G:/Meu%20Drive/app/2.%20Projetos%20e%20Aplica%C3%A7%C3%B5es/2.2%20Aplica%C3%A7%C3%B5es%20e%20C%C3%B3digos%20(GitHub)/YLuna85%20LABs%20APPs/calculadora-tae-federal/index.html) para alinhar com os critérios estritos da legislação federal:
+  - **Aba de Diárias Separada**: Isolado o simulador de diárias em uma aba principal dedicada no menu de navegação, inserida entre a Calculadora Salarial e a Tabela de Carreira.
+  - **Capitalização da Mascote**: Corrigido o nome próprio da mascote oficial no rodapé do simulador para a grafia correta: "Bolinho de Chuva".
   - **Isenção Previdenciária**: Removido o desconto indevido de previdência (R$ 45,45), uma vez que diárias de viagens federais possuem caráter estritamente indenizatório e são por lei isentas de PSS e IRRF, alinhando a simulação ao valor real recebido no SCDP (R$ 1.365,78 para viagem a SP).
   - **Classificação de Cargos**: Refatoradas as faixas de cargos/funções para 5 opções exatas em conformidade com o decreto (incluindo atualização do valor mínimo da diária TAE para R$ 340,00 na categoria demais).
   - **Exibição do Valor Unitário**: Incluído o valor unitário da diária no detalhamento do cálculo no card de resultados.

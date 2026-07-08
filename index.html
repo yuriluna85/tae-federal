@@ -32,6 +32,7 @@
         <!-- Navegação por Abas -->
         <nav class="nav-tabs" aria-label="Menu principal de abas">
             <button class="tab-btn active" data-tab="calculadora" aria-selected="true">📊 Calculadora Salarial</button>
+            <button class="tab-btn" data-tab="diarias" aria-selected="false">✈️ Simulador de Diárias</button>
             <button class="tab-btn" data-tab="tabela" aria-selected="false">📅 Tabela de Carreira</button>
             <button class="tab-btn" data-tab="calculadora-rsc" aria-selected="false">🎯 Pontuação RSC</button>
             <button class="tab-btn" data-tab="noticias" aria-selected="false">📰 Leis & Informativos</button>
@@ -326,11 +327,27 @@
                 </section>
             </div>
 
-            <!-- Simulador de Diárias de Viagem -->
-            <section class="card" aria-labelledby="diarias-title" style="margin-top: 30px;">
-                <h3 id="diarias-title" style="font-family: var(--font-title); font-size: 1.4rem; color: var(--color-primary); margin-bottom: 20px; display: flex; align-items: center; gap: 8px;">
-                    ✈️ Simulador de Diárias de Viagem (Decreto nº 11.872/2023)
-                </h3>
+
+
+            <!-- Mural de Novidades Rápidas e Acompanhamento do RSC (Aba Calculadora) -->
+            <div class="news-mural">
+                <section class="card card-mural-noticias" aria-labelledby="mural-news-title">
+                    <h3 id="mural-news-title" class="mural-title">📰 Painel de Novidades da Carreira & RSC</h3>
+                    <div id="mural-container" class="mural-grid">
+                        <!-- Inserido dinamicamente pelo JS via noticias.json -->
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- ABA 2: SIMULADOR DE DIÁRIAS -->
+        <section id="diarias" class="tab-content" aria-labelledby="diarias-title">
+            <div class="card">
+                <h2 id="diarias-title" style="font-family: var(--font-title); font-size: 1.6rem; color: var(--color-primary); margin-bottom: 10px;">✈️ Simulador de Diárias de Viagem</h2>
+                <p style="color: var(--color-text-muted); margin-bottom: 25px;">
+                    Simule os valores de diárias nacionais e as deduções estimadas do seu afastamento de acordo com o Decreto nº 11.872/2023.
+                </p>
+
                 <div class="diarias-grid">
                     <!-- Form Diárias -->
                     <div class="diarias-inputs">
@@ -443,18 +460,8 @@
                         </div>
                     </div>
                 </div>
-            </section>
-
-            <!-- Mural de Novidades Rápidas e Acompanhamento do RSC (Aba Calculadora) -->
-            <div class="news-mural">
-                <section class="card card-mural-noticias" aria-labelledby="mural-news-title">
-                    <h3 id="mural-news-title" class="mural-title">📰 Painel de Novidades da Carreira & RSC</h3>
-                    <div id="mural-container" class="mural-grid">
-                        <!-- Inserido dinamicamente pelo JS via noticias.json -->
-                    </div>
-                </section>
             </div>
-        </main>
+        </section>
 
         <!-- ABA 4: CALCULADORA DE PONTUAÇÃO RSC -->
         <section id="calculadora-rsc" class="tab-content" aria-labelledby="rsc-calc-title">
@@ -796,8 +803,8 @@
 
         <!-- Rodapé do Aplicativo -->
         <footer>
-            <img src="assets/mascotes-yluna85-labs.jpg" alt="Mascotes Oficiais do Laboratório: Coragem e Bolinho de chuva" class="mascots" id="footer-mascots">
-            <p>Mascotes Oficiais: Coragem e Bolinho de chuva</p>
+            <img src="assets/mascotes-yluna85-labs.jpg" alt="Mascotes Oficiais do Laboratório: Coragem e Bolinho de Chuva" class="mascots" id="footer-mascots">
+            <p>Mascotes Oficiais: Coragem e Bolinho de Chuva</p>
             <p class="brand-text">YLuna85 LABs — Laboratório de Softwares</p>
         </footer>
     </div>
