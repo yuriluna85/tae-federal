@@ -210,32 +210,9 @@ document.addEventListener("DOMContentLoaded", () => {
     initNews();
     initDiarias();
     calculateSalary(); // Cálculo inicial
-
-    // Inicialização segura do AdSense após reflow do layout
-    setTimeout(initAdSense, 300);
-
-    // Inicializar anúncios caso a página passe do plano de fundo para ativa
-    document.addEventListener("visibilitychange", () => {
-        if (document.visibilityState === "visible") {
-            initAdSense();
-        }
-    });
 });
 
-// Inicialização segura do Google AdSense
-function initAdSense() {
-    try {
-        const ads = document.querySelectorAll(".adsbygoogle:not([data-adsbygoogle-status='done'])");
-        ads.forEach(ad => {
-            if (ad.offsetParent !== null && ad.offsetWidth > 0) {
-                ad.setAttribute("data-adsbygoogle-status", "done");
-                (window.adsbygoogle = window.adsbygoogle || []).push({});
-            }
-        });
-    } catch (e) {
-        console.error("AdSense setup skipped/error:", e);
-    }
-}
+
 
 // Controle de Abas
 function initTabs() {
@@ -251,9 +228,6 @@ function initTabs() {
             
             btn.classList.add("active");
             document.getElementById(target).classList.add("active");
-
-            // Tentar inicializar anúncios que ficaram visíveis
-            setTimeout(initAdSense, 100);
         });
     });
 }
@@ -1319,14 +1293,28 @@ function calculateDiarias() {
 
     // Taxa diária da diária
     const taxaDiaria = pcctaeData.diarias[cargo][destino] || 0;
-    const valorBruto = qtdDiarias * taxaDiaria;
+    
+    // Cálculo do valor bruto considerando redução de 25% na permanência prolongada (a partir do 121º dia)
+    let valorBruto = 0;
+    if (qtdDiarias > 120) {
+        valorBruto = (120 * taxaDiaria) + ((qtdDiarias - 120) * taxaDiaria * 0.75);
+    } else {
+        valorBruto = qtdDiarias * taxaDiaria;
+    }
+
+    // Adicional de Deslocamento de R$ 95,00 para despesas de embarque e desembarque
+    const adicionalDeslocamento = qtdDiarias > 0 ? 95.00 : 0.00;
+
+    // Desconto de Retenção Previdenciária de R$ 45,45 por diária integral (com pernoite)
+    const diasIntegrais = Math.floor(qtdDiarias);
+    const descontoPrevidenciario = diasIntegrais * 45.45;
 
     // Desconto de Auxílio Alimentação (auxilio / 22 por dia de desconto efetivo)
     const alimentacaoAtiva = document.getElementById("diaria-alimentacao-checkbox").checked;
     const alimentacaoDiaria = alimentacaoAtiva ? (pcctaeData.auxilios.alimentacao / 22) : 0;
     const descontoAlimentacao = alimentacaoDiaria * diasDescontoEfetivos;
 
-        // Desconto de Auxílio Transporte (Somente o valor diário do auxílio-transporte, sem dedução de 6% ou PGD)
+    // Desconto de Auxílio Transporte (Somente o valor diário do auxílio-transporte, sem dedução de 6% ou PGD)
     let transporteDiarioLiquido = 0;
     const transporteAtivo = document.getElementById("diaria-transporte-checkbox").checked;
     if (transporteAtivo) {
@@ -1334,15 +1322,17 @@ function calculateDiarias() {
     }
     const descontoTransporte = transporteDiarioLiquido * diasDescontoEfetivos;
 
-    const totalDesconto = descontoAlimentacao + descontoTransporte;
-    const valorLiquido = Math.max(0, valorBruto - totalDesconto);
+    const totalDesconto = descontoAlimentacao + descontoTransporte + descontoPrevidenciario;
+    const valorLiquido = Math.max(0, valorBruto + adicionalDeslocamento - totalDesconto);
 
     // Renderizar nos elementos correspondentes
     document.getElementById("res-diaria-qtd").textContent = qtdDiarias.toLocaleString("pt-BR", { minimumFractionDigits: 1 });
     document.getElementById("res-diaria-dias-desconto").textContent = diasDescontoEfetivos;
     document.getElementById("res-diaria-bruto").textContent = formatCurrency(valorBruto);
+    document.getElementById("res-diaria-adicional").textContent = "+ " + formatCurrency(adicionalDeslocamento);
     document.getElementById("res-diaria-desc-alimentacao").textContent = "- " + formatCurrency(descontoAlimentacao);
     document.getElementById("res-diaria-desc-transporte").textContent = "- " + formatCurrency(descontoTransporte);
+    document.getElementById("res-diaria-desc-previdenciario").textContent = "- " + formatCurrency(descontoPrevidenciario);
     document.getElementById("res-diaria-liquido").textContent = formatCurrency(valorLiquido);
 }
 
@@ -1350,8 +1340,10 @@ function resetDiariasResults() {
     document.getElementById("res-diaria-qtd").textContent = "0.0";
     document.getElementById("res-diaria-dias-desconto").textContent = "0";
     document.getElementById("res-diaria-bruto").textContent = formatCurrency(0);
+    document.getElementById("res-diaria-adicional").textContent = "+ " + formatCurrency(0);
     document.getElementById("res-diaria-desc-alimentacao").textContent = "- " + formatCurrency(0);
     document.getElementById("res-diaria-desc-transporte").textContent = "- " + formatCurrency(0);
+    document.getElementById("res-diaria-desc-previdenciario").textContent = "- " + formatCurrency(0);
     document.getElementById("res-diaria-liquido").textContent = formatCurrency(0);
 }
 
