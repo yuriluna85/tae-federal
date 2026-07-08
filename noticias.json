@@ -18,6 +18,24 @@
     "badge_class": "badge-info"
   },
   {
+    "title": "Comunicado | Reconhecimento de Saberes e Competências (RSC-TAE) – Validação da Titulação no Sistema",
+    "source": "IFPE",
+    "pubDate": "2026-07-08 02:30",
+    "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQeHR6YTRUbXBxNnJqZXVHQ180cmNrc2dSNFZ4WHFEOFRYV2t0X056RmJoQVNSQnhka2FuS0M1WWtWU21HOTdWUE0zX2NpZTkzTFJOeENnTGRZanlGNC1pVy1VRGtwY2JCQS1vUEQ1UWk3WFFaUzFxR3BuWERiSlhTb1lxWVpaa0Z6VDVqZ1RTanNPeVo1MVJmU3UxTDRlUTdQTXZqWm1YOUtTa0U1YlRFQkl4bWdTcXphaDZuTDNjNGFTMmIzeTRDdFVwd2lZUXJvUnE0OXlVVGNVZGM?oc=5",
+    "description": "Comunicado | Reconhecimento de Saberes e Competências (RSC-TAE) – Validação da Titulação no Sistema",
+    "category": "RSC",
+    "badge_class": "badge-alert"
+  },
+  {
+    "title": "Instituto discute reconhecimento de saberes para técnicos administrativos",
+    "source": "IFRN",
+    "pubDate": "2026-07-07 14:25",
+    "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPNzhIUkd0Yzl6THQzZzFLLXQxNVJpLV9uaVhqaDg1NEs5MXQ1aFA5RS1tUnZqaWk5UUxOS19Dc2hvWlJUUkd1VXZqNFBuVGNKVzg2MnF3MzYydjFDZG9TUUpBR0Q4ZWZhT3RVdl8yT0ZfRDRRU19ObjJsQ2E2MUJMSDBQcVltN1NMV2lhdi1iNFZtUy1qQnlJaWtrTkNKRURNc1RKZ1pQdDJJQ21jX3hqdjZucF9fUktSeG5CczZFZFNrbmk4?oc=5",
+    "description": "Instituto discute reconhecimento de saberes para técnicos administrativos",
+    "category": "RSC",
+    "badge_class": "badge-alert"
+  },
+  {
     "title": "RSC-TAE: cuidado com golpes e informações falsas!",
     "source": "sinasefe",
     "pubDate": "2026-07-06 20:22",
@@ -39,10 +57,19 @@
     "title": "RSC-PCCTAE: Ifal inicia trabalhos para regulamentação interna",
     "source": "ifal.edu.br",
     "pubDate": "2026-07-06 19:19",
-    "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNM2tCV0J2X2pnU1lXYm4tdzRLYjF6MkUzQ1VQSFhQYm5SZS1QMF9XZkNnMHNaYW5yMUE4QTR1RnNUckphMThTamNYNUJZbFJzVmw2OXlibVlGLWxLbjdIWUpkZjYwRDZxUUs2T3E3d1RYeDU4RHRiMDdvWlMzUXVhRnZxT0hTbUpPcE53RzBQXzI2RlhVTkVTVkJn?oc=5",
+    "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPd2JVNmFYYl9zSWZEVDd6ejI2UXR6ZjQ1bWx5Ri1yR3RCRnFNTUwwTGNyOUlSd2hwUW1DR3ZpUE9kREQ1bGF4VnNTaUl5dGd2S1hPeWh4VXZ5ekl6dmlyNmJoZUM0VFE3WmxtekpTR2lma0Y4WGtNUG5GNDc5MGV3bUZDRXFmS0M0YlNYNXIxcEYwZ0t0c19hVTMxbHhzZjdfWENDSktNLWpWUUVJRmZ0Zw?oc=5",
     "description": "RSC-PCCTAE: Ifal inicia trabalhos para regulamentação interna",
     "category": "RSC",
     "badge_class": "badge-alert"
+  },
+  {
+    "title": "Aposentados e pensionistas com paridade poderão ter direito à aceleração da progressão por capacitação no PCCTAE",
+    "source": "SINTUFCE",
+    "pubDate": "2026-07-05 07:00",
+    "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPZHRpZVZVV1NXWWdYVk5IVzdYcTdCR1Bwa2dpeU9ROUJtOUZQZnh2T3NvYm04b2VET1BZQWFDM25lelhsMWpIeTVWb2F4T0ZWTHY2VFd0NnNwNl9NRmRudk9VekduRnhLclNXcEswWDhNTHV6bk9acUxnS1dfbmhId1NLVUgzY0dZLTRQV2NRUXIwM1lrU0VrYWtMcDNiazBJSHJYQXFPeHc0bVlscm5GdVNNZmM0a3JXTjVIdXJGUU43QUlocXI3cGNFd1habjBkOG5vNS1KVnU?oc=5",
+    "description": "Aposentados e pensionistas com paridade poderão ter direito à aceleração da progressão por capacitação no PCCTAE",
+    "category": "Notícia",
+    "badge_class": "badge-success"
   },
   {
     "title": "Decreto do RSC é publicado no Diário Oficial da União",
@@ -59,33 +86,6 @@
     "pubDate": "2026-07-03 20:32",
     "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQRzhTOTNmVnlnODh6aDhjX0x3MVUzYnQ1OG9OQlZ2OFZzejllWUZtdmlQTGxXcEk3d2hyN0c3UEVMOVpoNW1XNW01OG5HbXR5bURvT0M4aEUzeFZXaDVKY1lscU04M3pjaTZKSXJ1ZzNwTDVyeDQ0c3ZCd0lUVE5IZmRSR2lNN3JjeFZ0MngwYVVfZkpucmhHUUNRSHVXWEpVdHkzbC16dndDTjludWVIZjZNUEtwcFFMMFllZVA1Nk1xdFk?oc=5",
     "description": "Governo do Brasil regulamenta validação de saberes práticos de TAEs — Ministério da Educação",
-    "category": "RSC",
-    "badge_class": "badge-alert"
-  },
-  {
-    "title": "Vitória dos TAE: Governo Federal publica decreto que regulamenta o RSC para servidores técnico-administrativos em educação",
-    "source": "SINTUFCE",
-    "pubDate": "2026-07-03 19:58",
-    "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxOVkkwcHREWUdRMzRvM0RSZ0F0a3BicURiOV9Cal9mRk9GdjRTclBzZ3k4UTdIa1IxamhEZVVTLTdHQUtLX3NET2RIMHYxTnQtY1hFQktndWFzU3ZyVm5mZkFMRGJieEQ2bC1NM2FZYUp5NWZLMkc3RG5xSnc4OExVYUFTSTFtMzVnQm5CQnpFc005aUtQeUp1MENqRk55dzRlVEU3enpVN2JScmhIQWVJMlJRQWpPX3VCSmlJUENSSVJqeGtDaW1rQTUweTEwM3hRU3A5RXc2c2ZpNjRlOC0weHpUN1g?oc=5",
-    "description": "Vitória dos TAE: Governo Federal publica decreto que regulamenta o RSC para servidores técnico-administrativos em educação",
-    "category": "RSC",
-    "badge_class": "badge-alert"
-  },
-  {
-    "title": "Conquista da nossa luta: RSC-TAE está regulamentado!",
-    "source": "sinasefe",
-    "pubDate": "2026-07-03 19:54",
-    "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOYkFUUUxOMFBxcm5QTWcxOWNtSlRHRTJTUGx3R2k5UG5xUVczNjBSYm54bVE5NklZSHBoczRBXzhQLUREY0FTQ3Y0U3lzSFg0SGZLUmtheF91UGZiYUJpSGVDUldOZzBYRGxkekgxM3BlX1ZSY3FZM1pHeHh6QTB4cHNkblg4UEk?oc=5",
-    "description": "Conquista da nossa luta: RSC-TAE está regulamentado!",
-    "category": "RSC",
-    "badge_class": "badge-alert"
-  },
-  {
-    "title": "RSC-TAE: quanto tempo mais?!",
-    "source": "sinasefe",
-    "pubDate": "2026-06-11 07:00",
-    "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBFVkVCVEZPYWpXRUhTa0VzZXVCVnF6RXRPTkQ4VkliRzZYZWc1bXdpbW5xU2JSWTBWZThDc2FaR25ZXzVwYk5kQzNxVi1vUTVRemtiTXoybnQtRkpISjRyMWxzRVRPQQ?oc=5",
-    "description": "RSC-TAE: quanto tempo mais?!",
     "category": "RSC",
     "badge_class": "badge-alert"
   }
