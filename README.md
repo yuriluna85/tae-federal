@@ -61,9 +61,16 @@ Como a aplicação foi construída inteiramente com código estático nativo (SP
 Este repositório está publicado no endereço [github.com/yuriluna85/tae-federal](https://github.com/yuriluna85/tae-federal) e configurado com domínio personalizado no GitHub Pages:
 1. O repositório está integrado sob a branch `main` e publicado via GitHub Pages.
 2. Está associado ao domínio customizado [taes-federal.com.br](https://taes-federal.com.br) para navegação de produção com HTTPS seguro.
-## 📝 Log de Atualizações (Changelog)
 
-### [05/07/2026] - Atualização de Critérios RSC (Decreto nº 13.048/2026) e Ajuste de Layout no Simulador de Diárias
+## 📝 Log de Atualizações (Changelog)
+ 
+### [08/07/2026] - Ajustes e Conformidade na Lógica de Diárias (Decreto nº 5.992/2006 & Decreto nº 11.872/2023)
+* ✈️ **Conformidade de Diárias**: Atualizado o simulador de diárias em [app.js](file:///G:/Meu%20Drive/app/2.%20Projetos%20e%20Aplica%C3%A7%C3%B5es/2.2%20Aplica%C3%A7%C3%B5es%20e%20C%C3%B3digos%20(GitHub)/YLuna85%20LABs%20APPs/calculadora-tae-federal/app.js) e [index.html](file:///G:/Meu%20Drive/app/2.%20Projetos%20e%20Aplica%C3%A7%C3%B5es/2.2%20Aplica%C3%A7%C3%B5es%20e%20C%C3%B3digos%20(GitHub)/YLuna85%20LABs%20APPs/calculadora-tae-federal/index.html) para alinhar com os critérios estritos da legislação federal:
+  - **Retenção Previdenciária**: Aplicado o desconto previdenciário de R$ 45,45 por diária integral (com pernoite) na dedução líquida final.
+  - **Adicional de Deslocamento**: Adicionado o acréscimo fixo de R$ 95,00 para despesas de embarque/desembarque em todas as viagens com concessão de diária.
+  - **Permanência Prolongada**: Implementado redutor automático de 25% no valor diário excedente a partir do 121º dia na mesma localidade (acima de 120 dias).
+
+### [05/07/2026] - Atualização de Critérios RSC (Decreto nº 13.048/2026), Ajuste do Simulador de Diárias e AdSense
 * ⚖️ **Atualização dos Critérios RSC**: Ajustados os critérios individuais e pontuações do RSC-PCCTAE de acordo com o anexo oficial do **Decreto nº 13.048/2026**:
   - Alterada a pontuação do Eixo I, Item 4 (Sindicância/PAD/etc.) de **15,0** para **3,0** pontos.
   - Alterada a pontuação do Eixo II, Item 9 (Programas de formação continuada...) de **3,0** para **1,0** ponto.
@@ -72,7 +79,8 @@ Este repositório está publicado no endereço [github.com/yuriluna85/tae-federa
   - Ajustada a pontuação de Coordenação de Congresso no Eixo VI de **4,5** para **3,5** pontos.
   - Ajustada a pontuação de Coorientação de TCC no Eixo VI de **7,5** para **4,5** pontos.
   - Atualizadas as descrições dos níveis de RSC no painel e nos seletores para refletir a escolaridade exigida para pleitear cada nível de RSC (RSC-I a RSC-VI).
-* ✈️ **Ajuste de Layout do Simulador de Diárias**: Corrigida a estrutura do HTML em [index.html](file:///G:/Meu%20Drive/APP/2.%20Projetos%20e%20Aplicações/2.2%20Aplicações%20e%20Códigos%20(GitHub)/YLuna85%20LABs%20APPs/calculadora-tae-federal/index.html) movendo o bloco `diarias-results` para fora do contêiner `diarias-inputs` (como elemento irmão). Isso reestabeleceu o layout de grid responsivo em duas colunas, posicionando os resultados de detalhamento lado a lado com os campos de entrada de forma harmônica (similar à visualização de remuneração principal).
+* ✈️ **Ajuste de Layout do Simulador de Diárias**: Corrigida a estrutura do HTML em [index.html](file:///G:/Meu%20Drive/app/2.%20Projetos%20e%20Aplica%C3%A7%C3%B5es/2.2%20Aplica%C3%A7%C3%B5es%20e%20C%C3%B3digos%20(GitHub)/YLuna85%20LABs%20APPs/calculadora-tae-federal/index.html) movendo o bloco `diarias-results` para fora do contêiner `diarias-inputs` (como elemento irmão). Isso reestabeleceu o layout de grid responsivo em duas colunas, posicionando os resultados de detalhamento lado a lado com os campos de entrada de forma harmônica (similar à visualização de remuneração principal).
+* 💵 **Simplificação do Google AdSense**: Removida a rotina de inicialização complexa `initAdSense` em [app.js](file:///G:/Meu%20Drive/app/2.%20Projetos%20e%20Aplica%C3%A7%C3%B5es/2.2%20Aplica%C3%A7%C3%B5es%20e%20C%C3%B3digos%20(GitHub)/YLuna85%20LABs%20APPs/calculadora-tae-federal/app.js) e substituída pelas chamadas `push` nativas do AdSense posicionadas diretamente no HTML [index.html](file:///G:/Meu%20Drive/app/2.%20Projetos%20e%20Aplica%C3%A7%C3%B5es/2.2%20Aplica%C3%A7%C3%B5es%20e%20C%C3%B3digos%20(GitHub)/YLuna85%20LABs%20APPs/calculadora-tae-federal/index.html) logo abaixo de cada tag `ins`. Isso simplifica o ciclo de vida dos blocos e mitiga problemas de carregamento assíncrono da biblioteca de monetização.
 
 ### [04/07/2026] - Simplificação e Ajuste no Cálculo de Diárias & Correção do AdSense
 *   ✈️ **Revisão do Cálculo de Diárias**:
