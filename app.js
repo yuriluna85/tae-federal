@@ -1305,10 +1305,6 @@ function calculateDiarias() {
     // Adicional de Deslocamento de R$ 95,00 para despesas de embarque e desembarque
     const adicionalDeslocamento = qtdDiarias > 0 ? 95.00 : 0.00;
 
-    // Desconto de Retenção Previdenciária de R$ 45,45 por diária integral (com pernoite)
-    const diasIntegrais = Math.floor(qtdDiarias);
-    const descontoPrevidenciario = diasIntegrais * 45.45;
-
     // Desconto de Auxílio Alimentação (auxilio / 22 por dia de desconto efetivo)
     const alimentacaoAtiva = document.getElementById("diaria-alimentacao-checkbox").checked;
     const alimentacaoDiaria = alimentacaoAtiva ? (pcctaeData.auxilios.alimentacao / 22) : 0;
@@ -1322,8 +1318,8 @@ function calculateDiarias() {
     }
     const descontoTransporte = transporteDiarioLiquido * diasDescontoEfetivos;
 
-    const totalDesconto = descontoAlimentacao + descontoTransporte + descontoPrevidenciario;
-    const valorLiquido = Math.max(0, valorBruto + adicionalDeslocamento - totalDesconto);
+    const valorLiquidoSemTransporte = Math.max(0, valorBruto + adicionalDeslocamento - descontoAlimentacao);
+    const valorLiquidoComTransporte = Math.max(0, valorBruto + adicionalDeslocamento - (descontoAlimentacao + descontoTransporte));
 
     // Renderizar nos elementos correspondentes
     document.getElementById("res-diaria-qtd").textContent = qtdDiarias.toLocaleString("pt-BR", { minimumFractionDigits: 1 });
@@ -1332,8 +1328,8 @@ function calculateDiarias() {
     document.getElementById("res-diaria-adicional").textContent = "+ " + formatCurrency(adicionalDeslocamento);
     document.getElementById("res-diaria-desc-alimentacao").textContent = "- " + formatCurrency(descontoAlimentacao);
     document.getElementById("res-diaria-desc-transporte").textContent = "- " + formatCurrency(descontoTransporte);
-    document.getElementById("res-diaria-desc-previdenciario").textContent = "- " + formatCurrency(descontoPrevidenciario);
-    document.getElementById("res-diaria-liquido").textContent = formatCurrency(valorLiquido);
+    document.getElementById("res-diaria-liquido").textContent = formatCurrency(valorLiquidoSemTransporte);
+    document.getElementById("res-diaria-liquido-com-transporte").textContent = formatCurrency(valorLiquidoComTransporte);
 }
 
 function resetDiariasResults() {
@@ -1343,8 +1339,8 @@ function resetDiariasResults() {
     document.getElementById("res-diaria-adicional").textContent = "+ " + formatCurrency(0);
     document.getElementById("res-diaria-desc-alimentacao").textContent = "- " + formatCurrency(0);
     document.getElementById("res-diaria-desc-transporte").textContent = "- " + formatCurrency(0);
-    document.getElementById("res-diaria-desc-previdenciario").textContent = "- " + formatCurrency(0);
     document.getElementById("res-diaria-liquido").textContent = formatCurrency(0);
+    document.getElementById("res-diaria-liquido-com-transporte").textContent = formatCurrency(0);
 }
 
 // Inicialização das Notícias Dinâmicas

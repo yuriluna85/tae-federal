@@ -66,9 +66,11 @@ Este repositório está publicado no endereço [github.com/yuriluna85/tae-federa
  
 ### [08/07/2026] - Ajustes e Conformidade na Lógica de Diárias (Decreto nº 5.992/2006 & Decreto nº 11.872/2023)
 * ✈️ **Conformidade de Diárias**: Atualizado o simulador de diárias em [app.js](file:///G:/Meu%20Drive/app/2.%20Projetos%20e%20Aplica%C3%A7%C3%B5es/2.2%20Aplica%C3%A7%C3%B5es%20e%20C%C3%B3digos%20(GitHub)/YLuna85%20LABs%20APPs/calculadora-tae-federal/app.js) e [index.html](file:///G:/Meu%20Drive/app/2.%20Projetos%20e%20Aplica%C3%A7%C3%B5es/2.2%20Aplica%C3%A7%C3%B5es%20e%20C%C3%B3digos%20(GitHub)/YLuna85%20LABs%20APPs/calculadora-tae-federal/index.html) para alinhar com os critérios estritos da legislação federal:
-  - **Retenção Previdenciária**: Aplicado o desconto previdenciário de R$ 45,45 por diária integral (com pernoite) na dedução líquida final.
+  - **Isenção Previdenciária**: Removido o desconto indevido de previdência (R$ 45,45), uma vez que diárias de viagens federais possuem caráter estritamente indenizatório e são por lei isentas de PSS e IRRF, alinhando a simulação ao valor real recebido no SCDP (R$ 1.365,78 para viagem a SP).
   - **Adicional de Deslocamento**: Adicionado o acréscimo fixo de R$ 95,00 para despesas de embarque/desembarque em todas as viagens com concessão de diária.
   - **Permanência Prolongada**: Implementado redutor automático de 25% no valor diário excedente a partir do 121º dia na mesma localidade (acima de 120 dias).
+  - **Dupla Projeção Líquida**: Reestruturada a exibição de resultados para apresentar dois cenários paralelos de recebimento: o Líquido Estimado Sem Desconto de Transporte (caso o proponente desmarque o desconto no SCDP nos dias de ida/volta ou por esquecimento) e o Líquido com Desconto de Transporte (caso o sistema aplique integralmente as deduções).
+  - **Alerta de Estimativa**: Adicionado aviso de alerta detalhado em destaque no painel do simulador (`index.html`) esclarecendo que o cálculo é estimativo e explicando os dois cenários de incidência.
 
 ### [05/07/2026] - Atualização de Critérios RSC (Decreto nº 13.048/2026), Ajuste do Simulador de Diárias e AdSense
 * ⚖️ **Atualização dos Critérios RSC**: Ajustados os critérios individuais e pontuações do RSC-PCCTAE de acordo com o anexo oficial do **Decreto nº 13.048/2026**:

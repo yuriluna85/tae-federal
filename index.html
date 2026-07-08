@@ -386,8 +386,14 @@
                             </div>
                         </div>
 
-                        <div class="info-box-diaria" style="margin-top: 10px; padding: 10px 14px; border-radius: 8px; background: rgba(13, 202, 240, 0.05); border: 1px solid rgba(13, 202, 240, 0.15); font-size: 0.85rem; line-height: 1.4; color: var(--color-text-muted); max-width: 100%; margin-bottom: 15px;">
-                            💡 <strong>Informação de Dedução:</strong> O cálculo das diárias desconta o valor proporcional dos auxílios de transporte e alimentação recebidos para os dias úteis da viagem, visto que o deslocamento oficial já cobre as despesas de estadia e alimentação. O valor do auxílio-transporte diário informado é deduzido diretamente para cada dia útil de viagem.
+                        <div class="info-box-diaria" style="margin-top: 10px; padding: 10px 14px; border-radius: 8px; background: rgba(255, 193, 7, 0.05); border: 1px solid rgba(255, 193, 7, 0.25); font-size: 0.85rem; line-height: 1.4; color: var(--color-text-muted); max-width: 100%; margin-bottom: 15px;">
+                            💡 <strong>Informação de Dedução:</strong> O cálculo das diárias desconta o valor proporcional dos auxílios de transporte e alimentação recebidos para os dias úteis da viagem. O valor do auxílio-transporte diário informado é deduzido diretamente para cada dia útil.
+                            <br><br>
+                            ⚠️ <strong>Alerta de Estimativa (SCDP):</strong> O valor líquido das diárias varia conforme o cadastro de viagem no sistema. Por essa razão, o simulador exibe dois cenários:
+                            <ul style="margin: 8px 0 0 15px; padding: 0;">
+                                <li><strong>Líquido Estimado (Sem Desc. Transporte):</strong> Simula o recebimento caso a dedução de transporte não seja lançada na PCDP (esquecimento do operador) ou se você justificar no despacho que realizou o deslocamento habitual residência-trabalho na sede oficial nos dias de ida e volta.</li>
+                                <li><strong>Líquido com Desconto de Transporte:</strong> Simula o cenário em que o SCDP aplica a dedução integral de transporte nos dias úteis da viagem.</li>
+                            </ul>
                         </div>
                     </div>
 
@@ -417,13 +423,13 @@
                             <span>Desconto Aux-Transporte:</span>
                             <span id="res-diaria-desc-transporte" style="font-weight: 600;">- R$ 0,00</span>
                         </div>
-                        <div class="result-item deduction" style="display: flex; justify-content: space-between; font-size: 0.9rem; color: #f87171;">
-                            <span>Retenção Previdenciária:</span>
-                            <span id="res-diaria-desc-previdenciario" style="font-weight: 600;">- R$ 0,00</span>
-                        </div>
-                        <div class="result-item bold" style="display: flex; justify-content: space-between; margin-top: 5px; padding-top: 10px; border-top: 1px solid var(--border-color); font-size: 1.1rem; color: #34d399;">
-                            <span>Líquido das Diárias:</span>
+                        <div class="result-item bold" style="display: flex; justify-content: space-between; margin-top: 5px; padding-top: 10px; border-top: 1px solid var(--border-color); font-size: 1.05rem; color: #34d399;">
+                            <span>Líquido Estimado (Sem Desc. Transporte):</span>
                             <span id="res-diaria-liquido" style="font-weight: 700;">R$ 0,00</span>
+                        </div>
+                        <div class="result-item bold" style="display: flex; justify-content: space-between; font-size: 1.05rem; color: #fb7185;">
+                            <span>Líquido com Desconto de Transporte (SCDP):</span>
+                            <span id="res-diaria-liquido-com-transporte" style="font-weight: 700;">R$ 0,00</span>
                         </div>
                     </div>
                 </div>
