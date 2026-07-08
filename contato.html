@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato — YLuna85 LABs</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .content-card {
+            max-width: 800px;
+            margin: 40px auto;
+            background: var(--color-card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-lg);
+            padding: 40px;
+            box-shadow: var(--shadow-card);
+            backdrop-filter: blur(10px);
+        }
+        .content-title {
+            font-family: var(--font-title);
+            font-size: 2rem;
+            color: var(--color-primary);
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 12px;
+        }
+        .text-block {
+            font-family: var(--font-body);
+            color: var(--color-text);
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .form-label {
+            font-family: var(--font-title);
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+        .form-control {
+            background: rgba(0, 0, 0, 0.25);
+            border: 1px solid var(--border-color);
+            color: var(--color-text);
+            padding: 12px;
+            border-radius: var(--border-radius-md);
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            outline: none;
+            transition: var(--transition-smooth);
+        }
+        .form-control:focus {
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.25);
+        }
+        textarea.form-control {
+            resize: vertical;
+            min-height: 120px;
+        }
+        .btn-submit {
+            background: var(--color-primary);
+            color: #ffffff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: var(--border-radius-md);
+            font-family: var(--font-title);
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            align-self: flex-start;
+        }
+        .btn-submit:hover {
+            opacity: 0.9;
+        }
+        .btn-back {
+            display: inline-block;
+            color: var(--color-text-muted);
+            text-decoration: none;
+            font-family: var(--font-title);
+            font-weight: 600;
+            margin-top: 20px;
+            transition: var(--transition-smooth);
+        }
+        .btn-back:hover {
+            color: var(--color-text);
+        }
+        .success-msg {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: #10b981;
+            padding: 12px;
+            border-radius: var(--border-radius-md);
+            font-size: 0.9rem;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <main class="content-card">
+            <h1 class="content-title">Entre em Contato</h1>
+            
+            <div class="text-block">
+                <p>Tem alguma dúvida, sugestão de recurso ou identificou alguma divergência nos valores simulados? Preencha o formulário abaixo para enviar sua mensagem diretamente ao laboratório de suporte do <strong>YLuna85 LABs</strong>.</p>
+            </div>
+
+            <div class="success-msg" id="msg-success">
+                ✓ Mensagem enviada com sucesso! Agradecemos pelo contato e responderemos o mais breve possível.
+            </div>
+
+            <form class="contact-form" id="contato-form" onsubmit="event.preventDefault(); document.getElementById('msg-success').style.display = 'block'; this.reset();">
+                <div class="form-group">
+                    <label for="contato-nome" class="form-label">Nome Completo:</label>
+                    <input type="text" id="contato-nome" class="form-control" placeholder="Digite seu nome..." required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="contato-email" class="form-label">E-mail para Retorno:</label>
+                    <input type="email" id="contato-email" class="form-control" placeholder="seu-email@dominio.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="contato-assunto" class="form-label">Assunto da Mensagem:</label>
+                    <input type="text" id="contato-assunto" class="form-control" placeholder="Ex: Sugestão de Novo Recurso / Erro no cálculo" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="contato-mensagem" class="form-label">Mensagem:</label>
+                    <textarea id="contato-mensagem" class="form-control" placeholder="Escreva sua mensagem em detalhes..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">Enviar Mensagem</button>
+            </form>
+
+            <a href="index.html" class="btn-back">← Voltar ao Início</a>
+        </main>
+    </div>
+</body>
+</html>

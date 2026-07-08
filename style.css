@@ -1027,3 +1027,23 @@ footer .brand-text {
     to { opacity: 1; transform: translateY(0); }
 }
 
+/* Estilos para Links Institucionais AdSense */
+.footer-links {
+    margin-top: 15px;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+}
+
+.footer-link {
+    color: var(--color-text-muted);
+    text-decoration: none;
+    margin: 0 8px;
+    transition: var(--transition-smooth);
+}
+
+.footer-link:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+

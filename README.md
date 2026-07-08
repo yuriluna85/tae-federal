@@ -78,6 +78,13 @@ Este repositório está publicado no endereço [github.com/yuriluna85/tae-federa
   - **Dupla Projeção Líquida**: Reestruturada a exibição de resultados para apresentar dois cenários paralelos de recebimento (com e sem o desconto de transporte).
   - **Alerta de Estimativa e Canal SCDP**: Atualizado o painel com aviso detalhado reforçando o caráter estimativo dos valores e orientando o contato direto com o operador do SCDP da respectiva unidade do servidor em caso de dúvidas.
 
+### [08/07/2026] - Aba dedicada para Diárias de Viagem e Conformidade com Google AdSense
+*   ✈️ **Aba de Diárias Separada**: Isolou o painel de Diárias de Viagem em uma aba principal do aplicativo, posicionada no menu superior de navegação entre "Calculadora Salarial" e "Tabela de Carreira".
+*   🐕 **Mascote**: Corrigida a escrita de "Bolinho de chuva" para "**Bolinho de Chuva**" (nome próprio).
+*   💰 **Qualificação AdSense**: Implementada a conformidade completa com as políticas do Google AdSense:
+    *   Links institucionais no rodapé ligando a páginas obrigatórias.
+    *   Criação das páginas institucionais [sobre.html](file:///G:/Meu%20Drive/app/2.%20Projetos%20e%20Aplica%C3%A7%C3%B5es/2.2%20Aplica%C3%A7%C3%B5es%20e%20C%C3%B3digos%20(GitHub)/YLuna85%20LABs%20APPs/calculadora-tae-federal/sobre.html), [privacidade.html](file:///G:/Meu%20Drive/app/2.%20Projetos%20e%20Aplica%C3%A7%C3%B5es/2.2%20Aplica%C3%A7%C3%B5es%20e%20C%C3%B3digos%20(GitHub)/YLuna85%20LABs%20APPs/calculadora-tae-federal/privacidade.html), [termos.html](file:///G:/Meu%20Drive/app/2.%20Projetos%20e%20Aplica%C3%A7%C3%B5es/2.2%20Aplica%C3%A7%C3%B5es%20e%20C%C3%B3digos%20(GitHub)/YLuna85%20LABs%20APPs/calculadora-tae-federal/termos.html) e [contato.html](file:///G:/Meu%20Drive/app/2.%20Projetos%20e%20Aplica%C3%A7%C3%B5es/2.2%20Aplica%C3%A7%C3%B5es%20e%20C%C3%B3digos%20(GitHub)/YLuna85%20LABs%20APPs/calculadora-tae-federal/contato.html) contendo Política de Privacidade de anúncios de terceiros/DART cookies, Termos de Uso com isenção de responsabilidade e formulário de contato integrado.
+
 ### [05/07/2026] - Atualização de Critérios RSC (Decreto nº 13.048/2026), Ajuste do Simulador de Diárias e AdSense
 * ⚖️ **Atualização dos Critérios RSC**: Ajustados os critérios individuais e pontuações do RSC-PCCTAE de acordo com o anexo oficial do **Decreto nº 13.048/2026**:
   - Alterada a pontuação do Eixo I, Item 4 (Sindicância/PAD/etc.) de **15,0** para **3,0** pontos.
