@@ -203,6 +203,7 @@ const maxFontSize = 24;
 
 // Inicialização da página
 document.addEventListener("DOMContentLoaded", () => {
+    initCookieConsent(); // Consentimento de Cookies LGPD/AdSense
     initTabs();
     initA11y();
     initCalcInputs();
@@ -1426,5 +1427,44 @@ function renderNews(newsList) {
             newsContainer.appendChild(article);
         });
     }
+}
+
+// Cookie Consent Banner (LGPD / AdSense)
+function initCookieConsent() {
+    if (localStorage.getItem('cookie-consent-accepted') === 'true') {
+        return;
+    }
+
+    const banner = document.createElement('div');
+    banner.id = 'cookie-consent-banner';
+    banner.className = 'cookie-banner';
+    banner.setAttribute('role', 'dialog');
+    banner.setAttribute('aria-live', 'polite');
+    banner.innerHTML = `
+        <div class="cookie-banner-text">
+            Este site utiliza cookies para fins de análise e personalização de anúncios (Google AdSense). 
+            Nenhum dado pessoal ou de cálculo digitado é coletado ou armazenado por nós — todo o processamento é local no seu navegador. 
+            O uso da ferramenta possui caráter estritamente informativo. Consulte nossa 
+            <a href="privacidade.html">Política de Privacidade</a> e <a href="termos.html">Termos de Uso</a>.
+        </div>
+        <div class="cookie-banner-actions">
+            <button id="btn-accept-cookies" class="cookie-btn">Prosseguir e Aceitar</button>
+        </div>
+    `;
+
+    document.body.appendChild(banner);
+
+    // Pequeno delay para acionar a animação de entrada
+    setTimeout(() => {
+        banner.classList.add('show');
+    }, 500);
+
+    document.getElementById('btn-accept-cookies').addEventListener('click', () => {
+        localStorage.setItem('cookie-consent-accepted', 'true');
+        banner.classList.remove('show');
+        setTimeout(() => {
+            banner.remove();
+        }, 400);
+    });
 }
 
