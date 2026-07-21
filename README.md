@@ -64,6 +64,10 @@ Este repositório está publicado no endereço [github.com/yuriluna85/tae-federa
 
 ## 📝 Log de Atualizações (Changelog)
  
+### [21/07/2026] - Geração de Sitemap e Configuração de SEO (robots.txt)
+* 🗺️ **Sitemap e Indexação**: Gerado o arquivo `sitemap.xml` contendo todas as URLs públicas da aplicação (`taes-federal.com.br`, `sobre.html`, `contato.html`, `privacidade.html`, `termos.html`) para indexação em mecanismos de busca.
+* 🤖 **Configuração do Robô**: Criado o arquivo `robots.txt` com as diretivas de liberação de varredura global e vinculação do endereço absoluto do sitemap.
+
 ### [08/07/2026] - Ajustes e Conformidade na Lógica de Diárias (Decreto nº 5.992/2006 & Decreto nº 11.872/2023)
 * ✈️ **Conformidade de Diárias**: Atualizado o simulador de diárias em [app.js](file:///G:/Meu%20Drive/app/2.%20Projetos%20e%20Aplica%C3%A7%C3%B5es/2.2%20Aplica%C3%A7%C3%B5es%20e%20C%C3%B3digos%20(GitHub)/YLuna85%20LABs%20APPs/calculadora-tae-federal/app.js) e [index.html](file:///G:/Meu%20Drive/app/2.%20Projetos%20e%20Aplica%C3%A7%C3%B5es/2.2%20Aplica%C3%A7%C3%B5es%20e%20C%C3%B3digos%20(GitHub)/YLuna85%20LABs%20APPs/calculadora-tae-federal/index.html) para alinhar com os critérios estritos da legislação federal:
   - **Aba de Diárias Separada**: Isolado o simulador de diárias em uma aba principal dedicada no menu de navegação, inserida entre a Calculadora Salarial e a Tabela de Carreira.

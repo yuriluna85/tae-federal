@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://taes-federal.com.br/sitemap.xml
