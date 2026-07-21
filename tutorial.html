@@ -1,0 +1,381 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutoriais e Guias Praticos | Calculadora TAE Federal</title>
+    <meta name="description" content="Guias praticos e tutoriais passo a passo para usar os simuladores da Calculadora TAE Federal: calculo salarial, diarias, pontuacao RSC e tabela de carreira PCCTAE 2026.">
+    <link rel="icon" href="assets/marca-yluna85-labs.jpg" type="image/jpeg">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .tutorial-hero{background:linear-gradient(135deg,var(--color-primary) 0%,var(--color-secondary) 100%);padding:60px 30px;text-align:center;margin-bottom:40px;border-radius:20px}
+        .tutorial-hero h1{font-family:var(--font-title);font-size:2.2rem;color:#fff;margin-bottom:12px}
+        .tutorial-hero p{font-size:1.05rem;color:rgba(255,255,255,0.85);max-width:620px;margin:0 auto 24px;line-height:1.6}
+        .back-link{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.35);color:#fff;text-decoration:none;padding:10px 22px;border-radius:30px;font-size:0.9rem;font-weight:600;transition:background 0.2s}
+        .back-link:hover{background:rgba(255,255,255,0.27)}
+        .tutorial-nav{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:40px}
+        .tutorial-nav-card{background:var(--card-bg);border:2px solid transparent;border-radius:14px;padding:22px 18px;text-align:center;cursor:pointer;transition:all 0.25s ease}
+        .tutorial-nav-card:hover{border-color:var(--color-primary);transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,0.12)}
+        .tutorial-nav-card.active{border-color:var(--color-primary);background:linear-gradient(135deg,rgba(99,102,241,0.08),rgba(139,92,246,0.05))}
+        .tutorial-nav-card .nav-icon{font-size:2rem;margin-bottom:10px;display:block}
+        .tutorial-nav-card h3{font-family:var(--font-title);font-size:0.95rem;color:var(--color-text);margin-bottom:4px}
+        .tutorial-nav-card p{font-size:0.78rem;color:var(--color-text-muted)}
+        .tutorial-content{display:none}.tutorial-content.active{display:block}
+        .steps-header{display:flex;align-items:center;gap:14px;margin-bottom:30px;padding-bottom:18px;border-bottom:2px solid var(--border-color)}
+        .steps-header .icon{font-size:2.4rem}
+        .steps-header h2{font-family:var(--font-title);font-size:1.7rem;color:var(--color-primary)}
+        .steps-header p{font-size:0.9rem;color:var(--color-text-muted);margin-top:4px}
+        .steps-list{display:flex;flex-direction:column;gap:20px}
+        .step{display:grid;grid-template-columns:56px 1fr;gap:18px;align-items:start;padding:22px;background:var(--card-bg);border:1px solid var(--border-color);border-radius:14px;transition:box-shadow 0.2s}
+        .step:hover{box-shadow:0 4px 18px rgba(0,0,0,0.08)}
+        .step-number{width:50px;height:50px;background:linear-gradient(135deg,var(--color-primary),var(--color-secondary));border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-title);font-size:1.35rem;font-weight:700;color:#fff;flex-shrink:0}
+        .step-body h3{font-family:var(--font-title);font-size:1.05rem;color:var(--color-text);margin-bottom:8px}
+        .step-body p{font-size:0.9rem;color:var(--color-text-muted);line-height:1.7;margin-bottom:10px}
+        .step-body ul{list-style:none;display:flex;flex-direction:column;gap:6px}
+        .step-body ul li{font-size:0.88rem;color:var(--color-text-muted);padding-left:20px;position:relative;line-height:1.55}
+        .step-body ul li::before{content:"-> ";position:absolute;left:0;color:var(--color-primary);font-weight:700}
+        .tag{display:inline-block;padding:3px 10px;border-radius:20px;font-size:0.75rem;font-weight:600;margin-right:4px;margin-bottom:4px}
+        .tag-result{background:rgba(16,185,129,0.1);color:#10b981;border:1px solid rgba(16,185,129,0.3)}
+        .tag-warning{background:rgba(251,146,60,0.1);color:#fb923c;border:1px solid rgba(251,146,60,0.3)}
+        .tag-tip{background:rgba(139,92,246,0.1);color:var(--color-secondary);border:1px solid rgba(139,92,246,0.3)}
+        .tag-input{background:rgba(99,102,241,0.1);color:var(--color-primary);border:1px solid rgba(99,102,241,0.3)}
+        .tip-box{margin-top:14px;padding:12px 16px;background:rgba(99,102,241,0.06);border-left:4px solid var(--color-primary);border-radius:0 8px 8px 0;font-size:0.85rem;color:var(--color-text-muted);line-height:1.55}
+        .tip-box strong{color:var(--color-primary)}
+        .example-box{margin-top:14px;padding:14px 16px;background:rgba(16,185,129,0.05);border:1px dashed rgba(16,185,129,0.35);border-radius:10px;font-size:0.85rem;line-height:1.6;color:var(--color-text-muted)}
+        .example-box strong{color:#10b981}
+        .practical-example{margin-top:36px;padding:28px;background:linear-gradient(135deg,rgba(99,102,241,0.06),rgba(139,92,246,0.04));border:1px solid rgba(99,102,241,0.25);border-radius:16px}
+        .practical-example h3{font-family:var(--font-title);font-size:1.2rem;color:var(--color-primary);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+        .practical-table{width:100%;border-collapse:collapse;font-size:0.88rem;margin-top:14px}
+        .practical-table th{background:rgba(99,102,241,0.12);color:var(--color-primary);padding:10px 14px;text-align:left;font-family:var(--font-title);font-size:0.82rem;text-transform:uppercase;letter-spacing:0.05em}
+        .practical-table td{padding:10px 14px;border-bottom:1px solid var(--border-color);color:var(--color-text-muted)}
+        .practical-table tr:last-child td{border-bottom:none;font-weight:700;color:var(--color-text)}
+        .cta-bar{margin-top:30px;text-align:center;padding:24px;background:var(--card-bg);border-radius:14px;border:1px solid var(--border-color)}
+        .cta-bar p{font-size:0.92rem;color:var(--color-text-muted);margin-bottom:14px}
+        .cta-btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--color-primary),var(--color-secondary));color:#fff;text-decoration:none;padding:12px 28px;border-radius:30px;font-family:var(--font-title);font-weight:600;font-size:0.95rem;transition:opacity 0.2s,transform 0.2s}
+        .cta-btn:hover{opacity:0.88;transform:translateY(-2px)}
+        @media(max-width:600px){.tutorial-hero h1{font-size:1.55rem}.step{grid-template-columns:44px 1fr;gap:12px}.step-number{width:40px;height:40px;font-size:1.1rem}}
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <div class="a11y-bar">
+        <button id="btn-contrast" class="a11y-btn" aria-pressed="false">&#127761; Alto Contraste</button>
+        <button id="btn-font-minus" class="a11y-btn">A-</button>
+        <button id="btn-font-plus" class="a11y-btn">A+</button>
+    </div>
+    <header class="tutorial-hero">
+        <h1>&#128216; Guia Pratico dos Simuladores TAE Federal</h1>
+        <p>Tutoriais passo a passo para usar cada ferramenta da Calculadora TAE Federal com seguranca e clareza.</p>
+        <a href="index.html" class="back-link">&#8592; Voltar aos Simuladores</a>
+    </header>
+    <nav class="tutorial-nav" aria-label="Selecionar tutorial">
+        <div class="tutorial-nav-card active" data-target="tut-salarial" role="button" tabindex="0" aria-pressed="true">
+            <span class="nav-icon">&#128202;</span><h3>Calculadora Salarial</h3><p>Vencimento, IQ, RSC e beneficios</p>
+        </div>
+        <div class="tutorial-nav-card" data-target="tut-diarias" role="button" tabindex="0" aria-pressed="false">
+            <span class="nav-icon">&#9992;</span><h3>Simulador de Diarias</h3><p>Afastamentos e viagens a servico</p>
+        </div>
+        <div class="tutorial-nav-card" data-target="tut-rsc" role="button" tabindex="0" aria-pressed="false">
+            <span class="nav-icon">&#127919;</span><h3>Pontuacao RSC</h3><p>Memorial descritivo e eixos</p>
+        </div>
+        <div class="tutorial-nav-card" data-target="tut-tabela" role="button" tabindex="0" aria-pressed="false">
+            <span class="nav-icon">&#128197;</span><h3>Tabela de Carreira</h3><p>Progressoes e tempo de servico</p>
+        </div>
+    </nav>
+
+    <!-- TUTORIAL 1: CALCULADORA SALARIAL -->
+    <div id="tut-salarial" class="tutorial-content card active">
+        <div class="steps-header"><span class="icon">&#128202;</span><div><h2>Calculadora Salarial PCCTAE</h2><p>Estime o contracheque completo: vencimento base, qualificacoes, beneficios e descontos.</p></div></div>
+        <div class="steps-list">
+            <div class="step"><div class="step-number">1</div><div class="step-body">
+                <h3>Selecione o Nivel de Classificacao (Escolaridade de Entrada)</h3>
+                <p>O nivel e definido pela escolaridade minima exigida no edital do seu cargo ao momento da posse, e nao pela sua escolaridade atual:</p>
+                <ul>
+                    <li><strong>Nivel A</strong> - Funcoes de apoio: limpeza, conservacao, seguranca. Salario inicial: R$ 1.877,54</li>
+                    <li><strong>Nivel B</strong> - Funcoes auxiliares. Salario inicial: R$ 2.086,16</li>
+                    <li><strong>Nivel C</strong> - Cargos de nivel medio. Salario inicial: R$ 2.607,70</li>
+                    <li><strong>Nivel D</strong> - Cargos tecnicos de nivel medio/tecnico. Salario inicial: R$ 3.181,39</li>
+                    <li><strong>Nivel E</strong> - Cargos de nivel superior. Salario inicial: R$ 5.215,39</li>
+                </ul>
+                <div class="tip-box"><strong>Dica:</strong> Consulte sua certidao de posse ou acesse o SIAPE. O nivel esta registrado na tabela do seu cargo efetivo.</div>
+            </div></div>
+            <div class="step"><div class="step-number">2</div><div class="step-body">
+                <h3>Escolha o Padrao de Vencimento (Progressao de 1 a 19)</h3>
+                <p>O padrao indica quantas progressoes funcionais o servidor acumulou. Cada progressao e concedida por merecimento ou tempo de servico (a cada 18 ou 24 meses):</p>
+                <ul>
+                    <li>Padrao <strong>01</strong> - Servidor recem-empossado, inicio de carreira</li>
+                    <li>Padrao <strong>10</strong> - Aproximadamente 12 a 15 anos de efetivo exercicio</li>
+                    <li>Padrao <strong>19</strong> - Topo de carreira, sem mais progressoes horizontais</li>
+                </ul>
+                <div class="tip-box"><strong>Dica:</strong> Confira seu padrao atual no contracheque do SIAPE ou no Portal SIGEPE em "Meu Extrato".</div>
+            </div></div>
+            <div class="step"><div class="step-number">3</div><div class="step-body">
+                <h3>Informe a Funcao Comissionada ou Cargo de Confianca (se houver)</h3>
+                <p>Se voce exerce funcao gerencial ou cargo de direcao, selecione-a. Ha dois grupos principais:</p>
+                <ul>
+                    <li><strong>Cargos de Direcao (CD-1 a CD-4)</strong> - Para diretores e gestores estrategicos. Pagos em regime integral ou como opcao de 60% sobre o cargo efetivo.</li>
+                    <li><strong>Funcoes Gratificadas (FG-1 a FG-4)</strong> - Para coordenadores de setor e chefes de unidade.</li>
+                    <li><strong>FCC / FUC</strong> - Funcoes de nivel unico, tipicas de Coordenacoes Especiais.</li>
+                </ul>
+                <div class="example-box"><strong>Exemplo:</strong> Um Chefe de Departamento Academico com FG-1 recebe R$ 1.263,32 de gratificacao adicional sobre o vencimento base.</div>
+            </div></div>
+            <div class="step"><div class="step-number">4</div><div class="step-body">
+                <h3>Selecione o Incentivo a Qualificacao (IQ) - Escolaridade Extra</h3>
+                <p>O IQ e um percentual sobre o vencimento base, concedido quando o servidor possui escolaridade acima do requisito minimo do cargo:</p>
+                <ul>
+                    <li>Fundamental completo <span class="tag tag-result">+10%</span></li>
+                    <li>Ensino Medio completo <span class="tag tag-result">+15%</span></li>
+                    <li>Ensino Tecnico <span class="tag tag-result">+20%</span></li>
+                    <li>Graduacao <span class="tag tag-result">+25%</span></li>
+                    <li>Especializacao <span class="tag tag-result">+30%</span></li>
+                    <li>Mestrado <span class="tag tag-result">+52%</span></li>
+                    <li>Doutorado <span class="tag tag-result">+75%</span></li>
+                </ul>
+                <div class="tip-box"><strong>Atencao:</strong> O IQ e o RSC sao mutuamente exclusivos para o mesmo grau. Use o IQ se ja tem o diploma aprovado pelo setor de gestao de pessoas; use o RSC se ainda nao tem o diploma formal.</div>
+            </div></div>
+            <div class="step"><div class="step-number">5</div><div class="step-body">
+                <h3>Adicione os Beneficios Assistenciais</h3>
+                <p>Marque cada beneficio recebido mensalmente. O simulador calcula os descontos automaticamente:</p>
+                <ul>
+                    <li><strong>Auxilio-Alimentacao</strong> - R$ 1.192,00 (40h semanais). Isento de IRRF e PSS.</li>
+                    <li><strong>Assistencia Pre-Escolar</strong> - R$ 526,34 por filho com menos de 6 anos.</li>
+                    <li><strong>Auxilio-Transporte</strong> - Informe o valor diario do passe e os dias presenciais no mes. Selecione o regime de PGD caso realize teletrabalho.</li>
+                    <li><strong>Saude Suplementar</strong> - Informe sua idade e dos dependentes. O simulador aplica a tabela per capita da Portaria MGI n 2.778/2026.</li>
+                    <li><strong>Contribuicao Sindical</strong> - Se filiado ao sindicato, marque para incluir o desconto de 1% sobre o vencimento basico.</li>
+                </ul>
+            </div></div>
+            <div class="step"><div class="step-number">6</div><div class="step-body">
+                <h3>Leia o Painel de Resultados e o Grafico de Distribuicao</h3>
+                <p>Apos preencher os campos, o painel exibe automaticamente:</p>
+                <ul>
+                    <li><span class="tag tag-result">Total Bruto</span> - Soma de vencimento + funcao + IQ/RSC + beneficios</li>
+                    <li><span class="tag tag-warning">PSS</span> - Desconto progressivo da contribuicao previdenciaria (7,5% a 16,70%)</li>
+                    <li><span class="tag tag-warning">IRRF</span> - Imposto de Renda calculado sobre a base tributavel liquida</li>
+                    <li><span class="tag tag-result">Liquido a Receber</span> - Valor final depositado em conta apos todos os descontos</li>
+                </ul>
+                <p>O grafico de barras horizontais mostra a proporcao entre vencimento, qualificacao (IQ/RSC) e beneficios.</p>
+            </div></div>
+        </div>
+        <div class="practical-example">
+            <h3>&#129514; Exemplo Pratico - Nivel E, Padrao 07, com IQ de Especializacao</h3>
+            <table class="practical-table">
+                <thead><tr><th>Componente</th><th>Configuracao</th><th>Valor</th></tr></thead>
+                <tbody>
+                    <tr><td>Nivel / Padrao</td><td>Nivel E - Padrao 07</td><td>R$ 5.892,00 (aprox.)</td></tr>
+                    <tr><td>IQ Especializacao</td><td>+30% sobre VB</td><td>+ R$ 1.767,60</td></tr>
+                    <tr><td>Auxilio-Alimentacao</td><td>Integral 40h</td><td>+ R$ 1.192,00</td></tr>
+                    <tr><td>Auxilio-Transporte</td><td>R$ 12,00/dia x 22 dias</td><td>+ R$ 264,00</td></tr>
+                    <tr><td><strong>Total Bruto Estimado</strong></td><td></td><td><strong>aprox. R$ 9.115,60</strong></td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="cta-bar"><p>Pronto para simular? Abra a calculadora e preencha com os seus dados reais.</p><a href="index.html" class="cta-btn">&#128202; Abrir Calculadora Salarial</a></div>
+    </div>
+
+    <!-- TUTORIAL 2: SIMULADOR DE DIARIAS -->
+    <div id="tut-diarias" class="tutorial-content card">
+        <div class="steps-header"><span class="icon">&#9992;</span><div><h2>Simulador de Diarias</h2><p>Estime o valor liquido em viagens a servico, com os descontos obrigatorios de alimentacao e transporte.</p></div></div>
+        <div class="steps-list">
+            <div class="step"><div class="step-number">1</div><div class="step-body">
+                <h3>Informe o Destino da Viagem</h3>
+                <p>O valor unitario da diaria muda conforme o destino. O Decreto n 11.872/2023 divide os destinos em dois grupos:</p>
+                <ul>
+                    <li><strong>Capitais e Brasilia (Faixa Especial)</strong> - Sao Paulo, Rio de Janeiro, Brasilia e demais capitais. Valores mais altos pelo custo de vida elevado.</li>
+                    <li><strong>Demais Municipios (Faixa Padrao)</strong> - Cidades do interior, municipios menores e destinos rurais.</li>
+                </ul>
+                <div class="tip-box"><strong>Dica:</strong> O valor exato de cada destino esta disponivel na aba "Tabela de Carreira" ou nas portarias do seu ministerio de vinculacao.</div>
+            </div></div>
+            <div class="step"><div class="step-number">2</div><div class="step-body">
+                <h3>Defina a Quantidade de Diarias Inteiras e Meias-Diarias</h3>
+                <p>O numero de diarias depende dos dias de afastamento da sede:</p>
+                <ul>
+                    <li><strong>Diaria Inteira</strong> - Cada dia completo fora da sede com necessidade de pernoite.</li>
+                    <li><strong>Meia-Diaria</strong> - Dia de retorno a sede, ou viagem de ida e volta no mesmo dia sem pernoite. Paga 50% do valor unitario.</li>
+                </ul>
+                <div class="example-box"><strong>Exemplo:</strong> Viagem de segunda a quarta-feira. Segunda (ida) = 1 diaria inteira. Terca = 1 diaria inteira. Quarta (retorno) = 1 meia-diaria. Total = 2,5 diarias.</div>
+            </div></div>
+            <div class="step"><div class="step-number">3</div><div class="step-body">
+                <h3>Indique se ha Adicional de Deslocamento</h3>
+                <p>O adicional de R$ 95,00 e concedido em viagens com deslocamento intermunicipal ou interestadual. Marque quando:</p>
+                <ul>
+                    <li>A viagem envolve mudanca de cidade, estado ou pais</li>
+                    <li>O servidor nao possui veiculo oficial e utiliza transporte publico/privado</li>
+                </ul>
+            </div></div>
+            <div class="step"><div class="step-number">4</div><div class="step-body">
+                <h3>Informe os Beneficios que Serao Descontados</h3>
+                <p>O simulador calcula os descontos obrigatorios durante os dias de viagem:</p>
+                <ul>
+                    <li><strong>Auxilio-Alimentacao</strong> - O valor mensal e dividido por 22 dias uteis. Cada dia de viagem gera desconto proporcional.</li>
+                    <li><strong>Auxilio-Transporte</strong> - O valor diario do vale-transporte e descontado por cada dia presencial ausente da sede. Servidores em teletrabalho integral (PGD 100%) ficam isentos.</li>
+                </ul>
+            </div></div>
+            <div class="step"><div class="step-number">5</div><div class="step-body">
+                <h3>Leia os Dois Resultados Liquidos</h3>
+                <p>O simulador apresenta dois valores distintos para facilitar a conferencia com o SCDP:</p>
+                <ul>
+                    <li><span class="tag tag-result">Liquido sem Desconto de Transporte</span> - Valor antes de abater o vale-transporte.</li>
+                    <li><span class="tag tag-warning">Liquido com Desconto de Transporte (SCDP)</span> - Valor depositado na pratica para quem recebe vale-transporte.</li>
+                </ul>
+            </div></div>
+        </div>
+        <div class="practical-example">
+            <h3>&#129514; Exemplo Pratico - Viagem de 3 dias para Brasilia</h3>
+            <table class="practical-table">
+                <thead><tr><th>Componente</th><th>Detalhe</th><th>Valor</th></tr></thead>
+                <tbody>
+                    <tr><td>Diarias Inteiras</td><td>2 diarias (2a e 3a feiras)</td><td>R$ 640,00 (estimado)</td></tr>
+                    <tr><td>Meia-Diaria</td><td>1 meia-diaria (quarta, retorno)</td><td>R$ 160,00 (estimado)</td></tr>
+                    <tr><td>Adicional Deslocamento</td><td>Viagem interestadual</td><td>+ R$ 95,00</td></tr>
+                    <tr><td>Desconto Alimentacao</td><td>3 dias uteis de viagem</td><td>- R$ 162,54</td></tr>
+                    <tr><td>Desconto Transporte</td><td>R$ 12,00 x 3 dias</td><td>- R$ 36,00</td></tr>
+                    <tr><td><strong>Liquido Estimado (SCDP)</strong></td><td></td><td><strong>aprox. R$ 696,46</strong></td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="cta-bar"><p>Calcule agora o seu valor liquido de diarias com os dados reais da sua viagem.</p><a href="index.html" class="cta-btn">&#9992; Abrir Simulador de Diarias</a></div>
+    </div>
+
+    <!-- TUTORIAL 3: PONTUACAO RSC -->
+    <div id="tut-rsc" class="tutorial-content card">
+        <div class="steps-header"><span class="icon">&#127919;</span><div><h2>Simulador de Pontuacao RSC</h2><p>Estime se o seu Memorial Descritivo atinge a pontuacao minima para o RSC-PCCTAE, nos termos do Decreto n 13.048/2026.</p></div></div>
+        <div class="steps-list">
+            <div class="step"><div class="step-number">1</div><div class="step-body">
+                <h3>Entenda o que e o RSC antes de comecar</h3>
+                <p>O RSC e uma certificacao concedida ao servidor TAE que, mesmo sem o diploma formal de escolaridade superior ao requisito do cargo, comprova ter acumulado competencias equivalentes por experiencias praticas na instituicao. Ao ser concedido, gera o mesmo acrescimo percentual que o IQ regular concederia.</p>
+                <div class="tip-box"><strong>Quando usar o RSC em vez do IQ?</strong> Use o RSC quando voce ainda nao tem o diploma formal, mas ja possui competencias praticas comprovadas pelas atividades institucionais documentadas.</div>
+            </div></div>
+            <div class="step"><div class="step-number">2</div><div class="step-body">
+                <h3>Selecione o Nivel de RSC que deseja pleitear</h3>
+                <p>O nivel do RSC corresponde a escolaridade que voce pretende substituir via memorial. Cada nivel exige pontuacao minima diferente:</p>
+                <ul>
+                    <li><strong>RSC-I</strong> - Equivale a nao ter Fundamental Completo (+10% sobre VB)</li>
+                    <li><strong>RSC-II</strong> - Equivale ao Fundamental Completo (+15%)</li>
+                    <li><strong>RSC-III</strong> - Equivale ao Medio ou Tecnico Completo (+25%)</li>
+                    <li><strong>RSC-IV</strong> - Equivale a Graduacao Completa (+30%) - o mais solicitado</li>
+                    <li><strong>RSC-V</strong> - Equivale a Especializacao Completa (+52%)</li>
+                    <li><strong>RSC-VI</strong> - Equivale ao Mestrado Completo (+75%)</li>
+                </ul>
+            </div></div>
+            <div class="step"><div class="step-number">3</div><div class="step-body">
+                <h3>Verifique os Parametros de Elegibilidade</h3>
+                <p>Confirme dois requisitos obrigatorios antes de pontuar:</p>
+                <ul>
+                    <li><strong>Intersticio de 3 Anos (Art. 11)</strong> - O servidor deve ter, no minimo, 3 anos no cargo efetivo antes de solicitar o RSC. Marque o checkbox se voce ja cumpriu.</li>
+                    <li><strong>Estagio Probatorio (Art. 12)</strong> - Se ainda estiver em estagio probatorio, o pedido de RSC fica suspenso ate a conclusao.</li>
+                </ul>
+                <div class="tip-box"><strong>Saldo de Pontos Anteriores:</strong> Se ja participou de processo RSC anterior com pontos reconhecidos mas insuficientes, informe o saldo. O Art. 5, paragrafo 2 permite reaproveitar pontuacao de processos anteriores.</div>
+            </div></div>
+            <div class="step"><div class="step-number">4</div><div class="step-body">
+                <h3>Pontue as Atividades por Eixo (I a VI)</h3>
+                <p>O simulador organiza os criterios do Decreto n 13.048/2026 em 6 eixos tematicos. Para cada atividade que voce realizou e pode comprovar documentalmente:</p>
+                <ul>
+                    <li><strong>Eixo I</strong> - Participacao em Representacoes e Comissoes internas</li>
+                    <li><strong>Eixo II</strong> - Atuacao em Projetos Institucionais (ensino, pesquisa, extensao)</li>
+                    <li><strong>Eixo III</strong> - Premiacoes e Reconhecimentos Ocupacionais</li>
+                    <li><strong>Eixo IV</strong> - Encargos especiais e Responsabilidades atribuidas</li>
+                    <li><strong>Eixo V</strong> - Funcoes de Lideranca exercidas formalmente</li>
+                    <li><strong>Eixo VI</strong> - Producao e Difusao Tecnica (manuais, artigos tecnicos, apresentacoes)</li>
+                </ul>
+                <p>Clique em cada criterio e informe a quantidade de vezes comprovada. O simulador soma os pontos respeitando os limites maximos de cada eixo.</p>
+            </div></div>
+            <div class="step"><div class="step-number">5</div><div class="step-body">
+                <h3>Use a barra de busca para localizar criterios rapidamente</h3>
+                <p>O campo de busca filtra os criterios em tempo real. Digite palavras como <strong>"comissao"</strong>, <strong>"artigo"</strong>, <strong>"projeto"</strong> ou <strong>"premio"</strong> para encontrar o criterio correspondente.</p>
+            </div></div>
+            <div class="step"><div class="step-number">6</div><div class="step-body">
+                <h3>Salve e exporte a sua sessao</h3>
+                <p>O painel de resultados exibe pontuacao total, barra de progresso e status (Aprovado / Insuficiente). Voce pode:</p>
+                <ul>
+                    <li><span class="tag tag-tip">Salvar Sessao (JSON)</span> - Salva todos os criterios marcados. Util para retomar depois.</li>
+                    <li><span class="tag tag-input">Carregar Sessao</span> - Importa um arquivo JSON salvo anteriormente.</li>
+                    <li><span class="tag tag-result">Exportar Planilha (CSV)</span> - Gera um CSV com o Rol de Saberes completo para anexar ao Memorial Descritivo.</li>
+                </ul>
+            </div></div>
+        </div>
+        <div class="practical-example">
+            <h3>&#129514; Exemplo - Servidor pleiteando RSC-IV (Graduacao, +30%)</h3>
+            <table class="practical-table">
+                <thead><tr><th>Eixo</th><th>Atividades Exemplificadas</th><th>Pontos (estim.)</th></tr></thead>
+                <tbody>
+                    <tr><td>Eixo I</td><td>2 participacoes em Comissoes Internas</td><td>10 pts</td></tr>
+                    <tr><td>Eixo II</td><td>1 Projeto de Extensao como colaborador</td><td>8 pts</td></tr>
+                    <tr><td>Eixo IV</td><td>Responsabilidade por almoxarifado por 2 anos</td><td>12 pts</td></tr>
+                    <tr><td>Eixo VI</td><td>Elaboracao de 1 Manual Tecnico Institucional</td><td>15 pts</td></tr>
+                    <tr><td>Saldo Anterior</td><td>Processo RSC 2023 nao aprovado</td><td>+ 8 pts</td></tr>
+                    <tr><td><strong>Total</strong></td><td></td><td><strong>53 pts</strong></td></tr>
+                </tbody>
+            </table>
+            <div class="tip-box" style="margin-top:14px"><strong>Resultado:</strong> A meta minima para o RSC-IV e 50 pontos. Com 53 pontos, este exemplo atingiria a pontuacao necessaria para encaminhar o processo formal ao setor de gestao de pessoas.</div>
+        </div>
+        <div class="cta-bar"><p>Pontue agora o seu memorial e descubra se voce ja atingiu a meta para o RSC.</p><a href="index.html" class="cta-btn">&#127919; Abrir Simulador de Pontuacao RSC</a></div>
+    </div>
+
+    <!-- TUTORIAL 4: TABELA DE CARREIRA -->
+    <div id="tut-tabela" class="tutorial-content card">
+        <div class="steps-header"><span class="icon">&#128197;</span><div><h2>Tabela de Carreira PCCTAE</h2><p>Consulte os valores de vencimento base para cada nivel e padrao, e projete a evolucao salarial ao longo do tempo.</p></div></div>
+        <div class="steps-list">
+            <div class="step"><div class="step-number">1</div><div class="step-body">
+                <h3>Acesse a aba "Tabela de Carreira"</h3>
+                <p>A tabela exibe os 19 padroes de vencimento para cada um dos 5 niveis de classificacao (A, B, C, D e E), com os valores vigentes a partir de abril de 2026 conforme a reestruturacao salarial do PCCTAE.</p>
+            </div></div>
+            <div class="step"><div class="step-number">2</div><div class="step-body">
+                <h3>Localize sua posicao atual na tabela</h3>
+                <p>Encontre a intersecao entre a linha do seu <strong>Nivel</strong> e a coluna do seu <strong>Padrao</strong> atual. Esse e o seu vencimento base, o valor sobre o qual todos os percentuais de IQ, RSC e PSS sao calculados.</p>
+                <div class="tip-box"><strong>Lembre-se:</strong> O vencimento base e diferente do salario liquido. Sobre ele incidem acrescimos (IQ, RSC, funcoes) e descontos (PSS, IRRF). Use a Calculadora Salarial para calcular o valor final.</div>
+            </div></div>
+            <div class="step"><div class="step-number">3</div><div class="step-body">
+                <h3>Projete o crescimento salarial nas proximas progressoes</h3>
+                <p>Cada progressao horizontal eleva o padrao em +1 e aplica reajuste percentual escalonado. Use a tabela para visualizar:</p>
+                <ul>
+                    <li>Quanto voce recebera no proximo padrao (se aprovado na progressao)</li>
+                    <li>A diferenca bruta entre o padrao atual e o padrao maximo (19)</li>
+                    <li>A projecao de quanto tempo resta para atingir o topo de carreira no nivel atual</li>
+                </ul>
+            </div></div>
+            <div class="step"><div class="step-number">4</div><div class="step-body">
+                <h3>Entenda a diferenca entre Progressao e Desenvolvimento na Carreira</h3>
+                <p>O PCCTAE preve dois tipos de movimentacao vertical:</p>
+                <ul>
+                    <li><strong>Progressao Funcional</strong> - Avanco horizontal dentro do mesmo nivel (Padrao 01 ao 19). Ocorre a cada 18 meses por avaliacao de desempenho ou capacitacao.</li>
+                    <li><strong>Desenvolvimento na Carreira</strong> - Mudanca de nivel (ex.: Nivel C para Nivel D). Exige aprovacao em processo seletivo interno e qualificacao formal compativel com o novo nivel.</li>
+                </ul>
+                <div class="example-box"><strong>Exemplo:</strong> Um servidor Nivel C, Padrao 10, que concluiu uma graduacao aprovada no processo de Desenvolvimento sera reclassificado para Nivel D, Padrao 01, com aumento imediato de vencimento base e possibilidade de requerer IQ de especializacao sobre o novo vencimento.</div>
+            </div></div>
+        </div>
+        <div class="cta-bar"><p>Consulte agora os valores da tabela completa e planeje a sua evolucao na carreira TAE.</p><a href="index.html" class="cta-btn">&#128197; Ver Tabela de Carreira</a></div>
+    </div>
+
+    <footer style="text-align:center;padding:36px 0 20px;color:var(--color-text-muted);font-size:0.82rem;border-top:1px solid var(--border-color);margin-top:40px">
+        <p>Guias elaborados com base na legislacao vigente: Lei n 11.091/2005, Decreto n 13.048/2026 e Portaria MGI n 2.778/2026.</p>
+        <p style="margin-top:6px">Os valores sao estimativas para fins de planejamento financeiro. Para fins legais, consulte o SIGEPE e a DGP da sua IFE.</p>
+        <p style="margin-top:12px;font-weight:600;color:var(--color-primary)">YLuna85 LABs &copy; 2026 - Calculadora TAE Federal</p>
+    </footer>
+</div>
+<script>
+    const navCards = document.querySelectorAll('.tutorial-nav-card');
+    const contents = document.querySelectorAll('.tutorial-content');
+    navCards.forEach(card => {
+        card.addEventListener('click', () => activateTutorial(card));
+        card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') activateTutorial(card); });
+    });
+    function activateTutorial(card) {
+        const target = card.dataset.target;
+        navCards.forEach(c => { c.classList.remove('active'); c.setAttribute('aria-pressed','false'); });
+        contents.forEach(c => c.classList.remove('active'));
+        card.classList.add('active');
+        card.setAttribute('aria-pressed','true');
+        document.getElementById(target)?.classList.add('active');
+        document.getElementById(target)?.scrollIntoView({ behavior:'smooth', block:'start' });
+    }
+    let fontSize = 16;
+    document.getElementById('btn-contrast')?.addEventListener('click', () => {
+        document.body.classList.toggle('high-contrast');
+        document.getElementById('btn-contrast').setAttribute('aria-pressed', document.body.classList.contains('high-contrast'));
+    });
+    document.getElementById('btn-font-minus')?.addEventListener('click', () => { fontSize = Math.max(12, fontSize - 1); document.documentElement.style.fontSize = fontSize + 'px'; });
+    document.getElementById('btn-font-plus')?.addEventListener('click', () => { fontSize = Math.min(22, fontSize + 1); document.documentElement.style.fontSize = fontSize + 'px'; });
+</script>
+</body>
+</html>
