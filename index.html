@@ -5,8 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de Carreira e Salário TAE (PCCTAE 2026) | YLuna85 LABs</title>
     <meta name="description" content="Simulador financeiro e base de dados para a carreira dos Técnico-Administrativos em Educação (TAEs) federais. Realize cálculos salariais, simulação de IQ/RSC, adicionais e auxílios de 2026.">
+    <link rel="canonical" href="https://taes-federal.com.br/" />
+    <meta name="google-site-verification" content="dY48D0o4FUKPgMmsMLIA8oIXenNn_6MrRWilCxt8Ijk" />
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="assets/marca-yluna85-labs.jpg" type="image/jpeg">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/favicon.png" type="image/png" sizes="32x32">
+    <!-- Schema.org JSON-LD (SoftwareApplication + WebSite) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "Calculadora Salarial TAE Federal",
+          "operatingSystem": "All",
+          "applicationCategory": "FinanceApplication",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "BRL"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "YLuna85 LABs",
+            "url": "https://taes-federal.com.br/"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "name": "Calculadora TAEs Federal",
+          "url": "https://taes-federal.com.br/",
+          "description": "Simulador financeiro e base de dados para a carreira dos Técnico-Administrativos em Educação (TAEs) federais."
+        }
+      ]
+    }
+    </script>
     <!-- Google AdSense - Código de Monetização YLuna85 LABs -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7370246789612593" crossorigin="anonymous"></script>
 </head>
@@ -16,7 +49,7 @@
         <!-- Acessibilidade e Ferramentas -->
         <div class="a11y-bar">
             <button id="btn-contrast" class="a11y-btn" aria-pressed="false" aria-label="Alternar alto contraste para acessibilidade visual">
-                🌓 Alto Contraste
+                 operational Alto Contraste
             </button>
             <button id="btn-font-minus" class="a11y-btn" aria-label="Diminuir tamanho do texto">A-</button>
             <button id="btn-font-plus" class="a11y-btn" aria-label="Aumentar tamanho do texto">A+</button>
@@ -35,7 +68,7 @@
             <button class="tab-btn" data-tab="diarias" aria-selected="false">✈️ Simulador de Diárias</button>
             <button class="tab-btn" data-tab="tabela" aria-selected="false">📅 Tabela de Carreira</button>
             <button class="tab-btn" data-tab="calculadora-rsc" aria-selected="false">🎯 Pontuação RSC</button>
-            <button class="tab-btn" data-tab="noticias" aria-selected="false">📰 Leis & Informativos</button>
+            <a href="artigos/index.html" class="tab-btn" style="text-decoration:none;" aria-label="Abrir central de artigos e guias">📚 Artigos & Guias</a>
             <a href="tutorial.html" class="tab-btn" style="text-decoration:none;" aria-label="Abrir página de tutoriais passo a passo">📘 Tutoriais</a>
         </nav>
 
