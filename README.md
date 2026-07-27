@@ -63,6 +63,12 @@ Este repositório está publicado no endereço [github.com/yuriluna85/tae-federa
 2. Está associado ao domínio customizado [taes-federal.com.br](https://taes-federal.com.br) para navegação de produção com HTTPS seguro.
 
 ## 📝 Log de Atualizações (Changelog)
+
+### [27/07/2026] - Atualização de Autoria Lattes e Estilo de Legibilidade dos Artigos
+*   **Autoria Baseada no Currículo Lattes**: Atualização da biografia e assinatura de autoria do criador Yuri Luna em todo o portal e em todos os 15 artigos da seção editorial, fundamentada com exatidão nos dados oficiais do seu Currículo Lattes (Servidor Público Federal / Técnico de TI no IF Baiano, Licenciado em Ciência da Computação pela UniFatecie, Licenciado em Pedagogia pela UNEB, Especialista em Tecnologias Digitais e Inovação na Educação).
+*   **Estilo de Alta Legibilidade nos Artigos (Dark High-Contrast)**: Correção do contraste tipográfico nos artigos. O texto dos parágrafos foi atualizado de cor escura para a cor clara `#f1f5f9` (off-white de alto brilho), com títulos em `#38bdf8` (azul ciano vibrante) e subtítulos em `#818cf8` (violeta claro), tornando os artigos 100% legíveis sob o fundo dark nativo do portal.
+*   **Schema.org JSON-LD**: Atualização dos metadados estruturados de autoria em todas as páginas de artigos.
+
  
 ### [21/07/2026] - Geração de Sitemap e Configuração de SEO (robots.txt)
 * 🗺️ **Sitemap e Indexação**: Gerado o arquivo `sitemap.xml` contendo todas as URLs públicas da aplicação (`taes-federal.com.br`, `sobre.html`, `contato.html`, `privacidade.html`, `termos.html`) para indexação em mecanismos de busca.

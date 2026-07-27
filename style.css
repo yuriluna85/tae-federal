@@ -1106,3 +1106,23 @@ footer .brand-text {
     opacity: 0.9;
 }
 
+/* =============================================================
+   Estilos de Alta Legibilidade para Artigos (Dark Mode High-Contrast)
+   ============================================================= */
+.article-body { line-height: 1.85; font-size: 1.08rem; color: #f1f5f9 !important; margin-top: 2rem; }
+.article-body p { color: #f1f5f9 !important; margin-bottom: 1.5rem; }
+.article-body h2 { color: #38bdf8 !important; border-bottom: 2px solid rgba(56, 189, 248, 0.3); padding-bottom: 0.4rem; margin-top: 2.2rem; font-size: 1.5rem; }
+.article-body h3 { color: #818cf8 !important; margin-top: 1.8rem; font-size: 1.25rem; }
+.article-body ul, .article-body ol { color: #f1f5f9 !important; margin-left: 1.5rem; margin-bottom: 1.5rem; }
+.article-body li { margin-bottom: 0.5rem; color: #f1f5f9 !important; }
+.article-body strong { color: #ffffff !important; font-weight: 700; }
+.article-body a { color: #38bdf8 !important; text-decoration: underline; }
+.article-body a:hover { color: #7dd3fc !important; }
+.article-body table { width: 100%; border-collapse: collapse; margin: 1.8rem 0; box-shadow: 0 4px 16px rgba(0,0,0,0.3); background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255,255,255,0.1); }
+.article-body th, .article-body td { padding: 12px 15px; border: 1px solid rgba(255,255,255,0.08); text-align: left; color: #e2e8f0 !important; }
+.article-body th { background-color: rgba(30, 41, 59, 0.9); font-weight: 700; color: #38bdf8 !important; }
+.author-card { background: rgba(30, 41, 59, 0.7) !important; border: 1px solid rgba(255, 255, 255, 0.12) !important; border-radius: 12px; padding: 1.5rem; margin-top: 3rem; display: flex; gap: 1.2rem; align-items: center; box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+.author-avatar { width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, #0d6efd 0%, #0dcaf0 100%); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.4rem; flex-shrink: 0; }
+.disclaimer-box { background: rgba(245, 158, 11, 0.12) !important; border-left: 4px solid #f59e0b !important; padding: 1.2rem; margin: 2rem 0; font-size: 0.92rem; color: #fef3c7 !important; border-radius: 4px; line-height: 1.6; }
+
+
