@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
     <link rel="icon" href="assets/favicon.png" type="image/png" sizes="32x32">
-    <!-- Schema.org JSON-LD (SoftwareApplication + WebSite) -->
+    <!-- Schema.org JSON-LD (SoftwareApplication + WebSite + FAQPage + ItemList) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -36,10 +36,40 @@
           "name": "Calculadora TAEs Federal",
           "url": "https://taes-federal.com.br/",
           "description": "Simulador financeiro e base de dados para a carreira dos Técnico-Administrativos em Educação (TAEs) federais."
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Como funciona o reajuste salarial dos TAEs para 2025 e 2026?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "O reajuste da carreira TAE (PCCTAE) foi estabelecido pela Lei nº 15.141/2025 e Lei nº 15.367/2026, com aumentos compostos no Vencimento Básico aplicados em duas etapas principais em 2025 e abril de 2026."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "O que é o Incentivo à Qualificação (IQ) no PCCTAE?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "O Incentivo à Qualificação (IQ) é um adicional percentual pago ao servidor TAE que possui escolaridade superior à exigida para o ingresso no seu cargo, variando conforme a relação direta ou indireta com o ambiente organizacional."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Como funciona o Reconhecimento de Saberes e Competências (RSC-PCCTAE)?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "O RSC-PCCTAE foi instituído pela Lei nº 15.367/2026 e regulamentado pelo Decreto nº 13.048/2026, permitindo aos servidores TAEs pontuarem experiências profissionais e acadêmicas para fins de retribuição por qualificação."
+              }
+            }
+          ]
         }
       ]
     }
     </script>
+
     <!-- Google AdSense - Código de Monetização YLuna85 LABs -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7370246789612593" crossorigin="anonymous"></script>
 </head>
@@ -1057,11 +1087,14 @@
             <p>Mascotes Oficiais: Coragem e Bolinho de Chuva</p>
             <p class="brand-text">YLuna85 LABs — Laboratório de Softwares</p>
             <div class="footer-links" role="navigation" aria-label="Links Institucionais">
+                <a href="artigos/index.html" class="footer-link">Guias e Artigos</a> | 
+                <a href="tutorial.html" class="footer-link">Tutoriais</a> | 
                 <a href="sobre.html" class="footer-link">Sobre Nós</a> | 
                 <a href="privacidade.html" class="footer-link">Política de Privacidade</a> | 
                 <a href="termos.html" class="footer-link">Termos de Uso</a> | 
                 <a href="contato.html" class="footer-link">Contato</a>
             </div>
+
         </footer>
     </div>
 
