@@ -134,10 +134,8 @@ Este repositório está publicado no endereço [github.com/yuriluna85/tae-federa
     *   Interface com busca instantânea e cards colapsáveis (*Accordion*) cobrindo a Lei nº 11.091/2005 (PCCTAE), Lei nº 8.112/1990 (RJU), Termo de Acordo nº 01/2024 (Acordo de Greve), Decretos nº 5.824/2006 e 5.825/2006 (IQ e Capacitação) e normativas do RSC.
 *   🎯 **Radar de Concursos TAE & IFES (`concursos.html` & `app_concursos.js`)**:
     *   Motor de busca dinâmico estilo PCI Concursos, com filtros por Região/UF, Nível de Escolaridade (Classes D e E) e Status, listando editais abertos e previstos com links oficiais de editais e bancas examinadoras.
-*   📰 **Notícias Reais com Atribuição de Fonte**:
-    *   Atualização do feed `noticias.json` com notícias jornalísticas de fontes oficiais e botões diretos de leitura no veículo original.
-*   🗺️ **Sitemap & Interligação Universal**:
-    *   Atualização de `sitemap.xml` com as 5 novas rotas e interligação de menus superiores e rodapés de `index.html`, `tutorial.html` e `artigos/index.html`.
+*   🤖 **Automação Contínua no GitHub Actions (Zero APIs Pagas)**:
+    *   Criação do workflow unificado `.github/workflows/atualizacao_dados_tae.yml` e arquivo de dependências `scripts/requisitos_scraper.txt`, executando a mineração diária de notícias e editais diretamente em runner Ubuntu sem custos de APIs pagas, tokens ou serviços externos.
 
 ### [10/08/2026] - Reestruturação AdSense Readiness & Enriquecimento de Esquema JSON-LD
 

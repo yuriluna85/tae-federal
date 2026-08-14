@@ -1,8 +1,9 @@
 /**
  * app_concursos.js
  * -----------------
- * Motor de Busca Dinâmico de Concursos Públicos TAE & IFES (Estilo PCI Concursos)
- * Desenvolvido por: YLuna85 LABs
+ * Motor de Busca Dinamico de Concursos Publicos TAE & IFES (Estilo PCI Concursos)
+ * Alimentado por mineracao real via Scrapling (G:\Meu Drive\APP\_Recursos_e_Skills_Zips\AGy\Scrapling-main)
+ * Desenvolvido por: YLuna85 LABs & IF Baiano APPs
  */
 
 let todosConcursos = [];
@@ -27,8 +28,8 @@ async function carregarConcursos() {
         console.error(err);
         grid.innerHTML = `
             <div class="concurso-empty">
-                <h3>Não foi possível carregar os editais no momento</h3>
-                <p>Verifique sua conexão ou tente novamente mais tarde.</p>
+                <h3>Nao foi possivel carregar os editais no momento</h3>
+                <p>Verifique sua conexao ou tente novamente mais tarde.</p>
             </div>
         `;
     }
@@ -54,51 +55,47 @@ function renderizarConcursos(concursos) {
 
     grid.innerHTML = concursos.map(c => {
         let badgeStatusClass = 'badge-open';
-        if (c.status.includes('Publicado')) badgeStatusClass = 'badge-published';
-        if (c.status.includes('Previsto')) badgeStatusClass = 'badge-predicted';
+        if (c.status && c.status.includes('Publicado')) badgeStatusClass = 'badge-published';
+        if (c.status && c.status.includes('Previsto')) badgeStatusClass = 'badge-predicted';
 
-        const tagsNiveis = c.niveis.map(n => `<span class="tag-nivel">Nível ${n}</span>`).join(' ');
+        const tagsNiveis = (c.niveis || ['D', 'E']).map(n => `<span class="tag-nivel">Nivel ${n}</span>`).join(' ');
+        const vagasTexto = c.vagas_descricao || `${c.vagas || 1} vagas`;
+        const dataColetaStr = c.data_coleta ? `<span style="font-size:0.75rem; color:var(--color-text-muted); margin-left:8px;">Atualizado: ${c.data_coleta}</span>` : '';
 
         return `
-            <article class="concurso-card" data-regiao="${c.regiao}" data-uf="${c.uf}">
+            <article class="concurso-card" data-regiao="${c.regiao || 'Nacional'}" data-uf="${c.uf || 'BR'}">
                 <div class="concurso-card-header">
                     <div>
-                        <span class="concurso-badge ${badgeStatusClass}">${c.status}</span>
-                        <span class="concurso-uf">📍 ${c.uf} — ${c.regiao}</span>
+                        <span class="concurso-badge ${badgeStatusClass}">${c.status || 'Inscricoes Abertas'}</span>
+                        <span class="concurso-uf">Local: ${c.uf || 'BR'} — ${c.regiao || 'Nacional'}</span>
                     </div>
-                    <span class="concurso-banca">Banca: ${c.banca}</span>
+                    <span class="concurso-banca">${c.fonte_coleta || 'Fonte Oficial'}</span>
                 </div>
 
-                <h3 class="concurso-titulo">${c.instituicao}</h3>
-                <p class="concurso-subtitulo">${c.titulo}</p>
+                <h3 class="concurso-titulo">${c.instituicao || 'Instituicao Federal'}</h3>
+                <p class="concurso-subtitulo">${c.titulo || 'Processo Seletivo / Concurso'}</p>
 
                 <div class="concurso-tags-niveis">
                     ${tagsNiveis}
-                    <span class="tag-vagas">👥 ${c.vagas} vagas</span>
+                    <span class="tag-vagas">${vagasTexto}</span>
                 </div>
 
                 <div class="concurso-info-row">
-                    <strong>💼 Cargos:</strong> ${c.cargos}
+                    <strong>Cargos / Detalhes:</strong> ${c.cargos || 'Cargos do PCCTAE / IFES'}
                 </div>
                 <div class="concurso-info-row">
-                    <strong>💰 Remuneração Inicial:</strong> <span class="destaque-salario">${c.remuneracao_inicial}</span>
+                    <strong>Remuneracao Inicial:</strong> <span class="destaque-salario">${c.remuneracao_inicial || 'Conforme Edital'}</span>
                 </div>
                 <div class="concurso-info-row">
-                    <strong>📅 Inscrições:</strong> ${c.prazo_inscricao}
-                </div>
-                <div class="concurso-info-row">
-                    <strong>📝 Descrição:</strong> ${c.descricao}
+                    <strong>Periodo de Inscricao:</strong> ${c.prazo_inscricao || 'Consulte o edital'}
                 </div>
 
                 <div class="concurso-card-footer">
-                    <a href="${c.link_edital}" target="_blank" rel="noopener noreferrer" class="btn-concurso btn-edital">
-                        📄 Ver Edital Oficial
+                    <a href="${c.link_edital}" target="_blank" rel="noopener noreferrer" class="btn-concurso btn-edital" title="Acessar pagina oficial do edital">
+                        Acessar Edital Oficial
                     </a>
-                    <a href="${c.link_banca}" target="_blank" rel="noopener noreferrer" class="btn-concurso btn-banca">
-                        🌐 Página da Banca
-                    </a>
-                    <a href="index.html" class="btn-concurso btn-simular" title="Simular salário deste cargo na Calculadora TAE">
-                        🧮 Simular Salário
+                    <a href="index.html" class="btn-concurso btn-simular" title="Simular salario na Calculadora TAE">
+                        Simular Salario
                     </a>
                 </div>
             </article>
@@ -120,21 +117,15 @@ function configurarFiltros() {
         const status = selectStatus ? selectStatus.value : '';
 
         const filtrados = todosConcursos.filter(c => {
-            // Busca textual
             const matchTexto = !termo || 
-                c.instituicao.toLowerCase().includes(termo) ||
-                c.titulo.toLowerCase().includes(termo) ||
-                c.cargos.toLowerCase().includes(termo) ||
-                c.uf.toLowerCase().includes(termo) ||
-                c.banca.toLowerCase().includes(termo);
+                (c.instituicao && c.instituicao.toLowerCase().includes(termo)) ||
+                (c.titulo && c.titulo.toLowerCase().includes(termo)) ||
+                (c.cargos && c.cargos.toLowerCase().includes(termo)) ||
+                (c.uf && c.uf.toLowerCase().includes(termo)) ||
+                (c.banca && c.banca.toLowerCase().includes(termo));
 
-            // Filtro Regiao
             const matchRegiao = !regiao || c.regiao === regiao;
-
-            // Filtro Nivel
-            const matchNivel = !nivel || c.niveis.includes(nivel);
-
-            // Filtro Status
+            const matchNivel = !nivel || (c.niveis && c.niveis.includes(nivel));
             const matchStatus = !status || c.status === status;
 
             return matchTexto && matchRegiao && matchNivel && matchStatus;
