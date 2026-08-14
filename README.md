@@ -125,8 +125,20 @@ Este repositório está publicado no endereço [github.com/yuriluna85/tae-federa
 *   📰 **Mural de Novidades**: Inserida notícia em tempo real no feed assíncrono (`noticias.json`) comunicando a assinatura e os impactos jurídicos do novo decreto.
 *   💼 **Tabelas de Cargos e Funções**: Incluída a Tabela Geral de Funções Gratificadas e de Coordenação (FG-1 a FG-4 e FCC) com suas descrições e remunerações oficiais vigentes diretamente na aba "Tabela de Carreira" (`index.html`).
 *   ⚖️ **Equivalência CD vs CCE (Siorg)**: Incluída a tabela comparativa oficial entre os Cargos de Direção (CD) das Instituições Federais de Ensino e os Cargos Comissionados Executivos (CCE) da Administração Pública Federal, fundamentada nos critérios gerenciais da Lei nº 14.204/2021 e nos níveis regulatórios do Siorg (CD-1 a CD-4 vs CCE-11 a CCE-18). Corrigidos os rótulos de nível dos CCEs na tabela (de CCE-13/10/07 para CCE-15/13/11).
-### [27/07/2026] - Reestruturação Editorial, Hub de Conteúdo (15 Artigos Deep) e AdSense 100% Eligible
-*   📚 **Hub Editorial da Carreira TAE**: Criação do diretório `/artigos/` com 15 artigos profundos (>1.000 palavras cada) cobrindo todos os eixos do PCCTAE: Reestruturação Salarial 2024-2026, Tabela do Incentivo à Qualificação (IQ), Progressão por Capacitação e Mérito, Guia Completo do RSC-PCCTAE, Tabelas de Vencimento Básico 2026, Auxílios e Benefícios, Direitos na Lei 8.112/90, Estágio Probatório, Movimentação de Pessoal (Redistribuição/Remoção), Aposentadoria (RPPS/Funpresp), Insalubridade/Periculosidade, Licença Capacitação e FAQ Master com 30 dúvidas respondidas.
+### [14/08/2026] - Expansão de Tutoriais Passo a Passo, FAQ Legislativo, Radar de Concursos TAE e Notícias com Links Reais
+*   📖 **Novas Páginas de Tutoriais de Cálculo**:
+    *   `tutorial-calculo-remuneracao.html`: Passo a passo detalhado da remuneração TAE (Vencimento Básico, novos steps de 4,0% em 2026, IQ integral de 10% a 75%, progressões por mérito e capacitação, auxílios e faixas progressivas do CPSS/IRPF).
+    *   `tutorial-calculo-rsc.html`: Guia de equivalência salarial do Reconhecimento de Saberes e Competências (RSC-I a RSC-III), critérios de pontuação nos 4 macro-eixos e processo de banca examinadora.
+    *   `tutorial-calculo-diarias.html`: Manual prático de cálculo de diárias e passagens federais (Decreto nº 11.872/2023, diária integral vs meia diária sem pernoite, adicional de embarque e prestação de contas no SCDP).
+*   ⚖️ **FAQ Legislativo & Base de Conhecimento Q&A (`faq-legislacao-tae.html`)**:
+    *   Interface com busca instantânea e cards colapsáveis (*Accordion*) cobrindo a Lei nº 11.091/2005 (PCCTAE), Lei nº 8.112/1990 (RJU), Termo de Acordo nº 01/2024 (Acordo de Greve), Decretos nº 5.824/2006 e 5.825/2006 (IQ e Capacitação) e normativas do RSC.
+*   🎯 **Radar de Concursos TAE & IFES (`concursos.html` & `app_concursos.js`)**:
+    *   Motor de busca dinâmico estilo PCI Concursos, com filtros por Região/UF, Nível de Escolaridade (Classes D e E) e Status, listando editais abertos e previstos com links oficiais de editais e bancas examinadoras.
+*   📰 **Notícias Reais com Atribuição de Fonte**:
+    *   Atualização do feed `noticias.json` com notícias jornalísticas de fontes oficiais e botões diretos de leitura no veículo original.
+*   🗺️ **Sitemap & Interligação Universal**:
+    *   Atualização de `sitemap.xml` com as 5 novas rotas e interligação de menus superiores e rodapés de `index.html`, `tutorial.html` e `artigos/index.html`.
+
 ### [10/08/2026] - Reestruturação AdSense Readiness & Enriquecimento de Esquema JSON-LD
 
 *   🛡️ **Marcação Schema.org JSON-LD FAQPage**: Injeção da marcação estruturada `FAQPage` e `ItemList` no `@graph` do `index.html`, trazendo as perguntas e respostas mais frequentes sobre a reestruturação da carreira PCCTAE (Lei nº 15.141/2025 e Lei nº 15.367/2026), Incentivo à Qualificação e RSC.

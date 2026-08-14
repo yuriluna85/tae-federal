@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial do RSC-PCCTAE: Regras e Como Calcular | Calculadora TAE Federal</title>
+    <meta name="description" content="Guia completo de cálculo e pontuação do Reconhecimento de Saberes e Competências (RSC-TAE): equivalência salarial, critérios de barema, bancas avaliadoras e impacto financeiro.">
+    <meta name="keywords" content="RSC TAE, Reconhecimento de Saberes e Competências PCCTAE, Como calcular RSC TAE, Tabela RSC 2026, Pontuação RSC Federal, Equivalência RSC Especialização Mestrado Doutorado">
+    <link rel="canonical" href="https://taes-federal.com.br/tutorial-calculo-rsc.html" />
+    <meta name="google-site-verification" content="dY48D0o4FUKPgMmsMLIA8oIXenNn_6MrRWilCxt8Ijk" />
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/favicon.png" type="image/png" sizes="32x32">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .tutorial-hero{background:linear-gradient(135deg,#6366F1 0%,#8B5CF6 100%);padding:50px 24px;text-align:center;margin-bottom:32px;border-radius:20px}
+        .tutorial-hero h1{font-family:var(--font-title);font-size:2.2rem;color:#fff;margin-bottom:12px}
+        .tutorial-hero p{font-size:1.05rem;color:rgba(255,255,255,0.9);max-width:680px;margin:0 auto 20px;line-height:1.6}
+        .back-nav{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);color:#fff;text-decoration:none;padding:8px 20px;border-radius:30px;font-size:0.88rem;font-weight:600;transition:all 0.2s}
+        .back-nav:hover{background:rgba(255,255,255,0.28);transform:translateY(-2px)}
+        .article-content{background:var(--card-bg);border:1px solid var(--border-color);border-radius:16px;padding:32px;line-height:1.75;color:var(--color-text-muted);margin-bottom:30px}
+        .article-content h2{font-family:var(--font-title);color:var(--color-primary);font-size:1.5rem;margin-top:28px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border-color)}
+        .article-content h3{font-family:var(--font-title);color:var(--color-text);font-size:1.15rem;margin-top:20px;margin-bottom:8px}
+        .formula-box{background:rgba(99,102,241,0.08);border-left:4px solid var(--color-primary);padding:16px 20px;border-radius:0 12px 12px 0;margin:18px 0;font-family:monospace;font-size:0.95rem;color:var(--color-text)}
+        .table-responsive{overflow-x:auto;margin:20px 0}
+        .data-table{width:100%;border-collapse:collapse;font-size:0.9rem}
+        .data-table th{background:rgba(99,102,241,0.15);color:var(--color-primary);padding:12px;text-align:left;font-family:var(--font-title);font-weight:600}
+        .data-table td{padding:12px;border-bottom:1px solid var(--border-color);color:var(--color-text)}
+        .rsc-card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin:24px 0}
+        .rsc-card{background:rgba(30,41,59,0.7);border:1px solid var(--border-color);border-radius:14px;padding:20px;border-top:4px solid var(--color-primary)}
+        .rsc-card h4{font-family:var(--font-title);color:var(--color-primary);font-size:1.1rem;margin-bottom:8px}
+        .cta-banner{text-align:center;padding:30px;background:linear-gradient(135deg,rgba(99,102,241,0.12),rgba(139,92,246,0.08));border:1px solid rgba(99,102,241,0.3);border-radius:16px;margin-top:30px}
+        .cta-btn-action{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--color-primary),var(--color-secondary));color:#fff;text-decoration:none;padding:14px 32px;border-radius:30px;font-family:var(--font-title);font-weight:700;font-size:1rem;transition:all 0.2s}
+        .cta-btn-action:hover{opacity:0.9;transform:translateY(-2px);box-shadow:0 8px 20px rgba(99,102,241,0.3)}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Acessibilidade -->
+        <div class="a11y-bar">
+            <button id="btn-contrast" class="a11y-btn" aria-label="Alternar alto contraste">Alto Contraste</button>
+            <button id="btn-font-minus" class="a11y-btn" aria-label="Diminuir fonte">A-</button>
+            <button id="btn-font-plus" class="a11y-btn" aria-label="Aumentar fonte">A+</button>
+        </div>
+
+        <!-- Cabeçalho -->
+        <header>
+            <img src="assets/marca-yluna85-labs.jpg" alt="Logotipo Oficial YLuna85 LABs" class="brand-logo">
+            <div class="tutorial-hero">
+                <a href="index.html" class="back-nav">← Voltar à Calculadora Principal</a>
+                <h1 style="margin-top:16px;">Guia Completo do RSC-PCCTAE</h1>
+                <p>Aprenda como funciona o Reconhecimento de Saberes e Competências para os TAEs, os níveis de equivalência remuneratória, os critérios de pontuação e o passo a passo da submissão.</p>
+            </div>
+        </header>
+
+        <!-- Navegação Superior -->
+        <nav class="nav-tabs" aria-label="Menu de Navegação do Portal">
+            <a href="index.html" class="tab-btn" style="text-decoration:none;">📊 Calculadora Salarial</a>
+            <a href="tutorial-calculo-remuneracao.html" class="tab-btn" style="text-decoration:none;">📖 Tutorial Salário</a>
+            <a href="tutorial-calculo-rsc.html" class="tab-btn active" style="text-decoration:none;">🎯 Tutorial RSC</a>
+            <a href="tutorial-calculo-diarias.html" class="tab-btn" style="text-decoration:none;">✈️ Tutorial Diárias</a>
+            <a href="faq-legislacao-tae.html" class="tab-btn" style="text-decoration:none;">⚖️ FAQ Leis & Decretos</a>
+            <a href="concursos.html" class="tab-btn" style="text-decoration:none;">🎯 Concursos TAE</a>
+            <a href="artigos/index.html" class="tab-btn" style="text-decoration:none;">📚 Artigos & Guias</a>
+        </nav>
+
+        <!-- Conteúdo do Artigo -->
+        <main class="article-content">
+            <h2>1. O que é o RSC para os Técnico-Administrativos em Educação?</h2>
+            <p>O <strong>Reconhecimento de Saberes e Competências (RSC)</strong> é um instituto histórico conquistado pelos TAEs na greve de 2024 e regulamentado pelas diretrizes do MGI e MEC a partir de <strong>abril de 2026</strong>. Ele valoriza a experiência acumulada, a liderança em projetos institucionais, o desenvolvimento de metodologias e a atuação profissional no serviço público, permitindo que a retribuição por qualificação seja concedida em nível superior à escolaridade formal do servidor.</p>
+
+            <h2>2. Como Funciona a Equivalência Financeira do RSC?</h2>
+            <p>O RSC não altera o grau acadêmico do servidor (não confere diploma de pós-graduação), mas <strong>equipara o percentual do Incentivo à Qualificação (IQ)</strong> no contracheque ao nível imediatamente superior:</p>
+
+            <div class="rsc-card-grid">
+                <div class="rsc-card">
+                    <h4>RSC-I (Equivalência a Especialização)</h4>
+                    <p><strong>Requisito Acadêmico</strong>: Graduação completa.</p>
+                    <p><strong>Efeito Financeiro</strong>: O servidor passa a receber o percentual de <strong>30% a 52%</strong> sobre o Vencimento Básico, como se tivesse Especialização/Pós Lato Sensu.</p>
+                </div>
+                <div class="rsc-card">
+                    <h4>RSC-II (Equivalência a Mestrado)</h4>
+                    <p><strong>Requisito Acadêmico</strong>: Especialização completa.</p>
+                    <p><strong>Efeito Financeiro</strong>: O servidor passa a receber o percentual de <strong>52%</strong> sobre o Vencimento Básico, equivalente à retribuição de Mestrado.</p>
+                </div>
+                <div class="rsc-card">
+                    <h4>RSC-III (Equivalência a Doutorado)</h4>
+                    <p><strong>Requisito Acadêmico</strong>: Mestrado completo.</p>
+                    <p><strong>Efeito Financeiro</strong>: O servidor passa a receber o percentual máximo de <strong>75%</strong> sobre o Vencimento Básico, equivalente à retribuição de Doutorado.</p>
+                </div>
+            </div>
+
+            <h2>3. Os 4 Eixos de Pontuação do Barema de Saberes</h2>
+            <p>Para obter o deferimento na banca avaliadora, o servidor pontua atividades desenvolvidas ao longo de sua trajetória profissional divididas em 4 macro-eixos:</p>
+
+            <div class="table-responsive">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Eixo de Avaliação</th>
+                            <th>Atividades Pontuáveis</th>
+                            <th>Exemplos Comuns</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Eixo 1: Experiência Profissional & Gestão</strong></td>
+                            <td>Tempo de exercício no cargo, chefias exercidas (CD/FG/FCC), comissões permanentes e grupos de trabalho.</td>
+                            <td>Membro de comissão de licitação, NDE, colegiados, fiscais de contrato, chefia de setor.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Eixo 2: Produção Técnica & Inovação</strong></td>
+                            <td>Desenvolvimento de manuais, fluxos de processos, softwares, sistemas internos, patentes ou pareceres técnicos complexos.</td>
+                            <td>Criação de POPs (Procedimento Operacional Padrão), módulos no SIPAC/SIGAA/SUAP.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Eixo 3: Formação Continuada & Eventos</strong></td>
+                            <td>Cursos de capacitação realizados como aluno, participação em congressos, seminários e semanas acadêmicas.</td>
+                            <td>Cursos da Enap, certificações técnicas, participação no CONIF/FASUBRA.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Eixo 4: Multiplicação & Ensino</strong></td>
+                            <td>Ministração de treinamentos para equipes, palestras institucionais, coorientação de bolsistas ou projetos de extensão.</td>
+                            <td>Instrutoria interna, tutoria de estagiários, projetos de extensão comunitária.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>4. Passo a Passo do Requerimento e Banca Avaliadora</h2>
+            <ol style="padding-left: 20px; line-height: 1.8;">
+                <li><strong>Montagem do Dossiê/Memorial Descritivo</strong>: O servidor organiza os comprovantes de suas atividades e preenche o barema de pontuação da instituição.</li>
+                <li><strong>Abertura do Processo Eletrônico (SEI / SouGov)</strong>: Submissão do requerimento formal endereçado à Comissão Permanente de Pessoal Técnico-Administrativo (CPPTA / CIS).</li>
+                <li><strong>Designação da Banca Examinadora</strong>: A banca é composta de forma paritária por avaliadores internos e externos cadastrados no Banco de Avaliadores do MEC/MGI.</li>
+                <li><strong>Julgamento & Parecer</strong>: A banca emite parecer conclusivo aprovando ou solicitando complementação de documentos.</li>
+                <li><strong>Publicação da Portaria e Pagamento</strong>: A Reitoria publica a portaria no Boletim de Serviço/DOU, com efeitos financeiros retroativos à data do protocolo válido.</li>
+            </ol>
+
+            <div class="cta-banner">
+                <h3 style="font-family:var(--font-title); color:var(--color-primary); margin-bottom:8px;">Quer Simular sua Pontuação de RSC Agora?</h3>
+                <p style="margin-bottom:18px;">Utilize a aba dedicada de cálculo do RSC na Calculadora TAE Federal para simular sua pontuação e ganho salarial.</p>
+                <a href="index.html" class="cta-btn-action">🎯 Acessar Simulador de Pontuação RSC</a>
+            </div>
+        </main>
+
+        <!-- Rodapé -->
+        <footer>
+            <div class="footer-links">
+                <a href="index.html">Calculadora Salarial</a>
+                <a href="tutorial-calculo-remuneracao.html">Tutorial Salário</a>
+                <a href="tutorial-calculo-rsc.html">Tutorial RSC</a>
+                <a href="tutorial-calculo-diarias.html">Tutorial Diárias</a>
+                <a href="faq-legislacao-tae.html">FAQ Leis</a>
+                <a href="concursos.html">Concursos TAE</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="privacidade.html">Privacidade</a>
+                <a href="termos.html">Termos</a>
+                <a href="contato.html">Contato</a>
+            </div>
+            <p style="margin-top:14px; font-size:0.85rem; color:var(--color-text-muted);">
+                Calculadora TAEs Federal — Desenvolvida por <strong>YLuna85 LABs</strong>. Plataforma independente a serviço da educação pública federal.
+            </p>
+        </footer>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
