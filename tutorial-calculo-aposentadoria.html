@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutorial de Cálculo de Aposentadoria TAE | Calculadora TAE Federal</title>
+  <meta name="description" content="Guia completo e passo a passo de como calcular a aposentadoria dos Técnico-Administrativos em Educação (PCCTAE): Pedágio de 100%, Sistema de Pontos, Integralidade, Paridade e Abono de Permanência.">
+  <meta name="keywords" content="Como calcular aposentadoria TAE, Aposentadoria PCCTAE, Pedágio 100% servidor federal, Regra de Pontos EC 103, Abono de Permanência TAE, Integralidade e Paridade RPPS">
+  <link rel="canonical" href="https://taes-federal.com.br/tutorial-calculo-aposentadoria.html" />
+  <meta name="google-site-verification" content="dY48D0o4FUKPgMmsMLIA8oIXenNn_6MrRWilCxt8Ijk" />
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="assets/favicon.png" type="image/png" sizes="32x32">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .tutorial-hero{background:linear-gradient(135deg,var(--color-primary) 0%,var(--color-secondary) 100%);padding:50px 24px;text-align:center;margin-bottom:32px;border-radius:20px}
+    .tutorial-hero h1{font-family:var(--font-title);font-size:2.2rem;color:#fff;margin-bottom:12px}
+    .tutorial-hero p{font-size:1.05rem;color:rgba(255,255,255,0.9);max-width:680px;margin:0 auto 20px;line-height:1.6}
+    .back-nav{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);color:#fff;text-decoration:none;padding:8px 20px;border-radius:30px;font-size:0.88rem;font-weight:600;transition:all 0.2s}
+    .back-nav:hover{background:rgba(255,255,255,0.28);transform:translateY(-2px)}
+    .article-content{background:var(--card-bg);border:1px solid var(--border-color);border-radius:16px;padding:32px;line-height:1.75;color:var(--color-text-muted);margin-bottom:30px}
+    .article-content h2{font-family:var(--font-title);color:var(--color-primary);font-size:1.5rem;margin-top:28px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border-color)}
+    .article-content h3{font-family:var(--font-title);color:var(--color-text);font-size:1.15rem;margin-top:20px;margin-bottom:8px}
+    .formula-box{background:rgba(0,85,165,0.08);border-left:4px solid var(--color-primary);padding:16px 20px;border-radius:0 12px 12px 0;margin:18px 0;font-family:monospace;font-size:0.95rem;color:var(--color-text)}
+    .table-responsive{overflow-x:auto;margin:20px 0}
+    .data-table{width:100%;border-collapse:collapse;font-size:0.9rem}
+    .data-table th{background:rgba(0,85,165,0.15);color:var(--color-primary);padding:12px;text-align:left;font-family:var(--font-title);font-weight:600}
+    .data-table td{padding:12px;border-bottom:1px solid var(--border-color);color:var(--color-text)}
+    .highlight-box{background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.3);border-radius:12px;padding:18px;margin:20px 0}
+    .highlight-box h4{color:#10b981;font-family:var(--font-title);margin-bottom:6px;font-size:1.05rem}
+    .warning-box{background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.3);border-radius:12px;padding:18px;margin:20px 0}
+    .warning-box h4{color:#f59e0b;font-family:var(--font-title);margin-bottom:6px;font-size:1.05rem}
+    .cta-banner{text-align:center;padding:30px;background:linear-gradient(135deg,rgba(0,85,165,0.12),rgba(212,160,23,0.08));border:1px solid rgba(0,85,165,0.3);border-radius:16px;margin-top:30px}
+    .cta-btn-action{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--color-primary),var(--color-secondary));color:#fff;text-decoration:none;padding:14px 32px;border-radius:30px;font-family:var(--font-title);font-weight:700;font-size:1rem;transition:all 0.2s}
+    .cta-btn-action:hover{opacity:0.9;transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,85,165,0.3)}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Acessibilidade -->
+    <div class="a11y-bar">
+      <button id="btn-contrast" class="a11y-btn" aria-label="Alternar alto contraste">Alto Contraste</button>
+      <button id="btn-font-minus" class="a11y-btn" aria-label="Diminuir fonte">A-</button>
+      <button id="btn-font-plus" class="a11y-btn" aria-label="Aumentar fonte">A+</button>
+    </div>
+
+    <!-- Cabeçalho -->
+    <header>
+      <img src="assets/marca-yluna85-labs.jpg" alt="Logotipo Oficial YLuna85 LABs" class="brand-logo">
+      <div class="tutorial-hero">
+        <a href="index.html" class="back-nav">← Voltar ao Simulador Principal</a>
+        <h1 style="margin-top:16px;">Como Calcular a Aposentadoria do Servidor TAE</h1>
+        <p>Passo a passo com os marcos temporais, as regras de transição da EC nº 103/2019 (Pedágio 100% e Pontos), Integralidade, Paridade, averbação de tempo e Abono de Permanência.</p>
+      </div>
+    </header>
+
+    <!-- Navegação Superior -->
+    <nav class="nav-tabs" aria-label="Menu de Navegação do Portal">
+      <a href="index.html" class="tab-btn" style="text-decoration:none;">Calculadora Salarial</a>
+      <a href="tutorial-calculo-aposentadoria.html" class="tab-btn active" style="text-decoration:none;">Tutorial Aposentadoria</a>
+      <a href="tutorial-calculo-remuneracao.html" class="tab-btn" style="text-decoration:none;">Tutorial Salário</a>
+      <a href="tutorial-calculo-rsc.html" class="tab-btn" style="text-decoration:none;">Tutorial RSC</a>
+      <a href="tutorial-calculo-diarias.html" class="tab-btn" style="text-decoration:none;">Tutorial Diárias</a>
+      <a href="faq-legislacao-tae.html" class="tab-btn" style="text-decoration:none;">FAQ Leis e Decretos</a>
+      <a href="concursos.html" class="tab-btn" style="text-decoration:none;">Concursos TAE</a>
+      <a href="artigos/index.html" class="tab-btn" style="text-decoration:none;">Artigos e Guias</a>
+    </nav>
+
+    <!-- Conteúdo do Tutorial -->
+    <main class="article-content">
+      <h2>1. A Estrutura Previdenciária do Servidor Federal (RPPS)</h2>
+      <p>A aposentadoria dos servidores Técnico-Administrativos em Educação (TAEs) é regida pelo <strong>Regime Próprio de Previdência Social (RPPS da União)</strong>, sob a égide do Artigo 40 da Constituição Federal de 1988 e as alterações introduzidas pela <strong>Emenda Constitucional nº 103/2019</strong> (Reforma da Previdência).</p>
+      <p>O direito a uma regra de aposentadoria e a forma de cálculo dos proventos dependem estritamente da <strong>data em que o servidor ingressou no serviço público efetivo</strong>.</p>
+
+      <h2>2. Os Três Marcos Temporais Fundamentais</h2>
+      <div class="table-responsive">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Marco de Ingresso</th>
+              <th>Regime de Proventos</th>
+              <th>Regra de Reajuste</th>
+              <th>Teto Aplicável</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Até 31/12/2003</strong></td>
+              <td>Integralidade (100% da última remuneração)</td>
+              <td>Paridade (reajustes idênticos aos da ativa)</td>
+              <td>Teto Constitucional do Serviço Público</td>
+            </tr>
+            <tr>
+              <td><strong>De 01/01/2004 a 03/02/2013</strong></td>
+              <td>Média Aritmética Simples de 100% das contribuições</td>
+              <td>Reajuste anual pelo INPC/IPCA</td>
+              <td>Sem limitação ao teto do INSS</td>
+            </tr>
+            <tr>
+              <td><strong>A partir de 04/02/2013</strong></td>
+              <td>Média Aritmética limitada ao Teto do RGPS</td>
+              <td>Reajuste pelo índice do RGPS</td>
+              <td>Teto do RGPS (R$ 7.786,02) + FUNPRESP-Exe</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>3. As Duas Regras de Transição da Reforma (EC 103/2019)</h2>
+
+      <h3>Regra 1: Pedágio de 100% (Artigo 20 da EC nº 103/2019)</h3>
+      <p>Esta é a regra mais vantajosa para quem ingressou até 31/12/2003, pois garante a <strong>Integralidade e a Paridade plena</strong>. Os requisitos exigidos são:</p>
+      <ul>
+        <li><strong>Idade Mínima:</strong> 60 anos para homens e 57 anos para mulheres.</li>
+        <li><strong>Tempo de Contribuição Mínimo:</strong> 35 anos para homens e 30 anos para mulheres.</li>
+        <li><strong>Pedágio Adicional:</strong> Período adicional de contribuição equivalente a 100% do tempo que faltava em 13/11/2019 para atingir o tempo mínimo de contribuição.</li>
+        <li><strong>Tempo no Serviço Público:</strong> 20 anos de efetivo exercício.</li>
+        <li><strong>Tempo no Cargo Efetivo:</strong> 5 anos no cargo de TAE.</li>
+      </ul>
+
+      <div class="formula-box">
+        Tempo Total Exigido no Pedágio = 35 anos (H) ou 30 anos (M) + (Tempo que Faltava em 13/11/2019 × 1,0)
+      </div>
+
+      <h3>Regra 2: Sistema de Pontos (Artigo 4º da EC nº 103/2019)</h3>
+      <p>Combina a idade cronológica com o tempo total de contribuição. Os requisitos para 2026 são:</p>
+      <ul>
+        <li><strong>Homens:</strong> Mínimo de 35 anos de contribuição, 62 anos de idade e soma de 103 pontos (idade + contribuição).</li>
+        <li><strong>Mulheres:</strong> Mínimo de 30 anos de contribuição, 57 anos de idade e soma de 93 pontos (idade + contribuição).</li>
+        <li><strong>Tempo no Serviço Público e Cargo:</strong> 20 anos no serviço público e 5 anos no cargo efetivo.</li>
+      </ul>
+
+      <div class="warning-box">
+        <h4>Atenção à Integralidade na Regra de Pontos:</h4>
+        <p>Para quem ingressou até 31/12/2003 ter direito à integralidade na Regra de Pontos, a EC 103/2019 exige atingir a idade de <strong>65 anos para homens e 62 anos para mulheres</strong>. Caso se aposente antes dessa idade pelos pontos, o cálculo será pela média proporcional (60% + 2% por ano que exceder 20 anos de contribuição).</p>
+      </div>
+
+      <h2>4. O Abono de Permanência: Como Funciona e Quando Pedir?</h2>
+      <p>O <strong>Abono de Permanência</strong> (Artigo 40, § 19 da CF/88) é um benefício pecuniário concedido ao servidor que preenche todos os requisitos para se aposentar voluntariamente por qualquer das regras vigentes, mas opta por continuar em exercício no cargo público.</p>
+
+      <div class="highlight-box">
+        <h4>Valor e Retorno Financeiro do Abono:</h4>
+        <p>O valor do abono equivale a exatamente <strong>100% da contribuição previdenciária mensal (CPSS / PSS)</strong> descontada do servidor. Na prática, o desconto de 11% a 14% do PSS é anulado por um crédito de igual valor na folha de pagamento, aumentando a renda líquida mensal.</p>
+      </div>
+
+      <h2>5. Quais Parcelas do PCCTAE Acompanham a Aposentadoria?</h2>
+      <p>Na aposentadoria dos servidores TAEs, compõem a base dos proventos:</p>
+      <ul>
+        <li><strong>Vencimento Básico:</strong> Integralmente incorporado conforme o padrão em que se der a aposentadoria.</li>
+        <li><strong>Incentivo à Qualificação (IQ):</strong> Incorporado aos proventos no percentual homologado (10% a 75%).</li>
+        <li><strong>Reconhecimento de Saberes e Competências (RSC):</strong> Incorporado aos proventos de acordo com a equivalência deferida na ativa.</li>
+        <li><strong>Adicional por Tempo de Serviço (Anuênios):</strong> Para quem possui direito adquirido e concessão prévia.</li>
+      </ul>
+
+      <div class="warning-box">
+        <h4>Parcelas Indenizatórias que Cessam na Aposentadoria:</h4>
+        <p>Não integram os proventos da inatividade: Auxílio Alimentação (R$ 1.192,00), Auxílio Transporte, Adicionais de Insalubridade, Periculosidade e Gratificação por Raio-X.</p>
+      </div>
+
+      <h2>6. Como Fazer a Simulação no Portal</h2>
+      <p>Para obter um diagnóstico detalhado da sua carreira, utilize o nosso simulador:</p>
+      <ol>
+        <li>Acesse a aba <strong>Simulador de Aposentadoria</strong> no topo do portal.</li>
+        <li>Informe sua data de nascimento, sexo e as datas de admissão no serviço público e no cargo.</li>
+        <li>Lance o tempo averbado anterior de empresas privadas (INSS), prefeituras ou governos estaduais.</li>
+        <li>Selecione sua classe, padrão atual e percentuais de IQ/RSC.</li>
+        <li>Clique em <strong>Calcular Projeção e Comparativo de Aposentadoria</strong> para visualizar a linha do tempo, a melhor regra recomendada e os valores projetados.</li>
+      </ol>
+
+      <div class="cta-banner">
+        <h3 style="font-family:var(--font-title);color:var(--color-primary);font-size:1.4rem;margin-bottom:10px;">Deseja Projetar Sua Aposentadoria Agora?</h3>
+        <p style="margin-bottom:20px;color:var(--color-text-muted);">Acesse a ferramenta interativa e obtenha a estimativa oficial fundamentada na EC 103/2019.</p>
+        <a href="index.html" class="cta-btn-action">Ir para o Simulador de Aposentadoria</a>
+      </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+      <img src="assets/mascotes-yluna85-labs.jpg" alt="Mascotes Oficiais do Laboratório: Coragem e Bolinho de Chuva" class="mascots" id="footer-mascots">
+      <p>Mascotes Oficiais: Coragem e Bolinho de Chuva</p>
+      <p class="brand-text">YLuna85 LABs — Laboratório de Softwares</p>
+      <div class="footer-links" role="navigation" aria-label="Links Institucionais">
+        <a href="index.html" class="footer-link">Calculadora Salarial</a> | 
+        <a href="tutorial-calculo-aposentadoria.html" class="footer-link">Tutorial Aposentadoria</a> | 
+        <a href="tutorial-calculo-remuneracao.html" class="footer-link">Tutorial Salário</a> | 
+        <a href="tutorial-calculo-rsc.html" class="footer-link">Tutorial RSC</a> | 
+        <a href="tutorial-calculo-diarias.html" class="footer-link">Tutorial Diárias</a> | 
+        <a href="faq-legislacao-tae.html" class="footer-link">FAQ Leis</a> | 
+        <a href="concursos.html" class="footer-link">Concursos TAE</a> | 
+        <a href="artigos/index.html" class="footer-link">Guias e Artigos</a> | 
+        <a href="sobre.html" class="footer-link">Sobre Nós</a> | 
+        <a href="privacidade.html" class="footer-link">Política de Privacidade</a> | 
+        <a href="termos.html" class="footer-link">Termos de Uso</a> | 
+        <a href="contato.html" class="footer-link">Contato</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

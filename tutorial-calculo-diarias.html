@@ -1,165 +1,165 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tutorial de Cálculo de Diárias e Passagens Federais | Calculadora TAE Federal</title>
-    <meta name="description" content="Guia prático de como calcular diárias nacionais e internacionais no serviço público federal: tabela do Decreto nº 11.872/2023, meia diária, adicionais de deslocamento e prestação de contas no SCDP.">
-    <meta name="keywords" content="Diárias servidor público federal, Como calcular diária TAE, Tabela diárias Decreto 11872/2023, SCDP diárias e passagens, Meia diária federal, Adicional de deslocamento">
-    <link rel="canonical" href="https://taes-federal.com.br/tutorial-calculo-diarias.html" />
-    <meta name="google-site-verification" content="dY48D0o4FUKPgMmsMLIA8oIXenNn_6MrRWilCxt8Ijk" />
-    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="assets/favicon.png" type="image/png" sizes="32x32">
-    <link rel="stylesheet" href="style.css">
-    <style>
-        .tutorial-hero{background:linear-gradient(135deg,#0284C7 0%,#38BDF8 100%);padding:50px 24px;text-align:center;margin-bottom:32px;border-radius:20px}
-        .tutorial-hero h1{font-family:var(--font-title);font-size:2.2rem;color:#fff;margin-bottom:12px}
-        .tutorial-hero p{font-size:1.05rem;color:rgba(255,255,255,0.95);max-width:680px;margin:0 auto 20px;line-height:1.6}
-        .back-nav{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.35);color:#fff;text-decoration:none;padding:8px 20px;border-radius:30px;font-size:0.88rem;font-weight:600;transition:all 0.2s}
-        .back-nav:hover{background:rgba(255,255,255,0.30);transform:translateY(-2px)}
-        .article-content{background:var(--card-bg);border:1px solid var(--border-color);border-radius:16px;padding:32px;line-height:1.75;color:var(--color-text-muted);margin-bottom:30px}
-        .article-content h2{font-family:var(--font-title);color:var(--color-primary);font-size:1.5rem;margin-top:28px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border-color)}
-        .article-content h3{font-family:var(--font-title);color:var(--color-text);font-size:1.15rem;margin-top:20px;margin-bottom:8px}
-        .formula-box{background:rgba(99,102,241,0.08);border-left:4px solid var(--color-primary);padding:16px 20px;border-radius:0 12px 12px 0;margin:18px 0;font-family:monospace;font-size:0.95rem;color:var(--color-text)}
-        .table-responsive{overflow-x:auto;margin:20px 0}
-        .data-table{width:100%;border-collapse:collapse;font-size:0.9rem}
-        .data-table th{background:rgba(99,102,241,0.15);color:var(--color-primary);padding:12px;text-align:left;font-family:var(--font-title);font-weight:600}
-        .data-table td{padding:12px;border-bottom:1px solid var(--border-color);color:var(--color-text)}
-        .highlight-box{background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.3);border-radius:12px;padding:18px;margin:20px 0}
-        .highlight-box h4{color:#10b981;font-family:var(--font-title);margin-bottom:6px;font-size:1.05rem}
-        .cta-banner{text-align:center;padding:30px;background:linear-gradient(135deg,rgba(99,102,241,0.12),rgba(139,92,246,0.08));border:1px solid rgba(99,102,241,0.3);border-radius:16px;margin-top:30px}
-        .cta-btn-action{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--color-primary),var(--color-secondary));color:#fff;text-decoration:none;padding:14px 32px;border-radius:30px;font-family:var(--font-title);font-weight:700;font-size:1rem;transition:all 0.2s}
-        .cta-btn-action:hover{opacity:0.9;transform:translateY(-2px);box-shadow:0 8px 20px rgba(99,102,241,0.3)}
-    </style>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Tutorial de Cálculo de Diárias e Passagens Federais | Calculadora TAE Federal</title>
+ <meta name="description" content="Guia prático de como calcular diárias nacionais e internacionais no serviço público federal: tabela do Decreto nº 11.872/2023, meia diária, adicionais de deslocamento e prestação de contas no SCDP.">
+ <meta name="keywords" content="Diárias servidor público federal, Como calcular diária TAE, Tabela diárias Decreto 11872/2023, SCDP diárias e passagens, Meia diária federal, Adicional de deslocamento">
+ <link rel="canonical" href="https://taes-federal.com.br/tutorial-calculo-diarias.html" />
+ <meta name="google-site-verification" content="dY48D0o4FUKPgMmsMLIA8oIXenNn_6MrRWilCxt8Ijk" />
+ <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+ <link rel="icon" href="assets/favicon.png" type="image/png" sizes="32x32">
+ <link rel="stylesheet" href="style.css">
+ <style>
+ .tutorial-hero{background:linear-gradient(135deg,#0284C7 0%,#38BDF8 100%);padding:50px 24px;text-align:center;margin-bottom:32px;border-radius:20px}
+ .tutorial-hero h1{font-family:var(--font-title);font-size:2.2rem;color:#fff;margin-bottom:12px}
+ .tutorial-hero p{font-size:1.05rem;color:rgba(255,255,255,0.95);max-width:680px;margin:0 auto 20px;line-height:1.6}
+ .back-nav{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.35);color:#fff;text-decoration:none;padding:8px 20px;border-radius:30px;font-size:0.88rem;font-weight:600;transition:all 0.2s}
+ .back-nav:hover{background:rgba(255,255,255,0.30);transform:translateY(-2px)}
+ .article-content{background:var(--card-bg);border:1px solid var(--border-color);border-radius:16px;padding:32px;line-height:1.75;color:var(--color-text-muted);margin-bottom:30px}
+ .article-content h2{font-family:var(--font-title);color:var(--color-primary);font-size:1.5rem;margin-top:28px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border-color)}
+ .article-content h3{font-family:var(--font-title);color:var(--color-text);font-size:1.15rem;margin-top:20px;margin-bottom:8px}
+ .formula-box{background:rgba(99,102,241,0.08);border-left:4px solid var(--color-primary);padding:16px 20px;border-radius:0 12px 12px 0;margin:18px 0;font-family:monospace;font-size:0.95rem;color:var(--color-text)}
+ .table-responsive{overflow-x:auto;margin:20px 0}
+ .data-table{width:100%;border-collapse:collapse;font-size:0.9rem}
+ .data-table th{background:rgba(99,102,241,0.15);color:var(--color-primary);padding:12px;text-align:left;font-family:var(--font-title);font-weight:600}
+ .data-table td{padding:12px;border-bottom:1px solid var(--border-color);color:var(--color-text)}
+ .highlight-box{background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.3);border-radius:12px;padding:18px;margin:20px 0}
+ .highlight-box h4{color:#10b981;font-family:var(--font-title);margin-bottom:6px;font-size:1.05rem}
+ .cta-banner{text-align:center;padding:30px;background:linear-gradient(135deg,rgba(99,102,241,0.12),rgba(139,92,246,0.08));border:1px solid rgba(99,102,241,0.3);border-radius:16px;margin-top:30px}
+ .cta-btn-action{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--color-primary),var(--color-secondary));color:#fff;text-decoration:none;padding:14px 32px;border-radius:30px;font-family:var(--font-title);font-weight:700;font-size:1rem;transition:all 0.2s}
+ .cta-btn-action:hover{opacity:0.9;transform:translateY(-2px);box-shadow:0 8px 20px rgba(99,102,241,0.3)}
+ </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Acessibilidade -->
-        <div class="a11y-bar">
-            <button id="btn-contrast" class="a11y-btn" aria-label="Alternar alto contraste">Alto Contraste</button>
-            <button id="btn-font-minus" class="a11y-btn" aria-label="Diminuir fonte">A-</button>
-            <button id="btn-font-plus" class="a11y-btn" aria-label="Aumentar fonte">A+</button>
-        </div>
+ <div class="container">
+ <!-- Acessibilidade -->
+ <div class="a11y-bar">
+ <button id="btn-contrast" class="a11y-btn" aria-label="Alternar alto contraste">Alto Contraste</button>
+ <button id="btn-font-minus" class="a11y-btn" aria-label="Diminuir fonte">A-</button>
+ <button id="btn-font-plus" class="a11y-btn" aria-label="Aumentar fonte">A+</button>
+ </div>
 
-        <!-- Cabeçalho -->
-        <header>
-            <img src="assets/marca-yluna85-labs.jpg" alt="Logotipo Oficial YLuna85 LABs" class="brand-logo">
-            <div class="tutorial-hero">
-                <a href="index.html" class="back-nav">← Voltar à Calculadora Principal</a>
-                <h1 style="margin-top:16px;">Como Calcular Diárias e Passagens Federais</h1>
-                <p>Regras oficiais do Decreto nº 11.872/2023: valores por localidade de destino, regra da meia diária, adicional de deslocamento terrestre e prestação de contas no SCDP.</p>
-            </div>
-        </header>
+ <!-- Cabeçalho -->
+ <header>
+ <img src="assets/marca-yluna85-labs.jpg" alt="Logotipo Oficial YLuna85 LABs" class="brand-logo">
+ <div class="tutorial-hero">
+ <a href="index.html" class="back-nav">← Voltar à Calculadora Principal</a>
+ <h1 style="margin-top:16px;">Como Calcular Diárias e Passagens Federais</h1>
+ <p>Regras oficiais do Decreto nº 11.872/2023: valores por localidade de destino, regra da meia diária, adicional de deslocamento terrestre e prestação de contas no SCDP.</p>
+ </div>
+ </header>
 
-        <!-- Navegação Superior -->
-        <nav class="nav-tabs" aria-label="Menu de Navegação do Portal">
-            <a href="index.html" class="tab-btn" style="text-decoration:none;">📊 Calculadora Salarial</a>
-            <a href="tutorial-calculo-remuneracao.html" class="tab-btn" style="text-decoration:none;">📖 Tutorial Salário</a>
-            <a href="tutorial-calculo-rsc.html" class="tab-btn" style="text-decoration:none;">🎯 Tutorial RSC</a>
-            <a href="tutorial-calculo-diarias.html" class="tab-btn active" style="text-decoration:none;">✈️ Tutorial Diárias</a>
-            <a href="faq-legislacao-tae.html" class="tab-btn" style="text-decoration:none;">⚖️ FAQ Leis & Decretos</a>
-            <a href="concursos.html" class="tab-btn" style="text-decoration:none;">🎯 Concursos TAE</a>
-            <a href="artigos/index.html" class="tab-btn" style="text-decoration:none;">📚 Artigos & Guias</a>
-        </nav>
+ <!-- Navegação Superior -->
+ <nav class="nav-tabs" aria-label="Menu de Navegação do Portal">
+ <a href="index.html" class="tab-btn" style="text-decoration:none;"> Calculadora Salarial</a>
+ <a href="tutorial-calculo-remuneracao.html" class="tab-btn" style="text-decoration:none;"> Tutorial Salário</a>
+ <a href="tutorial-calculo-rsc.html" class="tab-btn" style="text-decoration:none;"> Tutorial RSC</a>
+ <a href="tutorial-calculo-diarias.html" class="tab-btn active" style="text-decoration:none;"> Tutorial Diárias</a>
+ <a href="faq-legislacao-tae.html" class="tab-btn" style="text-decoration:none;"> FAQ Leis e Decretos</a>
+ <a href="concursos.html" class="tab-btn" style="text-decoration:none;"> Concursos TAE</a>
+ <a href="artigos/index.html" class="tab-btn" style="text-decoration:none;"> Artigos e Guias</a>
+ </nav>
 
-        <!-- Conteúdo do Tutorial -->
-        <main class="article-content">
-            <h2>1. O que são Diárias no Serviço Público Federal?</h2>
-            <p>A diária é uma verba indenizatória devida ao servidor público federal (regido pela Lei nº 8.112/1990) que, a serviço da instituição (reuniões, fiscalização de obras, comissões de concurso, congressos, auditorias), afasta-se de sua sede de lotação em caráter eventual ou transitório para outro município no território nacional ou exterior.</p>
-            <p>A diária destina-se a indenizar as despesas extraordinárias com <strong>hospedagem</strong>, <strong>alimentação</strong> e <strong>locomoção urbana</strong>.</p>
+ <!-- Conteúdo do Tutorial -->
+ <main class="article-content">
+ <h2>1. O que são Diárias no Serviço Público Federal?</h2>
+ <p>A diária é uma verba indenizatória devida ao servidor público federal (regido pela Lei nº 8.112/1990) que, a serviço da instituição (reuniões, fiscalização de obras, comissões de concurso, congressos, auditorias), afasta-se de sua sede de lotação em caráter eventual ou transitório para outro município no território nacional ou exterior.</p>
+ <p>A diária destina-se a indenizar as despesas extraordinárias com <strong>hospedagem</strong>, <strong>alimentação</strong> e <strong>locomoção urbana</strong>.</p>
 
-            <h2>2. A Tabela Oficial de Valores (Decreto nº 11.872/2023)</h2>
-            <p>Os valores das diárias nacionais são fixados conforme o nível do cargo do servidor e a localidade de destino:</p>
+ <h2>2. A Tabela Oficial de Valores (Decreto nº 11.872/2023)</h2>
+ <p>Os valores das diárias nacionais são fixados conforme o nível do cargo do servidor e a localidade de destino:</p>
 
-            <div class="table-responsive">
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th>Nível / Cargo</th>
-                            <th>Brasília, Manaus, Rio de Janeiro e São Paulo</th>
-                            <th>Demais Capitais de Estado</th>
-                            <th>Demais Municípios (Interior)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Cargos de Nível Superior (Classe E) / CD-3 / CD-4 / FG-1</strong></td>
-                            <td>R$ 411,00</td>
-                            <td>R$ 362,00</td>
-                            <td>R$ 313,00</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Cargos de Nível Intermediário (Classe C e D) / FG-2 / FG-3</strong></td>
-                            <td>R$ 351,00</td>
-                            <td>R$ 307,00</td>
-                            <td>R$ 263,00</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Cargos de Nível Auxiliar (Classe A e B)</strong></td>
-                            <td>R$ 311,00</td>
-                            <td>R$ 272,00</td>
-                            <td>R$ 233,00</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+ <div class="table-responsive">
+ <table class="data-table">
+ <thead>
+ <tr>
+ <th>Nível / Cargo</th>
+ <th>Brasília, Manaus, Rio de Janeiro e São Paulo</th>
+ <th>Demais Capitais de Estado</th>
+ <th>Demais Municípios (Interior)</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td><strong>Cargos de Nível Superior (Classe E) / CD-3 / CD-4 / FG-1</strong></td>
+ <td>R$ 411,00</td>
+ <td>R$ 362,00</td>
+ <td>R$ 313,00</td>
+ </tr>
+ <tr>
+ <td><strong>Cargos de Nível Intermediário (Classe C e D) / FG-2 / FG-3</strong></td>
+ <td>R$ 351,00</td>
+ <td>R$ 307,00</td>
+ <td>R$ 263,00</td>
+ </tr>
+ <tr>
+ <td><strong>Cargos de Nível Auxiliar (Classe A e B)</strong></td>
+ <td>R$ 311,00</td>
+ <td>R$ 272,00</td>
+ <td>R$ 233,00</td>
+ </tr>
+ </tbody>
+ </table>
+ </div>
 
-            <h2>3. Regra de Cálculo: Diária Completa vs Meia Diária (50%)</h2>
-            <ul>
-                <li><strong>Diária Completa (100%)</strong>: Paga para cada dia de afastamento em que houver <strong>pernoite fora da sede</strong>.</li>
-                <li><strong>Meia Diária (50%)</strong>: Paga nas seguintes situações:
-                    <ul>
-                        <li>No <strong>dia de retorno</strong> à sede de lotação;</li>
-                        <li>Quando o afastamento não exigir pernoite (viagem de ida e volta no mesmo dia);</li>
-                        <li>Quando a União custear a hospedagem por outro meio institucional.</li>
-                    </ul>
-                </li>
-            </ul>
+ <h2>3. Regra de Cálculo: Diária Completa vs Meia Diária (50%)</h2>
+ <ul>
+ <li><strong>Diária Completa (100%)</strong>: Paga para cada dia de afastamento em que houver <strong>pernoite fora da sede</strong>.</li>
+ <li><strong>Meia Diária (50%)</strong>: Paga nas seguintes situações:
+ <ul>
+ <li>No <strong>dia de retorno</strong> à sede de lotação;</li>
+ <li>Quando o afastamento não exigir pernoite (viagem de ida e volta no mesmo dia);</li>
+ <li>Quando a União custear a hospedagem por outro meio institucional.</li>
+ </ul>
+ </li>
+ </ul>
 
-            <div class="formula-box">
-                Valor Total das Diárias = (Qtd. de Pernoites × Valor Diária 100%) + (1 × Valor Diária 50% no dia do retorno) + Adicional de Embarque
-            </div>
+ <div class="formula-box">
+ Valor Total das Diárias = (Qtd. de Pernoites × Valor Diária 100%) + (1 × Valor Diária 50% no dia do retorno) + Adicional de Embarque
+ </div>
 
-            <h2>4. Adicional de Embarque e Desembarque</h2>
-            <p>Conforme o Decreto nº 5.992/2006 e Decreto nº 11.872/2023, o servidor que utilizar transporte aéreo, rodoviário ou hidroviário tem direito a um <strong>adicional fixo por viagem de ida e volta</strong> (atualmente fixado em R$ 95,00) para cobrir despesas de táxi ou transporte urbano entre sua residência e os terminais de embarque.</p>
+ <h2>4. Adicional de Embarque e Desembarque</h2>
+ <p>Conforme o Decreto nº 5.992/2006 e Decreto nº 11.872/2023, o servidor que utilizar transporte aéreo, rodoviário ou hidroviário tem direito a um <strong>adicional fixo por viagem de ida e volta</strong> (atualmente fixado em R$ 95,00) para cobrir despesas de táxi ou transporte urbano entre sua residência e os terminais de embarque.</p>
 
-            <h2>5. Prestação de Contas no SCDP (Sistema de Concessão de Diárias e Passagens)</h2>
-            <div class="highlight-box">
-                <h4>Regras Rígidas de Prestação de Contas</h4>
-                <ul>
-                    <li><strong>Prazo Legal</strong>: Até <strong>5 (cinco) dias úteis</strong> após o retorno da viagem.</li>
-                    <li><strong>Comprovantes Obrigatórios</strong>: Canhotos de cartão de embarque, bilhetes de passagem rodoviária ou comprovante de pedágio (no caso de uso de veículo oficial).</li>
-                    <li><strong>Relatório de Viagem</strong>: Descrição sintética das atividades executadas, atas de reuniões, certificados de participação ou fotos institucionais.</li>
-                    <li><strong>Devolução de Saldo</strong>: Se a viagem for cancelada ou encurtada, o servidor deve recolher o valor das diárias excedentes via GRU (Guia de Recolhimento da União) no mesmo prazo de 5 dias.</li>
-                </ul>
-            </div>
+ <h2>5. Prestação de Contas no SCDP (Sistema de Concessão de Diárias e Passagens)</h2>
+ <div class="highlight-box">
+ <h4>Regras Rígidas de Prestação de Contas</h4>
+ <ul>
+ <li><strong>Prazo Legal</strong>: Até <strong>5 (cinco) dias úteis</strong> após o retorno da viagem.</li>
+ <li><strong>Comprovantes Obrigatórios</strong>: Canhotos de cartão de embarque, bilhetes de passagem rodoviária ou comprovante de pedágio (no caso de uso de veículo oficial).</li>
+ <li><strong>Relatório de Viagem</strong>: Descrição sintética das atividades executadas, atas de reuniões, certificados de participação ou fotos institucionais.</li>
+ <li><strong>Devolução de Saldo</strong>: Se a viagem for cancelada ou encurtada, o servidor deve recolher o valor das diárias excedentes via GRU (Guia de Recolhimento da União) no mesmo prazo de 5 dias.</li>
+ </ul>
+ </div>
 
-            <div class="cta-banner">
-                <h3 style="font-family:var(--font-title); color:var(--color-primary); margin-bottom:8px;">Calcule o Valor Exato da sua Viagem a Serviço</h3>
-                <p style="margin-bottom:18px;">Utilize nosso Simulador de Diárias integrado com a tabela de todas as capitais e municípios do Brasil.</p>
-                <a href="index.html" class="cta-btn-action">✈️ Acessar Simulador de Diárias</a>
-            </div>
-        </main>
+ <div class="cta-banner">
+ <h3 style="font-family:var(--font-title); color:var(--color-primary); margin-bottom:8px;">Calcule o Valor Exato da sua Viagem a Serviço</h3>
+ <p style="margin-bottom:18px;">Utilize nosso Simulador de Diárias integrado com a tabela de todas as capitais e municípios do Brasil.</p>
+ <a href="index.html" class="cta-btn-action"> Acessar Simulador de Diárias</a>
+ </div>
+ </main>
 
-        <!-- Rodapé -->
-        <footer>
-            <div class="footer-links">
-                <a href="index.html">Calculadora Salarial</a>
-                <a href="tutorial-calculo-remuneracao.html">Tutorial Salário</a>
-                <a href="tutorial-calculo-rsc.html">Tutorial RSC</a>
-                <a href="tutorial-calculo-diarias.html">Tutorial Diárias</a>
-                <a href="faq-legislacao-tae.html">FAQ Leis</a>
-                <a href="concursos.html">Concursos TAE</a>
-                <a href="sobre.html">Sobre</a>
-                <a href="privacidade.html">Privacidade</a>
-                <a href="termos.html">Termos</a>
-                <a href="contato.html">Contato</a>
-            </div>
-            <p style="margin-top:14px; font-size:0.85rem; color:var(--color-text-muted);">
-                Calculadora TAEs Federal — Desenvolvida por <strong>YLuna85 LABs</strong>. Ferramenta a serviço dos servidores federais de todo o Brasil.
-            </p>
-        </footer>
-    </div>
-    <script src="app.js"></script>
+ <!-- Rodapé -->
+ <footer>
+ <div class="footer-links">
+ <a href="index.html">Calculadora Salarial</a>
+ <a href="tutorial-calculo-remuneracao.html">Tutorial Salário</a>
+ <a href="tutorial-calculo-rsc.html">Tutorial RSC</a>
+ <a href="tutorial-calculo-diarias.html">Tutorial Diárias</a>
+ <a href="faq-legislacao-tae.html">FAQ Leis</a>
+ <a href="concursos.html">Concursos TAE</a>
+ <a href="sobre.html">Sobre</a>
+ <a href="privacidade.html">Privacidade</a>
+ <a href="termos.html">Termos</a>
+ <a href="contato.html">Contato</a>
+ </div>
+ <p style="margin-top:14px; font-size:0.85rem; color:var(--color-text-muted);">
+ Calculadora TAEs Federal — Desenvolvida por <strong>YLuna85 LABs</strong>. Ferramenta a serviço dos servidores federais de todo o Brasil.
+ </p>
+ </footer>
+ </div>
+ <script src="app.js"></script>
 </body>
 </html>

@@ -1,200 +1,200 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tutorial de Cálculo da Remuneração TAE | Calculadora TAE Federal</title>
-    <meta name="description" content="Guia completo e passo a passo de como calcular a remuneração dos Técnico-Administrativos em Educação (PCCTAE): Vencimento Básico, novos steps 2026, IQ, progressões e deduções.">
-    <meta name="keywords" content="Como calcular salário TAE, Vencimento Básico PCCTAE, Step 4% TAE, Incentivo à Qualificação, Progressão por Capacitação, Contracheque TAE Federal">
-    <link rel="canonical" href="https://taes-federal.com.br/tutorial-calculo-remuneracao.html" />
-    <meta name="google-site-verification" content="dY48D0o4FUKPgMmsMLIA8oIXenNn_6MrRWilCxt8Ijk" />
-    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="assets/favicon.png" type="image/png" sizes="32x32">
-    <link rel="stylesheet" href="style.css">
-    <style>
-        .tutorial-hero{background:linear-gradient(135deg,var(--color-primary) 0%,var(--color-secondary) 100%);padding:50px 24px;text-align:center;margin-bottom:32px;border-radius:20px}
-        .tutorial-hero h1{font-family:var(--font-title);font-size:2.2rem;color:#fff;margin-bottom:12px}
-        .tutorial-hero p{font-size:1.05rem;color:rgba(255,255,255,0.9);max-width:680px;margin:0 auto 20px;line-height:1.6}
-        .back-nav{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);color:#fff;text-decoration:none;padding:8px 20px;border-radius:30px;font-size:0.88rem;font-weight:600;transition:all 0.2s}
-        .back-nav:hover{background:rgba(255,255,255,0.28);transform:translateY(-2px)}
-        .article-content{background:var(--card-bg);border:1px solid var(--border-color);border-radius:16px;padding:32px;line-height:1.75;color:var(--color-text-muted);margin-bottom:30px}
-        .article-content h2{font-family:var(--font-title);color:var(--color-primary);font-size:1.5rem;margin-top:28px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border-color)}
-        .article-content h3{font-family:var(--font-title);color:var(--color-text);font-size:1.15rem;margin-top:20px;margin-bottom:8px}
-        .formula-box{background:rgba(99,102,241,0.08);border-left:4px solid var(--color-primary);padding:16px 20px;border-radius:0 12px 12px 0;margin:18px 0;font-family:monospace;font-size:0.95rem;color:var(--color-text)}
-        .table-responsive{overflow-x:auto;margin:20px 0}
-        .data-table{width:100%;border-collapse:collapse;font-size:0.9rem}
-        .data-table th{background:rgba(99,102,241,0.15);color:var(--color-primary);padding:12px;text-align:left;font-family:var(--font-title);font-weight:600}
-        .data-table td{padding:12px;border-bottom:1px solid var(--border-color);color:var(--color-text)}
-        .highlight-box{background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.3);border-radius:12px;padding:18px;margin:20px 0}
-        .highlight-box h4{color:#10b981;font-family:var(--font-title);margin-bottom:6px;font-size:1.05rem}
-        .cta-banner{text-align:center;padding:30px;background:linear-gradient(135deg,rgba(99,102,241,0.12),rgba(139,92,246,0.08));border:1px solid rgba(99,102,241,0.3);border-radius:16px;margin-top:30px}
-        .cta-btn-action{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--color-primary),var(--color-secondary));color:#fff;text-decoration:none;padding:14px 32px;border-radius:30px;font-family:var(--font-title);font-weight:700;font-size:1rem;transition:all 0.2s}
-        .cta-btn-action:hover{opacity:0.9;transform:translateY(-2px);box-shadow:0 8px 20px rgba(99,102,241,0.3)}
-    </style>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Tutorial de Cálculo da Remuneração TAE | Calculadora TAE Federal</title>
+ <meta name="description" content="Guia completo e passo a passo de como calcular a remuneração dos Técnico-Administrativos em Educação (PCCTAE): Vencimento Básico, novos steps 2026, IQ, progressões e deduções.">
+ <meta name="keywords" content="Como calcular salário TAE, Vencimento Básico PCCTAE, Step 4% TAE, Incentivo à Qualificação, Progressão por Capacitação, Contracheque TAE Federal">
+ <link rel="canonical" href="https://taes-federal.com.br/tutorial-calculo-remuneracao.html" />
+ <meta name="google-site-verification" content="dY48D0o4FUKPgMmsMLIA8oIXenNn_6MrRWilCxt8Ijk" />
+ <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+ <link rel="icon" href="assets/favicon.png" type="image/png" sizes="32x32">
+ <link rel="stylesheet" href="style.css">
+ <style>
+ .tutorial-hero{background:linear-gradient(135deg,var(--color-primary) 0%,var(--color-secondary) 100%);padding:50px 24px;text-align:center;margin-bottom:32px;border-radius:20px}
+ .tutorial-hero h1{font-family:var(--font-title);font-size:2.2rem;color:#fff;margin-bottom:12px}
+ .tutorial-hero p{font-size:1.05rem;color:rgba(255,255,255,0.9);max-width:680px;margin:0 auto 20px;line-height:1.6}
+ .back-nav{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);color:#fff;text-decoration:none;padding:8px 20px;border-radius:30px;font-size:0.88rem;font-weight:600;transition:all 0.2s}
+ .back-nav:hover{background:rgba(255,255,255,0.28);transform:translateY(-2px)}
+ .article-content{background:var(--card-bg);border:1px solid var(--border-color);border-radius:16px;padding:32px;line-height:1.75;color:var(--color-text-muted);margin-bottom:30px}
+ .article-content h2{font-family:var(--font-title);color:var(--color-primary);font-size:1.5rem;margin-top:28px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border-color)}
+ .article-content h3{font-family:var(--font-title);color:var(--color-text);font-size:1.15rem;margin-top:20px;margin-bottom:8px}
+ .formula-box{background:rgba(99,102,241,0.08);border-left:4px solid var(--color-primary);padding:16px 20px;border-radius:0 12px 12px 0;margin:18px 0;font-family:monospace;font-size:0.95rem;color:var(--color-text)}
+ .table-responsive{overflow-x:auto;margin:20px 0}
+ .data-table{width:100%;border-collapse:collapse;font-size:0.9rem}
+ .data-table th{background:rgba(99,102,241,0.15);color:var(--color-primary);padding:12px;text-align:left;font-family:var(--font-title);font-weight:600}
+ .data-table td{padding:12px;border-bottom:1px solid var(--border-color);color:var(--color-text)}
+ .highlight-box{background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.3);border-radius:12px;padding:18px;margin:20px 0}
+ .highlight-box h4{color:#10b981;font-family:var(--font-title);margin-bottom:6px;font-size:1.05rem}
+ .cta-banner{text-align:center;padding:30px;background:linear-gradient(135deg,rgba(99,102,241,0.12),rgba(139,92,246,0.08));border:1px solid rgba(99,102,241,0.3);border-radius:16px;margin-top:30px}
+ .cta-btn-action{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--color-primary),var(--color-secondary));color:#fff;text-decoration:none;padding:14px 32px;border-radius:30px;font-family:var(--font-title);font-weight:700;font-size:1rem;transition:all 0.2s}
+ .cta-btn-action:hover{opacity:0.9;transform:translateY(-2px);box-shadow:0 8px 20px rgba(99,102,241,0.3)}
+ </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Acessibilidade -->
-        <div class="a11y-bar">
-            <button id="btn-contrast" class="a11y-btn" aria-label="Alternar alto contraste">Alto Contraste</button>
-            <button id="btn-font-minus" class="a11y-btn" aria-label="Diminuir fonte">A-</button>
-            <button id="btn-font-plus" class="a11y-btn" aria-label="Aumentar fonte">A+</button>
-        </div>
+ <div class="container">
+ <!-- Acessibilidade -->
+ <div class="a11y-bar">
+ <button id="btn-contrast" class="a11y-btn" aria-label="Alternar alto contraste">Alto Contraste</button>
+ <button id="btn-font-minus" class="a11y-btn" aria-label="Diminuir fonte">A-</button>
+ <button id="btn-font-plus" class="a11y-btn" aria-label="Aumentar fonte">A+</button>
+ </div>
 
-        <!-- Cabeçalho -->
-        <header>
-            <img src="assets/marca-yluna85-labs.jpg" alt="Logotipo Oficial YLuna85 LABs" class="brand-logo">
-            <div class="tutorial-hero">
-                <a href="index.html" class="back-nav">← Voltar à Calculadora Principal</a>
-                <h1 style="margin-top:16px;">Como Calcular a Remuneração TAE Federal</h1>
-                <p>Passo a passo completo com a anatomia do contracheque, novo step de 4,0% de 2026, tabela do Vencimento Básico, Incentivo à Qualificação, auxílios e deduções oficiais.</p>
-            </div>
-        </header>
+ <!-- Cabeçalho -->
+ <header>
+ <img src="assets/marca-yluna85-labs.jpg" alt="Logotipo Oficial YLuna85 LABs" class="brand-logo">
+ <div class="tutorial-hero">
+ <a href="index.html" class="back-nav">← Voltar à Calculadora Principal</a>
+ <h1 style="margin-top:16px;">Como Calcular a Remuneração TAE Federal</h1>
+ <p>Passo a passo completo com a anatomia do contracheque, novo step de 4,0% de 2026, tabela do Vencimento Básico, Incentivo à Qualificação, auxílios e deduções oficiais.</p>
+ </div>
+ </header>
 
-        <!-- Navegação Superior -->
-        <nav class="nav-tabs" aria-label="Menu de Navegação do Portal">
-            <a href="index.html" class="tab-btn" style="text-decoration:none;">📊 Calculadora Salarial</a>
-            <a href="tutorial-calculo-remuneracao.html" class="tab-btn active" style="text-decoration:none;">📖 Tutorial Salário</a>
-            <a href="tutorial-calculo-rsc.html" class="tab-btn" style="text-decoration:none;">🎯 Tutorial RSC</a>
-            <a href="tutorial-calculo-diarias.html" class="tab-btn" style="text-decoration:none;">✈️ Tutorial Diárias</a>
-            <a href="faq-legislacao-tae.html" class="tab-btn" style="text-decoration:none;">⚖️ FAQ Leis & Decretos</a>
-            <a href="concursos.html" class="tab-btn" style="text-decoration:none;">🎯 Concursos TAE</a>
-            <a href="artigos/index.html" class="tab-btn" style="text-decoration:none;">📚 Artigos & Guias</a>
-        </nav>
+ <!-- Navegação Superior -->
+ <nav class="nav-tabs" aria-label="Menu de Navegação do Portal">
+ <a href="index.html" class="tab-btn" style="text-decoration:none;"> Calculadora Salarial</a>
+ <a href="tutorial-calculo-remuneracao.html" class="tab-btn active" style="text-decoration:none;"> Tutorial Salário</a>
+ <a href="tutorial-calculo-rsc.html" class="tab-btn" style="text-decoration:none;"> Tutorial RSC</a>
+ <a href="tutorial-calculo-diarias.html" class="tab-btn" style="text-decoration:none;"> Tutorial Diárias</a>
+ <a href="faq-legislacao-tae.html" class="tab-btn" style="text-decoration:none;"> FAQ Leis e Decretos</a>
+ <a href="concursos.html" class="tab-btn" style="text-decoration:none;"> Concursos TAE</a>
+ <a href="artigos/index.html" class="tab-btn" style="text-decoration:none;"> Artigos e Guias</a>
+ </nav>
 
-        <!-- Conteúdo do Tutorial -->
-        <main class="article-content">
-            <h2>1. A Anatomia da Remuneração do Servidor TAE (PCCTAE)</h2>
-            <p>A remuneração mensal dos servidores Técnico-Administrativos em Educação das Universidades Federais (IFES) e Institutos Federais (IFs) é regida pela <strong>Lei nº 11.091/2005</strong> e reestruturada pelos acordos firmados no <strong>Termo de Acordo nº 01/2024</strong> (com vigência plena a partir de abril de 2026). A composição do contracheque obedece à seguinte estrutura:</p>
+ <!-- Conteúdo do Tutorial -->
+ <main class="article-content">
+ <h2>1. A Anatomia da Remuneração do Servidor TAE (PCCTAE)</h2>
+ <p>A remuneração mensal dos servidores Técnico-Administrativos em Educação das Universidades Federais (IFES) e Institutos Federais (IFs) é regida pela <strong>Lei nº 11.091/2005</strong> e reestruturada pelos acordos firmados no <strong>Termo de Acordo nº 01/2024</strong> (com vigência plena a partir de abril de 2026). A composição do contracheque obedece à seguinte estrutura:</p>
 
-            <div class="formula-box">
-                Remuneração Bruta = Vencimento Básico (VB) + Incentivo à Qualificação (IQ) + Adicionais (Insalubridade/Noturno) + Gratificações/Funções (CD/FG/FCC) + Auxílios (Alimentação, Saúde, Creche)
-            </div>
+ <div class="formula-box">
+ Remuneração Bruta = Vencimento Básico (VB) + Incentivo à Qualificação (IQ) + Adicionais (Insalubridade/Noturno) + Gratificações/Funções (CD/FG/FCC) + Auxílios (Alimentação, Saúde, Creche)
+ </div>
 
-            <h2>2. Como é Calculado o Vencimento Básico (VB)?</h2>
-            <p>O Vencimento Básico depende de duas coordenadas dentro da matriz salarial do PCCTAE:</p>
-            <ul>
-                <li><strong>Classe de Ingresso (Escolaridade do Cargo)</strong>: Classes <strong>A</strong>, <strong>B</strong>, <strong>C</strong> (Nível Médio inicial), <strong>D</strong> (Nível Médio/Técnico) e <strong>E</strong> (Nível Superior).</li>
-                <li><strong>Padrão de Vencimento (Step de 1 a 19)</strong>: Cada padrão representa um degrau na carreira alcançado a cada 18 meses via <em>Progressão por Mérito Profissional</em>.</li>
-            </ul>
+ <h2>2. Como é Calculado o Vencimento Básico (VB)?</h2>
+ <p>O Vencimento Básico depende de duas coordenadas dentro da matriz salarial do PCCTAE:</p>
+ <ul>
+ <li><strong>Classe de Ingresso (Escolaridade do Cargo)</strong>: Classes <strong>A</strong>, <strong>B</strong>, <strong>C</strong> (Nível Médio inicial), <strong>D</strong> (Nível Médio/Técnico) e <strong>E</strong> (Nível Superior).</li>
+ <li><strong>Padrão de Vencimento (Step de 1 a 19)</strong>: Cada padrão representa um degrau na carreira alcançado a cada 18 meses via <em>Progressão por Mérito Profissional</em>.</li>
+ </ul>
 
-            <h3>O Novo Step de Progressão (4,0% em 2026)</h3>
-            <p>Com a reestruturação salarial, o step (fator multiplicador entre um padrão e o padrão seguinte) subiu para <strong>3,9% em janeiro de 2025</strong> e atingiu <strong>4,0% em abril de 2026</strong>. Isso significa que a cada progressão funcional, o Vencimento Básico do servidor é multiplicado por <code>1,040</code> de forma cumulativa.</p>
+ <h3>O Novo Step de Progressão (4,0% em 2026)</h3>
+ <p>Com a reestruturação salarial, o step (fator multiplicador entre um padrão e o padrão seguinte) subiu para <strong>3,9% em janeiro de 2025</strong> e atingiu <strong>4,0% em abril de 2026</strong>. Isso significa que a cada progressão funcional, o Vencimento Básico do servidor é multiplicado por <code>1,040</code> de forma cumulativa.</p>
 
-            <div class="table-responsive">
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th>Classe</th>
-                            <th>Escolaridade de Ingresso</th>
-                            <th>Padrão 1 (Inicial 2026)</th>
-                            <th>Padrão 19 (Topo de Carreira)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Classe E</strong></td>
-                            <td>Nível Superior (TAE, Administrador, Pedagogo, etc.)</td>
-                            <td>R$ 5.215,39</td>
-                            <td>R$ 10.565,33</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Classe D</strong></td>
-                            <td>Médio / Técnico (Assistente em Administração, TI)</td>
-                            <td>R$ 3.181,39</td>
-                            <td>R$ 6.445,42</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Classe C</strong></td>
-                            <td>Médio Geral</td>
-                            <td>R$ 2.607,70</td>
-                            <td>R$ 5.283,13</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Classe B</strong></td>
-                            <td>Auxiliar</td>
-                            <td>R$ 2.086,16</td>
-                            <td>R$ 4.226,50</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Classe A</strong></td>
-                            <td>Apoio Operacional</td>
-                            <td>R$ 1.877,54</td>
-                            <td>R$ 3.803,85</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+ <div class="table-responsive">
+ <table class="data-table">
+ <thead>
+ <tr>
+ <th>Classe</th>
+ <th>Escolaridade de Ingresso</th>
+ <th>Padrão 1 (Inicial 2026)</th>
+ <th>Padrão 19 (Topo de Carreira)</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td><strong>Classe E</strong></td>
+ <td>Nível Superior (TAE, Administrador, Pedagogo, etc.)</td>
+ <td>R$ 5.215,39</td>
+ <td>R$ 10.565,33</td>
+ </tr>
+ <tr>
+ <td><strong>Classe D</strong></td>
+ <td>Médio / Técnico (Assistente em Administração, TI)</td>
+ <td>R$ 3.181,39</td>
+ <td>R$ 6.445,42</td>
+ </tr>
+ <tr>
+ <td><strong>Classe C</strong></td>
+ <td>Médio Geral</td>
+ <td>R$ 2.607,70</td>
+ <td>R$ 5.283,13</td>
+ </tr>
+ <tr>
+ <td><strong>Classe B</strong></td>
+ <td>Auxiliar</td>
+ <td>R$ 2.086,16</td>
+ <td>R$ 4.226,50</td>
+ </tr>
+ <tr>
+ <td><strong>Classe A</strong></td>
+ <td>Apoio Operacional</td>
+ <td>R$ 1.877,54</td>
+ <td>R$ 3.803,85</td>
+ </tr>
+ </tbody>
+ </table>
+ </div>
 
-            <h2>3. Incentivo à Qualificação (IQ): O Fim da Relação Direta e Indireta</h2>
-            <p>O Incentivo à Qualificação é pago quando o servidor conclui curso formal de escolaridade superior à exigida para o cargo. A partir do acordo de greve de 2024 e legislação de 2026, <strong>foi extinta a antiga penalização de relação indireta</strong>: todos os títulos passam a ser remunerados pelo percentual máximo do nível obtido!</p>
+ <h2>3. Incentivo à Qualificação (IQ): O Fim da Relação Direta e Indireta</h2>
+ <p>O Incentivo à Qualificação é pago quando o servidor conclui curso formal de escolaridade superior à exigida para o cargo. A partir do acordo de greve de 2024 e legislação de 2026, <strong>foi extinta a antiga penalização de relação indireta</strong>: todos os títulos passam a ser remunerados pelo percentual máximo do nível obtido!</p>
 
-            <ul>
-                <li><strong>Ensino Médio</strong> (para cargos de Nível A/B): <strong>10%</strong> sobre o VB.</li>
-                <li><strong>Técnico / Ensino Médio Profissionalizante</strong>: <strong>15%</strong> sobre o VB.</li>
-                <li><strong>Graduação</strong> (para cargos de Nível A, B, C, D): <strong>25% a 30%</strong> sobre o VB.</li>
-                <li><strong>Especialização (Pós Lato Sensu - mín. 360h)</strong>: <strong>30%</strong> sobre o VB.</li>
-                <li><strong>Mestrado</strong>: <strong>52%</strong> sobre o VB.</li>
-                <li><strong>Doutorado</strong>: <strong>75%</strong> sobre o VB.</li>
-            </ul>
+ <ul>
+ <li><strong>Ensino Médio</strong> (para cargos de Nível A/B): <strong>10%</strong> sobre o VB.</li>
+ <li><strong>Técnico / Ensino Médio Profissionalizante</strong>: <strong>15%</strong> sobre o VB.</li>
+ <li><strong>Graduação</strong> (para cargos de Nível A, B, C, D): <strong>25% a 30%</strong> sobre o VB.</li>
+ <li><strong>Especialização (Pós Lato Sensu - mín. 360h)</strong>: <strong>30%</strong> sobre o VB.</li>
+ <li><strong>Mestrado</strong>: <strong>52%</strong> sobre o VB.</li>
+ <li><strong>Doutorado</strong>: <strong>75%</strong> sobre o VB.</li>
+ </ul>
 
-            <div class="formula-box">
-                Valor do IQ = Vencimento Básico (VB) × Percentual da Titulação (%)
-            </div>
+ <div class="formula-box">
+ Valor do IQ = Vencimento Básico (VB) × Percentual da Titulação (%)
+ </div>
 
-            <h2>4. Progressão por Capacitação Profissional</h2>
-            <p>Além da progressão por mérito (automática a cada 18 meses com avaliação), o servidor pode avançar nos <strong>Níveis de Capacitação (I, II, III e IV)</strong> acumulando cursos livres de capacitação técnica:</p>
-            <ul>
-                <li><strong>Nível I para II</strong>: 18 meses de efetivo exercício + Carga horária acumulada exigida para a classe.</li>
-                <li><strong>Nível II para III</strong>: +18 meses + Carga horária acumulada.</li>
-                <li><strong>Nível III para IV</strong>: +18 meses + Carga horária acumulada.</li>
-            </ul>
+ <h2>4. Progressão por Capacitação Profissional</h2>
+ <p>Além da progressão por mérito (automática a cada 18 meses com avaliação), o servidor pode avançar nos <strong>Níveis de Capacitação (I, II, III e IV)</strong> acumulando cursos livres de capacitação técnica:</p>
+ <ul>
+ <li><strong>Nível I para II</strong>: 18 meses de efetivo exercício + Carga horária acumulada exigida para a classe.</li>
+ <li><strong>Nível II para III</strong>: +18 meses + Carga horária acumulada.</li>
+ <li><strong>Nível III para IV</strong>: +18 meses + Carga horária acumulada.</li>
+ </ul>
 
-            <h2>5. Auxílios e Benefícios Atualizados (2026)</h2>
-            <div class="highlight-box">
-                <h4>Benefícios Indenizatórios Federais</h4>
-                <ul>
-                    <li><strong>Auxílio-Alimentação</strong>: <strong>R$ 1.000,00</strong> mensais (valor isento de IRPF e CPSS).</li>
-                    <li><strong>Auxílio-Saúde Suplementar</strong>: Reembolso per capita conforme tabela do MGI por faixa etária e renda (média de R$ 145,00 a R$ 320,00 por beneficiário/dependente).</li>
-                    <li><strong>Auxílio Pré-Escolar (Creche)</strong>: <strong>R$ 484,90</strong> por filho até 5 anos e 11 meses.</li>
-                    <li><strong>Auxílio-Transporte</strong>: Cobertura do gasto de transporte público que exceder 6% do Vencimento Básico.</li>
-                </ul>
-            </div>
+ <h2>5. Auxílios e Benefícios Atualizados (2026)</h2>
+ <div class="highlight-box">
+ <h4>Benefícios Indenizatórios Federais</h4>
+ <ul>
+ <li><strong>Auxílio-Alimentação</strong>: <strong>R$ 1.000,00</strong> mensais (valor isento de IRPF e CPSS).</li>
+ <li><strong>Auxílio-Saúde Suplementar</strong>: Reembolso per capita conforme tabela do MGI por faixa etária e renda (média de R$ 145,00 a R$ 320,00 por beneficiário/dependente).</li>
+ <li><strong>Auxílio Pré-Escolar (Creche)</strong>: <strong>R$ 484,90</strong> por filho até 5 anos e 11 meses.</li>
+ <li><strong>Auxílio-Transporte</strong>: Cobertura do gasto de transporte público que exceder 6% do Vencimento Básico.</li>
+ </ul>
+ </div>
 
-            <h2>6. Deduções Oficiais: Previdência (CPSS) e Imposto de Renda (IRPF)</h2>
-            <p>O valor líquido que entra na conta corrente do servidor é obtido após os descontos compulsórios:</p>
-            <ul>
-                <li><strong>CPSS (Previdência do Servidor Federal)</strong>: Alíquotas progressivas incidentes por faixa salarial (7,5%, 9%, 12%, 14%, 14,5%, 16,5%, 19% e 22%).</li>
-                <li><strong>IRPF (Imposto de Renda Retido na Fonte)</strong>: Calculado sobre a base de cálculo (<code>Bruto Tributável - CPSS - Dedução por Dependente</code>) aplicando a tabela progressiva da Receita Federal.</li>
-            </ul>
+ <h2>6. Deduções Oficiais: Previdência (CPSS) e Imposto de Renda (IRPF)</h2>
+ <p>O valor líquido que entra na conta corrente do servidor é obtido após os descontos compulsórios:</p>
+ <ul>
+ <li><strong>CPSS (Previdência do Servidor Federal)</strong>: Alíquotas progressivas incidentes por faixa salarial (7,5%, 9%, 12%, 14%, 14,5%, 16,5%, 19% e 22%).</li>
+ <li><strong>IRPF (Imposto de Renda Retido na Fonte)</strong>: Calculado sobre a base de cálculo (<code>Bruto Tributável - CPSS - Dedução por Dependente</code>) aplicando a tabela progressiva da Receita Federal.</li>
+ </ul>
 
-            <!-- Chamada para Ação -->
-            <div class="cta-banner">
-                <h3 style="font-family:var(--font-title); color:var(--color-primary); margin-bottom:8px;">Pronto para Simular seu Contracheque Completo?</h3>
-                <p style="margin-bottom:18px;">Utilize nossa calculadora interativa com todas as regras, steps e tabelas salariais de 2026 já programadas.</p>
-                <a href="index.html" class="cta-btn-action">📊 Abrir Calculadora Salarial TAE</a>
-            </div>
-        </main>
+ <!-- Chamada para Ação -->
+ <div class="cta-banner">
+ <h3 style="font-family:var(--font-title); color:var(--color-primary); margin-bottom:8px;">Pronto para Simular seu Contracheque Completo?</h3>
+ <p style="margin-bottom:18px;">Utilize nossa calculadora interativa com todas as regras, steps e tabelas salariais de 2026 já programadas.</p>
+ <a href="index.html" class="cta-btn-action"> Abrir Calculadora Salarial TAE</a>
+ </div>
+ </main>
 
-        <!-- Rodapé -->
-        <footer>
-            <div class="footer-links">
-                <a href="index.html">Calculadora Salarial</a>
-                <a href="tutorial-calculo-remuneracao.html">Tutorial Salário</a>
-                <a href="tutorial-calculo-rsc.html">Tutorial RSC</a>
-                <a href="tutorial-calculo-diarias.html">Tutorial Diárias</a>
-                <a href="faq-legislacao-tae.html">FAQ Leis</a>
-                <a href="concursos.html">Concursos TAE</a>
-                <a href="sobre.html">Sobre</a>
-                <a href="privacidade.html">Privacidade</a>
-                <a href="termos.html">Termos</a>
-                <a href="contato.html">Contato</a>
-            </div>
-            <p style="margin-top:14px; font-size:0.85rem; color:var(--color-text-muted);">
-                Calculadora TAEs Federal — Desenvolvida por <strong>YLuna85 LABs</strong>. Ferramenta de utilidade pública independente para os Técnico-Administrativos em Educação.
-            </p>
-        </footer>
-    </div>
-    <script src="app.js"></script>
+ <!-- Rodapé -->
+ <footer>
+ <div class="footer-links">
+ <a href="index.html">Calculadora Salarial</a>
+ <a href="tutorial-calculo-remuneracao.html">Tutorial Salário</a>
+ <a href="tutorial-calculo-rsc.html">Tutorial RSC</a>
+ <a href="tutorial-calculo-diarias.html">Tutorial Diárias</a>
+ <a href="faq-legislacao-tae.html">FAQ Leis</a>
+ <a href="concursos.html">Concursos TAE</a>
+ <a href="sobre.html">Sobre</a>
+ <a href="privacidade.html">Privacidade</a>
+ <a href="termos.html">Termos</a>
+ <a href="contato.html">Contato</a>
+ </div>
+ <p style="margin-top:14px; font-size:0.85rem; color:var(--color-text-muted);">
+ Calculadora TAEs Federal — Desenvolvida por <strong>YLuna85 LABs</strong>. Ferramenta de utilidade pública independente para os Técnico-Administrativos em Educação.
+ </p>
+ </footer>
+ </div>
+ <script src="app.js"></script>
 </body>
 </html>
