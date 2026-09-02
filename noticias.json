@@ -27,15 +27,6 @@
     "badge_class": "badge-success"
   },
   {
-    "title": "Reitoria da UFRGS cobra MEC por meio de ofício e exige regulamentação completa dos cargos do PCCTAE",
-    "source": "Assufrgs",
-    "pubDate": "2026-08-31 19:49",
-    "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxONzYxb0hWbnMyZzNaNUgtYkF5XzBuZE5Hdy0tZDU4N0Q4cnBmSmNQTTdfdXVqUVJjWWVaRG1hTThydlBWc2xkOVh5Ty1HdV9qLVg5Q0c0d01TcVVYTThJMmZYREx2a2xtUkVjWnlEekJIam9KZjBwZE1QRVBIOGg0U3ZSRVpSVmZXYUw4QU9saU1wb010OFNBeGY5UFk3VmZlZWFqQllLM3U2Wi01TjB4aFF6a1NPNDRJZG5qaGwwNWtEY29JQzctTWlCMXRFQ0JDTkx5N29R?oc=5",
-    "description": "Reitoria da UFRGS cobra MEC por meio de ofício e exige regulamentação completa dos cargos do PCCTAE",
-    "category": "Notícia",
-    "badge_class": "badge-success"
-  },
-  {
     "title": "UFPel alcança 212 requerimentos aprovados de RSC no primeiro mês do sistema",
     "source": "Universidade Federal de Pelotas",
     "pubDate": "2026-08-31 19:38",
@@ -55,7 +46,7 @@
   },
   {
     "title": "RSC-PCCTAE tem mais de 400 portarias emitidas no IFMG",
-    "source": "IFMG",
+    "source": "ifmg.edu.br",
     "pubDate": "2026-08-26 13:51",
     "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQeGxkcEtNZFdpOW1jaUJFd2hmTlhhTW5tNS15TzZaRERueU9BcllqZGVsdlJ1YXVlbFBVc1JScDM1c3k0NXFBYjc2V0tpdENZT044dUNDdXZVbUh0Zi1oMm40UkMwVWhfRzRSblNfeEh4eEhUZ2F0d1BxOTRSNnZHT0hmeGdVZDRFWEM3M0M0TUtpc2xUZlhLX29wTGF6T1RZLXQ5UlJ3?oc=5",
     "description": "RSC-PCCTAE tem mais de 400 portarias emitidas no IFMG",
@@ -81,11 +72,20 @@
     "badge_class": "badge-alert"
   },
   {
-    "title": "UFC realiza entrega de portarias aos 30 primeiros técnicos administrativos contemplados com RSC",
-    "source": "Universidade Federal do Ceará (UFC)",
-    "pubDate": "2026-08-14 07:00",
-    "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxOUXprejkwcG9ERVFRU3BKRFN0em1NSXZyQ2x3SG9oaVlCYkcwcTJKTEVBbUZIdWZnLWNLR1dCcGYzLXRNOFhJM1JlX005bVZZRUwyX1E1bVdlMTI0amVKNDNCZUo2dFphajk3UW9JUXJxcmgyMy1ldXI1Z1F1MWFfRTM0bFc2cl9IQTNuak1xOWVSTkNubUxEdmlkMURBOHRGT3RxWEFydFg1RDAyMnlEMXRzTG16cVQ4QW5pbGc0eWxpa01hamJxTXUwU3N2M3hPa1B2T0dhX0JJZnNZTzF3NXUtVVk?oc=5",
-    "description": "UFC realiza entrega de portarias aos 30 primeiros técnicos administrativos contemplados com RSC",
+    "title": "UFS orienta servidores sobre Reconhecimento de Saberes e Competências",
+    "source": "Portal UFS",
+    "pubDate": "2026-08-12 07:00",
+    "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOWV9sY1pCOW9DV3lERFlBRTRzamZXenlUV3VnZDlPMXB1V01EN0tUd1dZcVZRODk1R0xmMlNTWGQzVENheU1GdUZ3dlVWVWhENW1SeHhwM01CaDdVWWNQc093YS1WLUZIa0pSLTM3cmc4TmVSZU9mcDhnakJTSmxMMEJuWG51NEpPZDFVQWhENXVTXzJlMDVCOUlmWllkRzFjcWdKQg?oc=5",
+    "description": "UFS orienta servidores sobre Reconhecimento de Saberes e Competências",
+    "category": "RSC",
+    "badge_class": "badge-alert"
+  },
+  {
+    "title": "Informe importante sobre o RSC-TAE para aposentados",
+    "source": "sinasefe-sc.org.br",
+    "pubDate": "2026-08-12 07:00",
+    "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNZEtJVHlHbFdiOXg2YUwwdFJfMGh5Ri1zZ1hHVExmTG5rM1E4SGRZeC1ZdlEwTFNIa2NkSDJKQUwwUTJWZkIxbHBuMWU3VXhRbW95djM2YkhHX0hONURBSnlVM0xKMTkyLTgwT18td0tUYlJoZi0xd0dUb0F5cEh1RHFiRVIwUQ?oc=5",
+    "description": "Informe importante sobre o RSC-TAE para aposentados",
     "category": "RSC",
     "badge_class": "badge-alert"
   }
