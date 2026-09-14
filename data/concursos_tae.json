@@ -20,7 +20,7 @@
     "link_edital": "https://www.pciconcursos.com.br/noticias/ufrj-abre-concurso-publico-para-professor-na-area-de-canto-coral",
     "link_banca": "https://www.pciconcursos.com.br/noticias/ufrj-abre-concurso-publico-para-professor-na-area-de-canto-coral",
     "fonte_coleta": "PCI Concursos Nacional / IFES",
-    "data_coleta": "2026-09-13 13:40:19"
+    "data_coleta": "2026-09-14 14:56:02"
   },
   {
     "id": "ufrrj-universidade-federal-rural-do-rio-de-janeiro-rj",
@@ -43,7 +43,31 @@
     "link_edital": "https://www.pciconcursos.com.br/noticias/ufrrj-rj-abre-concurso-publico-para-cargos-tecnico-administrativos-de-nivel-superior",
     "link_banca": "https://www.pciconcursos.com.br/noticias/ufrrj-rj-abre-concurso-publico-para-cargos-tecnico-administrativos-de-nivel-superior",
     "fonte_coleta": "PCI Concursos Nacional / IFES",
-    "data_coleta": "2026-09-13 13:40:19"
+    "data_coleta": "2026-09-14 14:56:02"
+  },
+  {
+    "id": "ufrrj-universidade-federal-rural-do-rio-de-janeiro-rj",
+    "instituicao": "UFRRJ - Universidade Federal Rural do Rio de Janeiro",
+    "sigla": "UFRRJ",
+    "regiao": "Sudeste",
+    "uf": "RJ",
+    "titulo": "Processo Seletivo / Concurso UFRRJ - Universidade Federal Rural do Rio de Janeiro",
+    "cargos": "UFRRJ - Universidade Federal Rural do Rio de Janeiro RJ 13 vagas até R$ 3.181,39 Vários Cargos Médio / Técnico 13/10/2026",
+    "niveis": [
+      "D",
+      "E"
+    ],
+    "vagas": 13,
+    "vagas_descricao": "13 vagas",
+    "remuneracao_inicial": "R$ 3.181,39",
+    "status": "Inscrições Abertas",
+    "banca": "Comissão Organizadora / Banca Oficial",
+    "prazo_inscricao": "Consulte o cronograma no edital",
+    "taxa_inscricao": "Conforme o edital oficial",
+    "link_edital": "https://www.pciconcursos.com.br/noticias/ufrrj-publica-edital-de-concurso-publico-para-cargos-de-nivel-medio-e-tecnico",
+    "link_banca": "https://www.pciconcursos.com.br/noticias/ufrrj-publica-edital-de-concurso-publico-para-cargos-de-nivel-medio-e-tecnico",
+    "fonte_coleta": "PCI Concursos Nacional / IFES",
+    "data_coleta": "2026-09-14 14:56:02"
   },
   {
     "id": "ifmg-instituto-federal-de-educa-o-ci-ncia-e-tecnologia-de-minas-gerais-mg",
@@ -66,7 +90,7 @@
     "link_edital": "https://www.pciconcursos.com.br/noticias/ifmg-divulga-retificacoes-do-concurso-publico-para-professores-do-ensino-basico-tecnico-e-tecnologico",
     "link_banca": "https://www.pciconcursos.com.br/noticias/ifmg-divulga-retificacoes-do-concurso-publico-para-professores-do-ensino-basico-tecnico-e-tecnologico",
     "fonte_coleta": "PCI Concursos Nacional / IFES",
-    "data_coleta": "2026-09-13 13:40:19"
+    "data_coleta": "2026-09-14 14:56:02"
   },
   {
     "id": "ufmg-universidade-federal-de-minas-gerais-mg",
@@ -89,7 +113,7 @@
     "link_edital": "https://www.pciconcursos.com.br/noticias/ufmg-abre-concursos-publicos-com-tres-vagas-para-professores",
     "link_banca": "https://www.pciconcursos.com.br/noticias/ufmg-abre-concursos-publicos-com-tres-vagas-para-professores",
     "fonte_coleta": "PCI Concursos Nacional / IFES",
-    "data_coleta": "2026-09-13 13:40:19"
+    "data_coleta": "2026-09-14 14:56:02"
   },
   {
     "id": "ufmg-universidade-federal-de-minas-gerais-mg",
@@ -112,7 +136,7 @@
     "link_edital": "https://www.pciconcursos.com.br/noticias/ufmg-abre-concurso-publico-para-professor-de-magisterio-superior-na-area-de-antropologia-do-desenvolvimento",
     "link_banca": "https://www.pciconcursos.com.br/noticias/ufmg-abre-concurso-publico-para-professor-de-magisterio-superior-na-area-de-antropologia-do-desenvolvimento",
     "fonte_coleta": "PCI Concursos Nacional / IFES",
-    "data_coleta": "2026-09-13 13:40:19"
+    "data_coleta": "2026-09-14 14:56:02"
   },
   {
     "id": "ufmg-universidade-federal-de-minas-gerais-mg",
@@ -135,7 +159,7 @@
     "link_edital": "https://www.pciconcursos.com.br/noticias/ufmg-mg-abre-concurso-para-cargo-de-professor-na-area-de-citologia",
     "link_banca": "https://www.pciconcursos.com.br/noticias/ufmg-mg-abre-concurso-para-cargo-de-professor-na-area-de-citologia",
     "fonte_coleta": "PCI Concursos Nacional / IFES",
-    "data_coleta": "2026-09-13 13:40:19"
+    "data_coleta": "2026-09-14 14:56:02"
   },
   {
     "id": "ufmg-universidade-federal-de-minas-gerais-mg",
@@ -158,7 +182,7 @@
     "link_edital": "https://www.pciconcursos.com.br/noticias/ufmg-abre-concurso-para-professor-de-magisterio-superior-na-area-de-medicina",
     "link_banca": "https://www.pciconcursos.com.br/noticias/ufmg-abre-concurso-para-professor-de-magisterio-superior-na-area-de-medicina",
     "fonte_coleta": "PCI Concursos Nacional / IFES",
-    "data_coleta": "2026-09-13 13:40:19"
+    "data_coleta": "2026-09-14 14:56:02"
   },
   {
     "id": "ufmg-universidade-federal-de-minas-gerais-mg",
@@ -181,7 +205,7 @@
     "link_edital": "https://www.pciconcursos.com.br/noticias/ufmg-abre-concurso-para-docente-na-area-de-nutricao-em-esporte-e-exercicio-fisico",
     "link_banca": "https://www.pciconcursos.com.br/noticias/ufmg-abre-concurso-para-docente-na-area-de-nutricao-em-esporte-e-exercicio-fisico",
     "fonte_coleta": "PCI Concursos Nacional / IFES",
-    "data_coleta": "2026-09-13 13:40:19"
+    "data_coleta": "2026-09-14 14:56:02"
   },
   {
     "id": "ufsj-universidade-federal-de-s-o-jo-o-del-rei-mg",
@@ -204,7 +228,7 @@
     "link_edital": "https://www.pciconcursos.com.br/noticias/ufsj-mg-abre-concurso-publico-com-12-vagas-para-professores-do-magisterio-superior",
     "link_banca": "https://www.pciconcursos.com.br/noticias/ufsj-mg-abre-concurso-publico-com-12-vagas-para-professores-do-magisterio-superior",
     "fonte_coleta": "PCI Concursos Nacional / IFES",
-    "data_coleta": "2026-09-13 13:40:19"
+    "data_coleta": "2026-09-14 14:56:02"
   },
   {
     "id": "unifal-universidade-federal-de-alfenas-mg",
@@ -227,7 +251,7 @@
     "link_edital": "https://www.pciconcursos.com.br/noticias/unifal-mg-anuncia-processo-seletivo-para-professor-substituto-de-linguistica-e-literatura",
     "link_banca": "https://www.pciconcursos.com.br/noticias/unifal-mg-anuncia-processo-seletivo-para-professor-substituto-de-linguistica-e-literatura",
     "fonte_coleta": "PCI Concursos Nacional / IFES",
-    "data_coleta": "2026-09-13 13:40:19"
+    "data_coleta": "2026-09-14 14:56:02"
   },
   {
     "id": "unifei-universidade-federal-de-itajub-mg",
@@ -250,7 +274,7 @@
     "link_edital": "https://www.pciconcursos.com.br/noticias/unifei-mg-abre-concurso-para-professores-com-salarios-de-13753",
     "link_banca": "https://www.pciconcursos.com.br/noticias/unifei-mg-abre-concurso-para-professores-com-salarios-de-13753",
     "fonte_coleta": "PCI Concursos Nacional / IFES",
-    "data_coleta": "2026-09-13 13:40:19"
+    "data_coleta": "2026-09-14 14:56:02"
   },
   {
     "id": "ufpe-universidade-federal-de-pernambuco-pe",
@@ -273,7 +297,7 @@
     "link_edital": "https://www.pciconcursos.com.br/noticias/ufpe-abre-concurso-para-docente-na-area-de-eletromagnetismo-fotonica",
     "link_banca": "https://www.pciconcursos.com.br/noticias/ufpe-abre-concurso-para-docente-na-area-de-eletromagnetismo-fotonica",
     "fonte_coleta": "PCI Concursos Nacional / IFES",
-    "data_coleta": "2026-09-13 13:40:19"
+    "data_coleta": "2026-09-14 14:56:02"
   },
   {
     "id": "ufpe-universidade-federal-de-pernambuco-pe",
@@ -296,7 +320,7 @@
     "link_edital": "https://www.pciconcursos.com.br/noticias/ufpe-publica-retificacao-do-concurso-para-cargos-tecnico-administrativos",
     "link_banca": "https://www.pciconcursos.com.br/noticias/ufpe-publica-retificacao-do-concurso-para-cargos-tecnico-administrativos",
     "fonte_coleta": "PCI Concursos Nacional / IFES",
-    "data_coleta": "2026-09-13 13:40:19"
+    "data_coleta": "2026-09-14 14:56:02"
   },
   {
     "id": "ufrpe-universidade-federal-rural-de-pernambuco-pe",
@@ -305,7 +329,7 @@
     "regiao": "Nordeste",
     "uf": "PE",
     "titulo": "Processo Seletivo / Concurso UFRPE - Universidade Federal Rural de Pernambuco",
-    "cargos": "UFRPE - Universidade Federal Rural de Pernambuco PE 14 vagas até R$ 13.288,85 Professor do Magistério Superior Superior 14/09 a 13/10/2026",
+    "cargos": "UFRPE - Universidade Federal Rural de Pernambuco PE 14 vagas até R$ 13.288,85 Professor do Magistério Superior Superior 13/10/2026",
     "niveis": [
       "E"
     ],
@@ -319,7 +343,7 @@
     "link_edital": "https://www.pciconcursos.com.br/noticias/ufrpe-abre-concurso-com-vagas-para-professores-do-magisterio-superior",
     "link_banca": "https://www.pciconcursos.com.br/noticias/ufrpe-abre-concurso-com-vagas-para-professores-do-magisterio-superior",
     "fonte_coleta": "PCI Concursos Nacional / IFES",
-    "data_coleta": "2026-09-13 13:40:19"
+    "data_coleta": "2026-09-14 14:56:02"
   },
   {
     "id": "ifpi-instituto-federal-de-educa-o-ci-ncia-e-tecnologia-do-piau-pi",
@@ -342,7 +366,7 @@
     "link_edital": "https://www.pciconcursos.com.br/noticias/ifpi-abre-concurso-publico-para-cargos-tecnico-administrativos-em-educacao",
     "link_banca": "https://www.pciconcursos.com.br/noticias/ifpi-abre-concurso-publico-para-cargos-tecnico-administrativos-em-educacao",
     "fonte_coleta": "PCI Concursos Nacional / IFES",
-    "data_coleta": "2026-09-13 13:40:19"
+    "data_coleta": "2026-09-14 14:56:02"
   },
   {
     "id": "ufrn-universidade-federal-do-rio-grande-do-norte-rn",
@@ -365,30 +389,7 @@
     "link_edital": "https://www.pciconcursos.com.br/noticias/ufrn-abre-processo-seletivo-para-professores-do-magisterio-superior-e-ebtt",
     "link_banca": "https://www.pciconcursos.com.br/noticias/ufrn-abre-processo-seletivo-para-professores-do-magisterio-superior-e-ebtt",
     "fonte_coleta": "PCI Concursos Nacional / IFES",
-    "data_coleta": "2026-09-13 13:40:19"
-  },
-  {
-    "id": "unila-universidade-federal-da-integra-o-latino-americana-am",
-    "instituicao": "UNILA - Universidade Federal da Integração Latino-Americana",
-    "sigla": "UNILA",
-    "regiao": "Norte",
-    "uf": "AM",
-    "titulo": "Processo Seletivo / Concurso UNILA - Universidade Federal da Integração Latino-Americana",
-    "cargos": "UNILA - Universidade Federal da Integração Latino-Americana PR 6 vagas até R$ 13.288,85 Professor do Magistério Superior Superior 13/09/2026",
-    "niveis": [
-      "E"
-    ],
-    "vagas": 6,
-    "vagas_descricao": "6 vagas",
-    "remuneracao_inicial": "R$ 13.288,85",
-    "status": "Inscrições Abertas",
-    "banca": "Comissão Organizadora / Banca Oficial",
-    "prazo_inscricao": "Consulte o cronograma no edital",
-    "taxa_inscricao": "Conforme o edital oficial",
-    "link_edital": "https://www.pciconcursos.com.br/noticias/unila-pr-abre-concurso-publico-para-o-cargo-de-professor-do-magisterio-superior",
-    "link_banca": "https://www.pciconcursos.com.br/noticias/unila-pr-abre-concurso-publico-para-o-cargo-de-professor-do-magisterio-superior",
-    "fonte_coleta": "PCI Concursos Nacional / IFES",
-    "data_coleta": "2026-09-13 13:40:19"
+    "data_coleta": "2026-09-14 14:56:02"
   },
   {
     "id": "unila-universidade-federal-da-integra-o-latino-americana-am",
@@ -411,7 +412,7 @@
     "link_edital": "https://www.pciconcursos.com.br/noticias/unila-pr-abre-processo-seletivo-para-professor-substituto-de-matematica",
     "link_banca": "https://www.pciconcursos.com.br/noticias/unila-pr-abre-processo-seletivo-para-professor-substituto-de-matematica",
     "fonte_coleta": "PCI Concursos Nacional / IFES",
-    "data_coleta": "2026-09-13 13:40:19"
+    "data_coleta": "2026-09-14 14:56:02"
   },
   {
     "id": "unila-universidade-federal-da-integra-o-latino-americana-am",
@@ -434,7 +435,7 @@
     "link_edital": "https://www.pciconcursos.com.br/noticias/unila-pr-abre-processo-seletivo-para-cadastro-de-reserva-de-professor-visitante-e-estrangeiro",
     "link_banca": "https://www.pciconcursos.com.br/noticias/unila-pr-abre-processo-seletivo-para-cadastro-de-reserva-de-professor-visitante-e-estrangeiro",
     "fonte_coleta": "PCI Concursos Nacional / IFES",
-    "data_coleta": "2026-09-13 13:40:19"
+    "data_coleta": "2026-09-14 14:56:02"
   },
   {
     "id": "unila-universidade-federal-da-integra-o-latino-americana-am",
@@ -457,7 +458,7 @@
     "link_edital": "https://www.pciconcursos.com.br/noticias/unila-pr-abre-processo-seletivo-para-professor-substituto-de-musica-e-tecnologia",
     "link_banca": "https://www.pciconcursos.com.br/noticias/unila-pr-abre-processo-seletivo-para-professor-substituto-de-musica-e-tecnologia",
     "fonte_coleta": "PCI Concursos Nacional / IFES",
-    "data_coleta": "2026-09-13 13:40:19"
+    "data_coleta": "2026-09-14 14:56:02"
   },
   {
     "id": "unila-universidade-federal-da-integra-o-latino-americana-am",
@@ -480,7 +481,7 @@
     "link_edital": "https://www.pciconcursos.com.br/noticias/unila-pr-abre-processo-seletivo-para-professor-substituto-de-ciencia-da-computacao",
     "link_banca": "https://www.pciconcursos.com.br/noticias/unila-pr-abre-processo-seletivo-para-professor-substituto-de-ciencia-da-computacao",
     "fonte_coleta": "PCI Concursos Nacional / IFES",
-    "data_coleta": "2026-09-13 13:40:19"
+    "data_coleta": "2026-09-14 14:56:02"
   },
   {
     "id": "unila-universidade-federal-da-integra-o-latino-americana-am",
@@ -503,7 +504,99 @@
     "link_edital": "https://www.pciconcursos.com.br/noticias/unila-pr-abre-processo-seletivo-para-professor-visitante-na-area-de-quimica",
     "link_banca": "https://www.pciconcursos.com.br/noticias/unila-pr-abre-processo-seletivo-para-professor-visitante-na-area-de-quimica",
     "fonte_coleta": "PCI Concursos Nacional / IFES",
-    "data_coleta": "2026-09-13 13:40:19"
+    "data_coleta": "2026-09-14 14:56:02"
+  },
+  {
+    "id": "unila-universidade-federal-da-integra-o-latino-americana-am",
+    "instituicao": "UNILA - Universidade Federal da Integração Latino-Americana",
+    "sigla": "UNILA",
+    "regiao": "Norte",
+    "uf": "AM",
+    "titulo": "Processo Seletivo / Concurso UNILA - Universidade Federal da Integração Latino-Americana",
+    "cargos": "UNILA - Universidade Federal da Integração Latino-Americana PR 1 vaga até R$ 13.288,85 Professor Visitante ou Visitante Estrangeiro Superior 29/09/2026",
+    "niveis": [
+      "E"
+    ],
+    "vagas": 1,
+    "vagas_descricao": "1 vaga",
+    "remuneracao_inicial": "R$ 13.288,85",
+    "status": "Inscrições Abertas",
+    "banca": "Comissão Organizadora / Banca Oficial",
+    "prazo_inscricao": "Consulte o cronograma no edital",
+    "taxa_inscricao": "Conforme o edital oficial",
+    "link_edital": "https://www.pciconcursos.com.br/noticias/unila-pr-abre-processo-seletivo-para-professor-visitante-em-engenharia-de-materiais",
+    "link_banca": "https://www.pciconcursos.com.br/noticias/unila-pr-abre-processo-seletivo-para-professor-visitante-em-engenharia-de-materiais",
+    "fonte_coleta": "PCI Concursos Nacional / IFES",
+    "data_coleta": "2026-09-14 14:56:02"
+  },
+  {
+    "id": "unila-universidade-federal-da-integra-o-latino-americana-am",
+    "instituicao": "UNILA - Universidade Federal da Integração Latino-Americana",
+    "sigla": "UNILA",
+    "regiao": "Norte",
+    "uf": "AM",
+    "titulo": "Processo Seletivo / Concurso UNILA - Universidade Federal da Integração Latino-Americana",
+    "cargos": "UNILA - Universidade Federal da Integração Latino-Americana PR 4 vagas até R$ 13.288,85 Professor Visitante, Visitante Estrangeiro Superior 09/10/2026",
+    "niveis": [
+      "E"
+    ],
+    "vagas": 4,
+    "vagas_descricao": "4 vagas",
+    "remuneracao_inicial": "R$ 13.288,85",
+    "status": "Inscrições Abertas",
+    "banca": "Comissão Organizadora / Banca Oficial",
+    "prazo_inscricao": "Consulte o cronograma no edital",
+    "taxa_inscricao": "Conforme o edital oficial",
+    "link_edital": "https://www.pciconcursos.com.br/noticias/unila-pr-abre-processo-seletivo-para-professores-visitantes-e-estrangeiros-em-engenharia-quimica",
+    "link_banca": "https://www.pciconcursos.com.br/noticias/unila-pr-abre-processo-seletivo-para-professores-visitantes-e-estrangeiros-em-engenharia-quimica",
+    "fonte_coleta": "PCI Concursos Nacional / IFES",
+    "data_coleta": "2026-09-14 14:56:02"
+  },
+  {
+    "id": "unila-universidade-federal-da-integra-o-latino-americana-am",
+    "instituicao": "UNILA - Universidade Federal da Integração Latino-Americana",
+    "sigla": "UNILA",
+    "regiao": "Norte",
+    "uf": "AM",
+    "titulo": "Processo Seletivo / Concurso UNILA - Universidade Federal da Integração Latino-Americana",
+    "cargos": "UNILA - Universidade Federal da Integração Latino-Americana PR Cadastro de reserva até R$ 13.288,85 Professor Visitante, Visitante - Estrangeiro Superior 29/09/2026",
+    "niveis": [
+      "E"
+    ],
+    "vagas": 1,
+    "vagas_descricao": "1 + CR",
+    "remuneracao_inicial": "R$ 13.288,85",
+    "status": "Inscrições Abertas",
+    "banca": "Comissão Organizadora / Banca Oficial",
+    "prazo_inscricao": "Consulte o cronograma no edital",
+    "taxa_inscricao": "Conforme o edital oficial",
+    "link_edital": "https://www.pciconcursos.com.br/noticias/unila-pr-abre-processo-seletivo-para-professor-visitante-na-area-de-engenharia-de-materiais",
+    "link_banca": "https://www.pciconcursos.com.br/noticias/unila-pr-abre-processo-seletivo-para-professor-visitante-na-area-de-engenharia-de-materiais",
+    "fonte_coleta": "PCI Concursos Nacional / IFES",
+    "data_coleta": "2026-09-14 14:56:02"
+  },
+  {
+    "id": "ufpel-universidade-federal-de-pelotas-rs",
+    "instituicao": "UFPel - Universidade Federal de Pelotas",
+    "sigla": "UFPel",
+    "regiao": "Sul",
+    "uf": "RS",
+    "titulo": "Processo Seletivo / Concurso UFPel - Universidade Federal de Pelotas",
+    "cargos": "UFPel - Universidade Federal de Pelotas RS 32 vagas até R$ 13.753,96 Professor do Magistério Superior Superior 04/10/2026",
+    "niveis": [
+      "E"
+    ],
+    "vagas": 32,
+    "vagas_descricao": "32 vagas",
+    "remuneracao_inicial": "R$ 13.753,96",
+    "status": "Inscrições Abertas",
+    "banca": "Comissão Organizadora / Banca Oficial",
+    "prazo_inscricao": "Consulte o cronograma no edital",
+    "taxa_inscricao": "Conforme o edital oficial",
+    "link_edital": "https://www.pciconcursos.com.br/noticias/ufpel-rs-abre-concurso-publico-para-o-cargo-de-professor-do-magisterio-superior",
+    "link_banca": "https://www.pciconcursos.com.br/noticias/ufpel-rs-abre-concurso-publico-para-o-cargo-de-professor-do-magisterio-superior",
+    "fonte_coleta": "PCI Concursos Nacional / IFES",
+    "data_coleta": "2026-09-14 14:56:02"
   },
   {
     "id": "ufsm-universidade-federal-de-santa-maria-rs",
@@ -526,7 +619,7 @@
     "link_edital": "https://www.pciconcursos.com.br/noticias/ufsm-rs-abre-concurso-publico-com-vagas-para-professores-do-magisterio-superior",
     "link_banca": "https://www.pciconcursos.com.br/noticias/ufsm-rs-abre-concurso-publico-com-vagas-para-professores-do-magisterio-superior",
     "fonte_coleta": "PCI Concursos Nacional / IFES",
-    "data_coleta": "2026-09-13 13:40:19"
+    "data_coleta": "2026-09-14 14:56:02"
   },
   {
     "id": "ifap-instituto-federal-de-educa-o-ci-ncia-e-tecnologia-do-amap-ap",
@@ -549,6 +642,6 @@
     "link_edital": "https://www.pciconcursos.com.br/noticias/ifap-abre-concurso-para-cargos-de-tecnico-administrativo-em-educacao",
     "link_banca": "https://www.pciconcursos.com.br/noticias/ifap-abre-concurso-para-cargos-de-tecnico-administrativo-em-educacao",
     "fonte_coleta": "PCI Concursos Nacional / IFES",
-    "data_coleta": "2026-09-13 13:40:20"
+    "data_coleta": "2026-09-14 14:56:03"
   }
 ]
