@@ -18,15 +18,6 @@
     "badge_class": "badge-info"
   },
   {
-    "title": "Vídeos – RSC PCCTAE",
-    "source": "UFMG",
-    "pubDate": "2026-10-03 03:54",
-    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5CZDFqSHNnVnVkd2QwZF85WmdMR1RScFhGeEtDd0dqLVZ6ZWlIVUwxTE5od1ZUeTN0czk4YkxvVWFYX082TFVFRzJCeDJ2Z05xdDFSS3lHZw?oc=5",
-    "description": "Vídeos – RSC PCCTAE",
-    "category": "RSC",
-    "badge_class": "badge-alert"
-  },
-  {
     "title": "No primeiro mês de trabalho, comissão analisa 85% dos pedidos de RSC-TAE",
     "source": "Universidade Tecnológica Federal do Paraná — UTFPR",
     "pubDate": "2026-10-02 11:40",
@@ -37,7 +28,7 @@
   },
   {
     "title": "“Bem-vindos à Ufam” - 40 novos servidores da carreira TAE são acolhidos em evento de integração",
-    "source": "UFAM",
+    "source": "ufam.edu.br",
     "pubDate": "2026-09-24 19:18",
     "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOVUU5VWZYN0JRYWt4RnZqRFl6QjY4ODJrZUMxcjBFMUY3TUNsSXR6Z1lmVFVPejM4WUlCX1A2X0F0RTJZX0psNjhJUXVrWUluaGNKb3ZoVFFxdi05Nm1Qb1hzVTFzUUVMdy1kbkJ1dkFCc2xQQkVFTGZ0VGVuNlJsUzRnOXRxd3RuenR5Zm5yWUxHU21TX1JyWmtsWHNQbzZyNUpTOXFnUTNQYnZxTl90OXl2cmU3QQ?oc=5",
     "description": "“Bem-vindos à Ufam” - 40 novos servidores da carreira TAE são acolhidos em evento de integração",
@@ -54,11 +45,11 @@
     "badge_class": "badge-alert"
   },
   {
-    "title": "Progep amplia implantação do RSC-PCCTAE e viabiliza 285 concessões na folha de setembro",
-    "source": "furg.br",
+    "title": "Progep amplia implantação do RSC-PCCTAE e viabiliza 285 concessões na folha de setembro - Universidade Federal do Rio Grande",
+    "source": "FURG",
     "pubDate": "2026-09-18 07:00",
     "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPdm0zVEF6VzBFa2Rxakd5eWctY2ZHM29USmhrWjNCSGRUYUZ2QVkxbnZtQlRxYURqVHRHSnh0eFVla25ITVZZem42LWJjVE03dTdwZ2RKenJkWDh5VnFiclJMa3pyVm9iMEVhLTdXLWlLbi1zMktyRVRObWxFQjFzVGZRc1dzYmxjWHNfWEI4eTZEdElLMEp5VWtwV0lvZjgyakg0clBscFEzdG5KbDYxLVJKMnl6R19UTWZPd01kNktLNkdhY3Bta0pBODR2b0NWOGlsZVhlRU1mZw?oc=5",
-    "description": "Progep amplia implantação do RSC-PCCTAE e viabiliza 285 concessões na folha de setembro",
+    "description": "Progep amplia implantação do RSC-PCCTAE e viabiliza 285 concessões na folha de setembro - Universidade Federal do Rio Grande",
     "category": "RSC",
     "badge_class": "badge-alert"
   },
@@ -77,6 +68,15 @@
     "pubDate": "2026-08-20 07:00",
     "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPbXB1RnB5NGx6NVV1WkVaSU1xMzZReGhUM1BGeUhYZ1pTbG1XUldMNFJHbnd2VUxMbzNjM2ZZVmtETHp0S0xyQlZGdk5iSnc5b3FVT0dTX05qcGxKUjY3aW9OaE5WcVJNeXR5OHVzcE4zVGNMaWhNYU54UEc5ZUhjYmF4cGNOVndmQVBTcFNFUQ?oc=5",
     "description": "RSC-PCCTAE tem mais de 400 portarias emitidas no IFMG",
+    "category": "RSC",
+    "badge_class": "badge-alert"
+  },
+  {
+    "title": "Comissão do RSC-PCCTAE do IFRS alcança 250 processos deferidos em menos de duas semanas",
+    "source": "Assufrgs",
+    "pubDate": "2026-08-17 07:00",
+    "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOQWhNay1yZUxxS1FXTGdObjQ0T2ZjbUs3XzNuazFteUwwMEVDcUNBWE5zaERvOEZvdnhTTUJFWmt6c0hlNVJNaHo1dUc4NFVuUkluT05maFFjRHVfMnM0VGpSaTlKY3B2enlXWUtELTRMUmtiVE9qNU9rUVNVNWdpTV90OXUxVFFIYVhiRzdKVkdOSjJ6dk9ZQnI4d1g5LWRmVXJQb01ZWGJ5YVBySlotN1pRbmk3bl9hQy1qWFY4X3NmZmx2NHc?oc=5",
+    "description": "Comissão do RSC-PCCTAE do IFRS alcança 250 processos deferidos em menos de duas semanas",
     "category": "RSC",
     "badge_class": "badge-alert"
   },
