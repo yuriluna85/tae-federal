@@ -1,86 +1,108 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Política de Privacidade — YLuna85 LABs</title>
-    <link rel="canonical" href="https://taes-federal.com.br/privacidade.html" />
-    <meta name="google-site-verification" content="dY48D0o4FUKPgMmsMLIA8oIXenNn_6MrRWilCxt8Ijk" />
-    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="assets/favicon.png" type="image/png" sizes="32x32">
-    <link rel="stylesheet" href="style.css">
-    <style>
-        .content-card {
-            max-width: 800px;
-            margin: 40px auto;
-            background: var(--color-card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: var(--border-radius-lg);
-            padding: 40px;
-            box-shadow: var(--shadow-card);
-            backdrop-filter: blur(10px);
-        }
-        .content-title {
-            font-family: var(--font-title);
-            font-size: 2rem;
-            color: var(--color-primary);
-            margin-bottom: 20px;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 12px;
-        }
-        .text-block {
-            font-family: var(--font-body);
-            color: var(--color-text);
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-        .text-block h2 {
-            font-family: var(--font-title);
-            font-size: 1.25rem;
-            color: var(--color-accent);
-            margin-top: 25px;
-            margin-bottom: 10px;
-        }
-        .btn-back {
-            display: inline-block;
-            background: var(--color-primary);
-            color: #ffffff;
-            padding: 10px 20px;
-            border-radius: var(--border-radius-md);
-            text-decoration: none;
-            font-family: var(--font-title);
-            font-weight: 600;
-            margin-top: 20px;
-            transition: var(--transition-smooth);
-        }
-        .btn-back:hover {
-            opacity: 0.9;
-        }
-    </style>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Política de Privacidade | Calculadora TAE Federal</title>
+ <meta name="description" content="Como o portal TAE Federal trata dados, cookies e anúncios, e como você controla essas informações, conforme a LGPD.">
+ <link rel="canonical" href="https://taes-federal.com.br/privacidade.html" />
+ <meta name="google-site-verification" content="dY48D0o4FUKPgMmsMLIA8oIXenNn_6MrRWilCxt8Ijk" />
+ <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+ <link rel="icon" href="assets/favicon.png" type="image/png" sizes="32x32">
+ <link rel="stylesheet" href="style.css">
+ <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7370246789612593" crossorigin="anonymous"></script>
+ <style>
+ .content-card { max-width: 860px; margin: 24px auto 40px; background: var(--color-card-bg); border: 1px solid var(--border-color); border-radius: var(--border-radius-lg); padding: 40px; box-shadow: var(--shadow-card); }
+ .content-title { font-family: var(--font-title); font-size: 2rem; color: var(--color-primary); margin-bottom: 8px; padding-bottom: 12px; border-bottom: 1px solid var(--border-color); }
+ .meta-line { color: var(--color-text-muted); font-size: 0.9rem; margin-bottom: 20px; }
+ .text-block { font-family: var(--font-body); color: var(--color-text); line-height: 1.8; }
+ .text-block p { margin-bottom: 16px; }
+ .text-block h2 { font-family: var(--font-title); font-size: 1.3rem; color: var(--color-accent); margin-top: 28px; margin-bottom: 10px; }
+ .text-block ul { margin: 0 0 16px 22px; }
+ .text-block li { margin-bottom: 8px; }
+ .text-block table { width: 100%; border-collapse: collapse; margin: 16px 0 24px; font-size: 0.95rem; }
+ .text-block th, .text-block td { border: 1px solid var(--border-color); padding: 10px 12px; text-align: left; vertical-align: top; }
+ .text-block th { color: var(--color-accent); }
+ .text-block a { text-decoration: underline; }
+ .btn-back { display: inline-block; background: var(--color-primary); color: #ffffff; padding: 10px 20px; border-radius: var(--border-radius-md); text-decoration: none; font-family: var(--font-title); font-weight: 600; margin-top: 24px; }
+ .form-linha { margin-bottom: 14px; }
+ .form-linha label { display: block; font-weight: 600; margin-bottom: 4px; }
+ .form-linha input, .form-linha textarea { width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--border-color); background: transparent; color: var(--color-text); font: inherit; }
+ .form-linha textarea { min-height: 150px; }
+ .btn-enviar { background: var(--color-primary); color: #ffffff; border: 0; border-radius: 8px; padding: 12px 22px; font-weight: 700; cursor: pointer; font: inherit; }
+ @media (max-width: 600px) { .content-card { padding: 22px; } }
+ </style>
 </head>
 <body>
-    <div class="container">
-        <main class="content-card">
-            <h1 class="content-title">Política de Privacidade</h1>
-            
-            <div class="text-block">
-                <p>Esta Política de Privacidade descreve como o <strong>YLuna85 LABs</strong> lida com as informações dos usuários que visitam e utilizam nossas ferramentas de simulação online.</p>
-                
-                <h2>1. Coleta de Dados e Privacidade</h2>
-                <p>Nossas calculadoras e simuladores funcionam de forma 100% local (client-side), o que significa que todos os cálculos de salários, gratificações, diárias ou adicionais informados pelo usuário são processados inteiramente dentro do seu próprio navegador em tempo de execução. Não coletamos, armazenamos ou transmitimos nenhum dos dados financeiros ou pessoais digitados nos formulários a servidores externos.</p>
-                
-                <h2>2. Cookies e Links de Publicidade</h2>
-                <p>Utilizamos cookies para melhorar a experiência do usuário e coletar estatísticas anônimas de navegação. Adicionalmente, nosso site exibe anúncios em parceria com o programa <strong>Google AdSense</strong>. O Google e parceiros terceirizados utilizam cookies (como o cookie DoubleClick DART) para exibir anúncios direcionados com base nas visitas anteriores dos usuários a este e a outros sites na internet.</p>
-                
-                <h2>3. Desativação de Anúncios Personalizados</h2>
-                <p>Os usuários podem optar por desativar a publicidade personalizada acessando as <a href="https://settings.google.com/ads" target="_blank" rel="noopener">Configurações de Anúncios do Google</a>. Alternativamente, você pode bloquear o uso de cookies de terceiros visitando a página de desativação da <a href="https://optout.aboutads.info" target="_blank" rel="noopener">Network Advertising Initiative</a>.</p>
-                
-                <h2>4. Alterações nesta Política</h2>
-                <p>Reservamo-nos o direito de atualizar esta Política de Privacidade a qualquer momento para refletir melhorias no sistema ou mudanças operacionais. O uso continuado das nossas ferramentas após a publicação das alterações constitui aceitação dos novos termos.</p>
-            </div>
+ <div class="container">
+ <div class="a11y-bar">
+ <button type="button" id="btn-contrast" class="a11y-btn" aria-pressed="false" aria-label="Alternar alto contraste">Alto contraste</button>
+ <button type="button" id="btn-font-minus" class="a11y-btn" aria-label="Diminuir texto">A-</button>
+ <button type="button" id="btn-font-plus" class="a11y-btn" aria-label="Aumentar texto">A+</button>
+ </div>
+ <header>
+ <p class="site-title">Portal de Conhecimento TAE Federal</p>
+ <p>Guias, legislação e ferramentas para quem trabalha na carreira dos Técnico-Administrativos em Educação</p>
+ </header>
+ <nav class="nav-tabs" aria-label="Menu principal"><a href="index.html" class="tab-btn" style="text-decoration:none;">Calculadora Salarial</a><a href="artigos/index.html" class="tab-btn" style="text-decoration:none;">Artigos e Guias</a><a href="concursos.html" class="tab-btn" style="text-decoration:none;">Concursos TAE</a><a href="tutorial.html" class="tab-btn" style="text-decoration:none;">Tutoriais</a><a href="sobre.html" class="tab-btn" style="text-decoration:none;">Sobre</a><a href="contato.html" class="tab-btn" style="text-decoration:none;">Contato</a></nav>
+ <main class="content-card">
 
-            <a href="index.html" class="btn-back">← Voltar ao Início</a>
-        </main>
-    </div>
+ <h1 class="content-title">Política de Privacidade</h1>
+ <p class="meta-line">Vigente desde 08/10/2026. Esta política segue a Lei Geral de Proteção de Dados (Lei nº 13.709/2018).</p>
+ <div class="text-block">
+ <p>Esta política explica quais informações o portal <strong>taes-federal.com.br</strong> trata, por que trata e como você controla essas informações. O portal é mantido por Yuri de Oliveira Luna e Almeida, sob o nome YLuna85 LABs, que atua como controlador dos dados descritos aqui. O contato do controlador está na seção 9.</p>
+
+ <h2>1. O que você digita nas calculadoras</h2>
+ <p>Os valores informados na calculadora salarial, nas diárias, no RSC e na aposentadoria são processados no seu próprio navegador, por código JavaScript. Esses dados não são enviados, gravados nem compartilhados por nós. Se você fechar a página, eles desaparecem.</p>
+
+ <h2>2. Dados que podem ser coletados por terceiros</h2>
+ <table>
+ <thead><tr><th>Serviço</th><th>Para quê</th><th>O que pode ser coletado</th></tr></thead>
+ <tbody>
+ <tr><td>Google AdSense</td><td>Exibir anúncios e medir sua exibição</td><td>Endereço IP, identificadores de cookies, tipo de navegador, páginas visitadas, interações com anúncios</td></tr>
+ <tr><td>Google Fonts</td><td>Carregar as fontes de texto</td><td>Endereço IP e informações do navegador, no momento do carregamento</td></tr>
+ <tr><td>GitHub Pages</td><td>Hospedar as páginas</td><td>Registros técnicos de acesso, como endereço IP, data e página solicitada</td></tr>
+ <tr><td>Google Search Console</td><td>Verificar a propriedade do site e medir buscas</td><td>Não coloca cookies no seu navegador; recebe dados agregados de busca</td></tr>
+ </tbody>
+ </table>
+ <p>Esses serviços têm políticas próprias. O tratamento feito por eles segue as regras de cada empresa, e o portal não tem acesso aos dados individuais que elas coletam.</p>
+
+ <h2>3. Cookies e armazenamento no navegador</h2>
+ <p>O portal grava uma única informação no armazenamento local do seu navegador: a sua escolha sobre o aviso de cookies (chave <em>cookie-consent-accepted</em>), para que o aviso não apareça de novo. Os anúncios do Google podem usar cookies próprios, como o cookie DoubleClick, para exibir anúncios com base nas suas visitas a este e a outros sites. O Google explica o uso em <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">como o Google usa dados de sites parceiros</a>.</p>
+
+ <h2>4. Como controlar anúncios personalizados</h2>
+ <ul>
+ <li>Acesse as <a href="https://adssettings.google.com" target="_blank" rel="noopener">Configurações de anúncios do Google</a> para desativar a personalização.</li>
+ <li>Visite <a href="https://optout.aboutads.info" target="_blank" rel="noopener">aboutads.info</a> para recusar cookies de publicidade de outros fornecedores.</li>
+ <li>Nas configurações do seu navegador, bloqueie ou apague os cookies a qualquer momento.</li>
+ </ul>
+
+ <h2>5. Bases legais</h2>
+ <p>A exibição de anúncios e a medição de audiência se apoiam no consentimento que você dá ao aceitar o aviso de cookies e no legítimo interesse de manter o portal gratuito. Mensagens enviadas pelo contato são tratadas para responder ao seu pedido.</p>
+
+ <h2>6. Mensagens enviadas pelo formulário de contato</h2>
+ <p>A página de contato monta um e-mail no seu próprio programa de e-mail. Ao enviá-lo, a mensagem chega à caixa de entrada do controlador, com o nome, o endereço de e-mail e o texto que você escreveu. Esses dados são usados só para responder e ficam guardados pelo tempo necessário para o atendimento, em geral até seis meses.</p>
+
+ <h2>7. Seus direitos</h2>
+ <p>A LGPD garante a você, entre outros direitos, confirmar se há tratamento de dados seus, acessá-los, corrigi-los, pedir sua eliminação e revogar o consentimento. Como o portal não guarda cadastro de usuários, a maior parte desses dados fica com os terceiros listados na seção 2. Para os dados que estão com o controlador, como o e-mail de uma mensagem, escreva para o contato indicado abaixo.</p>
+
+ <h2>8. Crianças</h2>
+ <p>O portal se destina a servidores públicos adultos. Não coletamos dados de crianças de forma intencional.</p>
+
+ <h2>9. Contato do controlador</h2>
+ <p>Responsável: Yuri de Oliveira Luna e Almeida (YLuna85 LABs). E-mail: <a href="mailto:luna.yuri0@gmail.com">luna.yuri0@gmail.com</a>. O prazo de resposta é de até 48 horas úteis.</p>
+
+ <h2>10. Alterações nesta política</h2>
+ <p>Quando esta política mudar, a nova versão será publicada nesta página com a data de vigência no topo, e a mudança será registrada em <a href="atualizacoes.html">atualizações</a>.</p>
+ </div>
+
+ <a href="index.html" class="btn-back">Voltar ao início</a>
+ </main>
+ <footer style="margin-top:2rem; padding-top:1.5rem; border-top:1px solid var(--border-color); text-align:center; color:var(--color-text-muted); font-size:0.9rem;">
+ <p>&copy; 2026 YLuna85 LABs. Projeto independente, sem vínculo com órgãos do governo.</p>
+ <p><a href="sobre.html">Sobre</a> | <a href="contato.html">Contato</a> | <a href="privacidade.html">Política de Privacidade</a> | <a href="termos.html">Termos de Uso</a> | <a href="atualizacoes.html">Atualizações</a></p>
+ </footer>
+ </div>
+ <script src="site.js"></script>
 </body>
 </html>

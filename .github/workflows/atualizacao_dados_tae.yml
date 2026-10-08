@@ -1,4 +1,4 @@
-name: Atualizacao Diaria de Dados TAE (Noticias e Concursos)
+name: Atualizacao Diaria de Dados TAE (Concursos)
 
 on:
   schedule:
@@ -30,16 +30,13 @@ jobs:
       - name: Minerar Concursos TAEs e IFES (Scrapling)
         run: python scripts/minerador_concursos_tae.py
 
-      - name: Minerar Noticias do Servidorismo TAE (RSS Livre)
-        run: python scripts/atualizar_noticias_tae.py
-
       - name: Sincronizar e Enviar Atualizacoes
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/concursos_tae.json noticias.json
+          git add data/concursos_tae.json
           if ! git diff --staged --quiet; then
-            git commit -m "chore: atualizacao autonoma de noticias e concursos TAEs via Scrapling"
+            git commit -m "chore: atualizacao autonoma de concursos TAEs via Scrapling"
             git pull --rebase origin main
             git push origin main
           else

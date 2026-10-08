@@ -1,157 +1,89 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contato — YLuna85 LABs</title>
-    <link rel="canonical" href="https://taes-federal.com.br/contato.html" />
-    <meta name="google-site-verification" content="dY48D0o4FUKPgMmsMLIA8oIXenNn_6MrRWilCxt8Ijk" />
-    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="assets/favicon.png" type="image/png" sizes="32x32">
-    <link rel="stylesheet" href="style.css">
-    <style>
-        .content-card {
-            max-width: 800px;
-            margin: 40px auto;
-            background: var(--color-card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: var(--border-radius-lg);
-            padding: 40px;
-            box-shadow: var(--shadow-card);
-            backdrop-filter: blur(10px);
-        }
-        .content-title {
-            font-family: var(--font-title);
-            font-size: 2rem;
-            color: var(--color-primary);
-            margin-bottom: 20px;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 12px;
-        }
-        .text-block {
-            font-family: var(--font-body);
-            color: var(--color-text);
-            line-height: 1.8;
-            margin-bottom: 25px;
-        }
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-        .form-label {
-            font-family: var(--font-title);
-            font-size: 0.95rem;
-            font-weight: 600;
-        }
-        .form-control {
-            background: rgba(0, 0, 0, 0.25);
-            border: 1px solid var(--border-color);
-            color: var(--color-text);
-            padding: 12px;
-            border-radius: var(--border-radius-md);
-            font-family: var(--font-body);
-            font-size: 0.95rem;
-            outline: none;
-            transition: var(--transition-smooth);
-        }
-        .form-control:focus {
-            border-color: var(--color-primary);
-            box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.25);
-        }
-        textarea.form-control {
-            resize: vertical;
-            min-height: 120px;
-        }
-        .btn-submit {
-            background: var(--color-primary);
-            color: #ffffff;
-            border: none;
-            padding: 12px 20px;
-            border-radius: var(--border-radius-md);
-            font-family: var(--font-title);
-            font-weight: 600;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: var(--transition-smooth);
-            align-self: flex-start;
-        }
-        .btn-submit:hover {
-            opacity: 0.9;
-        }
-        .btn-back {
-            display: inline-block;
-            color: var(--color-text-muted);
-            text-decoration: none;
-            font-family: var(--font-title);
-            font-weight: 600;
-            margin-top: 20px;
-            transition: var(--transition-smooth);
-        }
-        .btn-back:hover {
-            color: var(--color-text);
-        }
-        .success-msg {
-            background: rgba(16, 185, 129, 0.1);
-            border: 1px solid rgba(16, 185, 129, 0.3);
-            color: #10b981;
-            padding: 12px;
-            border-radius: var(--border-radius-md);
-            font-size: 0.9rem;
-            display: none;
-        }
-    </style>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Contato | Calculadora TAE Federal</title>
+ <meta name="description" content="Envie correções, dúvidas e sugestões de tema ao portal TAE Federal. Resposta em até 48 horas úteis.">
+ <link rel="canonical" href="https://taes-federal.com.br/contato.html" />
+ <meta name="google-site-verification" content="dY48D0o4FUKPgMmsMLIA8oIXenNn_6MrRWilCxt8Ijk" />
+ <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+ <link rel="icon" href="assets/favicon.png" type="image/png" sizes="32x32">
+ <link rel="stylesheet" href="style.css">
+ <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7370246789612593" crossorigin="anonymous"></script>
+ <style>
+ .content-card { max-width: 860px; margin: 24px auto 40px; background: var(--color-card-bg); border: 1px solid var(--border-color); border-radius: var(--border-radius-lg); padding: 40px; box-shadow: var(--shadow-card); }
+ .content-title { font-family: var(--font-title); font-size: 2rem; color: var(--color-primary); margin-bottom: 8px; padding-bottom: 12px; border-bottom: 1px solid var(--border-color); }
+ .meta-line { color: var(--color-text-muted); font-size: 0.9rem; margin-bottom: 20px; }
+ .text-block { font-family: var(--font-body); color: var(--color-text); line-height: 1.8; }
+ .text-block p { margin-bottom: 16px; }
+ .text-block h2 { font-family: var(--font-title); font-size: 1.3rem; color: var(--color-accent); margin-top: 28px; margin-bottom: 10px; }
+ .text-block ul { margin: 0 0 16px 22px; }
+ .text-block li { margin-bottom: 8px; }
+ .text-block table { width: 100%; border-collapse: collapse; margin: 16px 0 24px; font-size: 0.95rem; }
+ .text-block th, .text-block td { border: 1px solid var(--border-color); padding: 10px 12px; text-align: left; vertical-align: top; }
+ .text-block th { color: var(--color-accent); }
+ .text-block a { text-decoration: underline; }
+ .btn-back { display: inline-block; background: var(--color-primary); color: #ffffff; padding: 10px 20px; border-radius: var(--border-radius-md); text-decoration: none; font-family: var(--font-title); font-weight: 600; margin-top: 24px; }
+ .form-linha { margin-bottom: 14px; }
+ .form-linha label { display: block; font-weight: 600; margin-bottom: 4px; }
+ .form-linha input, .form-linha textarea { width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--border-color); background: transparent; color: var(--color-text); font: inherit; }
+ .form-linha textarea { min-height: 150px; }
+ .btn-enviar { background: var(--color-primary); color: #ffffff; border: 0; border-radius: 8px; padding: 12px 22px; font-weight: 700; cursor: pointer; font: inherit; }
+ @media (max-width: 600px) { .content-card { padding: 22px; } }
+ </style>
 </head>
 <body>
-    <div class="container">
-        <main class="content-card">
-            <h1 class="content-title">Entre em Contato</h1>
-            
-            <div class="text-block">
-                <p>Tem alguma dúvida, sugestão de recurso ou identificou alguma divergência nos valores simulados? Preencha o formulário abaixo para enviar sua mensagem diretamente ao laboratório de suporte do <strong>YLuna85 LABs</strong>.</p>
-                <p style="margin-top: 10px; font-size: 0.9rem; color: var(--color-text-muted);">
-                    Se preferir, você também pode nos contatar diretamente através do e-mail de suporte institucional: 
-                    <a href="mailto:luna.yuri0@gmail.com" style="color: var(--color-accent); text-decoration: none; font-weight: 500;">luna.yuri0@gmail.com</a>. 
-                    Nossa equipe responderá em até 48 horas úteis.
-                </p>
-            </div>
+ <div class="container">
+ <div class="a11y-bar">
+ <button type="button" id="btn-contrast" class="a11y-btn" aria-pressed="false" aria-label="Alternar alto contraste">Alto contraste</button>
+ <button type="button" id="btn-font-minus" class="a11y-btn" aria-label="Diminuir texto">A-</button>
+ <button type="button" id="btn-font-plus" class="a11y-btn" aria-label="Aumentar texto">A+</button>
+ </div>
+ <header>
+ <p class="site-title">Portal de Conhecimento TAE Federal</p>
+ <p>Guias, legislação e ferramentas para quem trabalha na carreira dos Técnico-Administrativos em Educação</p>
+ </header>
+ <nav class="nav-tabs" aria-label="Menu principal"><a href="index.html" class="tab-btn" style="text-decoration:none;">Calculadora Salarial</a><a href="artigos/index.html" class="tab-btn" style="text-decoration:none;">Artigos e Guias</a><a href="concursos.html" class="tab-btn" style="text-decoration:none;">Concursos TAE</a><a href="tutorial.html" class="tab-btn" style="text-decoration:none;">Tutoriais</a><a href="sobre.html" class="tab-btn" style="text-decoration:none;">Sobre</a><a href="contato.html" class="tab-btn" style="text-decoration:none;">Contato</a></nav>
+ <main class="content-card">
 
-            <div class="success-msg" id="msg-success">
-                ✓ Mensagem enviada com sucesso! Agradecemos pelo contato e responderemos o mais breve possível.
-            </div>
+ <h1 class="content-title">Contato</h1>
+ <p class="meta-line">Resposta em até 48 horas úteis</p>
+ <div class="text-block">
+ <p>Use esta página para avisar de um erro de cálculo, de uma informação desatualizada, de uma barreira de acessibilidade ou para sugerir um tema de guia. O formulário abaixo monta uma mensagem no seu programa de e-mail, e você a envia por lá. Se preferir, escreva direto para <a href="mailto:luna.yuri0@gmail.com">luna.yuri0@gmail.com</a>.</p>
+ <p>Quando o assunto for um erro de cálculo, informe o nível, o padrão de vencimento, o incentivo à qualificação e o resultado que você esperava. Assim é possível reproduzir o problema.</p>
 
-            <form class="contact-form" id="contato-form" onsubmit="event.preventDefault(); document.getElementById('msg-success').style.display = 'block'; this.reset();">
-                <div class="form-group">
-                    <label for="contato-nome" class="form-label">Nome Completo:</label>
-                    <input type="text" id="contato-nome" class="form-control" placeholder="Digite seu nome..." required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="contato-email" class="form-label">E-mail para Retorno:</label>
-                    <input type="email" id="contato-email" class="form-control" placeholder="seu-email@dominio.com" required>
-                </div>
+ <form id="contato-form" class="contact-form">
+ <div class="form-linha"><label for="contato-nome">Seu nome</label><input type="text" id="contato-nome" required autocomplete="name"></div>
+ <div class="form-linha"><label for="contato-email">Seu e-mail para resposta</label><input type="email" id="contato-email" required autocomplete="email"></div>
+ <div class="form-linha"><label for="contato-assunto">Assunto</label><input type="text" id="contato-assunto" required placeholder="Ex.: erro no cálculo do IQ"></div>
+ <div class="form-linha"><label for="contato-mensagem">Mensagem</label><textarea id="contato-mensagem" required></textarea></div>
+ <button type="submit" class="btn-enviar">Abrir meu programa de e-mail</button>
+ <p id="contato-aviso" role="status" style="margin-top:12px;"></p>
+ </form>
+ <p>O tratamento dos dados desta mensagem está descrito na <a href="privacidade.html">Política de Privacidade</a>.</p>
+ </div>
 
-                <div class="form-group">
-                    <label for="contato-assunto" class="form-label">Assunto da Mensagem:</label>
-                    <input type="text" id="contato-assunto" class="form-control" placeholder="Ex: Sugestão de Novo Recurso / Erro no cálculo" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="contato-mensagem" class="form-label">Mensagem:</label>
-                    <textarea id="contato-mensagem" class="form-control" placeholder="Escreva sua mensagem em detalhes..." required></textarea>
-                </div>
-
-                <button type="submit" class="btn-submit">Enviar Mensagem</button>
-            </form>
-
-            <a href="index.html" class="btn-back">← Voltar ao Início</a>
-        </main>
-    </div>
+ <a href="index.html" class="btn-back">Voltar ao início</a>
+ </main>
+ <footer style="margin-top:2rem; padding-top:1.5rem; border-top:1px solid var(--border-color); text-align:center; color:var(--color-text-muted); font-size:0.9rem;">
+ <p>&copy; 2026 YLuna85 LABs. Projeto independente, sem vínculo com órgãos do governo.</p>
+ <p><a href="sobre.html">Sobre</a> | <a href="contato.html">Contato</a> | <a href="privacidade.html">Política de Privacidade</a> | <a href="termos.html">Termos de Uso</a> | <a href="atualizacoes.html">Atualizações</a></p>
+ </footer>
+ </div>
+ <script src="site.js"></script>
+ <script>
+ document.getElementById("contato-form").addEventListener("submit", function (ev) {
+   ev.preventDefault();
+   var nome = document.getElementById("contato-nome").value.trim();
+   var email = document.getElementById("contato-email").value.trim();
+   var assunto = document.getElementById("contato-assunto").value.trim();
+   var msg = document.getElementById("contato-mensagem").value.trim();
+   var corpo = msg + "\n\nNome: " + nome + "\nE-mail para resposta: " + email;
+   var link = "mailto:luna.yuri0@gmail.com?subject=" + encodeURIComponent("[taes-federal] " + assunto) + "&body=" + encodeURIComponent(corpo);
+   document.getElementById("contato-aviso").textContent = "Abrindo o seu programa de e-mail. Se nada abrir, escreva para luna.yuri0@gmail.com.";
+   window.location.href = link;
+ });
+ </script>
 </body>
 </html>

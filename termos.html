@@ -1,86 +1,98 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Termos de Uso — YLuna85 LABs</title>
-    <link rel="canonical" href="https://taes-federal.com.br/termos.html" />
-    <meta name="google-site-verification" content="dY48D0o4FUKPgMmsMLIA8oIXenNn_6MrRWilCxt8Ijk" />
-    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="assets/favicon.png" type="image/png" sizes="32x32">
-    <link rel="stylesheet" href="style.css">
-    <style>
-        .content-card {
-            max-width: 800px;
-            margin: 40px auto;
-            background: var(--color-card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: var(--border-radius-lg);
-            padding: 40px;
-            box-shadow: var(--shadow-card);
-            backdrop-filter: blur(10px);
-        }
-        .content-title {
-            font-family: var(--font-title);
-            font-size: 2rem;
-            color: var(--color-primary);
-            margin-bottom: 20px;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 12px;
-        }
-        .text-block {
-            font-family: var(--font-body);
-            color: var(--color-text);
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-        .text-block h2 {
-            font-family: var(--font-title);
-            font-size: 1.25rem;
-            color: var(--color-accent);
-            margin-top: 25px;
-            margin-bottom: 10px;
-        }
-        .btn-back {
-            display: inline-block;
-            background: var(--color-primary);
-            color: #ffffff;
-            padding: 10px 20px;
-            border-radius: var(--border-radius-md);
-            text-decoration: none;
-            font-family: var(--font-title);
-            font-weight: 600;
-            margin-top: 20px;
-            transition: var(--transition-smooth);
-        }
-        .btn-back:hover {
-            opacity: 0.9;
-        }
-    </style>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Termos de Uso | Calculadora TAE Federal</title>
+ <meta name="description" content="Condições de uso do portal TAE Federal: natureza estimativa dos cálculos, vínculo com o governo, propriedade intelectual e responsabilidade.">
+ <link rel="canonical" href="https://taes-federal.com.br/termos.html" />
+ <meta name="google-site-verification" content="dY48D0o4FUKPgMmsMLIA8oIXenNn_6MrRWilCxt8Ijk" />
+ <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+ <link rel="icon" href="assets/favicon.png" type="image/png" sizes="32x32">
+ <link rel="stylesheet" href="style.css">
+ <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7370246789612593" crossorigin="anonymous"></script>
+ <style>
+ .content-card { max-width: 860px; margin: 24px auto 40px; background: var(--color-card-bg); border: 1px solid var(--border-color); border-radius: var(--border-radius-lg); padding: 40px; box-shadow: var(--shadow-card); }
+ .content-title { font-family: var(--font-title); font-size: 2rem; color: var(--color-primary); margin-bottom: 8px; padding-bottom: 12px; border-bottom: 1px solid var(--border-color); }
+ .meta-line { color: var(--color-text-muted); font-size: 0.9rem; margin-bottom: 20px; }
+ .text-block { font-family: var(--font-body); color: var(--color-text); line-height: 1.8; }
+ .text-block p { margin-bottom: 16px; }
+ .text-block h2 { font-family: var(--font-title); font-size: 1.3rem; color: var(--color-accent); margin-top: 28px; margin-bottom: 10px; }
+ .text-block ul { margin: 0 0 16px 22px; }
+ .text-block li { margin-bottom: 8px; }
+ .text-block table { width: 100%; border-collapse: collapse; margin: 16px 0 24px; font-size: 0.95rem; }
+ .text-block th, .text-block td { border: 1px solid var(--border-color); padding: 10px 12px; text-align: left; vertical-align: top; }
+ .text-block th { color: var(--color-accent); }
+ .text-block a { text-decoration: underline; }
+ .btn-back { display: inline-block; background: var(--color-primary); color: #ffffff; padding: 10px 20px; border-radius: var(--border-radius-md); text-decoration: none; font-family: var(--font-title); font-weight: 600; margin-top: 24px; }
+ .form-linha { margin-bottom: 14px; }
+ .form-linha label { display: block; font-weight: 600; margin-bottom: 4px; }
+ .form-linha input, .form-linha textarea { width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--border-color); background: transparent; color: var(--color-text); font: inherit; }
+ .form-linha textarea { min-height: 150px; }
+ .btn-enviar { background: var(--color-primary); color: #ffffff; border: 0; border-radius: 8px; padding: 12px 22px; font-weight: 700; cursor: pointer; font: inherit; }
+ @media (max-width: 600px) { .content-card { padding: 22px; } }
+ </style>
 </head>
 <body>
-    <div class="container">
-        <main class="content-card">
-            <h1 class="content-title">Termos e Condições de Uso</h1>
-            
-            <div class="text-block">
-                <p>Ao acessar e navegar por este site, você concorda em cumprir e aceitar os seguintes Termos de Uso. Se você não concorda com qualquer um dos termos aqui dispostos, pedimos que interrompa o uso do portal.</p>
-                
-                <h2>1. Isenção de Vínculo Oficial e Responsabilidade</h2>
-                <p>O <strong>YLuna85 LABs</strong> é uma iniciativa privada e acadêmica que visa fornecer simuladores de cálculos. Este simulador <strong>não possui nenhum vínculo oficial</strong> com órgãos da Administração Pública Federal, Estadual ou com sistemas governamentais oficiais (como o SouGov, SUAP ou SCDP).</p>
-                
-                <h2>2. Natureza Estimativa dos Cálculos</h2>
-                <p>Todas as simulações e cálculos exibidos na plataforma servem estritamente como <strong>projeções estimativas</strong> informativas baseadas na legislação de regência compilada. Podem ocorrer pequenas diferenças decorrentes de regras específicas de lotação, arredondamentos tributários ou readequações de sistema dos órgãos oficiais. O usuário deve entrar em contato direto com o setor de gestão de pessoas ou coordenação de viagens de sua respectiva unidade para obter cálculos formais.</p>
-                
-                <h2>3. Propriedade Intelectual</h2>
-                <p>Os códigos-fontes, layouts, estilizações gráficas e lógicas desenvolvidas são de propriedade intelectual do <strong>YLuna85 LABs</strong>. Fica autorizado o uso e compartilhamento dos simuladores para fins de planejamento pessoal e informativo, sendo vedada a reprodução comercial sem consentimento expresso por escrito.</p>
-                
-                <h2>4. Limitação de Danos</h2>
-                <p>Em circunstância alguma o laboratório ou seus mantenedores serão responsáveis por quaisquer perdas, atrasos processuais, decisões tomadas com base nas projeções estimativas da ferramenta ou danos incidentais resultantes da navegação ou uso do simulador.</p>
-            </div>
+ <div class="container">
+ <div class="a11y-bar">
+ <button type="button" id="btn-contrast" class="a11y-btn" aria-pressed="false" aria-label="Alternar alto contraste">Alto contraste</button>
+ <button type="button" id="btn-font-minus" class="a11y-btn" aria-label="Diminuir texto">A-</button>
+ <button type="button" id="btn-font-plus" class="a11y-btn" aria-label="Aumentar texto">A+</button>
+ </div>
+ <header>
+ <p class="site-title">Portal de Conhecimento TAE Federal</p>
+ <p>Guias, legislação e ferramentas para quem trabalha na carreira dos Técnico-Administrativos em Educação</p>
+ </header>
+ <nav class="nav-tabs" aria-label="Menu principal"><a href="index.html" class="tab-btn" style="text-decoration:none;">Calculadora Salarial</a><a href="artigos/index.html" class="tab-btn" style="text-decoration:none;">Artigos e Guias</a><a href="concursos.html" class="tab-btn" style="text-decoration:none;">Concursos TAE</a><a href="tutorial.html" class="tab-btn" style="text-decoration:none;">Tutoriais</a><a href="sobre.html" class="tab-btn" style="text-decoration:none;">Sobre</a><a href="contato.html" class="tab-btn" style="text-decoration:none;">Contato</a></nav>
+ <main class="content-card">
 
-            <a href="index.html" class="btn-back">← Voltar ao Início</a>
-        </main>
-    </div>
+ <h1 class="content-title">Termos de Uso</h1>
+ <p class="meta-line">Vigentes desde 08/10/2026</p>
+ <div class="text-block">
+ <p>Ao usar o portal <strong>taes-federal.com.br</strong>, você concorda com estes termos. Se não concordar, deixe de usar o site. O texto abaixo explica o que o portal oferece, o que ele não promete e como você pode usar o conteúdo.</p>
+
+ <h2>1. O que o portal oferece</h2>
+ <p>O portal reúne uma calculadora salarial para servidores técnico-administrativos em educação, tutoriais de uso, guias sobre a carreira e um radar de concursos. Tudo é gratuito e financiado por anúncios.</p>
+
+ <h2>2. Vínculo com o governo</h2>
+ <p>O portal é um projeto independente do YLuna85 LABs. Ele não representa o Ministério da Educação, o Ministério da Gestão e da Inovação em Serviços Públicos, nenhuma instituição federal de ensino nem entidade sindical. Citações de leis e de órgãos servem apenas para indicar a fonte da informação.</p>
+
+ <h2>3. Natureza estimativa dos cálculos</h2>
+ <p>Os resultados da calculadora são estimativas, feitas com a legislação e as tabelas conhecidas na data da última atualização do portal. Podem existir diferenças em relação ao seu contracheque por causa de regras específicas da sua lotação, arredondamentos, parcelas que a calculadora não conhece ou mudanças de norma ainda não incorporadas. O contracheque do SouGov e a orientação do setor de gestão de pessoas da sua instituição prevalecem sempre.</p>
+
+ <h2>4. Conteúdo informativo, não aconselhamento</h2>
+ <p>Os guias descrevem normas e procedimentos de forma geral. Eles não substituem parecer jurídico, orientação da unidade de gestão de pessoas ou análise do seu caso individual. Antes de pedir um benefício, de tomar um empréstimo ou de decidir sobre aposentadoria, confira a norma citada no texto e consulte o seu órgão.</p>
+
+ <h2>5. Correções</h2>
+ <p>Se você encontrar um erro, avise pela página de <a href="contato.html">contato</a>. As correções são conferidas na fonte oficial e registradas em <a href="atualizacoes.html">atualizações</a>.</p>
+
+ <h2>6. Propriedade intelectual</h2>
+ <p>Os textos, o código e o desenho do portal pertencem ao YLuna85 LABs. Você pode usar a calculadora e ler os guias para fins pessoais e de informação. Pode citar trechos curtos com o link para a página de origem. A reprodução integral ou comercial exige autorização por escrito. As leis e os atos oficiais citados são de domínio público.</p>
+
+ <h2>7. Uso adequado</h2>
+ <p>É proibido usar o portal para atividades ilícitas, tentar derrubar ou sobrecarregar o serviço, copiar o conteúdo de forma automatizada em larga escala ou apresentar as estimativas da calculadora como documento oficial.</p>
+
+ <h2>8. Links para outros sites</h2>
+ <p>O portal tem links para páginas do governo e de outras fontes. Não controlamos esses sites e não respondemos pelo conteúdo ou pelas práticas de privacidade deles.</p>
+
+ <h2>9. Publicidade</h2>
+ <p>Os anúncios são exibidos pelo Google AdSense e identificados como publicidade. A presença de um anúncio não significa indicação ou aprovação do produto pelos autores do portal.</p>
+
+ <h2>10. Limite de responsabilidade</h2>
+ <p>O portal é oferecido como está. Os mantenedores não respondem por perdas, atrasos em processos ou decisões tomadas com base nas estimativas ou nos guias, na medida em que a lei permite. Isso não afasta direitos que a legislação de defesa do consumidor ou outras normas garantem a você.</p>
+
+ <h2>11. Mudanças e foro</h2>
+ <p>Estes termos podem mudar, e a versão vigente é sempre a publicada nesta página, com a data no topo. Aplica-se a lei brasileira, e as questões serão resolvidas no foro da comarca do domicílio do usuário consumidor ou, nos demais casos, no foro da comarca de Salvador, Bahia.</p>
+ </div>
+
+ <a href="index.html" class="btn-back">Voltar ao início</a>
+ </main>
+ <footer style="margin-top:2rem; padding-top:1.5rem; border-top:1px solid var(--border-color); text-align:center; color:var(--color-text-muted); font-size:0.9rem;">
+ <p>&copy; 2026 YLuna85 LABs. Projeto independente, sem vínculo com órgãos do governo.</p>
+ <p><a href="sobre.html">Sobre</a> | <a href="contato.html">Contato</a> | <a href="privacidade.html">Política de Privacidade</a> | <a href="termos.html">Termos de Uso</a> | <a href="atualizacoes.html">Atualizações</a></p>
+ </footer>
+ </div>
+ <script src="site.js"></script>
 </body>
 </html>
