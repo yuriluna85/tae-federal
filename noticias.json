@@ -1,29 +1,92 @@
 [
   {
-    "title": "Decreto nº 13.048/2026 regulamenta o RSC-PCCTAE",
-    "source": "Presidência da República",
-    "pubDate": "2026-07-03 08:00",
-    "link": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/decreto/D13048.htm",
-    "description": "Estabelece os critérios e os procedimentos do Reconhecimento de Saberes e Competências: seis níveis, pontuação mínima, comissão em cada instituição, prazo de 120 dias para análise e interstício de três anos entre concessões.",
-    "category": "Regulamentado",
-    "badge_class": "badge-info"
-  },
-  {
-    "title": "Lei nº 15.367/2026 institui o RSC-PCCTAE",
-    "source": "Presidência da República",
-    "pubDate": "2026-03-30 08:00",
-    "link": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/L15367.htm",
-    "description": "Acrescenta os arts. 12-B a 12-H à Lei nº 11.091/2005 e institui o RSC-PCCTAE a partir de 1º de abril de 2026, como modalidade alternativa para receber o Incentivo à Qualificação.",
-    "category": "Vigente",
-    "badge_class": "badge-info"
-  },
-  {
-    "title": "Lei nº 15.141/2025 altera a estrutura da carreira PCCTAE",
-    "source": "Presidência da República",
+    "title": "Promulgação da Lei nº 15.141/2025",
+    "source": "Diário Oficial",
     "pubDate": "2025-06-02 08:00",
-    "link": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/L15141.htm",
-    "description": "Altera a Lei nº 11.091/2005: novos padrões de vencimento desde 1º de janeiro de 2025, progressão por mérito e aceleração da progressão por capacitação, e Incentivo à Qualificação calculado sobre o padrão de vencimento.",
+    "link": "https://www.in.gov.br",
+    "description": "Esta lei consubstancia a reestruturação da carreira do PCCTAE nos moldes do Termo de Acordo nº 11/2024, extinguindo as antigas distorções de área direta e indireta.",
     "category": "Vigente",
+    "badge_class": "badge-info"
+  },
+  {
+    "title": "Instituição do RSC-PCCTAE via Lei nº 15.367/2026",
+    "source": "Diário Oficial",
+    "pubDate": "2026-03-30 08:00",
+    "link": "https://www.in.gov.br",
+    "description": "Sancionada em 30 de março de 2026, a lei instituiu o Reconhecimento de Saberes e Competências (RSC) para Técnico-Administrativos em Educação a contar de 1º de abril de 2026.",
+    "category": "Vigente",
+    "badge_class": "badge-info"
+  },
+  {
+    "title": "Módulo para requerimentos do RSC será lançado nesta segunda, 13",
+    "source": "IFRN",
+    "pubDate": "2026-10-07 07:00",
+    "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNNktVcWlLamVIY2JyektkNU1qdmRBbXI2dzFSWGRWVW9Jdy1Cd0h5OHdxaVlVSm9kaXFIQlltT25ibGUyVV9fczVVaFUxN0FwRnFoaXVramoyMWdINDg3eUFDQkNGRXJMUTFHVjJNcDkwaE5rNk9xaXU1Ui1KTWwyTWF2LWRUQmxNeExLbkxsY2RuUFFvcU1nS3NMMGcwQmxPRFc0UDhMc1I0am4zTjFyX29QM3c0dw?oc=5",
+    "description": "Módulo para requerimentos do RSC será lançado nesta segunda, 13",
+    "category": "RSC",
+    "badge_class": "badge-alert"
+  },
+  {
+    "title": "Planejamento e reconhecimento são dimensões centrais na carreira TAE",
+    "source": "UFMG",
+    "pubDate": "2026-10-06 20:24",
+    "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxONW5zUkJlQUVqbTRPc1lYNDdjaEdZcE1MeldFeEt5aWNpMlZCT0N0ZmNMbEhOSVota3EtUlc5REE0UWxOaU5Jc2pRXzI5MlhzNHpsQjVudm0tb19MVWJNUjN5VDFwaEZ3VWxnc3FhUkFwbUdCejkxVGFWdEZmQzFrN3ZrOEtZT1ZpZVVxb21hbkE2RnFDRmhBYVlXUkRzdHRNZmJ2c0xXSlBweHpWY3ZVQWtmOHFnVnVJajl4VERTLURBQQ?oc=5",
+    "description": "Planejamento e reconhecimento são dimensões centrais na carreira TAE",
+    "category": "Notícia",
+    "badge_class": "badge-success"
+  },
+  {
+    "title": "Comissão do RSC vem atuando de forma ininterrupta e alerta para principais problemas nas solicitações",
+    "source": "IFAL",
+    "pubDate": "2026-10-05 23:27",
+    "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQZnBuRFF0dmIwTjJnZ0Y3Z2ZvVG5xcUgyNG1QcmJ4OHlXS0QxU3hiNUtuNURJeGRVNEZaXy1qN3ZLOWU3b3hqS2xTanEzTUotZGRwekJRR1B2V1g3OWtnWVU0dEdWcUFOVThSZnVva2pCaFY5a09nWDlxSTFSUFptSW1GT05KY00xSlVKa2JseXoyN1pzZkVGbVNCZ2R2YnV1LWxMVVMwRU40aGRLbE5nbXpnLVNlbjU1QVFEZmxOSm1WV05CeHUtdi1qOWk5eUFQLUE5cDRWRG1rU2V0MVE?oc=5",
+    "description": "Comissão do RSC vem atuando de forma ininterrupta e alerta para principais problemas nas solicitações",
+    "category": "RSC",
+    "badge_class": "badge-alert"
+  },
+  {
+    "title": "Vídeos – RSC PCCTAE",
+    "source": "UFMG",
+    "pubDate": "2026-10-03 03:54",
+    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5CZDFqSHNnVnVkd2QwZF85WmdMR1RScFhGeEtDd0dqLVZ6ZWlIVUwxTE5od1ZUeTN0czk4YkxvVWFYX082TFVFRzJCeDJ2Z05xdDFSS3lHZw?oc=5",
+    "description": "Vídeos – RSC PCCTAE",
+    "category": "RSC",
+    "badge_class": "badge-alert"
+  },
+  {
+    "title": "“Bem-vindos à Ufam” - 40 novos servidores da carreira TAE são acolhidos em evento de integração",
+    "source": "UFAM",
+    "pubDate": "2026-09-24 19:18",
+    "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOVUU5VWZYN0JRYWt4RnZqRFl6QjY4ODJrZUMxcjBFMUY3TUNsSXR6Z1lmVFVPejM4WUlCX1A2X0F0RTJZX0psNjhJUXVrWUluaGNKb3ZoVFFxdi05Nm1Qb1hzVTFzUUVMdy1kbkJ1dkFCc2xQQkVFTGZ0VGVuNlJsUzRnOXRxd3RuenR5Zm5yWUxHU21TX1JyWmtsWHNQbzZyNUpTOXFnUTNQYnZxTl90OXl2cmU3QQ?oc=5",
+    "description": "“Bem-vindos à Ufam” - 40 novos servidores da carreira TAE são acolhidos em evento de integração",
+    "category": "Notícia",
+    "badge_class": "badge-success"
+  },
+  {
+    "title": "Progep amplia implantação do RSC-PCCTAE e viabiliza 285 concessões na folha de setembro - Universidade Federal do Rio Grande",
+    "source": "FURG",
+    "pubDate": "2026-09-18 17:14",
+    "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNYkJmOENPbHByaXRHT1R0OXBlYkFmRmVOeDc3ay1mUTYzbGtIeG9VQUduNUIxbVNUZXJrUUZQSEtEME9DM1FaSEdZNWNKUlZwNkdUUWpCdTVhRWF1Ykk5S2hzNlIwLV9RMUc3REwtTWVXMzlfTDF0VEZIdG1aSmktcEtDOVFRYlR0OWQ3ZVJ0elFfZkZsSHZPcUF5aUZGSjhPaFFnbzY4aldGdnpoeG82bUlNUXRvYzlqNjRLZFhoSEFoTGtVZVpPQTdKQjRHNTRGY3NXLTNNYTJNdw?oc=5",
+    "description": "Progep amplia implantação do RSC-PCCTAE e viabiliza 285 concessões na folha de setembro - Universidade Federal do Rio Grande",
+    "category": "RSC",
+    "badge_class": "badge-alert"
+  },
+  {
+    "title": "RSC-TAE na Prática: Prefeitura Universitária promove oficina de orientação para servidores",
+    "source": "Prefeitura da UFRJ",
+    "pubDate": "2026-09-14 07:00",
+    "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPcUNQOUZVUndqREE3OVpHTFdqVEtiT3lWNWhaQU16eGRmVGhPckY5cWFubkF4dGYySlRSU2NIbTRWS25YeWd4b0QycVY0VjJoQldwUkV2dnczbGxZdDZfbTA2WHV3STRHQk1QSHZKRHVXTC1weXBKbFNWaGp0R0pTSFVVY09wczY4TVB5SnluSm01QVdlcDI5amZrMmdjeWhjUmRDUXpVUFFBWlI2RUhjRmdjZ0dTMzl6Q3F2WE11bXFWczA?oc=5",
+    "description": "RSC-TAE na Prática: Prefeitura Universitária promove oficina de orientação para servidores",
+    "category": "RSC",
+    "badge_class": "badge-alert"
+  },
+  {
+    "title": "IFCE Aracati realizará eleições suplementares para a CIS-PCCTAE — IFCE",
+    "source": "Home — IFCE",
+    "pubDate": "2026-09-08 16:43",
+    "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOdnZQb0FQTDVSUWY2V3NYXzVhejVQWXR1aVloZ1c4LU5OM29VYUhLaHZIZDVseTd3R0NmNTM1T3VIT0E2aGlBY0ZnWUZVOEdJUnJCQ01MWk12a2xyMkUyVFlPSFJZOVB6Mkc1eVpabEJrelUtN0NFTmhzWW9DWVp1RDBpLWxudWRFQTRPUTNyWDdQNlF1aTVzUWJPYzdDNl9XbmgyVVJGSk51ZllMYkxUVG9JWmZPQQ?oc=5",
+    "description": "IFCE Aracati realizará eleições suplementares para a CIS-PCCTAE — IFCE",
+    "category": "Carreira",
     "badge_class": "badge-info"
   }
 ]
