@@ -36,15 +36,6 @@
     "badge_class": "badge-alert"
   },
   {
-    "title": "Módulo para requerimentos do RSC será lançado nesta segunda, 13",
-    "source": "IFRN",
-    "pubDate": "2026-10-07 07:00",
-    "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNNktVcWlLamVIY2JyektkNU1qdmRBbXI2dzFSWGRWVW9Jdy1Cd0h5OHdxaVlVSm9kaXFIQlltT25ibGUyVV9fczVVaFUxN0FwRnFoaXVramoyMWdINDg3eUFDQkNGRXJMUTFHVjJNcDkwaE5rNk9xaXU1Ui1KTWwyTWF2LWRUQmxNeExLbkxsY2RuUFFvcU1nS3NMMGcwQmxPRFc0UDhMc1I0am4zTjFyX29QM3c0dw?oc=5",
-    "description": "Módulo para requerimentos do RSC será lançado nesta segunda, 13",
-    "category": "RSC",
-    "badge_class": "badge-alert"
-  },
-  {
     "title": "Planejamento e reconhecimento são dimensões centrais na carreira TAE",
     "source": "UFMG",
     "pubDate": "2026-10-06 20:24",
@@ -70,6 +61,15 @@
     "description": "No primeiro mês de trabalho, comissão analisa 85% dos pedidos de RSC-TAE",
     "category": "RSC",
     "badge_class": "badge-alert"
+  },
+  {
+    "title": "“Bem-vindos à Ufam” - 40 novos servidores da carreira TAE são acolhidos em evento de integração",
+    "source": "UFAM",
+    "pubDate": "2026-09-24 19:18",
+    "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOVUU5VWZYN0JRYWt4RnZqRFl6QjY4ODJrZUMxcjBFMUY3TUNsSXR6Z1lmVFVPejM4WUlCX1A2X0F0RTJZX0psNjhJUXVrWUluaGNKb3ZoVFFxdi05Nm1Qb1hzVTFzUUVMdy1kbkJ1dkFCc2xQQkVFTGZ0VGVuNlJsUzRnOXRxd3RuenR5Zm5yWUxHU21TX1JyWmtsWHNQbzZyNUpTOXFnUTNQYnZxTl90OXl2cmU3QQ?oc=5",
+    "description": "“Bem-vindos à Ufam” - 40 novos servidores da carreira TAE são acolhidos em evento de integração",
+    "category": "Notícia",
+    "badge_class": "badge-success"
   },
   {
     "title": "RSC-TAE na Prática: Prefeitura Universitária promove oficina de orientação para servidores",
