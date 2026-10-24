@@ -54,29 +54,11 @@
     "badge_class": "badge-alert"
   },
   {
-    "title": "Mais de 574 processos de RSC já foram analisados - UFG",
-    "source": "Universidade Federal de Goiás",
-    "pubDate": "2026-10-14 13:01",
-    "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNRjFuckdMVHIwQUxYeGVnQjVXdVJKa2tLTnJodGhmSmxOZjZMeWtnQlhZeUk4YzZPSFhDU3Noazc3VU51MElMc1d1b3d2MV9TLS10T1NmRmRoV0p5RGZDeUJYdG82VzVWQ3QxeUt0R09PQ3RCLVlpM29UNldWTjFBSllubGk4bV9odkQyNEgzTklCSlE?oc=5",
-    "description": "Mais de 574 processos de RSC já foram analisados - UFG",
-    "category": "RSC",
-    "badge_class": "badge-alert"
-  },
-  {
     "title": "Aposentados e Pensionistas têm direito ao RSC/PCCTAE. Leia o informe jurídico",
     "source": "SINTFUB",
     "pubDate": "2026-10-09 07:00",
     "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOTXh3Nm1yT0Y2akttQlZYV1kzM3hDbHViT3VGT3FiZUhMQThrZlY2M2t3OWd6RlFCZlFlb1VpdENzeUxGM1AxeFE2NEZnakpoMHZobHJsQVRnSVNMaF9QVTBhWG5lUmdac2k1blJ5bWE0Y3VkV2VOcGo2VXBQelN4TU1RNEtUVGpZTUYzTUlNWFB3Zmp1MENrM0hNa1BWbERFQXkxbF9FdFBKaG42?oc=5",
     "description": "Aposentados e Pensionistas têm direito ao RSC/PCCTAE. Leia o informe jurídico",
-    "category": "RSC",
-    "badge_class": "badge-alert"
-  },
-  {
-    "title": "Servidores TAEs poderão dar entrada em seus processos de RSC a partir de segunda, 10 de agosto",
-    "source": "UFMG",
-    "pubDate": "2026-10-08 07:00",
-    "link": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxQNjg4UTVoQTlkSEk0dnFnYVpzWU5XYVZKb0N0S3NFM3JfSU8telhnNGs2NjgtRlBGR2R5aDUxM19OeGJpWGFtMFdUT1VsaGUyQlFfd01oUG9vM3EzLWtLNUNLZUo0MlhMUkNIeGJLWmRJMUdUbkVFMGVjOC1mYVRyeGlWMTZfZlNGLTBvczRqVmkyc0E1SEo0MWhjN0xKZ0pvUDlLLUM4WjFIVk1NTm0xdFBSTzY4Skttc3I0MG1wcF9LT1Jrd25odmRLRHBtdXZjVEpCWVZmRmJPRExiMHZkLXYwNA?oc=5",
-    "description": "Servidores TAEs poderão dar entrada em seus processos de RSC a partir de segunda, 10 de agosto",
     "category": "RSC",
     "badge_class": "badge-alert"
   },
@@ -88,5 +70,23 @@
     "description": "Planejamento e reconhecimento são dimensões centrais na carreira TAE",
     "category": "Notícia",
     "badge_class": "badge-success"
+  },
+  {
+    "title": "Memoriais – RSC PCCTAE",
+    "source": "UFMG",
+    "pubDate": "2026-10-04 03:45",
+    "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5SbXJFQjNtQnRHbjdrQ2NjX3BHYkdzTUhNQ0dDSkQ2dzM0NUNjOFJMQzJRUUF4d3VYaDJnWXd2eU5yMGVWdEpoVDRIbkx4a0kweWZic1BqazdNNWc?oc=5",
+    "description": "Memoriais – RSC PCCTAE",
+    "category": "RSC",
+    "badge_class": "badge-alert"
+  },
+  {
+    "title": "Vídeos – RSC PCCTAE",
+    "source": "UFMG",
+    "pubDate": "2026-10-03 03:54",
+    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5CZDFqSHNnVnVkd2QwZF85WmdMR1RScFhGeEtDd0dqLVZ6ZWlIVUwxTE5od1ZUeTN0czk4YkxvVWFYX082TFVFRzJCeDJ2Z05xdDFSS3lHZw?oc=5",
+    "description": "Vídeos – RSC PCCTAE",
+    "category": "RSC",
+    "badge_class": "badge-alert"
   }
 ]
