@@ -18,15 +18,6 @@
     "badge_class": "badge-info"
   },
   {
-    "title": "Decreto que regulamenta cargos do PCCTAE é publicado",
-    "source": "CONEXÃO MT",
-    "pubDate": "2026-10-23 02:32",
-    "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQSTVUc1QxdWxFaWZidXN4SkdzbTl1MC1VZkZFNjlUcEdsT0x1X2YtUV9ZdHRCRFFIU1pNRXBIRnp0aFVnRHU3d0djU2hnLXlZb0FPV0ZUZWlkNXc3aGo1OVpHcG9HVFU0bmNFRFpldGNhOWptcGM2bmpoNWtFM0NiamY1UU1VbWhqSXV0Wg?oc=5",
-    "description": "Decreto que regulamenta cargos do PCCTAE é publicado",
-    "category": "Notícia",
-    "badge_class": "badge-success"
-  },
-  {
     "title": "Governo regulamenta cargos do PCCTAE e libera mais de 15 mil vagas em universidades e IFs",
     "source": "Rádio Itatiaia",
     "pubDate": "2026-10-22 21:46",
@@ -37,7 +28,7 @@
   },
   {
     "title": "Decreto que regulamenta cargos do PCCTAE é publicado — Ministério da Educação",
-    "source": "Governo Federal",
+    "source": "GOV.BR",
     "pubDate": "2026-10-22 18:52",
     "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNaVEwTHgxLWpCTjRBcWJRUTExSk1zdWF0Y3JQNGVFT0pZS3hhanQ0Q3lULWp4Y2RqM01NVDNOWTRVb2VLLW5LZHBVN2FrZjZDLThxWkhnM0duR0pMSHRXMHNjRkw3UWxTN2M5bU5WbVU5cHZIMWZETm1vRW9YLVNja3lob3MxYVBfeC1HUWV2dHRHamREMVRfQzZfNGRLTG9ZUnlQT0hINEZtR05rTUNLNHFB?oc=5",
     "description": "Decreto que regulamenta cargos do PCCTAE é publicado — Ministério da Educação",
@@ -57,7 +48,7 @@
     "title": "Mais de 574 processos de RSC já foram analisados - UFG",
     "source": "Universidade Federal de Goiás",
     "pubDate": "2026-10-14 13:01",
-    "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNVllpSHYyQjZCbk94eWxQU1RkbnpGaDAwNXM5YVNhRjBPeDR3ZTZUOHJTcXZLd2lKT2xhSGh2OURMeU80U3NhRGxYM1ZBU19kUHNWaUpOb1JUMGxiVlNKdFpYZDZIZFpyZjZraWVrYm56QW4yZXQ5VEQydFZMU0hPeWdHZXV4UmNsRDFrT0ZoUDBQWnM?oc=5",
+    "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNRjFuckdMVHIwQUxYeGVnQjVXdVJKa2tLTnJodGhmSmxOZjZMeWtnQlhZeUk4YzZPSFhDU3Noazc3VU51MElMc1d1b3d2MV9TLS10T1NmRmRoV0p5RGZDeUJYdG82VzVWQ3QxeUt0R09PQ3RCLVlpM29UNldWTjFBSllubGk4bV9odkQyNEgzTklCSlE?oc=5",
     "description": "Mais de 574 processos de RSC já foram analisados - UFG",
     "category": "RSC",
     "badge_class": "badge-alert"
@@ -70,6 +61,15 @@
     "description": "Aposentados e Pensionistas têm direito ao RSC/PCCTAE. Leia o informe jurídico",
     "category": "RSC",
     "badge_class": "badge-alert"
+  },
+  {
+    "title": "Planejamento e reconhecimento são dimensões centrais na carreira TAE",
+    "source": "UFMG",
+    "pubDate": "2026-10-07 07:00",
+    "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxONW5zUkJlQUVqbTRPc1lYNDdjaEdZcE1MeldFeEt5aWNpMlZCT0N0ZmNMbEhOSVota3EtUlc5REE0UWxOaU5Jc2pRXzI5MlhzNHpsQjVudm0tb19MVWJNUjN5VDFwaEZ3VWxnc3FhUkFwbUdCejkxVGFWdEZmQzFrN3ZrOEtZT1ZpZVVxb21hbkE2RnFDRmhBYVlXUkRzdHRNZmJ2c0xXSlBweHpWY3ZVQWtmOHFnVnVJajl4VERTLURBQQ?oc=5",
+    "description": "Planejamento e reconhecimento são dimensões centrais na carreira TAE",
+    "category": "Notícia",
+    "badge_class": "badge-success"
   },
   {
     "title": "Comissão do RSC vem atuando de forma ininterrupta e alerta para principais problemas nas solicitações",
