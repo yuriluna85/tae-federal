@@ -21,7 +21,7 @@
     "title": "FURG abre inscrições para eleição suplementar de três membros da CIS/PCCTAE - Universidade Federal do Rio Grande",
     "source": "FURG",
     "pubDate": "2026-11-06 13:27",
-    "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQVTZ5VWtta0ZPRnJpekw0a25aYUxlbEV0RzhRMHhpNzFFYllIVlhBdlFVUmkxOFRseWE5UVJ1SURNVUNCOG5oV09OekZIQnJ4UHRuUUUzUW5zSFQ4WTRTRGhmd04xUjBDTnRvS3FwbDlLcER6alhqTVl6NFJEQ1Mxa0lycVdYclpFQjM3alNMWmdmRlVVZXgwalpIUFpSNTR5NXQ2TFJDeExJdWdQMnVYOU5vX2ZnZEFRNktzTFJaTGg4X0FDUG14MW5R?oc=5",
+    "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNSnJFc3VLMjl0Z1Vjd012T0JGZ0F5SEQtNElwRmJpYkNNX1hpVFJUOEVQOVJReUs5d05BcU5PWFRqcmUwMjk4VWFGMGlQcGpxa0VON3djTlk3a1RNUkhOUWhVVjcza0hyb3NodlAxdHNQVHZDNWxwbWNBbXptczN3R3dRRFMxbVl3YUp6eHBscmJwbWpwZl92QTJob1FHeWp4YldkUFRNcXJGRFd1V19VRmhGVkRaVkVHaDhmaUJxTjk5SG9pWWc?oc=5",
     "description": "FURG abre inscrições para eleição suplementar de três membros da CIS/PCCTAE - Universidade Federal do Rio Grande",
     "category": "Carreira",
     "badge_class": "badge-info"
@@ -37,12 +37,21 @@
   },
   {
     "title": "Decreto que regulamenta cargos do PCCTAE é publicado — Ministério da Educação",
-    "source": "GOV.BR",
+    "source": "Governo Federal",
     "pubDate": "2026-10-22 07:00",
     "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNaVEwTHgxLWpCTjRBcWJRUTExSk1zdWF0Y3JQNGVFT0pZS3hhanQ0Q3lULWp4Y2RqM01NVDNOWTRVb2VLLW5LZHBVN2FrZjZDLThxWkhnM0duR0pMSHRXMHNjRkw3UWxTN2M5bU5WbVU5cHZIMWZETm1vRW9YLVNja3lob3MxYVBfeC1HUWV2dHRHamREMVRfQzZfNGRLTG9ZUnlQT0hINEZtR05rTUNLNHFB?oc=5",
     "description": "Decreto que regulamenta cargos do PCCTAE é publicado — Ministério da Educação",
     "category": "Notícia",
     "badge_class": "badge-success"
+  },
+  {
+    "title": "Memoriais – RSC PCCTAE",
+    "source": "UFMG",
+    "pubDate": "2026-10-04 03:45",
+    "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5SbXJFQjNtQnRHbjdrQ2NjX3BHYkdzTUhNQ0dDSkQ2dzM0NUNjOFJMQzJRUUF4d3VYaDJnWXd2eU5yMGVWdEpoVDRIbkx4a0kweWZic1BqazdNNWc?oc=5",
+    "description": "Memoriais – RSC PCCTAE",
+    "category": "RSC",
+    "badge_class": "badge-alert"
   },
   {
     "title": "Comissão conclui análise de pedidos de RSC",
@@ -77,15 +86,6 @@
     "pubDate": "2026-08-28 07:00",
     "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQTlR1YXNHWnlkaHRWVDNDS2V5NWthaVpDbEQ3WnFmYzdORHJqb1hkZUE3RWdrdEVCaXZ3NjNrZ3QyMlFwQ3RndjVBX1lUQ28ySmxjaW1xdlFOUHJIN2NEM3VqZncxVXZwWEZPSlhySURrVUdpY29VSnlGOEZUdXMtWmI3eE1iNkd0M09RdVdtYkRaMXpYc2dOUGZ5OWVJelk?oc=5",
     "description": "Comunicado do Ifal orienta servidores sobre processos do RSC-TAE",
-    "category": "RSC",
-    "badge_class": "badge-alert"
-  },
-  {
-    "title": "Reitoria da UFRN reconhece trabalho para implantação do RSC-PCCTAE",
-    "source": "Portal da UFRN",
-    "pubDate": "2026-08-24 07:00",
-    "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPSUNGS2RGWVhuYmdZZzJjTmN5cmxsMmpReW84NmotSS1yTWZhbHRBTHJBTjBYSThJQUUyX0pxRVpYNkJIRDQ2d05QOU5TNUJLY0JILWloNEcxWXR6OFAzR3U1akJaME5OUVM5eWNVNldqcWtNVWpxQ2dCdHZRSFBXSXk3WWNYVTVzS291ODZtbEFMeGM2MTZQZHFvSG1GWnRoVWFFbFpRSld3TjgtbUJTZQ?oc=5",
-    "description": "Reitoria da UFRN reconhece trabalho para implantação do RSC-PCCTAE",
     "category": "RSC",
     "badge_class": "badge-alert"
   }
