@@ -18,6 +18,15 @@
     "badge_class": "badge-info"
   },
   {
+    "title": "RSC: MGI nega extensão do benefício a servidores lotados fora das instituições de ensino",
+    "source": "Condsef",
+    "pubDate": "2026-11-18 22:24",
+    "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNcVNHbVN5ZTI1Z01hS1FsZHB1NDc0RGhBQXlNOEY2VGZkSHQ1M1dLb0dJREdONlVyR3dPT0kyWGZ1ZHF3OF9ieGw2cmdJd0dXcjNLOTFrYTh1cVZTZ3V5Ul9wUXl2Z3J3RmxlczFJMzhqWWJXWUlVeXpvMnhoSnBRbjZUZnpYOFlhMlZ5V3lRaUl1ajZ2ai1Sb19hUEc1NF9jMW4tYUlVOWFKRXREZFhnM1otZGNSZw?oc=5",
+    "description": "RSC: MGI nega extensão do benefício a servidores lotados fora das instituições de ensino",
+    "category": "RSC",
+    "badge_class": "badge-alert"
+  },
+  {
     "title": "FURG abre inscrições para eleição suplementar de três membros da CIS/PCCTAE - Universidade Federal do Rio Grande",
     "source": "FURG",
     "pubDate": "2026-11-06 13:27",
@@ -45,6 +54,15 @@
     "badge_class": "badge-success"
   },
   {
+    "title": "Decreto que regulamenta cargos do PCCTAE é publicado — Ministério da Educação",
+    "source": "GOV.BR",
+    "pubDate": "2026-10-22 07:00",
+    "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNaVEwTHgxLWpCTjRBcWJRUTExSk1zdWF0Y3JQNGVFT0pZS3hhanQ0Q3lULWp4Y2RqM01NVDNOWTRVb2VLLW5LZHBVN2FrZjZDLThxWkhnM0duR0pMSHRXMHNjRkw3UWxTN2M5bU5WbVU5cHZIMWZETm1vRW9YLVNja3lob3MxYVBfeC1HUWV2dHRHamREMVRfQzZfNGRLTG9ZUnlQT0hINEZtR05rTUNLNHFB?oc=5",
+    "description": "Decreto que regulamenta cargos do PCCTAE é publicado — Ministério da Educação",
+    "category": "Notícia",
+    "badge_class": "badge-success"
+  },
+  {
     "title": "Comissão conclui análise de pedidos de RSC",
     "source": "IFRN",
     "pubDate": "2026-09-23 07:00",
@@ -63,15 +81,6 @@
     "badge_class": "badge-success"
   },
   {
-    "title": "Publicadas as primeiras portarias de concessão de RSC para TAEs da UTFPR",
-    "source": "Universidade Tecnológica Federal do Paraná — UTFPR",
-    "pubDate": "2026-09-09 07:00",
-    "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPNGx1VHJvaDBJd3FJNGI4Mms1NExpejU2M0R1ZmwtNmdPV2hyMDR4Vm1WRTNoVkpMY09kMlZVcGdPdjE0bFliVkpQbjNVMF9aNnNfa3FoN0JKY2FTNGxwaGkyVFRhSHkzblc2TzRHWk45aHUtRnBsWUJMNy0yM2Nsa3E0TlpzV3kzeXhCQy1pQ2xwaUs3QU1zTExEd1NvSnNCZ3djWVV4cUxBeVl4SnJBMjJvdV8yQzg4SnViNEpxTmw?oc=5",
-    "description": "Publicadas as primeiras portarias de concessão de RSC para TAEs da UTFPR",
-    "category": "RSC",
-    "badge_class": "badge-alert"
-  },
-  {
     "title": "FASUBRA divulga cartilha sobre o RSC-PCCTAE",
     "source": "Assufrgs",
     "pubDate": "2026-09-08 07:00",
@@ -79,14 +88,5 @@
     "description": "FASUBRA divulga cartilha sobre o RSC-PCCTAE",
     "category": "RSC",
     "badge_class": "badge-alert"
-  },
-  {
-    "title": "Reitoria da UFRGS cobra MEC por meio de ofício e exige regulamentação completa dos cargos do PCCTAE",
-    "source": "Assufrgs",
-    "pubDate": "2026-08-31 07:00",
-    "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxONzYxb0hWbnMyZzNaNUgtYkF5XzBuZE5Hdy0tZDU4N0Q4cnBmSmNQTTdfdXVqUVJjWWVaRG1hTThydlBWc2xkOVh5Ty1HdV9qLVg5Q0c0d01TcVVYTThJMmZYREx2a2xtUkVjWnlEekJIam9KZjBwZE1QRVBIOGg0U3ZSRVpSVmZXYUw4QU9saU1wb010OFNBeGY5UFk3VmZlZWFqQllLM3U2Wi01TjB4aFF6a1NPNDRJZG5qaGwwNWtEY29JQzctTWlCMXRFQ0JDTkx5N29R?oc=5",
-    "description": "Reitoria da UFRGS cobra MEC por meio de ofício e exige regulamentação completa dos cargos do PCCTAE",
-    "category": "Notícia",
-    "badge_class": "badge-success"
   }
 ]
